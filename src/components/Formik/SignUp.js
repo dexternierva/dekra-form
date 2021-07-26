@@ -76,7 +76,7 @@ function SignUp() {
     
     const onSubmit = async function (values, actions) {
         axios
-            .post('http://localhost:1337/auth/local/register', {
+            .post('https://dekra-form-api-m8bsw.ondigitalocean.app/auth/local/register', {
                 firstname: `${values.firstname}`,
                 lastname: `${values.lastname}`,
                 username: `${values.username}`,
