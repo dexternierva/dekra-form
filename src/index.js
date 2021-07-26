@@ -1,17 +1,35 @@
 import React from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
 import ReactDOM from 'react-dom';
-import './index.css';
+import { CurrentUserProvider } from "./containers/CurrentUser";
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './index.css';
+import { createTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      // Purple and green play nicely together.
+      main: '#008A4C',
+    },
+    secondary: {
+      // This is green.A700 as hex.
+      main: '#F00E74',
+    },
+  },
+});
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<React.StrictMode>
+		<Router>
+		<ThemeProvider theme={theme}>
+			<CurrentUserProvider>
+				<App />
+			</CurrentUserProvider>
+		</ThemeProvider>
+		</Router>
+	</React.StrictMode>,
+	document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
