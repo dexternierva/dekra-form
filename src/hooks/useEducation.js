@@ -20,9 +20,9 @@ function useEducation (educationID) {
     let apiUrl = '';
 
     if (educationID !== undefined) { 
-        apiUrl = `http://localhost:1337/educations/${educationID}`;
+        apiUrl = `https://dekra-form-api-m8bsw.ondigitalocean.app/educations/${educationID}`;
     } else {
-        apiUrl = 'http://localhost:1337/educations';
+        apiUrl = 'https://dekra-form-api-m8bsw.ondigitalocean.app/educations';
     }
 
     const [state, dispatch] = useReducer(reducer, {

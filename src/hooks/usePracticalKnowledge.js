@@ -20,9 +20,9 @@ function usePracticalKnowledge (ID) {
     let apiUrl = '';
 
     if (ID !== undefined) {
-        apiUrl = `http://localhost:1337/practical-knowledges/${ID}`;
+        apiUrl = `https://dekra-form-api-m8bsw.ondigitalocean.app/practical-knowledges/${ID}`;
     } else {
-        apiUrl = 'http://localhost:1337/practical-knowledges';
+        apiUrl = 'https://dekra-form-api-m8bsw.ondigitalocean.app/practical-knowledges';
     }
 
     const [state, dispatch] = useReducer(reducer, {

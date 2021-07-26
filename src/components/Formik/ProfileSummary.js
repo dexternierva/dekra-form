@@ -443,7 +443,7 @@ function ProfileSummary () {
  
         await axios({
             method: 'PUT',
-            url: `http://localhost:1337/cvs/${cvID}`,
+            url: `https://dekra-form-api-m8bsw.ondigitalocean.app/cvs/${cvID}`,
             data,
             withCredentials: true
         })

@@ -22,9 +22,9 @@ function useProfile (cvID) {
 
     if (cvID !== undefined) {
         (typeof cvID === "object") ? id = cvID.id : id = cvID;
-        apiUrl = `http://localhost:1337/cvs/${id}`;
+        apiUrl = `https://dekra-form-api-m8bsw.ondigitalocean.app/cvs/${id}`;
     } else {
-        apiUrl = 'http://localhost:1337/cvs';
+        apiUrl = 'https://dekra-form-api-m8bsw.ondigitalocean.app/cvs';
     }
 
     const [state, dispatch] = useReducer(reducer, {

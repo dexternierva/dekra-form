@@ -91,7 +91,7 @@ function Login() {
         //setDialogHeader(null);
 
         await axios
-            .post('http://localhost:1337/auth/local', {
+            .post('https://dekra-form-api-m8bsw.ondigitalocean.app/', {
                 identifier: values.email,
                 password: values.password,
             }, {

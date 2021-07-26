@@ -72,7 +72,7 @@ function WorkExperience () {
                     setFormValues(savedData);
                 } else {
                     if (requestID === null) {
-                        setRequest({ method: 'POST', url: 'http://localhost:1337/work-experiences' });
+                        setRequest({ method: 'POST', url: 'https://dekra-form-api-m8bsw.ondigitalocean.app/work-experiences' });
                     } else {
                         setExperienceID(requestID);
                     }
@@ -114,7 +114,7 @@ function WorkExperience () {
             if (formValues !==  null) {
                 for (let i = 0; i < formValues.workExperiences.length; i++) {
                     if ( formValues.workExperiences[i].id === valuesToSubmit.id ) {
-                        setRequest({ method: 'PUT', url: `http://localhost:1337/work-experiences/${formValues.educations[i].id}` });
+                        setRequest({ method: 'PUT', url: `https://dekra-form-api-m8bsw.ondigitalocean.app/work-experiences/${formValues.educations[i].id}` });
                     }
                 }
             }

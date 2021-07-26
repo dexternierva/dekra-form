@@ -67,7 +67,7 @@ function Education () {
                     setFormValues(savedData);
                 } else {
                     if (requestID === null) {
-                        setRequest({ method: 'POST', url: 'http://localhost:1337/educations' });
+                        setRequest({ method: 'POST', url: 'https://dekra-form-api-m8bsw.ondigitalocean.app/educations' });
                     } else {
                         setEducationID(requestID);
                     }
@@ -106,7 +106,7 @@ function Education () {
             if (formValues !==  null) {
                 for (let i = 0; i < formValues.educations.length; i++) {
                     if ( formValues.educations[i].id === valuesToSubmit.id ) {
-                        setRequest({ method: 'PUT', url: `http://localhost:1337/educations/${formValues.educations[i].id}` });
+                        setRequest({ method: 'PUT', url: `https://dekra-form-api-m8bsw.ondigitalocean.app/educations/${formValues.educations[i].id}` });
                     }
                 }
             }

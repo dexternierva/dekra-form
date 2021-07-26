@@ -20,9 +20,9 @@ function usePracticalActivity (ID) {
     let apiUrl = '';
 
     if (ID !== undefined) {
-        apiUrl = `http://localhost:1337/practical-activities/${ID}`;
+        apiUrl = `https://dekra-form-api-m8bsw.ondigitalocean.app/practical-activities/${ID}`;
     } else {
-        apiUrl = 'http://localhost:1337/practical-activities';
+        apiUrl = 'https://dekra-form-api-m8bsw.ondigitalocean.app/practical-activities';
     }
 
     const [state, dispatch] = useReducer(reducer, {

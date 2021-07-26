@@ -20,9 +20,9 @@ function useExperience (experienceID) {
     let apiUrl = '';
 
     if (experienceID !== undefined) { 
-        apiUrl = `http://localhost:1337/work-experiences/${experienceID}`;
+        apiUrl = `https://dekra-form-api-m8bsw.ondigitalocean.app/work-experiences/${experienceID}`;
     } else {
-        apiUrl = 'http://localhost:1337/work-experiences';
+        apiUrl = 'https://dekra-form-api-m8bsw.ondigitalocean.app/work-experiences';
     }
 
     const [state, dispatch] = useReducer(reducer, {

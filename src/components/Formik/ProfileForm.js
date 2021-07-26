@@ -418,7 +418,7 @@ function ProfileForm ({ setProfileFormState }) {
             
                     await axios({
                         method: 'POST',
-                        url: 'http://localhost:1337/cvs',
+                        url: 'https://dekra-form-api-m8bsw.ondigitalocean.app/cvs',
                         data,
                         withCredentials: true
                     })

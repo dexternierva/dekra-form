@@ -303,7 +303,7 @@ function PracticalActivitiesSummary () {
 
         await axios({
             method: 'PUT',
-            url: `http://localhost:1337/practical-activities/${practicalActivityID}`,
+            url: `https://dekra-form-api-m8bsw.ondigitalocean.app/practical-activities/${practicalActivityID}`,
             data,
             withCredentials: true
         })

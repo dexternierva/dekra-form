@@ -20,9 +20,9 @@ function useUsers (userID) {
     let apiUrl = null;
 
     if (userID !== undefined) { 
-        apiUrl = `http://localhost:1337/users/${userID}`;
+        apiUrl = `https://dekra-form-api-m8bsw.ondigitalocean.app/users/${userID}`;
     } else {
-        apiUrl = 'http://localhost:1337/users';
+        apiUrl = 'https://dekra-form-api-m8bsw.ondigitalocean.app/users';
     }
 
     const [state, dispatch] = useReducer(reducer, {

@@ -269,7 +269,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
 
                 await axios({
                     method: 'POST',
-                    url: 'http://localhost:1337/practical-knowledges',
+                    url: 'https://dekra-form-api-m8bsw.ondigitalocean.app/practical-knowledges',
                     data,
                     withCredentials: true
                 })

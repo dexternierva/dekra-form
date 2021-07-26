@@ -187,7 +187,7 @@ function PracticalKnowledgeForm ({ setPracticalActivitiesState }) {
 
                 await axios({
                     method: 'POST',
-                    url: 'http://localhost:1337/practical-activities',
+                    url: 'https://dekra-form-api-m8bsw.ondigitalocean.app/practical-activities',
                     data,
                     withCredentials: true
                 })

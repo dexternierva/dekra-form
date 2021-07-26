@@ -22,7 +22,7 @@ export const CurrentUserProvider = ({ children }) => {
         const fetchUser = async () => {
 
             try{
-                const user = await axios.get('http://localhost:1337/users/me', { withCredentials: true })
+                const user = await axios.get('https://dekra-form-api-m8bsw.ondigitalocean.app/users/me', { withCredentials: true })
                     .then(response => { return response.data })
                 if (user.id && isMounted) {
                     dispatch({ type: "LOGIN", user });
