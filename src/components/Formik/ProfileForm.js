@@ -50,6 +50,9 @@ const useStyles = makeStyles((theme) => ({
         },
         padding: theme.spacing(2, 4, 3),
     },
+    modallink: {
+        cursor: 'pointer'
+    }
 }));
 
 function ProfileForm ({ setProfileFormState }) {
@@ -479,7 +482,9 @@ function ProfileForm ({ setProfileFormState }) {
                             ))}
                         </Field>
                         <Typography variant="caption" display="block" gutterBottom color="secondary"><ErrorMessage name="kfDegree" component="span" /></Typography>
-                        <FormHelperText><Link onClick={handleOpen}>Click here to learn more about the Category options.</Link></FormHelperText>
+                        <FormHelperText>
+                            <Link onClick={handleOpen} className={classes.modallink}>Click here to learn more about the Category options.</Link>
+                        </FormHelperText>
                         { /* MODAL FOR THE CATEGORIES */ }
                         <Modal
                             aria-labelledby="transition-modal-title"
@@ -1065,6 +1070,7 @@ export function FormikStepper ({ children, ...props }) {
                                             disabled={isSubmitting}
                                             variant="contained"
                                             color="primary"
+                                            size="large"
                                             onClick={() => setStep((s) => s - 1)}
                                         >
                                             Back

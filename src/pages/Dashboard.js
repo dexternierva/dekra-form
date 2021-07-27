@@ -86,7 +86,6 @@ function Dashboard (props) {
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const currentUser = useCurrentUser();
-    console.log("CURRENT USER FROM DASHBOARD: ", currentUser);
     const dispatch = useDispatchCurrentUser();
     const history = useHistory();
 
@@ -118,7 +117,7 @@ function Dashboard (props) {
 
     const handleLogout = async () => {
         try {
-            await axios.post("http://localhost:1337/logout");
+            await axios.post("https://dekra-form-api-m8bsw.ondigitalocean.app/logout");
         } catch (error) {
             console.error("Error in logging out", error);
         }
