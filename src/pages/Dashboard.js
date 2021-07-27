@@ -219,7 +219,7 @@ function Dashboard (props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap>DEKRA Expert Migration</Typography>
+                    <Typography variant="h6" noWrap>A-Vantage International Recruitment Corp</Typography>
                     </Toolbar>
                 </AppBar>
                 <nav className={classes.drawer} aria-label="mailbox folders">
@@ -256,9 +256,10 @@ function Dashboard (props) {
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
                     { currentUser.role.type === "authenticated" ? <Component /> : <GetUsers><UsersList /></GetUsers> }
-                    <br />
-                    Copyright &copy; 2019 A-Vantage International Recruitment Corp. All rights reserved.
-                    <br />
+
+                    <Typography variant="body2" display="block" align="center" gutterBottom>
+                        Copyright &copy; 2019 A-Vantage International Recruitment Corp. All rights reserved.
+                    </Typography>
                 </main>
             </div>
         </>

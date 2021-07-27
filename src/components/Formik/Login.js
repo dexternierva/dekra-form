@@ -22,7 +22,7 @@ function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
-            <Link to="a-vantageinternational.com" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+            <Link to="www.a-vantageinternational.com" style={{ color: 'inherit', textDecoration: 'inherit' }}>
             {new Date().getFullYear()} A-Vantage International Recruitment Corp. <br /> All rights reserved.
             </Link>{' '}
             {'.'}
