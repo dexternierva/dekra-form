@@ -256,6 +256,9 @@ function Dashboard (props) {
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
                     { currentUser.role.type === "authenticated" ? <Component /> : <GetUsers><UsersList /></GetUsers> }
+                    <br />
+                    Copyright &copy; 2019 A-Vantage International Recruitment Corp. All rights reserved.
+                    <br />
                 </main>
             </div>
         </>
