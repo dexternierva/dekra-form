@@ -256,10 +256,12 @@ function Dashboard (props) {
                 <main className={classes.content}>
                     <div className={classes.toolbar} />
                     { currentUser.role.type === "authenticated" ? <Component /> : <GetUsers><UsersList /></GetUsers> }
-
-                    <Typography variant="body2" display="block" align="center" gutterBottom>
-                        Copyright &copy; 2019 A-Vantage International Recruitment Corp. All rights reserved.
-                    </Typography>
+                    
+                    <Box px={2}>
+                        <Typography variant="body2" display="block" align="center" gutterBottom>
+                            Copyright &copy; 2019 A-Vantage International Recruitment Corp. All rights reserved.
+                        </Typography>
+                    </Box>
                 </main>
             </div>
         </>
