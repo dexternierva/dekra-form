@@ -82,9 +82,6 @@ function SignUp() {
                 username: `${values.username}`,
                 email: `${values.email}`,
                 password: `${values.password}`
-            }, {
-                withCredentials: true,
-                headers: { 'Access-Control-Allow-Origin': true, 'Content-Type': 'application/json' }
             })
                 .then(response => {
                     setDialog({ state: true, header: "Account Successfully Created.", text: "Login and start entering your information." });
