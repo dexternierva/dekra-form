@@ -82,13 +82,16 @@ function SignUp() {
                 username: `${values.username}`,
                 email: `${values.email}`,
                 password: `${values.password}`
+            }, {
+                withCredentials: true,
+                headers: { 'Access-Control-Allow-Origin': true, 'Content-Type': 'application/json' }
             })
-            .then(response => {
-                setDialog({ state: true, header: "Account Successfully Created.", text: "Login and start entering your information." });
-            })
-            .catch(error => {
-                setDialog({ state: true, header: "Sorry but your form was not submitted!", text: "Please change a few things up and try submitting again. Thank you!" });
-            });
+                .then(response => {
+                    setDialog({ state: true, header: "Account Successfully Created.", text: "Login and start entering your information." });
+                })
+                .catch(error => {
+                    setDialog({ state: true, header: "Sorry but your form was not submitted!", text: "Please change a few things up and try submitting again. Thank you!" });
+                });
     }
 
     return (
