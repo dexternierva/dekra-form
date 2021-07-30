@@ -29,8 +29,6 @@ function ProfileSummary () {
     const currentUser = useCurrentUser();
     const cvID = currentUser.cv;                             
     const { loading, response, error, setCvID } = useContext(ProfileContext);
-    console.log("*** RESPONSE INSIDE PROFILESUMMARY: ", response);
-    console.log("*** CURRENT USER INSIDE PROFILESUMMARY: ", currentUser);
     setCvID(cvID); 
     const [dialog, setDialog] = useState({ state:false, header: null, text: null });
     const [formValues, setFormValues] = useState(null);
