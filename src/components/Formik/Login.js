@@ -95,7 +95,6 @@ function Login() {
                 password: values.password,
             }, {
                 withCredentials: true,
-                headers: { 'Access-Control-Allow-Origin': true, 'Content-Type': 'application/json' }
             })
                 .then(response => {
                     // Handle success.    
