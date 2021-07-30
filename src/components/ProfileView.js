@@ -68,6 +68,10 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+const user = {
+    avatar: '/static/images/avatars/avatar_6.png',
+};
+
 function  ProfileView({ response }) {
     let t = useTranslate("Profile");
     const classes = useStyles();
@@ -101,7 +105,11 @@ function  ProfileView({ response }) {
         <>
         <Grid container spacing={3} className={classes.grid}>
             <Grid item xs={12} sm={2}>
-                <Avatar src={`http://localhost:1337${response.cv.avatar.url}`} alt="Profile" />
+                <Avatar 
+                    component="div"
+                    src={user.avatar}
+                    className={classes.large}
+                />
             </Grid>
             <Grid item xs={12} sm={10}>
                 <TableContainer className={classes.ftable}>
