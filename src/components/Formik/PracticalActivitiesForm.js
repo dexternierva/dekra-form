@@ -1859,6 +1859,7 @@ export function FormikStepper ({ children, ...props }) {
                                             variant="contained"
                                             color="primary"
                                             onClick={() => setStep((s) => s - 1)}
+                                            size="large"
                                         >
                                             Back
                                         </Button>

@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { Formik, Form, FieldArray } from "formik";
 import { useCurrentUser } from "../../containers/CurrentUser";
-import { ExperienceContext } from "../../containers/GetExperience";
+import { TrainingContext } from "../../containers/GetTraining";
 import Alert from "../Alert";
 import { 
     Box, 
@@ -33,11 +33,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function WorkExperience () {
+function Training () {
     const classes = useStyles();
-    const { loading, response, error, setExperienceID } = useContext(ExperienceContext);
+    const { loading, response, error, setTrainingID } = useContext(TrainingContext);
+    console.log("*** TRAINING PAGE: RESPONSE: ", response);
     const [formValues, setFormValues] = useState(null);
     const currentUser = useCurrentUser();
+    console.log("*** TRAINING PAGE: CURRENTUSER: ", currentUser);
     const [request, setRequest] = useState({ method: null, url: null });
     const [dialog, setDialog] = useState({ state:false, header: null, text: null });
     const [requestID, setRequestID] = useState(null);
@@ -45,66 +47,58 @@ function WorkExperience () {
     /** PREFILL FORM WITH SAVED DATA */
     useEffect(() => {
         if (response !== null) {
-            if (Array.isArray(response)) {
-                /*** 
-                 * IF RESPONSE IS AN ARRAY
-                 * GET EXPERIENCE/S RELATED TO THE CURRENT USER 
-                 */
-                const experiences = response.map((experience) => {
-                    if (experience.user.id === currentUser.id) return experience; 
+            if(Array.isArray(response)) {
+                const trainings = response.map((training) => {
+                    if (training.user.id === currentUser.id) return training;
                     return null;
                 }).filter((el) => { return el !== null });
 
-                /***  SET SAVED DATA */
-                if (experiences.length !== 0) {
-                    const cleanedExperience = experiences.map((experience) => {
+                if (trainings.length !== 0) {
+                    const cleanedTrainings = trainings.map((training) => {
                         return {
-                            id: experience.id,
-                            from: experience.from,
-                            to: experience.to,
-                            job: experience.job,
-                            employer: experience.employer
+                            id: training.id,
+                            from: training.from,
+                            to: training.to,
+                            provider: training.provider,
+                            skills: training.skills,
                         }
                     });
 
-                    const savedData = { workExperiences: [] };
-                    savedData.workExperiences.push(...cleanedExperience);
+                    const savedData = { trainings: [] };
+                    savedData.educations.push(...cleanedTrainings);
                     setFormValues(savedData);
                 } else {
                     if (requestID === null) {
-                        setRequest({ method: 'POST', url: 'https://dekra-form-api-m8bsw.ondigitalocean.app/work-experiences' });
+                        setRequest({ method: 'POST', url: 'https://dekra-form-api-m8bsw.ondigitalocean.app/trainings' });
                     } else {
-                        setExperienceID(requestID);
+                        setTrainingID(requestID);
                     }
                 }
             } else {
-                /***
-                 * RESPONSE IS NOT AN ARRAY
-                 */
-                const savedData = { workExperiences: [] };
-                savedData.workExperiences.push(response);
+                const savedData = { trainings: [] };
+                savedData.trainings.push(response);
                 setFormValues(savedData);
             }
         }
-    }, [response, currentUser.id, requestID, setExperienceID]);
+    }, [response, currentUser.id, requestID, setTrainingID]);
 
     /** INITIAL VALUES */
     const initialValues = {
-        workExperiences: [
-            { from: new Date(), to: new Date(), job: '', employer: '' }
+        educations: [
+            { from: new Date(), to: new Date(), provider: '', skills: '' }
         ]
     };
 
     const validationSchema = Yup.object({
-        workExperiences: Yup.array()
+        trainings: Yup.array()
             .of(
                 Yup.object().shape({
                     from: Yup.date().required('This field is required'),
                     to: Yup.date().required('This field is required'),
-                    job: Yup.string().required('This field is required'),
-                    employer: Yup.string().required('This field is required')
+                    provider: Yup.string().required('This field is required'),
+                    skills: Yup.string().required('This field is required')
                 })
-            ).min(1).max(5)
+            ).min(1).max(4)
     });
     
     const onSubmit = async function (values, actions) {
@@ -112,9 +106,9 @@ function WorkExperience () {
         // FUNCTION TO SAVE EACH EXPERIENCE
         const submitValues = async function (valuesToSubmit) {
             if (formValues !==  null) {
-                for (let i = 0; i < formValues.workExperiences.length; i++) {
-                    if ( formValues.workExperiences[i].id === valuesToSubmit.id ) {
-                        setRequest({ method: 'PUT', url: `https://dekra-form-api-m8bsw.ondigitalocean.app/work-experiences/${formValues.educations[i].id}` });
+                for (let i = 0; i < formValues.trainings.length; i++) {
+                    if ( formValues.trainings[i].id === valuesToSubmit.id ) {
+                        setRequest({ method: 'PUT', url: `https://dekra-form-api-m8bsw.ondigitalocean.app/trainings/${formValues.trainings[i].id}` });
                     }
                 }
             }
@@ -124,8 +118,8 @@ function WorkExperience () {
             const info = {
                 'from': valuesToSubmit.from,
                 'to': valuesToSubmit.to,
-                'job': valuesToSubmit.job,
-                'employer': valuesToSubmit.employer
+                'provider': valuesToSubmit.provider,
+                'skills': valuesToSubmit.skills
             }
 
             data.append('data', JSON.stringify(info));
@@ -145,9 +139,9 @@ function WorkExperience () {
                 });
         }
 
-        // MAP THROUGH EXPERIENCES
-        values.workExperiences.map((experience) => (
-            submitValues(experience)    
+        // MAP THROUGH EDUCATIONS
+        values.trainings.map((training) => (
+            submitValues(training)    
         ))
     }
 
@@ -158,20 +152,20 @@ function WorkExperience () {
                     <CircularProgress color="inherit" />
                 </Backdrop> 
             }
-            { error && <Typography variant="overline" color="secondary" display="block" align="center">No previously saved data.</Typography> }
+            { error && <Typography variant="overline" color="secondary" display="block" align="center">Please Refresh the Browser.</Typography> }
 
             <Alert 
                 dialog={dialog}
                 handleClick={ 
                     () => { 
                         setDialog(false);
-                        setExperienceID(requestID);
+                        setTrainingID(requestID);
                     }
                 }
             />
 
             <Formik
-                initialValues={ formValues || initialValues }
+                initialValues={ formValues ||initialValues }
                 validationSchema={ validationSchema }
                 onSubmit={ onSubmit }
                 enableReinitialize
@@ -180,10 +174,10 @@ function WorkExperience () {
                     ({submitForm, isSubmitting, touched, errors, values}) => (
                         <Form>
                             <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                <FieldArray name="workExperiences">
+                                <FieldArray name="trainings">
                                     {({ push, remove }) =>(
                                         <>
-                                            {values.workExperiences.map((_, index) => (
+                                            {values.trainings.map((_, index) => (
                                                 <Box px={4} py={2} key={index}>
                                                     <Paper variant="outlined">
                                                         <Grid container>
@@ -194,7 +188,7 @@ function WorkExperience () {
                                                                             <Field
                                                                                 component={DatePicker}
                                                                                 label="From:"
-                                                                                name={`workExperiences[${index}].from`}
+                                                                                name={`trainings[${index}].from`}
                                                                                 inputVariant="outlined"
                                                                                 variant="dialog"
                                                                                 views={["year", "month"]}
@@ -205,7 +199,7 @@ function WorkExperience () {
                                                                             <Field
                                                                                 component={DatePicker}
                                                                                 label="To:"
-                                                                                name={`workExperiences[${index}].to`}
+                                                                                name={`trainings[${index}].to`}
                                                                                 inputVariant="outlined"
                                                                                 variant="dialog"
                                                                                 views={["year", "month"]}
@@ -218,37 +212,25 @@ function WorkExperience () {
                                                                     <Field
                                                                         component={TextField}
                                                                         type="text"
-                                                                        label="Job Title"
-                                                                        name={`workExperiences[${index}].job`}
+                                                                        label="Training Provider"
+                                                                        name={`educations[${index}].provider`}
                                                                         variant="outlined"
-                                                                        multiline
                                                                         fullWidth
-                                                                        helperText="Please use German word for your job title"
                                                                     />
                                                                 </Box>
                                                                 <Box px={4} pb={4} pt={2}>
                                                                     <Field
                                                                         component={TextField}
                                                                         type="text"
-                                                                        label="Employer Data"
-                                                                        name={`workExperiences[${index}].employer`}
+                                                                        label="Skills Acquired"
+                                                                        name={`educations[${index}].skills`}
                                                                         variant="outlined"
                                                                         fullWidth
                                                                     />
                                                                 </Box>
                                                             </Grid>
                                                             <Grid container item lg={2} xs={12} justify="center" alignItems="center">
-                                                                <Fab 
-                                                                    color="secondary" 
-                                                                    aria-label="add" 
-                                                                    className={classes.margin} 
-                                                                    onClick={
-                                                                        () => { 
-                                                                            remove(index);
-                                                                            //setMethod('DELETE');
-                                                                        }
-                                                                    }
-                                                                >
+                                                                <Fab color="secondary" aria-label="add" className={classes.margin} onClick={() => remove(index)}>
                                                                     <RemoveIcon />
                                                                 </Fab>
                                                             </Grid>
@@ -259,12 +241,12 @@ function WorkExperience () {
 
                                             <Box px={4} py={2}>
                                                 <Button 
-                                                    size="large"
+                                                    size="large" 
                                                     color="primary"
                                                     startIcon={<AddIcon />}
-                                                    onClick={ () => push({ from: new Date(), to: new Date(), job: '', employer: '' }) }
+                                                    onClick={ () => push({ from: new Date(), to: new Date(), provider: '', skills: '' })}
                                                 >
-                                                        Add Experience
+                                                        Add Training
                                                 </Button>
                                             </Box>
                                         </>
@@ -273,7 +255,7 @@ function WorkExperience () {
                             </MuiPickersUtilsProvider>
                             
                             <Box px={4} py={2} display="flex" justifyContent="flex-end">
-                                <Button variant="contained" color="primary" type="submit" size="large">Save</Button>
+                                <Button variant="contained" color="primary" type="submit" size="large">Submit</Button>
                             </Box>
                         </Form>
                     )
@@ -283,4 +265,4 @@ function WorkExperience () {
     )
 }
 
-export default WorkExperience;
+export default Training;

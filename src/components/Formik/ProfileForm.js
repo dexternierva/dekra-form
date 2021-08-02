@@ -359,11 +359,6 @@ function ProfileForm ({ setProfileFormState }) {
                     dateOfBirth: new Date(),
                     placeOfBirth: '',
                     maritalStatus: '',
-                    // INITIAL VALUES: TRAINING
-                    trainingFrom: new Date(),
-                    trainingTo: new Date(),
-                    provider: '',
-                    skills: '',
                     // INITIAL VALUES: LANGUAGE SKILLS
                     nativeLanguage: 'Filipino (Tagalog)',
                     germanLanguageLevel: '',
@@ -398,11 +393,6 @@ function ProfileForm ({ setProfileFormState }) {
                         'dateOfBirth': values.dateOfBirth,
                         'placeOfBirth': values.placeOfBirth,
                         'maritalStatus': values.maritalStatus,
-                        // VALUES: TRAINING
-                        'trainingFrom': values.trainingFrom,
-                        'trainingTo': values.trainingTo,
-                        'provider': values.provider,
-                        'skills': values.skills,
                         // VALUES: LANGUAGE SKILLS
                         'nativeLanguage': values.nativeLanguage,
                         'germanLanguageLevel': values.germanLanguageLevel,
@@ -714,75 +704,6 @@ function ProfileForm ({ setProfileFormState }) {
                             <ErrorMessage name="sex" component="span" />
                         </Typography>
                     </Box>
-                </FormikStep>
-
-                {
-                    /**
-                     * FORMIK STEP:
-                     * TRAINING
-                     * 
-                     */
-                }
-                <FormikStep
-                    label="Training"
-                    validationSchema={Yup.object({
-                        trainingFrom: Yup.date().required('This field is required'),
-                        trainingTo: Yup.date().required('This field is required'),
-                        provider: Yup.string().required('This field is required'),
-                        skills: Yup.string().required('This field is required')
-                    })}
-                >
-                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                        <Box px={4} py={2}>
-                            <Grid container spacing={2}>
-                                <Grid item lg={6} xs={12}>
-                                    <Field
-                                        component={DatePicker}
-                                        label="From:"
-                                        name="trainingFrom"
-                                        inputVariant="outlined"
-                                        variant="dialog"
-                                        views={["date", "year", "month"]}
-                                        fullWidth
-                                        format="MM/dd/yyyy"
-                                    />
-                                </Grid>
-                                <Grid item lg={6} xs={12}>
-                                    <Field
-                                        component={DatePicker}
-                                        label="To:"
-                                        name="trainingTo"
-                                        inputVariant="outlined"
-                                        variant="dialog"
-                                        views={["date", "year", "month"]}
-                                        fullWidth
-                                        format="MM/dd/yyyy"
-                                    />
-                                </Grid>
-                                <Grid item lg={12} xs={12}>
-                                    <Field
-                                        component={TextField}
-                                        type="text"
-                                        label="Provider"
-                                        name="provider"
-                                        variant="outlined"
-                                        fullWidth
-                                        format="MM/dd/yyyy"
-                                    />
-                                </Grid>
-                                <Grid item lg={12} xs={12}>
-                                    <Field
-                                        component={TextField}
-                                        type="text"
-                                        label="Skills Acquired"
-                                        name="skills"
-                                        variant="outlined"
-                                        fullWidth
-                                    />
-                                </Grid>
-                            </Grid>
-                        </Box>
-                    </MuiPickersUtilsProvider>
                 </FormikStep>
 
                 {

@@ -480,7 +480,7 @@ function PracticalKnowledgeSummary () {
                     <CircularProgress color="inherit" />
                 </Backdrop> 
             }
-            { error && <Typography variant="overline" color="secondary" display="block" align="center">No previously saved data.</Typography> }
+            { error && <Typography variant="overline" color="secondary" display="block" align="center">Kindly Refresh Browser!</Typography> }
 
             <Alert 
                 dialog={dialog}

@@ -4,6 +4,7 @@ import UsersList from "../components/UsersList";
 import GetUsers from "../containers/GetUsers";
 import GetExperience from "../containers/GetExperience";
 import GetEducation from "../containers/GetEducation";
+import GetTraining from "../containers/GetTraining";
 import { Link } from "react-router-dom";
 import { useCurrentUser, useDispatchCurrentUser } from "../containers/CurrentUser";
 import { useHistory } from "react-router-dom";
@@ -26,6 +27,7 @@ import {
 } from '@material-ui/core';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
+import CreateIcon from '@material-ui/icons/Create';
 import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 import DescriptionIcon from '@material-ui/icons/Description';
 import WorkIcon from '@material-ui/icons/Work';
@@ -37,6 +39,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Profile from "../components/Formik/Profile";
 import Experience from "../components/Formik/Experience";
 import Education from "../components/Formik/Education";
+import Training from "../components/Formik/Training";
 import PracticalKnowledge from "../components/Formik/PracticalKnowledge";
 import PracticalActivities from "../components/Formik/PracticalActivities";
 
@@ -98,6 +101,8 @@ function Dashboard (props) {
                 return <GetExperience><Experience /></GetExperience>;
             case 'education':
                 return <GetEducation><Education /></GetEducation>;
+            case 'trainings':
+                return <GetTraining><Training /></GetTraining>;
             case 'practicalknowledge':
                 return <PracticalKnowledge />;
             case 'practicalactivitiesform':
@@ -159,6 +164,10 @@ function Dashboard (props) {
                     <ListItem button>
                         <ListItemIcon><SchoolIcon /></ListItemIcon>
                         <ListItemText><Link onClick={ () => setState("education") } style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.87)' }}>Education</Link></ListItemText>
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon><CreateIcon /></ListItemIcon>
+                        <ListItemText><Link onClick={ () => setState("trainings") } style={{ textDecoration: 'none', color: 'rgba(0, 0, 0, 0.87)' }}>Trainings</Link></ListItemText>
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon><PlaylistAddIcon /></ListItemIcon>
