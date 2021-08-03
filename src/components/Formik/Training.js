@@ -107,13 +107,16 @@ function Training () {
         const submitValues = async function (valuesToSubmit) {
             console.log("valuesToSubmit: ", valuesToSubmit);
             console.log("formValues: ", formValues);
-            // if (formValues !==  null) {
-            //     for (let i = 0; i < formValues.trainings.length; i++) {
-            //         if ( formValues.trainings[i].id === valuesToSubmit.id ) {
-            //             setRequest({ method: 'PUT', url: `https://dekra-form-api-m8bsw.ondigitalocean.app/trainings/${formValues.trainings[i].id}` });
-            //         }
-            //     }
-            // }
+            if (formValues !==  null) {
+                for (let i = 0; i < formValues.trainings.length; i++) {
+                    if ( formValues.trainings[i].id === valuesToSubmit.id ) {
+                        // setRequest({ method: 'PUT', url: `https://dekra-form-api-m8bsw.ondigitalocean.app/trainings/${formValues.trainings[i].id}` });
+                        console.log("****** FORMVALUE IS EQUAL TO VALUETOSUBMIT!!!");
+                    } else {
+                        console.log("*** FORMVALUE IS NOT EQUAL TO VALUETOSUBMIT!!!")
+                    }
+                }
+            }
 
             const data = new FormData(); 
             
