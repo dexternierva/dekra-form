@@ -65,7 +65,7 @@ function Training () {
                     });
 
                     const savedData = { trainings: [] };
-                    savedData.educations.push(...cleanedTrainings);
+                    savedData.trainings.push(...cleanedTrainings);
                     setFormValues(savedData);
                 } else {
                     if (requestID === null) {
@@ -84,7 +84,7 @@ function Training () {
 
     /** INITIAL VALUES */
     const initialValues = {
-        educations: [
+        trainings: [
             { from: new Date(), to: new Date(), provider: '', skills: '' }
         ]
     };
@@ -139,7 +139,7 @@ function Training () {
                 });
         }
 
-        // MAP THROUGH EDUCATIONS
+        // MAP THROUGH TRAININGS
         values.trainings.map((training) => (
             submitValues(training)    
         ))
@@ -213,7 +213,7 @@ function Training () {
                                                                         component={TextField}
                                                                         type="text"
                                                                         label="Training Provider"
-                                                                        name={`educations[${index}].provider`}
+                                                                        name={`trainings[${index}].provider`}
                                                                         variant="outlined"
                                                                         fullWidth
                                                                     />
@@ -223,7 +223,7 @@ function Training () {
                                                                         component={TextField}
                                                                         type="text"
                                                                         label="Skills Acquired"
-                                                                        name={`educations[${index}].skills`}
+                                                                        name={`trainings[${index}].skills`}
                                                                         variant="outlined"
                                                                         fullWidth
                                                                     />

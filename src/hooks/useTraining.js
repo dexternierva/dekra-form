@@ -16,11 +16,11 @@ function reducer (state, action) {
     }
 }
 
-function useTraining (educationID) {
+function useTraining (trainingID) {
     let apiUrl = '';
 
-    if (educationID !== undefined) { 
-        apiUrl = `https://dekra-form-api-m8bsw.ondigitalocean.app/trainings/${educationID}`;
+    if (trainingID !== undefined) { 
+        apiUrl = `https://dekra-form-api-m8bsw.ondigitalocean.app/trainings/${trainingID}`;
     } else {
         apiUrl = 'https://dekra-form-api-m8bsw.ondigitalocean.app/trainings';
     }
