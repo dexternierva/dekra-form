@@ -103,6 +103,33 @@ function Training () {
     
     const onSubmit = async function (values, actions) {
 
+        const submitValue = async function (value) {
+            const data = new FormData(); 
+            
+            const info = {
+                'from': value.from,
+                'to': value.to,
+                'provider': value.provider,
+                'skills': values.skills
+            }
+
+            data.append('data', JSON.stringify(info));
+
+            await axios({
+                method: 'POST',
+                url: 'https://dekra-form-api-m8bsw.ondigitalocean.app/trainings',
+                data,
+                withCredentials: true
+            })
+                .then((res) => {
+                    setRequestID(res.data.id);
+                    setDialog({ state: true, header: "Status: Successful", text: request.method === "POST" ? "Information Successfully CREATED!" : "Information Successfully UPDATED!" });
+                })
+                .catch(error => {
+                    setDialog({ state: true, header: "An Error Occurred!", text: "Oh snap! Something went wrong. Please change a few things up and try submitting again. Thank you!" });
+                });
+        }
+
         // FUNCTION TO SAVE EACH EXPERIENCE
         const submitValues = async function (valuesToSubmit) {
             console.log("valuesToSubmit: ", valuesToSubmit);
@@ -111,57 +138,11 @@ function Training () {
                 for (let i = 0; i < formValues.trainings.length; i++) {
                     if ( formValues.trainings[i].id !== valuesToSubmit.id ) {
                         // setRequest({ method: 'PUT', url: `https://dekra-form-api-m8bsw.ondigitalocean.app/trainings/${formValues.trainings[i].id}` });
-                        const data = new FormData(); 
-            
-                        const info = {
-                            'from': valuesToSubmit.from,
-                            'to': valuesToSubmit.to,
-                            'provider': valuesToSubmit.provider,
-                            'skills': valuesToSubmit.skills
-                        }
-
-                        data.append('data', JSON.stringify(info));
-
-                        await axios({
-                            method: 'POST',
-                            url: 'https://dekra-form-api-m8bsw.ondigitalocean.app/trainings',
-                            data,
-                            withCredentials: true
-                        })
-                            .then((res) => {
-                                setRequestID(res.data.id);
-                                setDialog({ state: true, header: "Status: Successful", text: request.method === "POST" ? "Information Successfully CREATED!" : "Information Successfully UPDATED!" });
-                            })
-                            .catch(error => {
-                                setDialog({ state: true, header: "An Error Occurred!", text: "Oh snap! Something went wrong. Please change a few things up and try submitting again. Thank you!" });
-                            });
-                    } else {
-                        const data = new FormData(); 
-                    
-                        const info = {
-                            'from': valuesToSubmit.from,
-                            'to': valuesToSubmit.to,
-                            'provider': valuesToSubmit.provider,
-                            'skills': valuesToSubmit.skills
-                        }
-
-                        data.append('data', JSON.stringify(info));
-
-                        await axios({
-                            method: 'POST',
-                            url: 'https://dekra-form-api-m8bsw.ondigitalocean.app/trainings',
-                            data,
-                            withCredentials: true
-                        })
-                            .then((res) => {
-                                setRequestID(res.data.id);
-                                setDialog({ state: true, header: "Status: Successful", text: request.method === "POST" ? "Information Successfully CREATED!" : "Information Successfully UPDATED!" });
-                            })
-                            .catch(error => {
-                                setDialog({ state: true, header: "An Error Occurred!", text: "Oh snap! Something went wrong. Please change a few things up and try submitting again. Thank you!" });
-                            });
+                        submitValue(valuesToSubmit);
                     }
-                } // END OF: FOR LOOP
+                }
+            } else {
+                submitValue(valuesToSubmit);
             }
         }
 
