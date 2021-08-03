@@ -105,6 +105,8 @@ function Training () {
 
         // FUNCTION TO SAVE EACH EXPERIENCE
         const submitValues = async function (valuesToSubmit) {
+            console.log("valuesToSubmit: ", valuesToSubmit);
+            console.log("formValues: ", formValues);
             if (formValues !==  null) {
                 for (let i = 0; i < formValues.trainings.length; i++) {
                     if ( formValues.trainings[i].id === valuesToSubmit.id ) {
