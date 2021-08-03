@@ -123,8 +123,8 @@ function Training () {
                         data.append('data', JSON.stringify(info));
 
                         await axios({
-                            method: request.method,
-                            url: request.url,
+                            method: 'POST',
+                            url: 'https://dekra-form-api-m8bsw.ondigitalocean.app/trainings',
                             data,
                             withCredentials: true
                         })
