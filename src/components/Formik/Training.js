@@ -36,10 +36,8 @@ const useStyles = makeStyles((theme) => ({
 function Training () {
     const classes = useStyles();
     const { loading, response, error, setTrainingID } = useContext(TrainingContext);
-    console.log("*** TRAINING PAGE: RESPONSE: ", response);
     const [formValues, setFormValues] = useState(null);
     const currentUser = useCurrentUser();
-    console.log("*** TRAINING PAGE: CURRENTUSER: ", currentUser);
     const [request, setRequest] = useState({ method: null, url: null });
     const [dialog, setDialog] = useState({ state:false, header: null, text: null });
     const [requestID, setRequestID] = useState(null);
@@ -132,12 +130,11 @@ function Training () {
 
         // FUNCTION TO SAVE EACH EXPERIENCE
         const submitValues = async function (valuesToSubmit) {
-            console.log("valuesToSubmit: ", valuesToSubmit);
-            console.log("formValues: ", formValues);
             if (formValues !==  null) {
                 for (let i = 0; i < formValues.trainings.length; i++) {
                     if ( formValues.trainings[i].id !== valuesToSubmit.id ) {
                         // setRequest({ method: 'PUT', url: `https://dekra-form-api-m8bsw.ondigitalocean.app/trainings/${formValues.trainings[i].id}` });
+                        console.log("*** valuesToSubmit.id: ", valuesToSubmit.id);
                         submitValue(valuesToSubmit);
                     }
                 }
