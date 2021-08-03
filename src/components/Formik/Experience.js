@@ -222,6 +222,7 @@ function WorkExperience () {
                                                                         name={`workExperiences[${index}].job`}
                                                                         variant="outlined"
                                                                         multiline
+                                                                        rows={4}
                                                                         fullWidth
                                                                         helperText="Please use German word for your job title"
                                                                     />
