@@ -107,13 +107,13 @@ function Training () {
         const submitValues = async function (valuesToSubmit) {
             console.log("valuesToSubmit: ", valuesToSubmit);
             console.log("formValues: ", formValues);
-            if (formValues !==  null) {
-                for (let i = 0; i < formValues.trainings.length; i++) {
-                    if ( formValues.trainings[i].id === valuesToSubmit.id ) {
-                        setRequest({ method: 'PUT', url: `https://dekra-form-api-m8bsw.ondigitalocean.app/trainings/${formValues.trainings[i].id}` });
-                    }
-                }
-            }
+            // if (formValues !==  null) {
+            //     for (let i = 0; i < formValues.trainings.length; i++) {
+            //         if ( formValues.trainings[i].id === valuesToSubmit.id ) {
+            //             setRequest({ method: 'PUT', url: `https://dekra-form-api-m8bsw.ondigitalocean.app/trainings/${formValues.trainings[i].id}` });
+            //         }
+            //     }
+            // }
 
             const data = new FormData(); 
             
@@ -167,7 +167,7 @@ function Training () {
             />
 
             <Formik
-                initialValues={ formValues ||initialValues }
+                initialValues={ formValues || initialValues }
                 validationSchema={ validationSchema }
                 onSubmit={ onSubmit }
                 enableReinitialize
