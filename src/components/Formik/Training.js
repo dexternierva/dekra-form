@@ -109,41 +109,60 @@ function Training () {
             console.log("formValues: ", formValues);
             if (formValues !==  null) {
                 for (let i = 0; i < formValues.trainings.length; i++) {
-                    if ( formValues.trainings[i].id === valuesToSubmit.id ) {
+                    if ( formValues.trainings[i].id !== valuesToSubmit.id ) {
                         // setRequest({ method: 'PUT', url: `https://dekra-form-api-m8bsw.ondigitalocean.app/trainings/${formValues.trainings[i].id}` });
-                        console.log("****** FORMVALUE IS EQUAL TO VALUETOSUBMIT!!!");
-                        return true;
-                    } else {
-                        console.log("*** FORMVALUE IS NOT EQUAL TO VALUETOSUBMIT!!!")
-                        return false;
-                    }
-                }
-            }
-
-            const data = new FormData(); 
+                        const data = new FormData(); 
             
-            const info = {
-                'from': valuesToSubmit.from,
-                'to': valuesToSubmit.to,
-                'provider': valuesToSubmit.provider,
-                'skills': valuesToSubmit.skills
+                        const info = {
+                            'from': valuesToSubmit.from,
+                            'to': valuesToSubmit.to,
+                            'provider': valuesToSubmit.provider,
+                            'skills': valuesToSubmit.skills
+                        }
+
+                        data.append('data', JSON.stringify(info));
+
+                        await axios({
+                            method: request.method,
+                            url: request.url,
+                            data,
+                            withCredentials: true
+                        })
+                            .then((res) => {
+                                setRequestID(res.data.id);
+                                setDialog({ state: true, header: "Status: Successful", text: request.method === "POST" ? "Information Successfully CREATED!" : "Information Successfully UPDATED!" });
+                            })
+                            .catch(error => {
+                                setDialog({ state: true, header: "An Error Occurred!", text: "Oh snap! Something went wrong. Please change a few things up and try submitting again. Thank you!" });
+                            });
+                                }
+                            }
             }
 
-            data.append('data', JSON.stringify(info));
+            // const data = new FormData(); 
+            
+            // const info = {
+            //     'from': valuesToSubmit.from,
+            //     'to': valuesToSubmit.to,
+            //     'provider': valuesToSubmit.provider,
+            //     'skills': valuesToSubmit.skills
+            // }
 
-            await axios({
-                method: request.method,
-                url: request.url,
-                data,
-                withCredentials: true
-            })
-                .then((res) => {
-                    setRequestID(res.data.id);
-                    setDialog({ state: true, header: "Status: Successful", text: request.method === "POST" ? "Information Successfully CREATED!" : "Information Successfully UPDATED!" });
-                })
-                .catch(error => {
-                    setDialog({ state: true, header: "An Error Occurred!", text: "Oh snap! Something went wrong. Please change a few things up and try submitting again. Thank you!" });
-                });
+            // data.append('data', JSON.stringify(info));
+
+            // await axios({
+            //     method: request.method,
+            //     url: request.url,
+            //     data,
+            //     withCredentials: true
+            // })
+            //     .then((res) => {
+            //         setRequestID(res.data.id);
+            //         setDialog({ state: true, header: "Status: Successful", text: request.method === "POST" ? "Information Successfully CREATED!" : "Information Successfully UPDATED!" });
+            //     })
+            //     .catch(error => {
+            //         setDialog({ state: true, header: "An Error Occurred!", text: "Oh snap! Something went wrong. Please change a few things up and try submitting again. Thank you!" });
+            //     });
         }
 
         // MAP THROUGH TRAININGS
