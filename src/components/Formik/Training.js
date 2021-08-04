@@ -107,10 +107,10 @@ function Training () {
                 const data = new FormData(); 
             
                 const info = {
-                    'from': values.from,
-                    'to': values.to,
-                    'provider': values.provider,
-                    'skills': values.skills
+                    'from': valuesToSubmit.from,
+                    'to': valuesToSubmit.to,
+                    'provider': valuesToSubmit.provider,
+                    'skills': valuesToSubmit.skills
                 }
 
                 data.append('data', JSON.stringify(info));
