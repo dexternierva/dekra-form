@@ -129,7 +129,12 @@ const useStyles = makeStyles((theme) => ({
     },
     typo: {
         margin: '0 0 0 1rem'
-    }
+    },
+    notification: {
+        ...theme.typography.button,
+        backgroundColor: theme.palette.background.paper,
+        padding: theme.spacing(1),
+    },
 }));
 
 /* 
@@ -164,61 +169,64 @@ function  ProfileView({ response }) {
     ];
 
     return (
-        <>
-        <div className={classes.intro}>
-            <Paper elevation={0} className={classes.paper}>
-                <Name>
-                    First Name:
-                    <Typography className={classes.typo} variant="h4" component="h2" color="textSecondary">{response.firstname}</Typography>
-                </Name>
-                <Name>
-                    Last Name:
-                    <Typography className={classes.typo}variant="h4" component="h2" color="textSecondary" gutterBottom>{response.lastname}</Typography>
-                </Name>
-            </Paper>
-        </div>
+        response.cv !== null ?
+            <>
+            <div className={classes.intro}>
+                <Paper elevation={0} className={classes.paper}>
+                    <Name>
+                        First Name:
+                        <Typography className={classes.typo} variant="h4" component="h2" color="textSecondary">{response.firstname}</Typography>
+                    </Name>
+                    <Name>
+                        Last Name:
+                        <Typography className={classes.typo}variant="h4" component="h2" color="textSecondary" gutterBottom>{response.lastname}</Typography>
+                    </Name>
+                </Paper>
+            </div>
 
-        <Grid container spacing={0} className={classes.grid}>
-            <Grid item xs={12} sm={2}>
-                <SectionTitle>At a glance</SectionTitle>
+            <Grid container spacing={0} className={classes.grid}>
+                <Grid item xs={12} sm={2}>
+                    <SectionTitle>At a glance</SectionTitle>
+                </Grid>
+                <Grid item xs={12} sm={10}>
+                    <TableContainer className={classes.table}>
+                        <Table aria-label="simple table">
+                            <TableBody>
+                            {keyfigurerows.map((row) => (
+                                <TableRow key={row.name}>
+                                    <TableCell component="th" scope="row">{row.name}</TableCell>
+                                    <TableCell align="right">{row.value}</TableCell>
+                                </TableRow>
+                            ))}
+                            </TableBody>
+                            <caption>Detailed overview of activities in the 'Professional Skills' facility"</caption>
+                        </Table>
+                    </TableContainer>
+                </Grid>
             </Grid>
-            <Grid item xs={12} sm={10}>
-                <TableContainer className={classes.table}>
-                    <Table aria-label="simple table">
-                        <TableBody>
-                        {keyfigurerows.map((row) => (
-                            <TableRow key={row.name}>
-                                <TableCell component="th" scope="row">{row.name}</TableCell>
-                                <TableCell align="right">{row.value}</TableCell>
-                            </TableRow>
-                        ))}
-                        </TableBody>
-                        <caption>Detailed overview of activities in the 'Professional Skills' facility"</caption>
-                    </Table>
-                </TableContainer>
-            </Grid>
-        </Grid>
 
-        <Grid container spacing={0} className={classes.grid}>
-            <Grid item xs={12} sm={2}>
-                <SectionTitle>Private Background</SectionTitle>
+            <Grid container spacing={0} className={classes.grid}>
+                <Grid item xs={12} sm={2}>
+                    <SectionTitle>Private Background</SectionTitle>
+                </Grid>
+                <Grid item xs={12} sm={10}>
+                    <TableContainer className={classes.table}>
+                        <Table aria-label="simple table">
+                            <TableBody>
+                            {personalbackgroundrows.map((row) => (
+                                <TableRow key={row.name}>
+                                    <TableCell component="th" scope="row">{row.name}</TableCell>
+                                    <TableCell align="right">{row.value}</TableCell>
+                                </TableRow>
+                            ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Grid>
             </Grid>
-            <Grid item xs={12} sm={10}>
-                <TableContainer className={classes.table}>
-                    <Table aria-label="simple table">
-                        <TableBody>
-                        {personalbackgroundrows.map((row) => (
-                            <TableRow key={row.name}>
-                                <TableCell component="th" scope="row">{row.name}</TableCell>
-                                <TableCell align="right">{row.value}</TableCell>
-                            </TableRow>
-                        ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </Grid>
-        </Grid>
-        </>
+            </>
+        :
+            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Profile form.</div>
     )
 }
 
@@ -233,40 +241,47 @@ function WorkExprienceTemplate({ exp, idx }) {
     }
     
     const keyfigurerows = [
-        createKeyFiguresData('Period', "From: " + exp.from + " | " +  " To: " + exp.to),
+        createKeyFiguresData('Period', "From: " + exp.from + " | To: " + exp.to),
         createKeyFiguresData('Job title/function', exp.job),
         createKeyFiguresData('Employers name & address', exp.employer),
     ];
 
     return (
-        <Grid container spacing={0} className={classes.grid}>
-            <Grid item xs={12} sm={2}>
-                <SectionTitle>Work Experience {idx + 1}</SectionTitle>
+            <Grid container spacing={0} className={classes.grid}>
+                <Grid item xs={12} sm={2}>
+                    <SectionTitle>Work Experience {idx + 1}</SectionTitle>
+                </Grid>
+                <Grid item xs={12} sm={10}>
+                    <TableContainer className={classes.table}>
+                        <Table aria-label="simple table">
+                            <TableBody>
+                            {keyfigurerows.map((row) => (
+                                <TableRow key={row.name}>
+                                    <TableCell component="th" scope="row">{row.name}</TableCell>
+                                    <TableCell align="right">{row.value}</TableCell>
+                                </TableRow>
+                            ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Grid>
             </Grid>
-            <Grid item xs={12} sm={10}>
-                <TableContainer className={classes.table}>
-                    <Table aria-label="simple table">
-                        <TableBody>
-                        {keyfigurerows.map((row) => (
-                            <TableRow key={row.name}>
-                                <TableCell component="th" scope="row">{row.name}</TableCell>
-                                <TableCell align="right">{row.value}</TableCell>
-                            </TableRow>
-                        ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </Grid>
-        </Grid>
     )
 }
 
 function WorkExperienceView ({ response }) {
+    const classes = useStyles();
+
     const experiences = response.work_experiences.map((experience, idx) => {
         return <WorkExprienceTemplate exp={experience} idx={idx} key={idx} />
     })
 
-    return <>{experiences}</>
+    return (
+        response.work_experiences.length !== 0 ?
+            <>{experiences}</>
+        :
+            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Work Experience form.</div>
+    )
 }
 
 /* 
@@ -280,7 +295,7 @@ function EducationTemplate({ edu, idx }) {
     }
     
     const keyfigurerows = [
-        createKeyFiguresData('Period', "From: " + edu.from + " | " + " To: " + edu.to),
+        createKeyFiguresData('Period', "From: " + edu.from + " | To: " + edu.to),
         createKeyFiguresData('Conclusion', edu.course),
         createKeyFiguresData('Name & address of the school/university', edu.university),
     ];
@@ -309,41 +324,48 @@ function EducationTemplate({ edu, idx }) {
 }
 
 function EducationView ({ response }) {
+    const classes = useStyles();
+
     const educations = response.educations.map(function (edu, idx) {
         return (
             <EducationTemplate edu={edu} idx={idx} key={idx} />
         )
     })
 
-    return <> {educations} </>;
+    return (
+        response.educations.length !== 0 ?
+            <> {educations} </>
+        :
+            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Educations form.</div>
+    )
 }
 
 /* 
  * TRAINING VIEW
  * ------------------------------------------------------------------------------------------------ */
-function TrainingView({ response }) {
+function TrainingTemplate({ training, idx }) {
     const classes = useStyles();
 
-    function createTrainingData(name, value) {
+    function createKeyFiguresData(name, value) {
         return { name, value };
     }
     
-    const trainingrows = [
-        createTrainingData('Period', "From: " + response.cv.trainingFrom + " | " + " To: " + response.cv.trainingTo),
-        createTrainingData('Name of training provider', response.cv.provider),
-        createTrainingData('Skills acquired', response.cv.skills),
+    const keyfigurerows = [
+        createKeyFiguresData('Period', "From: " + training.from + " | To: " + training.to),
+        createKeyFiguresData('Name of Training Provider', training.provider),
+        createKeyFiguresData('Skills Acquired', training.skills),
     ];
 
     return (
         <Grid container spacing={0} className={classes.grid}>
             <Grid item xs={12} sm={2}>
-                <SectionTitle>Training and further education</SectionTitle>
+                <SectionTitle>Training(s) {idx + 1}</SectionTitle>
             </Grid>
             <Grid item xs={12} sm={10}>
                 <TableContainer className={classes.table}>
                     <Table aria-label="simple table">
                         <TableBody>
-                        {trainingrows.map((row) => (
+                        {keyfigurerows.map((row) => (
                             <TableRow key={row.name}>
                                 <TableCell component="th" scope="row">{row.name}</TableCell>
                                 <TableCell align="right">{row.value}</TableCell>
@@ -354,6 +376,23 @@ function TrainingView({ response }) {
                 </TableContainer>
             </Grid>
         </Grid>
+    )
+}
+
+function TrainingView ({ response }) {
+    const classes = useStyles();
+
+    const trainings = response.trainings.map(function (training, idx) {
+        return (
+            <TrainingTemplate training={training} idx={idx} key={idx} />
+        )
+    })
+
+    return (
+        response.trainings.length !== 0 ?
+            <> {trainings} </>
+        :
+            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Trainings form.</div>
     )
 }
 
@@ -375,25 +414,28 @@ function LanguageSkillsView({ response }) {
     ];
 
     return (
-        <Grid container spacing={0} className={classes.grid}>
-            <Grid item xs={12} sm={2}>
-                <SectionTitle>Language Skills</SectionTitle>
+        response.cv !== null ?
+            <Grid container spacing={0} className={classes.grid}>
+                <Grid item xs={12} sm={2}>
+                    <SectionTitle>Language Skills</SectionTitle>
+                </Grid>
+                <Grid item xs={12} sm={10}>
+                    <TableContainer className={classes.table}>
+                        <Table aria-label="simple table">
+                            <TableBody>
+                            {languageskillsrows.map((row) => (
+                                <TableRow key={row.name}>
+                                    <TableCell component="th" scope="row">{row.name}</TableCell>
+                                    <TableCell align="right">{row.value}</TableCell>
+                                </TableRow>
+                            ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Grid>
             </Grid>
-            <Grid item xs={12} sm={10}>
-                <TableContainer className={classes.table}>
-                    <Table aria-label="simple table">
-                        <TableBody>
-                        {languageskillsrows.map((row) => (
-                            <TableRow key={row.name}>
-                                <TableCell component="th" scope="row">{row.name}</TableCell>
-                                <TableCell align="right">{row.value}</TableCell>
-                            </TableRow>
-                        ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </Grid>
-        </Grid>
+        :
+            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Profile form.</div>
     )
 }
 
@@ -415,25 +457,28 @@ function OtherSkillsView({ response }) {
     ];
 
     return (
-        <Grid container spacing={0} className={classes.grid}>
-            <Grid item xs={12} sm={2}>
-                <SectionTitle>Further Knowledge</SectionTitle>
+        response.cv !== null ?
+            <Grid container spacing={0} className={classes.grid}>
+                <Grid item xs={12} sm={2}>
+                    <SectionTitle>Further Knowledge</SectionTitle>
+                </Grid>
+                <Grid item xs={12} sm={10}>
+                    <TableContainer className={classes.table}>
+                        <Table aria-label="simple table">
+                            <TableBody>
+                            {furtherknowledgerows.map((row) => (
+                                <TableRow key={row.name}>
+                                    <TableCell component="th" scope="row">{row.name}</TableCell>
+                                    <TableCell align="right">{row.value}</TableCell>
+                                </TableRow>
+                            ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Grid>
             </Grid>
-            <Grid item xs={12} sm={10}>
-                <TableContainer className={classes.table}>
-                    <Table aria-label="simple table">
-                        <TableBody>
-                        {furtherknowledgerows.map((row) => (
-                            <TableRow key={row.name}>
-                                <TableCell component="th" scope="row">{row.name}</TableCell>
-                                <TableCell align="right">{row.value}</TableCell>
-                            </TableRow>
-                        ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </Grid>
-        </Grid>
+        :
+            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Profile form.</div>
     )
 }
 
@@ -444,616 +489,623 @@ function  PracticalKnowledgeView({ response }) {
     const classes = useStyles();
 
     return (
-        <>
-        <div className={classes.intro}>
-            <Paper elevation={0} className={classes.paper}>
-                <Typography variant="h5" component="h2">
-                    Practical Knowledge
-                </Typography>
-                <Typography color="textSecondary" gutterBottom>
-                    Appendix to the CV of:
-                </Typography>
-                <Typography variant="body2" component="p">
-                    In addition to the CV, these information is intended to provide an overview of which practical skills have already been carried out independently. It is a self-assessment of the participant for a basic orientation, <strong>but does not represent a qualitative statement about this individual abilities.</strong>
-                </Typography>
-            </Paper>
-        </div>
-
-        {
-            /**
-             * DEPARTMENT
-             * =====================================================================
-             */
-        }
-        <Grid container spacing={0} className={classes.grid}>
-            <Grid item xs={12} sm={12}>
-                <SectionTitle>Department</SectionTitle>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.care}  color="primary" />}
-                        label="Care"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.internalmedicine}  color="primary" />}
-                        label="Internal medicine"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.pediatrics}  color="primary" />}
-                        label="Pediatrics"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.generalaccidentsurgery}  color="primary" />}
-                        label="General accident surgery"
-                    />
-                </Box>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.anesthesia}  color="primary" />}
-                        label="Anesthesia"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.orthopedics}  color="primary" />}
-                        label="Orthopedics"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.emergency}  color="primary" />}
-                        label="Emergency"
-                    />
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionaldepartment1}/>
-                </Box>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.op}  color="primary" />}
-                        label="Op"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.neurology}  color="primary" />}
-                        label="Neurology"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.geriatrics}  color="primary" />}
-                        label="Geriatrics"
-                    />
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionaldepartment2}/>
-                </Box>
-            </Grid>
-        </Grid>
-
-        
-        <Grid container spacing={0}>
-            {
-                /**
-                 * BASIC CARE
-                 * =====================================================================
-                 */
-            }
-            <Grid item xs={12} sm={6} className={classes.grid}>
-                <SectionTitle>Basic care</SectionTitle>
-
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.patientwashing}  color="primary" />}
-                        label="Patient washing"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.patientstorage}  color="primary" />}
-                        label="Patient storage"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.mobilization}  color="primary" />}
-                        label="Mobilization"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.helpwithfood}  color="primary" />}
-                        label="Help with food"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.prophylaxis}  color="primary" />}
-                        label="Prophylaxis (pneumonia, decubitus, contracture...)"
-                    />
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare1}/>
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare2}/>
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare3}/>
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare4}/>
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare5}/>
-                </Box>
-            </Grid>
+        response.practical_knowledge !== null ?
+            <>
+            <div className={classes.intro}>
+                <Paper elevation={0} className={classes.paper}>
+                    <Typography variant="h5" component="h2">
+                        Practical Knowledge
+                    </Typography>
+                    <Typography color="textSecondary" gutterBottom>
+                        Appendix to the CV of:
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                        In addition to the CV, these information is intended to provide an overview of which practical skills have already been carried out independently. It is a self-assessment of the participant for a basic orientation, <strong>but does not represent a qualitative statement about this individual abilities.</strong>
+                    </Typography>
+                </Paper>
+            </div>
 
             {
                 /**
-                 * BREATHING
+                 * DEPARTMENT
                  * =====================================================================
                  */
             }
-            <Grid item xs={12} sm={6} className={classes.grid}>
-                <SectionTitle>Breathing</SectionTitle>
-
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.oxygentherapy}  color="primary" />}
-                        label="02-Gabe / Oxygen Therapy"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.assessingbreathing}  color="primary" />}
-                        label="Assessing breathing"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.inhalation}  color="primary" />}
-                        label="Inhalation"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.thoraxdrainage}  color="primary" />}
-                        label="Thoraxdrainage"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.tracheostoma}  color="primary" />}
-                        label="Tracheostoma / Care Tracheal Cannula"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.suction}  color="primary" />}
-                        label="Suction mouth/throat"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.ventilators}  color="primary" />}
-                        label="Ventilators operate on instruction"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.settingventilators}  color="primary" />}
-                        label="Setting ventilators independently"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.beatmungsformen}  color="primary" />}
-                        label="Beatmungsformen (CPAP, BIPAP, SIMV)"
-                    />
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbreathing}/>
-                </Box>
-            </Grid>
-        </Grid>
-
-
-        <Grid container spacing={0}>
-            {
-                /**
-                 * Vital sign control / monitoring
-                 * =====================================================================
-                 */
-            }
-            <Grid item xs={12} sm={6} className={classes.grid}>
-                <SectionTitle>Vital sign control / monitoring</SectionTitle>
-
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.rrmeasurement}  color="primary" />}
-                        label="RR measurement (measure blood pressure)"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.measuringtemperature}  color="primary" />}
-                        label="Measuring temperature"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.measuringblood}  color="primary" />}
-                        label="Measuring blood sugar (devices)"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.monitor}  color="primary" />}
-                        label="Monitor"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.pulsoxymeter}  color="primary" />}
-                        label="Pulsoxymeter"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.ecg}  color="primary" />}
-                        label="ECG writing"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.readassess}  color="primary" />}
-                        label="Read/assess ECG"
-                    />
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalvitalsign}/>
-                </Box>
+            <Grid container spacing={0} className={classes.grid}>
+                <Grid item xs={12} sm={12}>
+                    <SectionTitle>Department</SectionTitle>
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.care}  color="primary" />}
+                            label="Care"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.internalmedicine}  color="primary" />}
+                            label="Internal medicine"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.pediatrics}  color="primary" />}
+                            label="Pediatrics"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.generalaccidentsurgery}  color="primary" />}
+                            label="General accident surgery"
+                        />
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.anesthesia}  color="primary" />}
+                            label="Anesthesia"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.orthopedics}  color="primary" />}
+                            label="Orthopedics"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.emergency}  color="primary" />}
+                            label="Emergency"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionaldepartment1}/>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.op}  color="primary" />}
+                            label="Op"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.neurology}  color="primary" />}
+                            label="Neurology"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.geriatrics}  color="primary" />}
+                            label="Geriatrics"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionaldepartment2}/>
+                    </Box>
+                </Grid>
             </Grid>
 
-            {
-                /**
-                 * DEVICES
-                 * =====================================================================
-                 */
-            }
-            <Grid item xs={12} sm={6} className={classes.grid}>
-                <SectionTitle>Devices</SectionTitle>
+            
+            <Grid container spacing={0}>
+                {
+                    /**
+                     * BASIC CARE
+                     * =====================================================================
+                     */
+                }
+                <Grid item xs={12} sm={6} className={classes.grid}>
+                    <SectionTitle>Basic care</SectionTitle>
 
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.bloodglucose}  color="primary" />}
-                        label="Blood glucose"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.devicesmonitor}  color="primary" />}
-                        label="Monitor"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.devicespulsoxymeter}  color="primary" />}
-                        label="Pulsoxymeter"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.schmerzpumpe}  color="primary" />}
-                        label="Schmerzpumpe / PCA-Pumpe"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.infusomat}  color="primary" />}
-                        label="Infusomat / Infusionspumpe"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.perfusor}  color="primary" />}
-                        label="Perfusor / Sprizenpumpe"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.ventilators}  color="primary" />}
-                        label="Ventilators operate on instruction"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.vacuumpump}  color="primary" />}
-                        label="Vacuum pump wound"
-                    />
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionaldevices}/>
-                </Box>
-            </Grid>
-        </Grid>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.patientwashing}  color="primary" />}
+                            label="Patient washing"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.patientstorage}  color="primary" />}
+                            label="Patient storage"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.mobilization}  color="primary" />}
+                            label="Mobilization"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.helpwithfood}  color="primary" />}
+                            label="Help with food"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.prophylaxis}  color="primary" />}
+                            label="Prophylaxis (pneumonia, decubitus, contracture...)"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare1}/>
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare2}/>
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare3}/>
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare4}/>
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare5}/>
+                    </Box>
+                </Grid>
 
-        <Grid container spacing={0}>
-            {
-                /**
-                 * MEDICATIONS
-                 * =====================================================================
-                 */
-            }
-            <Grid item xs={12} sm={6} className={classes.grid}>
-                <SectionTitle>Medications</SectionTitle>
+                {
+                    /**
+                     * BREATHING
+                     * =====================================================================
+                     */
+                }
+                <Grid item xs={12} sm={6} className={classes.grid}>
+                    <SectionTitle>Breathing</SectionTitle>
 
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.pharmacology}  color="primary" />}
-                        label="Pharmacology, mode of action of drugs"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.oraladministration}  color="primary" />}
-                        label="Oral administration"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.rektalegabe}  color="primary" />}
-                        label="Rektale gabe"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.subcutaneous}  color="primary" />}
-                        label="Subcutaneous"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.intramuscular}  color="primary" />}
-                        label="Intramuscular"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.intravenously}  color="primary" />}
-                        label="Intravenously"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.infusion}  color="primary" />}
-                        label="Infusion"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.centralvenous}  color="primary" />}
-                        label="ZVK - Central Venous Catheter"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.feedingtube}  color="primary" />}
-                        label="Feeding tube"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.notfallmedikamente}  color="primary" />}
-                        label="Emergency medication"
-                    />
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication1}/>
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication2}/>
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication3}/>
-                </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.oxygentherapy}  color="primary" />}
+                            label="02-Gabe / Oxygen Therapy"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.assessingbreathing}  color="primary" />}
+                            label="Assessing breathing"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.inhalation}  color="primary" />}
+                            label="Inhalation"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.thoraxdrainage}  color="primary" />}
+                            label="Thoraxdrainage"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.tracheostoma}  color="primary" />}
+                            label="Tracheostoma / Care Tracheal Cannula"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.suction}  color="primary" />}
+                            label="Suction mouth/throat"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.ventilators}  color="primary" />}
+                            label="Ventilators operate on instruction"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.settingventilators}  color="primary" />}
+                            label="Setting ventilators independently"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.beatmungsformen}  color="primary" />}
+                            label="Beatmungsformen (CPAP, BIPAP, SIMV)"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbreathing}/>
+                    </Box>
+                </Grid>
             </Grid>
 
-            {
-                /**
-                 * EXCRETION
-                 * =====================================================================
-                 */
-            }
-            <Grid item xs={12} sm={6} className={classes.grid}>
-                <SectionTitle>Excretion</SectionTitle>
 
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.urogenitalbereich}  color="primary" />}
-                        label="Urogenital area"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.onetimecatheter}  color="primary" />}
-                        label="Lay one-time catheter"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.permanentcatheter}  color="primary" />}
-                        label="Lay permanent catheter"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.suprapubiccatheter}  color="primary" />}
-                        label="Subrapubic catheter assist. plant/care"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.hurine}  color="primary" />}
-                        label="24h - Urine"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.excretioninfusion}  color="primary" />}
-                        label="Infusion"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.condomurinal}  color="primary" />}
-                        label="Condom - Urinal"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.magendarmtrakt}  color="primary" />}
-                        label="Magendarmtrakt"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.caregastricprobe}  color="primary" />}
-                        label="Care of gastric probe"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.transnasalgastric}  color="primary" />}
-                        label="Transnasal gastric probe lay"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.careofpeg}  color="primary" />}
-                        label="Care of PEG"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.careofstoma}  color="primary" />}
-                        label="Care of stoma / Enterostoma"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.intestinalrinsing}  color="primary" />}
-                        label="Intestinal rinsing (lift-sink encession, clitanimal)"
-                    />
-                </Box>
-            </Grid>
-        </Grid>
+            <Grid container spacing={0}>
+                {
+                    /**
+                     * Vital sign control / monitoring
+                     * =====================================================================
+                     */
+                }
+                <Grid item xs={12} sm={6} className={classes.grid}>
+                    <SectionTitle>Vital sign control / monitoring</SectionTitle>
 
-        <Grid container spacing={0}>
-            {
-                /**
-                 * NEUROLOGY
-                 * =====================================================================
-                 */
-            }
-            <Grid item xs={12} sm={6} className={classes.grid}>
-                <SectionTitle>Neurology</SectionTitle>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.rrmeasurement}  color="primary" />}
+                            label="RR measurement (measure blood pressure)"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.measuringtemperature}  color="primary" />}
+                            label="Measuring temperature"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.measuringblood}  color="primary" />}
+                            label="Measuring blood sugar (devices)"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.monitor}  color="primary" />}
+                            label="Monitor"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.pulsoxymeter}  color="primary" />}
+                            label="Pulsoxymeter"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.ecg}  color="primary" />}
+                            label="ECG writing"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.readassess}  color="primary" />}
+                            label="Read/assess ECG"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalvitalsign}/>
+                    </Box>
+                </Grid>
 
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.stateofconsciousness}  color="primary" />}
-                        label="Checking the state of consciousness"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.carestroke}  color="primary" />}
-                        label="Care Stroke / Stroke"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.cerebralhemorrhage}  color="primary" />}
-                        label="Care of cerebral hemorrhage"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.caringparkinson}  color="primary" />}
-                        label="Caring parkinson"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.carebraintumor}  color="primary" />}
-                        label="Care of  brain tumor"
-                    />
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalneurology}/>
-                </Box>
+                {
+                    /**
+                     * DEVICES
+                     * =====================================================================
+                     */
+                }
+                <Grid item xs={12} sm={6} className={classes.grid}>
+                    <SectionTitle>Devices</SectionTitle>
+
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.bloodglucose}  color="primary" />}
+                            label="Blood glucose"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.devicesmonitor}  color="primary" />}
+                            label="Monitor"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.devicespulsoxymeter}  color="primary" />}
+                            label="Pulsoxymeter"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.schmerzpumpe}  color="primary" />}
+                            label="Schmerzpumpe / PCA-Pumpe"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.infusomat}  color="primary" />}
+                            label="Infusomat / Infusionspumpe"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.perfusor}  color="primary" />}
+                            label="Perfusor / Sprizenpumpe"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.ventilators}  color="primary" />}
+                            label="Ventilators operate on instruction"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.vacuumpump}  color="primary" />}
+                            label="Vacuum pump wound"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionaldevices}/>
+                    </Box>
+                </Grid>
             </Grid>
 
-            {
-                /**
-                 * WOUND TREATMENT
-                 * =====================================================================
-                 */
-            }
-            <Grid item xs={12} sm={6} className={classes.grid}>
-                <SectionTitle>Wound Treatment</SectionTitle>
+            <Grid container spacing={0}>
+                {
+                    /**
+                     * MEDICATIONS
+                     * =====================================================================
+                     */
+                }
+                <Grid item xs={12} sm={6} className={classes.grid}>
+                    <SectionTitle>Medications</SectionTitle>
 
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.asepticdressing}  color="primary" />}
-                        label="Sterile bandage change of aseptic dressing"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.septicdressing}  color="primary" />}
-                        label="Steriler bandage change septic bandage"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.pullingthreads}  color="primary" />}
-                        label="Pulling threads"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.removebrackets}  color="primary" />}
-                        label="Remove brackets"
-                    />
-                </Box>
-                <Box px={4}>
-                    <FormControlLabel
-                        control={<Checkbox checked={response.practical_knowledge.woundassessment}  color="primary" />}
-                        label="Wound assessment"
-                    />
-                </Box>
-                <Box px={4}>
-                    <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalwoundtreatment}/>
-                </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.pharmacology}  color="primary" />}
+                            label="Pharmacology, mode of action of drugs"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.oraladministration}  color="primary" />}
+                            label="Oral administration"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.rektalegabe}  color="primary" />}
+                            label="Rektale gabe"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.subcutaneous}  color="primary" />}
+                            label="Subcutaneous"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.intramuscular}  color="primary" />}
+                            label="Intramuscular"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.intravenously}  color="primary" />}
+                            label="Intravenously"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.infusion}  color="primary" />}
+                            label="Infusion"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.centralvenous}  color="primary" />}
+                            label="ZVK - Central Venous Catheter"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.feedingtube}  color="primary" />}
+                            label="Feeding tube"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.notfallmedikamente}  color="primary" />}
+                            label="Emergency medication"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication1}/>
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication2}/>
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication3}/>
+                    </Box>
+                </Grid>
+
+                {
+                    /**
+                     * EXCRETION
+                     * =====================================================================
+                     */
+                }
+                <Grid item xs={12} sm={6} className={classes.grid}>
+                    <SectionTitle>Excretion</SectionTitle>
+
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.urogenitalbereich}  color="primary" />}
+                            label="Urogenital area"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.onetimecatheter}  color="primary" />}
+                            label="Lay one-time catheter"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.permanentcatheter}  color="primary" />}
+                            label="Lay permanent catheter"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.suprapubiccatheter}  color="primary" />}
+                            label="Subrapubic catheter assist. plant/care"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.hurine}  color="primary" />}
+                            label="24h - Urine"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.excretioninfusion}  color="primary" />}
+                            label="Infusion"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.condomurinal}  color="primary" />}
+                            label="Condom - Urinal"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.magendarmtrakt}  color="primary" />}
+                            label="Magendarmtrakt"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.caregastricprobe}  color="primary" />}
+                            label="Care of gastric probe"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.transnasalgastric}  color="primary" />}
+                            label="Transnasal gastric probe lay"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.careofpeg}  color="primary" />}
+                            label="Care of PEG"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.careofstoma}  color="primary" />}
+                            label="Care of stoma / Enterostoma"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.intestinalrinsing}  color="primary" />}
+                            label="Intestinal rinsing (lift-sink encession, clitanimal)"
+                        />
+                    </Box>
+                </Grid>
             </Grid>
-        </Grid>
-        </>
+
+            <Grid container spacing={0}>
+                {
+                    /**
+                     * NEUROLOGY
+                     * =====================================================================
+                     */
+                }
+                <Grid item xs={12} sm={6} className={classes.grid}>
+                    <SectionTitle>Neurology</SectionTitle>
+
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.stateofconsciousness}  color="primary" />}
+                            label="Checking the state of consciousness"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.carestroke}  color="primary" />}
+                            label="Care Stroke / Stroke"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.cerebralhemorrhage}  color="primary" />}
+                            label="Care of cerebral hemorrhage"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.caringparkinson}  color="primary" />}
+                            label="Caring parkinson"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.carebraintumor}  color="primary" />}
+                            label="Care of  brain tumor"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalneurology}/>
+                    </Box>
+                </Grid>
+
+                {
+                    /**
+                     * WOUND TREATMENT
+                     * =====================================================================
+                     */
+                }
+                <Grid item xs={12} sm={6} className={classes.grid}>
+                    <SectionTitle>Wound Treatment</SectionTitle>
+
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.asepticdressing}  color="primary" />}
+                            label="Sterile bandage change of aseptic dressing"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.septicdressing}  color="primary" />}
+                            label="Steriler bandage change septic bandage"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.pullingthreads}  color="primary" />}
+                            label="Pulling threads"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.removebrackets}  color="primary" />}
+                            label="Remove brackets"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.woundassessment}  color="primary" />}
+                            label="Wound assessment"
+                        />
+                    </Box>
+                    <Box px={4}>
+                        <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalwoundtreatment}/>
+                    </Box>
+                </Grid>
+            </Grid>
+            </>
+        :
+            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Practical Knowledge form.</div>
     )
 }
+
+/* 
+ * PRACTICAL ACTIVITIES
+ * ------------------------------------------------------------------------------------------------ */
 
 /* 
  * USER SUMMARY
