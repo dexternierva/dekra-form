@@ -132,8 +132,8 @@ const useStyles = makeStyles((theme) => ({
     },
     notification: {
         ...theme.typography.button,
-        backgroundColor: theme.palette.background.paper,
         padding: theme.spacing(1),
+        border: '1px solid #EFEFEF',
     },
 }));
 
@@ -143,33 +143,33 @@ const useStyles = makeStyles((theme) => ({
 function  ProfileView({ response }) {
     const classes = useStyles();
 
-    function createKeyFiguresData(name, value) {
-        return { name, value };
-    }
-    
-    const keyfigurerows = [
-        createKeyFiguresData('Conclusion', response.cv.kfDegree),
-        createKeyFiguresData('Language skills', response.cv.kfLanguage),
-        createKeyFiguresData('Experience', response.cv.kfExperienceYear + " years(s) and " + response.cv.kfExperienceMonth + " month(s)"),
-        createKeyFiguresData('Priorities', response.cv.kfPriorities),
-    ];
+    if (response.cv !== null) {
+        function createKeyFiguresData(name, value) {
+            return { name, value };
+        }
+        
+        const keyfigurerows = [
+            createKeyFiguresData('Conclusion', response.cv.kfDegree),
+            createKeyFiguresData('Language skills', response.cv.kfLanguage),
+            createKeyFiguresData('Experience', response.cv.kfExperienceYear + " years(s) and " + response.cv.kfExperienceMonth + " month(s)"),
+            createKeyFiguresData('Priorities', response.cv.kfPriorities),
+        ];
 
-    function personalBackgroundData(name, value) {
-        return { name, value };
-    }
-    
-    const personalbackgroundrows = [
-        personalBackgroundData('Address', response.cv.address),
-        personalBackgroundData('E-mail Address', response.cv.email),
-        personalBackgroundData('Nationality', response.cv.nationality),
-        personalBackgroundData('Sex', response.cv.sex),
-        personalBackgroundData('Date of birth', response.cv.dateOfBirth),
-        personalBackgroundData('Place of birth', response.cv.placeOfBirth),
-        personalBackgroundData('Marital status', response.cv.maritalStatus),
-    ];
+        function personalBackgroundData(name, value) {
+            return { name, value };
+        }
+        
+        const personalbackgroundrows = [
+            personalBackgroundData('Address', response.cv.address),
+            personalBackgroundData('E-mail Address', response.cv.email),
+            personalBackgroundData('Nationality', response.cv.nationality),
+            personalBackgroundData('Sex', response.cv.sex),
+            personalBackgroundData('Date of birth', response.cv.dateOfBirth),
+            personalBackgroundData('Place of birth', response.cv.placeOfBirth),
+            personalBackgroundData('Marital status', response.cv.maritalStatus),
+        ];
 
-    return (
-        response.cv !== null ?
+        return (
             <>
             <div className={classes.intro}>
                 <Paper elevation={0} className={classes.paper}>
@@ -225,9 +225,14 @@ function  ProfileView({ response }) {
                 </Grid>
             </Grid>
             </>
-        :
-            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Profile form.</div>
-    )
+        )
+    } else {
+        return (
+            <Box p={4}>
+                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Profile form.</div>
+            </Box>
+        )
+    }
 }
 
 /* 
@@ -272,16 +277,19 @@ function WorkExprienceTemplate({ exp, idx }) {
 function WorkExperienceView ({ response }) {
     const classes = useStyles();
 
-    const experiences = response.work_experiences.map((experience, idx) => {
-        return <WorkExprienceTemplate exp={experience} idx={idx} key={idx} />
-    })
+    if (response.work_experiences.length !== 0) {
+        const experiences = response.work_experiences.map((experience, idx) => {
+            return <WorkExprienceTemplate exp={experience} idx={idx} key={idx} />
+        })
 
-    return (
-        response.work_experiences.length !== 0 ?
-            <>{experiences}</>
-        :
-            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Work Experience form.</div>
-    )
+        return  <>{experiences}</>
+    } else {
+        return (
+            <Box p={4}>
+                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Work Experience(s) form.</div>
+            </Box>
+        )
+    } 
 }
 
 /* 
@@ -325,19 +333,21 @@ function EducationTemplate({ edu, idx }) {
 
 function EducationView ({ response }) {
     const classes = useStyles();
+    if (response.educations.length !== 0) {
+        const educations = response.educations.map(function (edu, idx) {
+            return (
+                <EducationTemplate edu={edu} idx={idx} key={idx} />
+            )
+        })
 
-    const educations = response.educations.map(function (edu, idx) {
+        return <> {educations} </>
+    } else {
         return (
-            <EducationTemplate edu={edu} idx={idx} key={idx} />
+            <Box p={4}>
+                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Education(s) form.</div>
+            </Box>
         )
-    })
-
-    return (
-        response.educations.length !== 0 ?
-            <> {educations} </>
-        :
-            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Educations form.</div>
-    )
+    }
 }
 
 /* 
@@ -382,18 +392,21 @@ function TrainingTemplate({ training, idx }) {
 function TrainingView ({ response }) {
     const classes = useStyles();
 
-    const trainings = response.trainings.map(function (training, idx) {
-        return (
-            <TrainingTemplate training={training} idx={idx} key={idx} />
-        )
-    })
+    if (response.trainings.length !== 0) {
+        const trainings = response.trainings.map(function (training, idx) {
+            return (
+                <TrainingTemplate training={training} idx={idx} key={idx} />
+            )
+        })
 
-    return (
-        response.trainings.length !== 0 ?
-            <> {trainings} </>
-        :
-            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Trainings form.</div>
-    )
+        return <> {trainings} </>
+    } else {
+        return (
+            <Box p={4}>
+                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Training(s) form.</div>
+            </Box>
+        )
+    }
 }
 
 /* 
@@ -401,20 +414,19 @@ function TrainingView ({ response }) {
  * ------------------------------------------------------------------------------------------------ */
 function LanguageSkillsView({ response }) {
     const classes = useStyles();
+    if (response.cv !== null) {
+        function languageSkillsData(name, value) {
+            return { name, value };
+        }
+        
+        const languageskillsrows = [
+            languageSkillsData('Native language', response.cv.nativeLanguage),
+            languageSkillsData('German language skills up-to-date', response.cv.germanLanguageDate),
+            languageSkillsData('German B1-B2 Care', response.cv.germanCare),
+            languageSkillsData('Other languages', "Language: " + response.cv.otherLanguages + " | Level: " + response.cv.otherLanguagesLevel),
+        ];
 
-    function languageSkillsData(name, value) {
-        return { name, value };
-    }
-    
-    const languageskillsrows = [
-        languageSkillsData('Native language', response.cv.nativeLanguage),
-        languageSkillsData('German language skills up-to-date', response.cv.germanLanguageDate),
-        languageSkillsData('German B1-B2 Care', response.cv.germanCare),
-        languageSkillsData('Other languages', "Language: " + response.cv.otherLanguages + " | Level: " + response.cv.otherLanguagesLevel),
-    ];
-
-    return (
-        response.cv !== null ?
+        return (
             <Grid container spacing={0} className={classes.grid}>
                 <Grid item xs={12} sm={2}>
                     <SectionTitle>Language Skills</SectionTitle>
@@ -434,9 +446,14 @@ function LanguageSkillsView({ response }) {
                     </TableContainer>
                 </Grid>
             </Grid>
-        :
-            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Profile form.</div>
-    )
+        )
+    } else {
+        return (
+            <Box p={4}>
+                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Language Skills form.</div>
+            </Box>
+        )
+    }
 }
 
 /* 
@@ -445,19 +462,19 @@ function LanguageSkillsView({ response }) {
 function OtherSkillsView({ response }) {
     const classes = useStyles();
 
-    function furtherKnowledgeData(name, value) {
-        return { name, value };
-    }
-    
-    const furtherknowledgerows = [
-        furtherKnowledgeData('Computer skills', response.cv.computerSkills),
-        furtherKnowledgeData('Other Computer skills', response.cv.otherComputerSkills),
-        furtherKnowledgeData('Personal skills', response.cv.personalSkills),
-        furtherKnowledgeData('Driving license', response.cv.drivingLicense),
-    ];
+    if (response.cv !== null) {
+        function furtherKnowledgeData(name, value) {
+            return { name, value };
+        }
+        
+        const furtherknowledgerows = [
+            furtherKnowledgeData('Computer skills', response.cv.computerSkills),
+            furtherKnowledgeData('Other Computer skills', response.cv.otherComputerSkills),
+            furtherKnowledgeData('Personal skills', response.cv.personalSkills),
+            furtherKnowledgeData('Driving license', response.cv.drivingLicense),
+        ];
 
-    return (
-        response.cv !== null ?
+        return (
             <Grid container spacing={0} className={classes.grid}>
                 <Grid item xs={12} sm={2}>
                     <SectionTitle>Further Knowledge</SectionTitle>
@@ -477,9 +494,14 @@ function OtherSkillsView({ response }) {
                     </TableContainer>
                 </Grid>
             </Grid>
-        :
-            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Profile form.</div>
-    )
+        )
+    } else {
+        return (
+            <Box p={4}>
+                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Other Skills form.</div>
+            </Box>
+        )
+    } 
 }
 
 /* 
@@ -487,9 +509,8 @@ function OtherSkillsView({ response }) {
  * ------------------------------------------------------------------------------------------------ */
 function  PracticalKnowledgeView({ response }) {
     const classes = useStyles();
-
-    return (
-        response.practical_knowledge !== null ?
+    if ( response.practical_knowledge !== null) {
+        return (
             <>
             <div className={classes.intro}>
                 <Paper elevation={0} className={classes.paper}>
@@ -1098,9 +1119,14 @@ function  PracticalKnowledgeView({ response }) {
                 </Grid>
             </Grid>
             </>
-        :
-            <div className={classes.notification} color="secondary">Applicant has not filled out his/her Practical Knowledge form.</div>
-    )
+        )
+    } else {
+        return (
+            <Box p={4}>
+                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Other Skills form.</div>
+            </Box>
+        )
+    }
 }
 
 /* 
