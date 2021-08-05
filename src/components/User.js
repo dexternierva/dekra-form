@@ -43,6 +43,7 @@ import PrintIcon from '@material-ui/icons/Print';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import { green, pink } from '@material-ui/core/colors';
@@ -132,7 +133,7 @@ const useStyles = makeStyles((theme) => ({
     },
     notification: {
         ...theme.typography.button,
-        padding: theme.spacing(1),
+        padding: theme.spacing(2),
         border: '1px solid #EFEFEF',
     },
 }));
@@ -229,7 +230,10 @@ function  ProfileView({ response }) {
     } else {
         return (
             <Box p={4}>
-                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Profile form.</div>
+                <div className={classes.notification} color="secondary">
+                    <ErrorOutlineIcon color="secondary" /> 
+                    Applicant has not filled out his/her Profile form.
+                </div>
             </Box>
         )
     }
@@ -286,7 +290,10 @@ function WorkExperienceView ({ response }) {
     } else {
         return (
             <Box p={4}>
-                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Work Experience(s) form.</div>
+                <div className={classes.notification} color="secondary">
+                    <ErrorOutlineIcon color="secondary" /> 
+                    Applicant has not filled out his/her Work Experience(s) form.
+                </div>
             </Box>
         )
     } 
@@ -344,7 +351,10 @@ function EducationView ({ response }) {
     } else {
         return (
             <Box p={4}>
-                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Education(s) form.</div>
+                <div className={classes.notification} color="secondary">
+                    <ErrorOutlineIcon color="secondary" /> 
+                    Applicant has not filled out his/her Education(s) form.
+                </div>
             </Box>
         )
     }
@@ -403,7 +413,10 @@ function TrainingView ({ response }) {
     } else {
         return (
             <Box p={4}>
-                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Training(s) form.</div>
+                <div className={classes.notification} color="secondary">
+                    <ErrorOutlineIcon color="secondary" /> 
+                    Applicant has not filled out his/her Training(s) form.
+                </div>
             </Box>
         )
     }
@@ -450,7 +463,10 @@ function LanguageSkillsView({ response }) {
     } else {
         return (
             <Box p={4}>
-                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Language Skills form.</div>
+                <div className={classes.notification} color="secondary">
+                    <ErrorOutlineIcon color="secondary" /> 
+                    Applicant has not filled out his/her Language Skills form.
+                </div>
             </Box>
         )
     }
@@ -498,7 +514,10 @@ function OtherSkillsView({ response }) {
     } else {
         return (
             <Box p={4}>
-                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Other Skills form.</div>
+                <div className={classes.notification} color="secondary">
+                    <ErrorOutlineIcon color="secondary" /> 
+                    Applicant has not filled out his/her Other Skills form.
+                </div>
             </Box>
         )
     } 
@@ -1123,7 +1142,10 @@ function  PracticalKnowledgeView({ response }) {
     } else {
         return (
             <Box p={4}>
-                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Other Skills form.</div>
+                <div className={classes.notification} color="secondary">
+                    <ErrorOutlineIcon color="secondary" /> 
+                    Applicant has not filled out his/her Practical Knowledge form.
+                </div>
             </Box>
         )
     }

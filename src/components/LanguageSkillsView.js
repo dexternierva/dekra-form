@@ -11,6 +11,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
 import Box from '@material-ui/core/Box';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 
 const useStyles = makeStyles((theme) => ({
     grid: {
@@ -68,7 +69,10 @@ function LanguageSkillsView({ response }) {
     } else {
         return (
             <Box p={4}>
-                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Language Skills form.</div>
+                <div className={classes.notification} color="secondary">
+                    <ErrorOutlineIcon color="secondary" /> 
+                    Applicant has not filled out his/her Language Skills form.
+                </div>
             </Box>
         )
     }
