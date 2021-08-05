@@ -68,7 +68,7 @@ function LanguageSkillsView({ response }) {
     } else {
         return (
             <Box p={4}>
-                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Training(s) form.</div>
+                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Language Skills form.</div>
             </Box>
         )
     }
