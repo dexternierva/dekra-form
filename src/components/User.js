@@ -133,8 +133,12 @@ const useStyles = makeStyles((theme) => ({
     },
     notification: {
         ...theme.typography.button,
+        display: 'flex',
+        aligItems: 'center',
+        justifyContent: 'center',
         padding: theme.spacing(2),
-        border: '1px solid #EFEFEF',
+        border: '1px solid #008B4F',
+        textAlign: 'center'
     },
 }));
 
@@ -229,7 +233,7 @@ function  ProfileView({ response }) {
         )
     } else {
         return (
-            <Box p={4}>
+            <Box py={4}>
                 <div className={classes.notification} color="secondary">
                     <ErrorOutlineIcon color="secondary" /> 
                     Applicant has not filled out his/her Profile form.
