@@ -20,7 +20,15 @@ const useStyles = makeStyles((theme) => ({
     },
     table: {
         margin: '-.75rem 0 0 0'
-    }
+    },
+    notification: {
+        ...theme.typography.button,
+        display: 'flex',
+        aligItems: 'center',
+        justifyContent: 'center',
+        border: '1px solid #008B4F',
+        textAlign: 'center'
+    },
 }));
 
 const SectionTitle = styled.div`

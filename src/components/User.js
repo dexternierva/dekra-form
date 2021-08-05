@@ -136,7 +136,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         aligItems: 'center',
         justifyContent: 'center',
-        padding: theme.spacing(2),
         border: '1px solid #008B4F',
         textAlign: 'center'
     },
@@ -235,7 +234,7 @@ function  ProfileView({ response }) {
         return (
             <Box py={4}>
                 <div className={classes.notification} color="secondary">
-                    <ErrorOutlineIcon color="secondary" /> 
+                    <ErrorOutlineIcon color="secondary" />&nbsp;
                     Applicant has not filled out his/her Profile form.
                 </div>
             </Box>
@@ -295,7 +294,7 @@ function WorkExperienceView ({ response }) {
         return (
             <Box p={4}>
                 <div className={classes.notification} color="secondary">
-                    <ErrorOutlineIcon color="secondary" /> 
+                    <ErrorOutlineIcon color="secondary" />&nbsp; 
                     Applicant has not filled out his/her Work Experience(s) form.
                 </div>
             </Box>
@@ -356,7 +355,7 @@ function EducationView ({ response }) {
         return (
             <Box p={4}>
                 <div className={classes.notification} color="secondary">
-                    <ErrorOutlineIcon color="secondary" /> 
+                    <ErrorOutlineIcon color="secondary" />&nbsp; 
                     Applicant has not filled out his/her Education(s) form.
                 </div>
             </Box>
@@ -418,7 +417,7 @@ function TrainingView ({ response }) {
         return (
             <Box p={4}>
                 <div className={classes.notification} color="secondary">
-                    <ErrorOutlineIcon color="secondary" /> 
+                    <ErrorOutlineIcon color="secondary" />&nbsp; 
                     Applicant has not filled out his/her Training(s) form.
                 </div>
             </Box>
@@ -468,7 +467,7 @@ function LanguageSkillsView({ response }) {
         return (
             <Box p={4}>
                 <div className={classes.notification} color="secondary">
-                    <ErrorOutlineIcon color="secondary" /> 
+                    <ErrorOutlineIcon color="secondary" />&nbsp; 
                     Applicant has not filled out his/her Language Skills form.
                 </div>
             </Box>
@@ -519,7 +518,7 @@ function OtherSkillsView({ response }) {
         return (
             <Box p={4}>
                 <div className={classes.notification} color="secondary">
-                    <ErrorOutlineIcon color="secondary" /> 
+                    <ErrorOutlineIcon color="secondary" />&nbsp; 
                     Applicant has not filled out his/her Other Skills form.
                 </div>
             </Box>
@@ -1147,7 +1146,7 @@ function  PracticalKnowledgeView({ response }) {
         return (
             <Box p={4}>
                 <div className={classes.notification} color="secondary">
-                    <ErrorOutlineIcon color="secondary" /> 
+                    <ErrorOutlineIcon color="secondary" />&nbsp; 
                     Applicant has not filled out his/her Practical Knowledge form.
                 </div>
             </Box>
