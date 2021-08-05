@@ -19,8 +19,7 @@ import {
     Backdrop,
     CircularProgress,
     Box,
-    Fab,
-    Typography
+    Fab
 } from '@material-ui/core';
 import PrintIcon from '@material-ui/icons/Print';
 import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -174,7 +173,8 @@ function UserDetails () {
                 <GetUsers>
                     <PDFExport 
                         ref={pdfExportComponent} 
-                        paperSize="A4" 
+                        paperSize="A4"
+                        keepTogether=".MuiGrid-container" 
                         scale={0.6} 
                         forcePageBreak=".page-break"
                         margin={{ top: 20, left: 20, right: 20, bottom: 40 }}

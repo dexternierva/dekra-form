@@ -79,7 +79,7 @@ function TrainingView({ response }) {
         return (
             <Box py={4}>
                 <div className={classes.notification} color="secondary">
-                    <ErrorOutlineIcon color="secondary" /> 
+                    <ErrorOutlineIcon color="secondary" />&nbsp;
                     Applicant has not filled out his/her Training(s) form.
                 </div>
             </Box>

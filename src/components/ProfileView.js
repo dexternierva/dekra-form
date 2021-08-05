@@ -132,8 +132,8 @@ function  ProfileView({ response }) {
                                     <TableCell component="th" scope="row" align="center"><Header>Category</Header></TableCell>
                                 </TableRow>
                                 <TableRow>
-                                    <TableCell align="center" className={classes.tcell}>{response.cv.participantId}</TableCell>
-                                    <TableCell align="center">{response.cv.category}</TableCell>
+                                    <TableCell align="center" className={classes.tcell}>{response.cv.kfParticipantId}</TableCell>
+                                    <TableCell align="center">{response.cv.kfCategory}</TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>
