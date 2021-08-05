@@ -136,6 +136,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         aligItems: 'center',
         justifyContent: 'center',
+        padding: theme.spacing(2),
         border: '1px solid #008B4F',
         textAlign: 'center'
     },
@@ -292,7 +293,7 @@ function WorkExperienceView ({ response }) {
         return  <>{experiences}</>
     } else {
         return (
-            <Box p={4}>
+            <Box py={4}>
                 <div className={classes.notification} color="secondary">
                     <ErrorOutlineIcon color="secondary" />&nbsp; 
                     Applicant has not filled out his/her Work Experience(s) form.
@@ -353,7 +354,7 @@ function EducationView ({ response }) {
         return <> {educations} </>
     } else {
         return (
-            <Box p={4}>
+            <Box py={4}>
                 <div className={classes.notification} color="secondary">
                     <ErrorOutlineIcon color="secondary" />&nbsp; 
                     Applicant has not filled out his/her Education(s) form.
@@ -415,7 +416,7 @@ function TrainingView ({ response }) {
         return <> {trainings} </>
     } else {
         return (
-            <Box p={4}>
+            <Box py={4}>
                 <div className={classes.notification} color="secondary">
                     <ErrorOutlineIcon color="secondary" />&nbsp; 
                     Applicant has not filled out his/her Training(s) form.
@@ -465,7 +466,7 @@ function LanguageSkillsView({ response }) {
         )
     } else {
         return (
-            <Box p={4}>
+            <Box py={4}>
                 <div className={classes.notification} color="secondary">
                     <ErrorOutlineIcon color="secondary" />&nbsp; 
                     Applicant has not filled out his/her Language Skills form.
@@ -516,7 +517,7 @@ function OtherSkillsView({ response }) {
         )
     } else {
         return (
-            <Box p={4}>
+            <Box py={4}>
                 <div className={classes.notification} color="secondary">
                     <ErrorOutlineIcon color="secondary" />&nbsp; 
                     Applicant has not filled out his/her Other Skills form.
@@ -1144,7 +1145,7 @@ function  PracticalKnowledgeView({ response }) {
         )
     } else {
         return (
-            <Box p={4}>
+            <Box py={4}>
                 <div className={classes.notification} color="secondary">
                     <ErrorOutlineIcon color="secondary" />&nbsp; 
                     Applicant has not filled out his/her Practical Knowledge form.

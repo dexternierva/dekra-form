@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     notification: {
         ...theme.typography.button,
+        padding: theme.spacing(2),
         display: 'flex',
         aligItems: 'center',
         justifyContent: 'center',
@@ -76,7 +77,7 @@ function LanguageSkillsView({ response }) {
         )
     } else {
         return (
-            <Box p={4}>
+            <Box py={4}>
                 <div className={classes.notification} color="secondary">
                     <ErrorOutlineIcon color="secondary" />&nbsp; 
                     Applicant has not filled out his/her Language Skills form.
