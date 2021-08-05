@@ -180,7 +180,7 @@ function  ProfileView({ response }) {
     } else {
         return (
             <Box p={4}>
-                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Other Skills form.</div>
+                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Profile form.</div>
             </Box>
         )
     }

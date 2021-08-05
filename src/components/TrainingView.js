@@ -10,6 +10,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
     grid: {
@@ -32,37 +33,45 @@ function TrainingView({ response }) {
     let t = useTranslate("Training");
     const classes = useStyles();
 
-    function createTrainingData(name, value) {
-        return { name, value };
-    }
-    
-    const trainingrows = [
-        createTrainingData(t('Period'), t("From: ") + response.training.from + " | " + t(" To: ") + response.training.to),
-        createTrainingData(t('Name of training provider'), response.training.trainingProvider),
-        createTrainingData(t('Skills acquired'), response.training.skillsAcquired),
-    ];
+    if (response.trainings.length !== 0) {
+        function createTrainingData(name, value) {
+            return { name, value };
+        }
+        
+        const trainingrows = [
+            createTrainingData(t('Period'), t("From: ") + response.training.from + " | " + t(" To: ") + response.training.to),
+            createTrainingData(t('Name of training provider'), response.training.trainingProvider),
+            createTrainingData(t('Skills acquired'), response.training.skillsAcquired),
+        ];
 
-    return (
-        <Grid container spacing={0} className={classes.grid}>
-            <Grid item xs={12} sm={3}>
-                <SectionTitle>{t("Training and further education")}</SectionTitle>
+        return (
+            <Grid container spacing={0} className={classes.grid}>
+                <Grid item xs={12} sm={3}>
+                    <SectionTitle>{t("Training and further education")}</SectionTitle>
+                </Grid>
+                <Grid item xs={12} sm={9}>
+                    <TableContainer className={classes.table}>
+                        <Table aria-label="simple table">
+                            <TableBody>
+                            {trainingrows.map((row) => (
+                                <TableRow key={row.name}>
+                                    <TableCell component="th" scope="row">{row.name}</TableCell>
+                                    <TableCell align="right">{row.value}</TableCell>
+                                </TableRow>
+                            ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Grid>
             </Grid>
-            <Grid item xs={12} sm={9}>
-                <TableContainer className={classes.table}>
-                    <Table aria-label="simple table">
-                        <TableBody>
-                        {trainingrows.map((row) => (
-                            <TableRow key={row.name}>
-                                <TableCell component="th" scope="row">{row.name}</TableCell>
-                                <TableCell align="right">{row.value}</TableCell>
-                            </TableRow>
-                        ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </Grid>
-        </Grid>
-    )
+        )
+    } else {
+        return (
+            <Box p={4}>
+                <div className={classes.notification} color="secondary">Applicant has not filled out his/her Training(s) form.</div>
+            </Box>
+        )
+    }
 }
 
 export default TrainingView;
