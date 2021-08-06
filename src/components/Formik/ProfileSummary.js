@@ -302,11 +302,6 @@ function ProfileSummary () {
                 dateOfBirth: response.dateOfBirth,
                 placeOfBirth: response.placeOfBirth,
                 maritalStatus: response.maritalStatus,
-                // TRAINING
-                trainingFrom: response.trainingFrom,
-                trainingTo: response.trainingTo,
-                provider: response.provider,
-                skills: response.skills,
                 // LANGUAGE-SKILLS
                 nativeLanguage: response.nativeLanguage,
                 germanLanguageLevel: response.germanLanguageLevel,
@@ -343,11 +338,6 @@ function ProfileSummary () {
         dateOfBirth: new Date(),
         placeOfBirth: '',
         maritalStatus: '',
-        // TRAINING
-        trainingFrom: new Date(),
-        trainingTo: new Date(),
-        provider: '',
-        skills: '',
         // LANGUAGE SKILLS
         nativeLanguage: 'Filipino (Tagalog)',
         germanLanguageLevel: '',
@@ -380,11 +370,6 @@ function ProfileSummary () {
         dateOfBirth: Yup.date().required('This field is required').nullable(),
         placeOfBirth: Yup.string().required('This field is required'),
         maritalStatus: Yup.string().required('This field is required'),
-        // TRAINING
-        trainingFrom: Yup.date().required('This field is required'),
-        trainingTo: Yup.date().required('This field is required'),
-        provider: Yup.string().required('This field is required'),
-        skills: Yup.string().required('This field is required'),
         // LANGUAGE-SKILLS
         nativeLanguage: Yup.string().required('This field is required'),
         germanLanguageLevel: Yup.string().required('This field is required'),
@@ -420,11 +405,6 @@ function ProfileSummary () {
             'dateOfBirth': values.dateOfBirth,
             'placeOfBirth': values.placeOfBirth,
             'maritalStatus': values.maritalStatus,
-            // TRAINING
-            'trainingFrom': values.trainingFrom,
-            'trainingTo': values.trainingTo,
-            'provider': values.provider,
-            'skills': values.skills,
             // LANGUAGE-SKILLS
             'nativeLanguage': values.nativeLanguage,
             'germanLanguageLevel': values.germanLanguageLevel,
@@ -676,59 +656,6 @@ function ProfileSummary () {
                                     <ErrorMessage name="sex" component="span" />
                                 </Typography>
                             </Box>
-
-                            {
-                                /**
-                                 * = TRAINING
-                                 * ------------------------------------------------------------------------- */
-                            }
-                            <Box px={4} py={2}>
-                                <Typography variant="h5" gutterBottom>Training</Typography>
-                            </Box>
-                            <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                <Box px={4} py={2}>
-                                    <Grid container spacing={2}>
-                                        <Grid item lg={6} xs={12}>
-                                            <Field
-                                                component={DatePicker}
-                                                label="From:"
-                                                name="trainingFrom"
-                                                variant="dialog"
-                                                views={["date", "year", "month"]}
-                                                fullWidth
-                                            />
-                                        </Grid>
-                                        <Grid item lg={6} xs={12}>
-                                            <Field
-                                                component={DatePicker}
-                                                label="To:"
-                                                name="trainingTo"
-                                                variant="dialog"
-                                                views={["date", "year", "month"]}
-                                                fullWidth
-                                            />
-                                        </Grid>
-                                        <Grid item lg={12} xs={12}>
-                                            <Field
-                                                component={TextField}
-                                                type="text"
-                                                label="Provider"
-                                                name="provider"
-                                                fullWidth
-                                            />
-                                        </Grid>
-                                        <Grid item lg={12} xs={12}>
-                                            <Field
-                                                component={TextField}
-                                                type="text"
-                                                label="Skills Acquired"
-                                                name="skills"
-                                                fullWidth
-                                            />
-                                        </Grid>
-                                    </Grid>
-                                </Box>
-                            </MuiPickersUtilsProvider>
 
                             {
                                 /**
