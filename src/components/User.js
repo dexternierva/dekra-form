@@ -56,10 +56,11 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const StyledRating = withStyles({
     iconFilled: {
-      color: '#ff6d75',
+      color: '#0F4D20',
+      fill: '#008B4F'
     },
     iconHover: {
-      color: '#ff3d47',
+      color: 'rgba(0, 0, 0, 0.26)',
     },
 })(Rating);
 
@@ -1173,7 +1174,7 @@ function  PracticalKnowledgeView({ response }) {
  * ------------------------------------------------------------------------------------------------ */
 function  PracticalActivitiesView({ response }) {
     const classes = useStyles();
-    if ( response.practical_knowledge !== null) {
+    if (response.practical_activity !== null) {
         return (
             <>
             <div className={classes.intro}>
@@ -1212,6 +1213,7 @@ function  PracticalActivitiesView({ response }) {
                             precision={1}
                             value={response.practical_activity.a1}
                             icon={<CheckBoxOutlineBlankIcon fontSize="inherit" />}
+                            max={6}
                         />
                     </Box>
                 </Grid>
