@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
+import { withStyles } from '@material-ui/core/styles';
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import { useCurrentUser, useDispatchCurrentUser } from "../containers/CurrentUser";
@@ -38,6 +39,9 @@ import {
     TextField,
 } from '@material-ui/core';
 
+import Rating from '@material-ui/lab/Rating';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+
 import MenuIcon from '@material-ui/icons/Menu';
 import PrintIcon from '@material-ui/icons/Print';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
@@ -49,6 +53,15 @@ import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import { green, pink } from '@material-ui/core/colors';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+
+const StyledRating = withStyles({
+    iconFilled: {
+      color: '#ff6d75',
+    },
+    iconHover: {
+      color: '#ff3d47',
+    },
+})(Rating);
 
 const drawerWidth = 240;
 
@@ -1158,6 +1171,64 @@ function  PracticalKnowledgeView({ response }) {
 /* 
  * PRACTICAL ACTIVITIES
  * ------------------------------------------------------------------------------------------------ */
+function  PracticalActivitiesView({ response }) {
+    const classes = useStyles();
+    if ( response.practical_knowledge !== null) {
+        return (
+            <>
+            <div className={classes.intro}>
+                <Paper elevation={0} className={classes.paper}>
+                    <Typography variant="h5" component="h2">
+                        Practical Activities
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                        Self-assessment of the participant <br />
+                        0 (not known), 1 (known in theory), 2 (practical implementation observed), 3 (carried out under supervision), 4 (independent implementation), 5 (expert, guidance of other collegues).
+                    </Typography>
+                </Paper>
+            </div>
+
+            <Box py={2} px={4}>
+                <Typography variant="subtitle2" display="block" gutterBottom color="primary">
+                    A - Assessment of patients, nursing diagnosis, care planning
+                </Typography>
+                <Typography variant="subtitle2" display="block" gutterBottom>
+                    Gain information about patients
+                </Typography>
+            </Box>
+
+            <Grid container spacing={3} alignItems="center">
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Collect basic parameters (e.g. size, weight) and vital parameters (by manual measurement, by means of monitoring)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.a1}
+                            icon={<CheckBoxOutlineBlankIcon fontSize="inherit" />}
+                        />
+                    </Box>
+                </Grid>
+            </Grid>{ /* END OF: Grid container */ }
+            </>
+        )
+    } else {
+        return (
+            <Box py={4}>
+                <div className={classes.notification} color="secondary">
+                    <ErrorOutlineIcon color="secondary" />&nbsp; 
+                    Applicant has not filled out his/her Practical Knowledge form.
+                </div>
+            </Box>
+        )
+    }
+}
 
 /* 
  * USER SUMMARY
@@ -1191,6 +1262,17 @@ function UserSummary ({id, displayComponent}) {
                     <PracticalKnowledgeView response={response} />
                     <Box my={4} position="fixed" right="2rem" bottom="0rem">
                         <Link to={`/userpracticalknowledge/${id}`}>
+                        <Fab color="primary" aria-label="add"><PrintIcon /></Fab>
+                        </Link>
+                    </Box>
+                </>
+            )
+        } else if (displayComponent === 'pa') {
+            return (
+                <>
+                    <PracticalActivitiesView response={response} />
+                    <Box my={4} position="fixed" right="2rem" bottom="0rem">
+                        <Link to={`/userpracticalactivities/${id}`}>
                         <Fab color="primary" aria-label="add"><PrintIcon /></Fab>
                         </Link>
                     </Box>
@@ -1232,7 +1314,7 @@ function User (props) {
 
     const handleLogout = async () => {
         try {
-            await axios.post("http://localhost:1337/logout")
+            await axios.post("https://dekra-form-api-m8bsw.ondigitalocean.app/logout")
         } catch (error) {
             console.error("Error in logging out", error);
         }
@@ -1265,14 +1347,14 @@ function User (props) {
                 <ListItem>
                     <ListItemIcon><PermIdentityIcon /></ListItemIcon>
                     <ListItemText
-                        primary="foobar"
+                        primary="dekraformadmin"
                         secondary="username"
                     />
                 </ListItem>
                 <ListItem href="#simple-list">
                 <ListItemIcon><MailOutlineIcon /></ListItemIcon>
                     <ListItemText
-                        primary="dexternierva@gmail.com"
+                        primary="d.nierva@educar-consultancy.com"
                         secondary="email"
                     />
                 </ListItem>
@@ -1288,6 +1370,10 @@ function User (props) {
                 <ListItem button onClick={ () => setDisplayComponent("pk") }>
                     <ListItemIcon><ListAltIcon /></ListItemIcon>
                     <ListItemText>Practical Knowledge</ListItemText>
+                </ListItem>
+                <ListItem button onClick={ () => setDisplayComponent("pa") }>
+                    <ListItemIcon><ListAltIcon /></ListItemIcon>
+                    <ListItemText>Practical Activities</ListItemText>
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon><ArrowBackIosIcon /></ListItemIcon>
