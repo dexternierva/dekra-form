@@ -764,6 +764,29 @@ function PracticalKnowledgeForm ({ setPracticalActivitiesState }) {
 
                     <Grid item xs={12} sm={10}>
                         <Box px={4}>
+                            <Typography variant="body2" gutterBottom>Discharge systems (e.g. urinary catheterism, stool dissipation systems)</Typography>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={12} sm={2}>
+                        <Box px={4}>
+                            <Field
+                                component={Select}
+                                name="b11"
+                                defaultValue="0"
+                                variant="outlined"
+                            >
+                                <MenuItem value={0}>0</MenuItem>
+                                <MenuItem value={1}>1</MenuItem>
+                                <MenuItem value={2}>2</MenuItem>
+                                <MenuItem value={3}>3</MenuItem>
+                                <MenuItem value={4}>4</MenuItem>
+                                <MenuItem value={5}>5</MenuItem>
+                            </Field>
+                        </Box>
+                    </Grid>
+
+                    <Grid item xs={12} sm={10}>
+                        <Box px={4}>
                             <Typography variant="body2" gutterBottom>Administer ingesudes</Typography>
                         </Box>
                     </Grid>
