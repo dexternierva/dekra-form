@@ -40,7 +40,7 @@ import {
 } from '@material-ui/core';
 
 import Rating from '@material-ui/lab/Rating';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 
 import MenuIcon from '@material-ui/icons/Menu';
 import PrintIcon from '@material-ui/icons/Print';
@@ -55,12 +55,14 @@ import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const StyledRating = withStyles({
+    icon: {
+        color: 'rgba(0, 0, 0, 0.12)',
+    },
     iconFilled: {
-      color: '#0F4D20',
-      fill: '#008B4F'
+        color: '#008B4F',
     },
     iconHover: {
-      color: 'rgba(0, 0, 0, 0.26)',
+        color: 'rgba(0, 0, 0, 0.24)',
     },
 })(Rating);
 
@@ -1212,7 +1214,7 @@ function  PracticalActivitiesView({ response }) {
                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                             precision={1}
                             value={response.practical_activity.a1}
-                            icon={<CheckBoxOutlineBlankIcon fontSize="inherit" />}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
                             max={6}
                         />
                     </Box>
@@ -1297,8 +1299,7 @@ function UserSummary ({id, displayComponent}) {
 
 /**
  * START OF USER COMPONENT
- * 
- */
+ * ================================================================================================ */
 function User (props) {
     let { id } = useParams();
     const { window } = props;
