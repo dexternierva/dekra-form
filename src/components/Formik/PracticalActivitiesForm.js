@@ -819,18 +819,20 @@ function PracticalKnowledgeForm ({ setPracticalActivitiesState }) {
             <FormikStep 
                 label="Practical Activities C"
                 validationSchema={Yup.object({
-                    b1: Yup.number().min(0).max(5),
-                    b2: Yup.number().min(0).max(5),
-                    b3: Yup.number().min(0).max(5),
-                    b4: Yup.number().min(0).max(5),
-                    b5: Yup.number().min(0).max(5),
-                    b6: Yup.number().min(0).max(5),
-                    b7: Yup.number().min(0).max(5),
-                    b8: Yup.number().min(0).max(5),
-                    b9: Yup.number().min(0).max(5),
-                    b10: Yup.number().min(0).max(5),
-                    b11: Yup.number().min(0).max(5),
-                    b12: Yup.number().min(0).max(5),
+                    c1: Yup.number().min(0).max(5),
+                    c2: Yup.number().min(0).max(5),
+                    c3: Yup.number().min(0).max(5),
+                    c4: Yup.number().min(0).max(5),
+                    c5: Yup.number().min(0).max(5),
+                    c6: Yup.number().min(0).max(5),
+                    c7: Yup.number().min(0).max(5),
+                    c8: Yup.number().min(0).max(5),
+                    c9: Yup.number().min(0).max(5),
+                    c10: Yup.number().min(0).max(5),
+                    c11: Yup.number().min(0).max(5),
+                    c12: Yup.number().min(0).max(5),
+                    c13: Yup.number().min(0).max(5),
+                    c14: Yup.number().min(0).max(5),
                 })}
             >
                 <Box py={2} px={4}>

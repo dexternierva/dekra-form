@@ -1280,9 +1280,11 @@ function  PracticalActivitiesView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={12}>
-                    <Typography variant="subtitle2" display="block" gutterBottom>
-                        Care problems and care diagnosis
-                    </Typography>
+                    <Box px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Care problems and care diagnosis
+                        </Typography>
+                    </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
@@ -1343,9 +1345,11 @@ function  PracticalActivitiesView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={12}>
-                    <Typography variant="subtitle2" display="block" gutterBottom>
-                        Careplanning
-                    </Typography>
+                    <Box px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Careplanning
+                        </Typography>
+                    </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
@@ -1668,6 +1672,336 @@ function  PracticalActivitiesView({ response }) {
                         />
                     </Box>
                 </Grid>
+
+                { /*** PROFESSIONAL CARE */ }
+                <Grid item xs={12} sm={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom color="primary">
+                            Pflegeintervention
+                        </Typography>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Participation in medical and diagnostic procedures
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Blood collection, physical examination</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c1}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Assistance with medical measures (e.g. endoscopy, admission examination in the hospital)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c2}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Medications
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Manage, prepare, administer (e.g. oral, intravenous)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c3}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Blood and blood products (transfusion)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c4}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Dealing with narcotics</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c5}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Wound management
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Wound avoidance, Prophylaxen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c6}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Wound assessment</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c7}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Wound treatment (e.g. dressings and change)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c8}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Ostomy care
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Care of different stomata (e.g. tracheostoma, ileostoma, urostoma)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c9}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Applying medical devices
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Care aids, mobilization aids, transfer aids, wheelchairs</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c10}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Devices for measuring vital parameters (e.g. blood pressure, blood sugar, monitoring)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c11}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Special equipment (e.g. suction devices, ECG, defibrillators, ventilators)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c12}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Life-saving measures
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Basic life support</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c13}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Advanced life support</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.c14}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom color="primary">
+                            D - Hygiene
+                        </Typography>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Apply hygiene measures
+                        </Typography>
+                    </Box>
+                </Grid>
+
             </Grid>{ /* END OF: Grid container */ }
             </>
         )
