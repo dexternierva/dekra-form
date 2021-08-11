@@ -359,6 +359,12 @@ function ProfileForm ({ setProfileFormState }) {
                     dateOfBirth: new Date(),
                     placeOfBirth: '',
                     maritalStatus: '',
+                    child1: new Date(),
+                    child2: new Date(),
+                    child3: new Date(),
+                    child4: new Date(),
+                    child5: new Date(),
+                    child6: new Date(),
                     // INITIAL VALUES: LANGUAGE SKILLS
                     nativeLanguage: 'Filipino (Tagalog)',
                     germanLanguageLevel: '',
@@ -393,6 +399,12 @@ function ProfileForm ({ setProfileFormState }) {
                         'dateOfBirth': values.dateOfBirth,
                         'placeOfBirth': values.placeOfBirth,
                         'maritalStatus': values.maritalStatus,
+                        'child1': values.child1,
+                        'child2': values.child2,
+                        'child3': values.child3,
+                        'child4': values.child4,
+                        'child5': values.child5,
+                        'child6': values.child6,
                         // VALUES: LANGUAGE SKILLS
                         'nativeLanguage': values.nativeLanguage,
                         'germanLanguageLevel': values.germanLanguageLevel,
@@ -530,7 +542,7 @@ function ProfileForm ({ setProfileFormState }) {
                         </Field>
                     </Box>
                     <Box px={4} py={2}>
-                        <InputLabel shrink={true} htmlFor="kfpriorities">Priorities</InputLabel>
+                        <InputLabel shrink={true} htmlFor="kfpriorities">Specializations</InputLabel>
                         <Field
                             component={Select}
                             type="text"
@@ -686,6 +698,59 @@ function ProfileForm ({ setProfileFormState }) {
                         <Typography variant="caption" display="block" gutterBottom color="secondary">
                             <ErrorMessage name="maritalStatus" component="span" />
                         </Typography>
+                    </Box>
+                    <Box px={4} py={2}>
+                        <InputLabel shrink={true} htmlFor="maritalStatus">Children</InputLabel>
+                        <Grid container spacing={0} className={classes.grid}>
+                            <Grid item xs={4} sm={2}>
+                                <Field
+                                    component={DatePicker}
+                                    name="child1"
+                                    variant="dialog"
+                                    views={["year"]}
+                                />
+                            </Grid>
+                            <Grid item xs={4} sm={2}>
+                                <Field
+                                    component={DatePicker}
+                                    name="child2"
+                                    variant="dialog"
+                                    views={["year"]}
+                                />
+                            </Grid>
+                            <Grid item xs={4} sm={2}>
+                                <Field
+                                    component={DatePicker}
+                                    name="child3"
+                                    variant="dialog"
+                                    views={["year"]}
+                                />
+                            </Grid>
+                            <Grid item xs={4} sm={2}>
+                                <Field
+                                    component={DatePicker}
+                                    name="child4"
+                                    variant="dialog"
+                                    views={["year"]}
+                                />
+                            </Grid>
+                            <Grid item xs={4} sm={2}>
+                                <Field
+                                    component={DatePicker}
+                                    name="child5"
+                                    variant="dialog"
+                                    views={["year"]}
+                                />
+                            </Grid>
+                            <Grid item xs={4} sm={2}>
+                                <Field
+                                    component={DatePicker}
+                                    name="child6"
+                                    variant="dialog"
+                                    views={["year"]}
+                                />
+                            </Grid>
+                        </Grid>
                     </Box>
                     <Box px={4} py={2}>
                         <Field component={RadioGroup} name="sex" row>

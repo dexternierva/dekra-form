@@ -503,7 +503,7 @@ function ProfileSummary () {
                                 </Field>
                             </Box>
                             <Box px={4} py={2}>
-                                <InputLabel shrink={true} htmlFor="kfpriorities">Priorities</InputLabel>
+                                <InputLabel shrink={true} htmlFor="kfpriorities">Specializations</InputLabel>
                                 <Field
                                     component={Select}
                                     type="text"
