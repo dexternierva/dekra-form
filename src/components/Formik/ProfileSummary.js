@@ -302,6 +302,12 @@ function ProfileSummary () {
                 dateOfBirth: response.dateOfBirth,
                 placeOfBirth: response.placeOfBirth,
                 maritalStatus: response.maritalStatus,
+                child1: response.child1,
+                child2: response.child2,
+                child3: response.child3,
+                child4: response.child4,
+                child5: response.child5,
+                child6: response.child6,
                 // LANGUAGE-SKILLS
                 nativeLanguage: response.nativeLanguage,
                 germanLanguageLevel: response.germanLanguageLevel,

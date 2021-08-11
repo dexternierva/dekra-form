@@ -159,17 +159,8 @@ function  ProfileView({ response }) {
                                     <TableCell align="right">{row.value}</TableCell>
                                 </TableRow>
                             ))}
-                            <caption>{t("Detailed overview of activities in the 'Professional Skills' facility")}</caption>
                             </TableBody>
-                            <TableRow>
-                                <TableCell>Kinder</TableCell>
-                                <TableCell>{response.cv.child1}</TableCell>
-                                <TableCell>{response.cv.child2}</TableCell>
-                                <TableCell>{response.cv.child3}</TableCell>
-                                <TableCell>{response.cv.child4}</TableCell>
-                                <TableCell>{response.cv.child5}</TableCell>
-                                <TableCell>{response.cv.child6}</TableCell>
-                            </TableRow>
+                            <caption>{t("Detailed overview of activities in the 'Professional Skills' facility")}</caption>
                         </Table>
                     </TableContainer>
                 </Grid>
@@ -189,6 +180,15 @@ function  ProfileView({ response }) {
                                     <TableCell align="right">{row.value}</TableCell>
                                 </TableRow>
                             ))}
+                                <TableRow>
+                                    <TableCell>Kinder</TableCell>
+                                    <TableCell>{response.cv.child1}</TableCell>
+                                    <TableCell>{response.cv.child2}</TableCell>
+                                    <TableCell>{response.cv.child3}</TableCell>
+                                    <TableCell>{response.cv.child4}</TableCell>
+                                    <TableCell>{response.cv.child5}</TableCell>
+                                    <TableCell>{response.cv.child6}</TableCell>
+                                </TableRow>
                             </TableBody>
                         </Table>
                     </TableContainer>
