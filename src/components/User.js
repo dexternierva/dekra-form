@@ -55,6 +55,10 @@ import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const StyledRating = withStyles({
+    grid: {
+        margin: '0 0 4rem 0',
+        borderLeft: '4px solid #008B4F',
+    },
     icon: {
         color: 'rgba(0, 0, 0, 0.12)',
     },
@@ -1191,7 +1195,7 @@ function  PracticalActivitiesView({ response }) {
                 </Paper>
             </div>
 
-            <Grid container spacing={3} alignItems="center">
+            <Grid container spacing={3} alignItems="center" className={classes.grid}>
                 <Grid item xs={12} sm={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
