@@ -9,7 +9,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import {
     Box,
-    Paper,
     Typography
 } from '@material-ui/core';
 
@@ -21,14 +20,6 @@ const useStyles = makeStyles((theme) => ({
     table: {
         margin: '-.75rem 0 0 0'
     },
-    intro: {
-        padding: '1rem',
-        margin: '0 0 2rem 0',
-        borderLeft: '4px solid #008B4F',
-    },
-    paper: {
-        background: 'transparent'
-    }
 }));
 
 const StyledRating = withStyles({
@@ -53,17 +44,15 @@ function  PracticalActivitiesView({ response }) {
         return (
             <Grid container spacing={3} alignItems="center" className={classes.grid}>
                 <Grid item xs={12} sm={12}>
-                    <div className={classes.intro}>
-                        <Paper elevation={0} className={classes.paper}>
-                            <Typography variant="h5" component="h2">
-                                Practical Activities
-                            </Typography>
-                            <Typography variant="body2" component="p">
-                                Self-assessment of the participant <br />
-                                0 (not known), 1 (known in theory), 2 (practical implementation observed), 3 (carried out under supervision), 4 (independent implementation), 5 (expert, guidance of other collegues).
-                            </Typography>
-                        </Paper>
-                    </div>
+                    <Box py={2} px={4}>
+                        <Typography variant="h5" component="h2">
+                            Practical Activities
+                        </Typography>
+                        <Typography variant="body2" component="p">
+                            Self-assessment of the participant <br />
+                            0 (not known), 1 (known in theory), 2 (practical implementation observed), 3 (carried out under supervision), 4 (independent implementation), 5 (expert, guidance of other collegues).
+                        </Typography>
+                    </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={12}>

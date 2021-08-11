@@ -1208,12 +1208,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Collect basic parameters (e.g. size, weight) and vital parameters (by manual measurement, by means of monitoring)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1227,12 +1227,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Identify physical (physical, neurological) and cognitive state of patients</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1246,12 +1246,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Fill in scales and indicators</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1265,12 +1265,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Evaluate the parameters collected in compliance with the clinical</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1292,12 +1292,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Identify supply deficits, provide adequate support</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1311,12 +1311,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Set care diagnosis</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1330,12 +1330,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Applying care standards</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1357,12 +1357,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Set care goals and update care plans</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1376,12 +1376,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Planning and carrying out care measures</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1395,12 +1395,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Apply special care plans (disease pictured-related)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1426,12 +1426,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Support and take over partial and whole body care (including skin care, washing and dressing, use care products, apply special methods [e.B. basal stimulation, bobath], at the sink, in bed)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1445,12 +1445,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Application of compression bandages and compression stockings</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1472,12 +1472,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Prepare, distribute, rich (feed) food and beverages</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1491,12 +1491,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Create, document nutrition plans</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1510,12 +1510,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Use food probes (including PEG)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1537,12 +1537,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Support, maintain, restore mobility</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1556,12 +1556,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Perform prophylactic measures (decubitus, contractur, thrombosis prophylaxis)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1575,12 +1575,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Create and maintain mobilization plans</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1602,12 +1602,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Assisting in the excretion</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1621,12 +1621,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Dealing with incontinence, continence training</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1640,12 +1640,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Discharge systems (e.g. urinary catheterism, stool dissipation systems)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1659,12 +1659,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Administer ingesudes</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1690,12 +1690,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Blood collection, physical examination</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1709,12 +1709,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Assistance with medical measures (e.g. endoscopy, admission examination in the hospital)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1736,12 +1736,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>  
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Manage, prepare, administer (e.g. oral, intravenous)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1755,12 +1755,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Blood and blood products (transfusion)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1774,12 +1774,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Dealing with narcotics</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1801,12 +1801,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>  
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Wound avoidance, Prophylaxen</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1820,12 +1820,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Wound assessment</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1839,12 +1839,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Wound treatment (e.g. dressings and change)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1866,12 +1866,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>  
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Care of different stomata (e.g. tracheostoma, ileostoma, urostoma)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1893,12 +1893,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>  
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Care aids, mobilization aids, transfer aids, wheelchairs</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1912,12 +1912,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Devices for measuring vital parameters (e.g. blood pressure, blood sugar, monitoring)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1931,12 +1931,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Special equipment (e.g. suction devices, ECG, defibrillators, ventilators)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1958,12 +1958,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>  
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Basic life support</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -1977,12 +1977,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Advanced life support</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2007,12 +2007,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Various disinfection measures (e.g. hand, skin, surface disinfection)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2026,12 +2026,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Perform infection control measures (e.g. isolation of patients)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2045,12 +2045,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Use sterile procedures (e.g. laying permanent catheters)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2072,12 +2072,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>  
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Process, appropriately package and store medical devices</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2091,12 +2091,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Operating sterilizers</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2118,12 +2118,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>  
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Transports of patients</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2137,12 +2137,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Reduce the risk of accidents (e.g. accident prevention regulations)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2156,12 +2156,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>External protection and self-protection</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2183,12 +2183,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>  
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Fire, emergencies, mass attack on patients</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2210,12 +2210,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Lead team and case meetings</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2229,12 +2229,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Introducing, guiding and guilding employees</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2248,12 +2248,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Shift line station line</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2267,12 +2267,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Write rosters</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2286,12 +2286,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Educate and advice relatives</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2305,12 +2305,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Educate and advice relatives</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2332,12 +2332,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Document primary care and treatment care measures (care report)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2351,12 +2351,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Placing order</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2370,12 +2370,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Documenting and evaluating visits</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2389,12 +2389,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Write letters (e.g. care transition)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2408,12 +2408,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Ensure cleanliness and order at the workplace (station rooms, patient rooms)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2427,12 +2427,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Apply quality assurance and control measures (e.g. drug check)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
@@ -2446,12 +2446,12 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <Box px={4}>
                         <Typography variant="body2" gutterBottom>Resource-saving working methods</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <Box px={4}>
                         <StyledRating
                             name="customized-color"
