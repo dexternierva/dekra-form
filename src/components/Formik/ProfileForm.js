@@ -328,6 +328,42 @@ function ProfileForm ({ setProfileFormState }) {
         { label: 'M', value: 'm' }
     ];
 
+    const yearOptions = [
+        { label: 'Not Applicable', value: 'none' },
+        { label: '1990', value: '1990' },
+        { label: '1991', value: '1991' },
+        { label: '1992', value: '1992' },
+        { label: '1993', value: '1993' },
+        { label: '1994', value: '1994' },
+        { label: '1995', value: '1995' },
+        { label: '1996', value: '1996' },
+        { label: '1997', value: '1997' },
+        { label: '1998', value: '1998' },
+        { label: '1999', value: '1999' },
+        { label: '2000', value: '2000' },
+        { label: '2001', value: '2001' },
+        { label: '2002', value: '2002' },
+        { label: '2003', value: '2003' },
+        { label: '2004', value: '2004' },
+        { label: '2005', value: '2005' },
+        { label: '2006', value: '2006' },
+        { label: '2007', value: '2007' },
+        { label: '2008', value: '2008' },
+        { label: '2009', value: '2009' },
+        { label: '2010', value: '2010' },
+        { label: '2011', value: '2011' },
+        { label: '2012', value: '2012' },
+        { label: '2013', value: '2013' },
+        { label: '2014', value: '2014' },
+        { label: '2015', value: '2015' },
+        { label: '2016', value: '2016' },
+        { label: '2017', value: '2017' },
+        { label: '2018', value: '2018' },
+        { label: '2019', value: '2019' },
+        { label: '2020', value: '2020' },
+        { label: '2021', value: '2021' },
+    ];
+
     return(
         <>
             <Alert 
@@ -704,74 +740,86 @@ function ProfileForm ({ setProfileFormState }) {
                         <Grid container spacing={0} className={classes.grid}>
                             <Grid item xs={4} sm={2}>
                                 <Box pl={0} pr={2} py={0}>
-                                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                        <Field
-                                            component={DatePicker}
-                                            name="child1"
-                                            variant="dialog"
-                                            views={["year"]}
-                                        />
-                                    </MuiPickersUtilsProvider>
+                                    <Field
+                                        component={Select}
+                                        name="child1"
+                                    >
+                                        {yearOptions.map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                            </MenuItem>
+                                        ))}
+                                    </Field>
                                 </Box>
                             </Grid>
                             <Grid item xs={4} sm={2}>
                                 <Box px={2} py={0}>
-                                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                        <Field
-                                            component={DatePicker}
-                                            name="child2"
-                                            variant="dialog"
-                                            views={["year"]}
-                                        />
-                                    </MuiPickersUtilsProvider>
+                                    <Field
+                                        component={Select}
+                                        name="child2"
+                                    >
+                                        {yearOptions.map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                            </MenuItem>
+                                        ))}
+                                    </Field>
                                 </Box>
                             </Grid>
                             <Grid item xs={4} sm={2}>
                                 <Box px={2} py={0}>
-                                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                        <Field
-                                            component={DatePicker}
-                                            name="child3"
-                                            variant="dialog"
-                                            views={["year"]}
-                                        />
-                                    </MuiPickersUtilsProvider>
+                                    <Field
+                                        component={Select}
+                                        name="child3"
+                                    >
+                                        {yearOptions.map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                            </MenuItem>
+                                        ))}
+                                    </Field>
                                 </Box>
                             </Grid>
                             <Grid item xs={4} sm={2}>
                                 <Box px={2} py={0}>
-                                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                        <Field
-                                            component={DatePicker}
-                                            name="child4"
-                                            variant="dialog"
-                                            views={["year"]}
-                                        />
-                                    </MuiPickersUtilsProvider>
+                                    <Field
+                                        component={Select}
+                                        name="child4"
+                                    >
+                                        {yearOptions.map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                            </MenuItem>
+                                        ))}
+                                    </Field>
                                 </Box>
                             </Grid>
                             <Grid item xs={4} sm={2}>
                                 <Box px={2} py={0}>
-                                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                        <Field
-                                            component={DatePicker}
-                                            name="child5"
-                                            variant="dialog"
-                                            views={["year"]}
-                                        />
-                                    </MuiPickersUtilsProvider>
+                                    <Field
+                                        component={Select}
+                                        name="child5"
+                                    >
+                                        {yearOptions.map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                            </MenuItem>
+                                        ))}
+                                    </Field>
                                 </Box>
                             </Grid>
                             <Grid item xs={4} sm={2}>
                                 <Box pl={2} pr={0} py={0}>
-                                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                        <Field
-                                            component={DatePicker}
-                                            name="child6"
-                                            variant="dialog"
-                                            views={["year"]}
-                                        />
-                                    </MuiPickersUtilsProvider>
+                                    <Field
+                                        component={Select}
+                                        name="child6"
+                                    >
+                                        {yearOptions.map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                            </MenuItem>
+                                        ))}
+                                    </Field>
                                 </Box>
                             </Grid>
                         </Grid>
