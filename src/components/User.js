@@ -2002,6 +2002,463 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Various disinfection measures (e.g. hand, skin, surface disinfection)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.d1}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Perform infection control measures (e.g. isolation of patients)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.d2}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Use sterile procedures (e.g. laying permanent catheters)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.d3}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Sterilization
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Process, appropriately package and store medical devices</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.d4}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Operating sterilizers</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.d5}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Occupational health and safety
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Transports of patients</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.d6}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Reduce the risk of accidents (e.g. accident prevention regulations)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.d7}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>External protection and self-protection</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.d8}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Dealing with disasters
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Fire, emergencies, mass attack on patients</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.d9}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={2}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom color="primary">
+                            E - Communication with colleagues, patients and others
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Lead team and case meetings</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.e1}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Introducing, guiding and guilding employees</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.e2}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Shift line station line</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.e3}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Write rosters</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.e4}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Educate and advice relatives</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.e5}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Educate and advice relatives</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.e6}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={2}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom color="primary">
+                            F - Documentation and quality
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Document primary care and treatment care measures (care report)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.f1}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Placing order</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.f2}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Documenting and evaluating visits</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.f3}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Write letters (e.g. care transition)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.f4}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Ensure cleanliness and order at the workplace (station rooms, patient rooms)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.f5}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Apply quality assurance and control measures (e.g. drug check)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.f6}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={10}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Resource-saving working methods</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={2}>
+                    <Box px={4}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.f7}
+                            icon={<CheckBoxIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
+                </Grid>
             </Grid>{ /* END OF: Grid container */ }
             </>
         )
