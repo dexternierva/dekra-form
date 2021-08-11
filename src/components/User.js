@@ -2197,7 +2197,7 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             E - Communication with colleagues, patients and others
@@ -2319,7 +2319,7 @@ function  PracticalActivitiesView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             F - Documentation and quality
