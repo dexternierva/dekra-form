@@ -359,12 +359,12 @@ function ProfileForm ({ setProfileFormState }) {
                     dateOfBirth: new Date(),
                     placeOfBirth: '',
                     maritalStatus: '',
-                    child1: '',
-                    child2: '',
-                    child3: '',
-                    child4: '',
-                    child5: '',
-                    child6: '',
+                    child1: 'Choose Year',
+                    child2: 'Choose Year',
+                    child3: 'Choose Year',
+                    child4: 'Choose Year',
+                    child5: 'Choose Year',
+                    child6: 'Choose Year',
                     // INITIAL VALUES: LANGUAGE SKILLS
                     nativeLanguage: 'Filipino (Tagalog)',
                     germanLanguageLevel: '',
@@ -703,7 +703,7 @@ function ProfileForm ({ setProfileFormState }) {
                         <InputLabel shrink={true} htmlFor="child1">Children</InputLabel>
                         <Grid container spacing={0} className={classes.grid}>
                             <Grid item xs={4} sm={2}>
-                                <Box px={2} py={0}>
+                                <Box pl={0} pr={2} py={0}>
                                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                         <Field
                                             component={DatePicker}
@@ -763,7 +763,7 @@ function ProfileForm ({ setProfileFormState }) {
                                 </Box>
                             </Grid>
                             <Grid item xs={4} sm={2}>
-                                <Box px={2} py={0}>
+                                <Box pl={2} pr={0} py={0}>
                                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                         <Field
                                             component={DatePicker}
