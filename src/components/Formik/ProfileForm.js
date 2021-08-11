@@ -700,55 +700,67 @@ function ProfileForm ({ setProfileFormState }) {
                         </Typography>
                     </Box>
                     <Box px={4} py={2}>
-                        <InputLabel shrink={true} htmlFor="maritalStatus">Children</InputLabel>
+                        <InputLabel shrink={true} htmlFor="child1">Children</InputLabel>
                         <Grid container spacing={0} className={classes.grid}>
                             <Grid item xs={4} sm={2}>
-                                <Field
-                                    component={DatePicker}
-                                    name="child1"
-                                    variant="dialog"
-                                    views={["year"]}
-                                />
+                                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                    <Field
+                                        component={DatePicker}
+                                        name="child1"
+                                        variant="dialog"
+                                        views={["year"]}
+                                    />
+                                </MuiPickersUtilsProvider>
                             </Grid>
                             <Grid item xs={4} sm={2}>
-                                <Field
-                                    component={DatePicker}
-                                    name="child2"
-                                    variant="dialog"
-                                    views={["year"]}
-                                />
+                                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                    <Field
+                                        component={DatePicker}
+                                        name="child2"
+                                        variant="dialog"
+                                        views={["year"]}
+                                    />
+                                </MuiPickersUtilsProvider>
                             </Grid>
                             <Grid item xs={4} sm={2}>
-                                <Field
-                                    component={DatePicker}
-                                    name="child3"
-                                    variant="dialog"
-                                    views={["year"]}
-                                />
+                                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                    <Field
+                                        component={DatePicker}
+                                        name="child3"
+                                        variant="dialog"
+                                        views={["year"]}
+                                    />
+                                </MuiPickersUtilsProvider>
                             </Grid>
                             <Grid item xs={4} sm={2}>
-                                <Field
-                                    component={DatePicker}
-                                    name="child4"
-                                    variant="dialog"
-                                    views={["year"]}
-                                />
+                                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                    <Field
+                                        component={DatePicker}
+                                        name="child4"
+                                        variant="dialog"
+                                        views={["year"]}
+                                    />
+                                </MuiPickersUtilsProvider>
                             </Grid>
                             <Grid item xs={4} sm={2}>
-                                <Field
-                                    component={DatePicker}
-                                    name="child5"
-                                    variant="dialog"
-                                    views={["year"]}
-                                />
+                                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                    <Field
+                                        component={DatePicker}
+                                        name="child5"
+                                        variant="dialog"
+                                        views={["year"]}
+                                    />
+                                </MuiPickersUtilsProvider>
                             </Grid>
                             <Grid item xs={4} sm={2}>
-                                <Field
-                                    component={DatePicker}
-                                    name="child6"
-                                    variant="dialog"
-                                    views={["year"]}
-                                />
+                                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                    <Field
+                                        component={DatePicker}
+                                        name="child6"
+                                        variant="dialog"
+                                        views={["year"]}
+                                    />
+                                </MuiPickersUtilsProvider>
                             </Grid>
                         </Grid>
                     </Box>
