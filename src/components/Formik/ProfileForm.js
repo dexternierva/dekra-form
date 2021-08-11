@@ -708,9 +708,12 @@ function ProfileForm ({ setProfileFormState }) {
                                         <Field
                                             component={DatePicker}
                                             name="child1"
-                                            value="Choose Year"
                                             variant="dialog"
                                             views={["year"]}
+
+                                            hintText="Choose Year"
+                                            container="inline"
+                                            inputStyle={{ textAlign: 'center' }}
                                         />
                                     </MuiPickersUtilsProvider>
                                 </Box>
