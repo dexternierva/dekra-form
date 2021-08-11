@@ -359,12 +359,12 @@ function ProfileForm ({ setProfileFormState }) {
                     dateOfBirth: new Date(),
                     placeOfBirth: '',
                     maritalStatus: '',
-                    child1: 'Choose Year',
-                    child2: 'Choose Year',
-                    child3: 'Choose Year',
-                    child4: 'Choose Year',
-                    child5: 'Choose Year',
-                    child6: 'Choose Year',
+                    child1: new Date(),
+                    child2: new Date(),
+                    child3: new Date(),
+                    child4: new Date(),
+                    child5: new Date(),
+                    child6: new Date(),
                     // INITIAL VALUES: LANGUAGE SKILLS
                     nativeLanguage: 'Filipino (Tagalog)',
                     germanLanguageLevel: '',
@@ -710,10 +710,6 @@ function ProfileForm ({ setProfileFormState }) {
                                             name="child1"
                                             variant="dialog"
                                             views={["year"]}
-
-                                            hintText="Choose Year"
-                                            container="inline"
-                                            inputStyle={{ textAlign: 'center' }}
                                         />
                                     </MuiPickersUtilsProvider>
                                 </Box>
@@ -725,7 +721,6 @@ function ProfileForm ({ setProfileFormState }) {
                                             component={DatePicker}
                                             name="child2"
                                             variant="dialog"
-                                            value="Choose Year"
                                             views={["year"]}
                                         />
                                     </MuiPickersUtilsProvider>
@@ -738,7 +733,6 @@ function ProfileForm ({ setProfileFormState }) {
                                             component={DatePicker}
                                             name="child3"
                                             variant="dialog"
-                                            value="Choose Year"
                                             views={["year"]}
                                         />
                                     </MuiPickersUtilsProvider>
@@ -751,7 +745,6 @@ function ProfileForm ({ setProfileFormState }) {
                                             component={DatePicker}
                                             name="child4"
                                             variant="dialog"
-                                            value="Choose Year"
                                             views={["year"]}
                                         />
                                     </MuiPickersUtilsProvider>
@@ -764,7 +757,6 @@ function ProfileForm ({ setProfileFormState }) {
                                             component={DatePicker}
                                             name="child5"
                                             variant="dialog"
-                                            value="Choose Year"
                                             views={["year"]}
                                         />
                                     </MuiPickersUtilsProvider>
@@ -777,7 +769,6 @@ function ProfileForm ({ setProfileFormState }) {
                                             component={DatePicker}
                                             name="child6"
                                             variant="dialog"
-                                            value="Choose Year"
                                             views={["year"]}
                                         />
                                     </MuiPickersUtilsProvider>
