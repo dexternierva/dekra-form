@@ -42,6 +42,7 @@ import {
 import Rating from '@material-ui/lab/Rating';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 
+import PersonIcon from '@material-ui/icons/Person';
 import MenuIcon from '@material-ui/icons/Menu';
 import PrintIcon from '@material-ui/icons/Print';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
@@ -83,6 +84,14 @@ const Name = styled.div`
     display: flex;
     font-size: 1.5rem;
     color: #008B4F;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+`;
+
+const Header = styled.h4`
+    color: #008B4F;
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.5rem;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 `;
 
@@ -210,18 +219,33 @@ function  ProfileView({ response }) {
 
         return (
             <>
-            <div className={classes.intro}>
-                <Paper elevation={0} className={classes.paper}>
+            <Grid container spacing={0} className={classes.grid}>
+                <Grid item xs={12} sm={2}>
+                    <Paper variant="outlined" square>
+                        <PersonIcon />
+                    </Paper>
+                </Grid>
+                <Grid item xs={12} sm={10}>
+                    <TableContainer className={classes.ftable}>
+                        <Table aria-label="simple table">
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell component="th" scope="row" align="center" className={classes.tcell}><Header>Participant ID</Header></TableCell>
+                                    <TableCell component="th" scope="row" align="center"><Header>Category</Header></TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell align="center" className={classes.tcell}>{response.cv.kfParticipantId}</TableCell>
+                                    <TableCell align="center">{response.cv.kfCategory}</TableCell>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+
                     <Name>
-                        First Name:
-                        <Typography className={classes.typo} variant="h4" component="h2" color="textSecondary">{response.firstname}</Typography>
+                        <Typography className={classes.typo} variant="h4" component="h2">{response.firstname} {response.lastname}</Typography>
                     </Name>
-                    <Name>
-                        Last Name:
-                        <Typography className={classes.typo}variant="h4" component="h2" color="textSecondary" gutterBottom>{response.lastname}</Typography>
-                    </Name>
-                </Paper>
-            </div>
+                </Grid>
+            </Grid>
 
             <Grid container spacing={0} className={classes.grid}>
                 <Grid item xs={12} sm={2}>

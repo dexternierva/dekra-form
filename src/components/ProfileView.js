@@ -12,13 +12,9 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
 import Box from '@material-ui/core/Box';
+import Paper from '@material-ui/core/Paper'
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
-
-const Avatar = styled.img`
-    display: block;
-    width: 100%;
-    margin: 0;
-`;
+import PersonIcon from '@material-ui/icons/Person';
 
 const SectionTitle = styled.div`
     margin-left: 1rem;
@@ -93,10 +89,6 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const user = {
-    avatar: '/static/images/avatars/avatar_6.png',
-};
-
 function  ProfileView({ response }) {
     let t = useTranslate("Profile");
     const classes = useStyles();
@@ -130,14 +122,12 @@ function  ProfileView({ response }) {
         return (
             <>
             <Grid container spacing={3} className={classes.grid}>
-                <Grid item xs={12} sm={2}>
-                    <Avatar 
-                        component="div"
-                        src={user.avatar}
-                        className={classes.large}
-                    />
+                <Grid item xs={12} sm={3}>
+                    <Paper variant="outlined" square>
+                        <PersonIcon />
+                    </Paper>
                 </Grid>
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <TableContainer className={classes.ftable}>
                         <Table aria-label="simple table">
                             <TableBody>

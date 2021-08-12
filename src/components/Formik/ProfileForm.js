@@ -329,7 +329,7 @@ function ProfileForm ({ setProfileFormState }) {
     ];
 
     const yearOptions = [
-        { label: 'Not Applicable', value: 'none' },
+        { label: 'N/A', value: 'none' },
         { label: '1990', value: '1990' },
         { label: '1991', value: '1991' },
         { label: '1992', value: '1992' },
