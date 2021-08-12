@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
         borderLeft: '4px solid #008B4F',
     },
     gridItemNoPadding: {
-        padding: '12px 0'
+        padding: '12px 0 !important',
     },
     table: {
         margin: '-.75rem 0 0 0',
@@ -90,6 +90,14 @@ const useStyles = makeStyles((theme) => ({
         border: '1px solid #008B4F',
         textAlign: 'center'
     },
+    avatar: {
+        height: '100%',
+        margin: '0 12px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxSizing: 'borderBox'
+    }
 }));
 
 function  ProfileView({ response }) {
@@ -126,7 +134,7 @@ function  ProfileView({ response }) {
             <>
             <Grid container spacing={3} className={classes.grid}>
                 <Grid item xs={12} sm={3} className={classes.gridItemNoPadding}>
-                    <Paper variant="outlined" square>
+                    <Paper variant="outlined" square className={classes.avatar}>
                         <PersonIcon color="disabled" fontSize="large" />
                     </Paper>
                 </Grid>

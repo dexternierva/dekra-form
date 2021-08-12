@@ -189,12 +189,12 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center'
     },
     avatar: {
-        width: '100%',
         height: '100%',
         margin: '0 12px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        boxSizing: 'borderBox'
     }
 }));
 
