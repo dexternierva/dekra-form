@@ -395,12 +395,12 @@ function ProfileForm ({ setProfileFormState }) {
                     dateOfBirth: new Date(),
                     placeOfBirth: '',
                     maritalStatus: '',
-                    child1: new Date(),
-                    child2: new Date(),
-                    child3: new Date(),
-                    child4: new Date(),
-                    child5: new Date(),
-                    child6: new Date(),
+                    child1: 'Not Applicable',
+                    child2: 'Not Applicable',
+                    child3: 'Not Applicable',
+                    child4: 'Not Applicable',
+                    child5: 'Not Applicable',
+                    child6: 'Not Applicable',
                     // INITIAL VALUES: LANGUAGE SKILLS
                     nativeLanguage: 'Filipino (Tagalog)',
                     germanLanguageLevel: '',
@@ -742,6 +742,8 @@ function ProfileForm ({ setProfileFormState }) {
                                 <Box pl={0} pr={2} py={0}>
                                     <Field
                                         component={Select}
+                                        fullWidth
+                                        autoWidth={true}
                                         name="child1"
                                     >
                                         {yearOptions.map((option) => (
@@ -756,6 +758,8 @@ function ProfileForm ({ setProfileFormState }) {
                                 <Box px={2} py={0}>
                                     <Field
                                         component={Select}
+                                        fullWidth
+                                        autoWidth={true}
                                         name="child2"
                                     >
                                         {yearOptions.map((option) => (
@@ -770,6 +774,8 @@ function ProfileForm ({ setProfileFormState }) {
                                 <Box px={2} py={0}>
                                     <Field
                                         component={Select}
+                                        fullWidth
+                                        autoWidth={true}
                                         name="child3"
                                     >
                                         {yearOptions.map((option) => (
@@ -784,6 +790,8 @@ function ProfileForm ({ setProfileFormState }) {
                                 <Box px={2} py={0}>
                                     <Field
                                         component={Select}
+                                        fullWidth
+                                        autoWidth={true}
                                         name="child4"
                                     >
                                         {yearOptions.map((option) => (
@@ -798,6 +806,8 @@ function ProfileForm ({ setProfileFormState }) {
                                 <Box px={2} py={0}>
                                     <Field
                                         component={Select}
+                                        fullWidth
+                                        autoWidth={true}
                                         name="child5"
                                     >
                                         {yearOptions.map((option) => (
@@ -812,6 +822,8 @@ function ProfileForm ({ setProfileFormState }) {
                                 <Box pl={2} pr={0} py={0}>
                                     <Field
                                         component={Select}
+                                        fullWidth
+                                        autoWidth={true}
                                         name="child6"
                                     >
                                         {yearOptions.map((option) => (
