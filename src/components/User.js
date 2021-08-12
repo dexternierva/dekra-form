@@ -160,6 +160,11 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 0 4rem 0',
         borderLeft: '4px solid #008B4F',
     },
+    ftable: {
+        maxWidth: '98%',
+        border: '4px solid #008B4F',
+        margin: '0 0 2rem 0'
+    },
     table: {
         margin: '-.75rem 0 0 0'
     },
@@ -183,6 +188,14 @@ const useStyles = makeStyles((theme) => ({
         border: '1px solid #008B4F',
         textAlign: 'center'
     },
+    avatar: {
+        width: '100%',
+        height: '100%',
+        margin: '0 12px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
 }));
 
 /* 
@@ -221,8 +234,8 @@ function  ProfileView({ response }) {
             <>
             <Grid container spacing={0} className={classes.grid}>
                 <Grid item xs={12} sm={2}>
-                    <Paper variant="outlined" square>
-                        <PersonIcon />
+                    <Paper variant="outlined" square className={classes.avatar}>
+                        <PersonIcon color="disabled" fontSize="large" />
                     </Paper>
                 </Grid>
                 <Grid item xs={12} sm={10}>

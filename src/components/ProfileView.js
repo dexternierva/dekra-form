@@ -56,6 +56,9 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 0 2rem 0',
         borderLeft: '4px solid #008B4F',
     },
+    gridItemNoPadding: {
+        padding: '12px 0'
+    },
     table: {
         margin: '-.75rem 0 0 0',
     },
@@ -122,9 +125,9 @@ function  ProfileView({ response }) {
         return (
             <>
             <Grid container spacing={3} className={classes.grid}>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={12} sm={3} className={classes.gridItemNoPadding}>
                     <Paper variant="outlined" square>
-                        <PersonIcon />
+                        <PersonIcon color="disabled" fontSize="large" />
                     </Paper>
                 </Grid>
                 <Grid item xs={12} sm={9}>
