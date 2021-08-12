@@ -86,6 +86,10 @@ const Name = styled.div`
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 `;
 
+const Dl = styled.dl``;
+const Dt = styled.dt``;
+const Dd = styled.dd``;
+
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -246,6 +250,16 @@ function  ProfileView({ response }) {
                             ))}
                             </TableBody>
                         </Table>
+
+                        <Dl>
+                            <Dt>Children</Dt>
+                            <Dd>{response.cv.child1}</Dd>
+                            <Dd>{response.cv.child2}</Dd>
+                            <Dd>{response.cv.child3}</Dd>
+                            <Dd>{response.cv.child4}</Dd>
+                            <Dd>{response.cv.child5}</Dd>
+                            <Dd>{response.cv.child6}</Dd>
+                        </Dl>
                     </TableContainer>
                 </Grid>
             </Grid>
