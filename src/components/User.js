@@ -86,9 +86,19 @@ const Name = styled.div`
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 `;
 
-const Dl = styled.dl``;
-const Dt = styled.dt``;
-const Dd = styled.dd``;
+const Dl = styled.dl`
+    display: flex;
+    justify-content: space-between;
+`;
+
+const Dt = styled.dt`
+    padding: 0 16px;
+`;
+
+const Dd = styled.dd`
+    padding: 0 16px;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+`;
 
 const useStyles = makeStyles((theme) => ({
     root: {

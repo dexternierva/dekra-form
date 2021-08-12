@@ -41,6 +41,20 @@ const Name = styled.div`
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 `;
 
+const Dl = styled.dl`
+    display: flex;
+    justify-content: space-between;
+`;
+
+const Dt = styled.dt`
+    padding: 0 16px;
+`;
+
+const Dd = styled.dd`
+    padding: 0 16px;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+`;
+
 const useStyles = makeStyles((theme) => ({
     grid: {
         margin: '0 0 2rem 0',
@@ -180,17 +194,18 @@ function  ProfileView({ response }) {
                                     <TableCell align="right">{row.value}</TableCell>
                                 </TableRow>
                             ))}
-                                <TableRow>
-                                    <TableCell>Kinder</TableCell>
-                                    <TableCell>{response.cv.child1}</TableCell>
-                                    <TableCell>{response.cv.child2}</TableCell>
-                                    <TableCell>{response.cv.child3}</TableCell>
-                                    <TableCell>{response.cv.child4}</TableCell>
-                                    <TableCell>{response.cv.child5}</TableCell>
-                                    <TableCell>{response.cv.child6}</TableCell>
-                                </TableRow>
                             </TableBody>
                         </Table>
+
+                        <Dl>
+                            <Dt>Kinder</Dt>
+                            <Dd>{response.cv.child1}</Dd>
+                            <Dd>{response.cv.child2}</Dd>
+                            <Dd>{response.cv.child3}</Dd>
+                            <Dd>{response.cv.child4}</Dd>
+                            <Dd>{response.cv.child5}</Dd>
+                            <Dd>{response.cv.child6}</Dd>
+                        </Dl>
                     </TableContainer>
                 </Grid>
             </Grid>
