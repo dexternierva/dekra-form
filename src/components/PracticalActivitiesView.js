@@ -40,17 +40,18 @@ const StyledRating = withStyles({
 
 function  PracticalActivitiesView({ response }) {
     const classes = useStyles();
+    
     if (response.practical_activity !== null) {
         return (
             <Grid container spacing={3} alignItems="center" className={classes.grid}>
                 <Grid item xs={12} sm={12}>
                     <Box py={2} px={4}>
                         <Typography variant="h5" component="h2">
-                            Practical Activities
+                            Praktische Tätigkeiten
                         </Typography>
                         <Typography variant="body2" component="p">
-                            Self-assessment of the participant <br />
-                            0 (not known), 1 (known in theory), 2 (practical implementation observed), 3 (carried out under supervision), 4 (independent implementation), 5 (expert, guidance of other collegues).
+                            Selbsteinschätzung des Teilnehmers <br />
+                            0 (nicht bekannt), 1 (in Theorie bekannt), 2 (praktische Durchführung beobachtet), 3 (unter Aufsicht selbst durchgeführt), 4 (selbständige Durchführung), 5 (Experte, Anleitung anderer Kollegen).
                         </Typography>
                     </Box>
                 </Grid>
@@ -58,17 +59,17 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12} sm={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
-                            A - Assessment of patients, nursing diagnosis, care planning
+                            A - Beurteilung von PatientInnen, Pflegediagnose, Pflegeplanung
                         </Typography>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Gain information about patients
+                            Informationen über PatientInnen erlangen
                         </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Collect basic parameters (e.g. size, weight) and vital parameters (by manual measurement, by means of monitoring)</Typography>
+                        <Typography variant="body2" gutterBottom>1. Grundsätzliche Parameter (bspw. Größe, Gewicht) und Vitalparameter erheben (mittels manueller Messung, mittels Monitoring)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -87,7 +88,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Identify physical (physical, neurological) and cognitive state of patients</Typography>
+                        <Typography variant="body2" gutterBottom>2. Körperlichen (physisch, neurologisch) und kognitiven Zustand von PatientInnen ermitteln</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -106,7 +107,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Fill in scales and indicators</Typography>
+                        <Typography variant="body2" gutterBottom>3. Skalen und Indikatoren auszufüllen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -125,7 +126,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Evaluate the parameters collected in compliance with the clinical</Typography>
+                        <Typography variant="body2" gutterBottom>4. Skalen und Indikatoren auszufüllen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -145,14 +146,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12} sm={12}>
                     <Box px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Care problems and care diagnosis
+                            Pflegeprobleme und Pflegediagnose
                         </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Identify supply deficits, provide adequate support</Typography>
+                        <Typography variant="body2" gutterBottom>5. Versorgungsdefizite erkennen, adäquate Unterstützung bereitstellen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -171,7 +172,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Set care diagnosis</Typography>
+                        <Typography variant="body2" gutterBottom>6. Pflegediagnosen festlegen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -190,7 +191,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Applying care standards</Typography>
+                        <Typography variant="body2" gutterBottom>7. Pflegestandards anwenden</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -210,14 +211,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12} sm={12}>
                     <Box px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Careplanning
+                            Pflegeplanung
                         </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Set care goals and update care plans</Typography>
+                        <Typography variant="body2" gutterBottom>8. Pflegeziele festlegen und Pflegepläne aktualisieren</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -236,7 +237,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Planning and carrying out care measures</Typography>
+                        <Typography variant="body2" gutterBottom>9. Pflegemaßnahmen planen und durchführen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -255,7 +256,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Apply special care plans (disease pictured-related)</Typography>
+                        <Typography variant="body2" gutterBottom>10. Spezielle Pflegepläne (krankheitsbildbezogen) anwenden</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -276,17 +277,17 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12} sm={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
-                            B - Professional Care
+                            B - Professionelle Pflege
                         </Typography>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Basic care and personal care
+                            Grundpflege und Körperpflege
                         </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Support and take over partial and whole body care (including skin care, washing and dressing, use care products, apply special methods [e.B. basal stimulation, bobath], at the sink, in bed)</Typography>
+                        <Typography variant="body2" gutterBottom>1. Teil- und Ganzkörperpflege unterstützen und übernehmen (inklusive Hautpflege, Waschen und Kleiden, Pflegeprodukte anwenden, spezielle Methoden anwenden [z.B. Basale Stimulation, Bobath], am Waschbecken, im Bett)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -305,7 +306,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Application of compression bandages and compression stockings</Typography>
+                        <Typography variant="body2" gutterBottom>2. Anlegen von Kompressionsverbänden und Kompressionsstrümpfen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -325,14 +326,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12} sm={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Diet
+                            Ernährung
                         </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Prepare, distribute, rich (feed) food and beverages</Typography>
+                        <Typography variant="body2" gutterBottom>3. Speisen und Getränke zubereiten, verteilen, anreichen (füttern)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -351,7 +352,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Create, document nutrition plans</Typography>
+                        <Typography variant="body2" gutterBottom>4. Ernährungspläne erstellen, dokumentieren</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -370,7 +371,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Use food probes (including PEG)</Typography>
+                        <Typography variant="body2" gutterBottom>5. Ernährungssonden (inklusive PEG) benutzen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -390,14 +391,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12} sm={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Mobility
+                            Mobilität
                         </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Support, maintain, restore mobility</Typography>
+                        <Typography variant="body2" gutterBottom>6. Mobilität unterstützen, aufrechterhalten, wiederherstellen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -416,7 +417,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Perform prophylactic measures (decubitus, contractur, thrombosis prophylaxis)</Typography>
+                        <Typography variant="body2" gutterBottom>7. Prophylaktische Maßnahmen (Dekubitus-, Kontraktur-, Thromboseprophylaxe) durchführen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -435,7 +436,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Create and maintain mobilization plans</Typography>
+                        <Typography variant="body2" gutterBottom>8. Mobilisationspläne erstellen und führen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -455,14 +456,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12} sm={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Retirement
+                            Ausscheiden
                         </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Assisting in the excretion</Typography>
+                        <Typography variant="body2" gutterBottom>9. Bei der Ausscheidung unterstützen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -481,7 +482,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Dealing with incontinence, continence training</Typography>
+                        <Typography variant="body2" gutterBottom>10. Umgang mit Inkontinenz, Kontinenztraining</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -500,7 +501,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Discharge systems (e.g. urinary catheterism, stool dissipation systems)</Typography>
+                        <Typography variant="body2" gutterBottom>11. Ableitungssysteme (z.B. Harnblasenkatheterismus, Stuhlableitungssysteme) anwenden</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -519,7 +520,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Administer ingesudes</Typography>
+                        <Typography variant="body2" gutterBottom>12. Einläufe verabreichen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -543,14 +544,14 @@ function  PracticalActivitiesView({ response }) {
                             Pflegeintervention
                         </Typography>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Participation in medical and diagnostic procedures
+                            Teilnahme an medizinischen und diagnostischen Prozeduren und Verfahren
                         </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Blood collection, physical examination</Typography>
+                        <Typography variant="body2" gutterBottom>1. Blutentnahme, körperliche Untersuchung</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -569,7 +570,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Assistance with medical measures (e.g. endoscopy, admission examination in the hospital)</Typography>
+                        <Typography variant="body2" gutterBottom>2. Assistenz bei ärztlichen Maßnahmen (z.B. Endoskopie, Aufnahmeuntersuchung im Krankenhaus)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -589,14 +590,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Medications
+                            Medikamente
                         </Typography>
                     </Box>  
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Manage, prepare, administer (e.g. oral, intravenous)</Typography>
+                        <Typography variant="body2" gutterBottom>3. Verwalten, vorbereiten, verabreichen (z.B. oral, intravenös)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -615,7 +616,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Blood and blood products (transfusion)</Typography>
+                        <Typography variant="body2" gutterBottom>4. Blut und Blutprodukte (Transfusion)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -634,7 +635,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Dealing with narcotics</Typography>
+                        <Typography variant="body2" gutterBottom>5. Umgang mit Betäubungsmitteln</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -654,14 +655,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Wound management
+                            Wundmanagement
                         </Typography>
                     </Box>  
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Wound avoidance, Prophylaxen</Typography>
+                        <Typography variant="body2" gutterBottom>6. Wundvermeidung, Prophylaxen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -680,7 +681,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Wound assessment</Typography>
+                        <Typography variant="body2" gutterBottom>7. Wundassessment</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -699,7 +700,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Wound treatment (e.g. dressings and change)</Typography>
+                        <Typography variant="body2" gutterBottom>8. Wundbehandlung (z.B. Verbände anlegen und wechseln)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -719,14 +720,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Ostomy care
+                            Stomaversorgung
                         </Typography>
                     </Box>  
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Care of different stomata (e.g. tracheostoma, ileostoma, urostoma)</Typography>
+                        <Typography variant="body2" gutterBottom>9. Pflege unterschiedlicher Stomata (z.B. Tracheostoma, Ileostoma, Urostoma)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -746,14 +747,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Applying medical devices
+                            Medizinische Geräte anwenden
                         </Typography>
                     </Box>  
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Care aids, mobilization aids, transfer aids, wheelchairs</Typography>
+                        <Typography variant="body2" gutterBottom>10. Pflegehilfsmittel, Mobilisationsmittel, Transferhilfen, Rollstühle</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -772,7 +773,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Devices for measuring vital parameters (e.g. blood pressure, blood sugar, monitoring)</Typography>
+                        <Typography variant="body2" gutterBottom>11. Geräte zur Messung von Vitalparametern (z.B. Blutdruck, Blutzucker, Monitoring</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -791,7 +792,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Special equipment (e.g. suction devices, ECG, defibrillators, ventilators)</Typography>
+                        <Typography variant="body2" gutterBottom>12. Spezielle Geräte (z.B. Absauggeräte, EKG, Defibrillatoren, Beatmungsmaschinen)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -811,7 +812,7 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Life-saving measures
+                            Lebensrettende Maßnahmen
                         </Typography>
                     </Box>  
                 </Grid>
@@ -860,14 +861,14 @@ function  PracticalActivitiesView({ response }) {
                             D - Hygiene
                         </Typography>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Apply hygiene measures
+                            Hygienemaßnahmen anwenden
                         </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Various disinfection measures (e.g. hand, skin, surface disinfection)</Typography>
+                        <Typography variant="body2" gutterBottom>1. Verschiedene Desinfektionsmaßnahmen (z.B. Hände-, Haut-, Flächendesinfektion</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -886,7 +887,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Perform infection control measures (e.g. isolation of patients)</Typography>
+                        <Typography variant="body2" gutterBottom>2. Maßnahmen der Infektionskontrolle durchführen (z.B. Isolierung von Patienten</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -905,7 +906,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Use sterile procedures (e.g. laying permanent catheters)</Typography>
+                        <Typography variant="body2" gutterBottom>3. Sterile Verfahren anwenden (z.B. Legen von Dauerkathetern)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -925,14 +926,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Sterilization
+                            Sterilisation
                         </Typography>
                     </Box>  
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Process, appropriately package and store medical devices</Typography>
+                        <Typography variant="body2" gutterBottom>4. Medizinprodukte aufbereiten, angemessen verpacken und lagern</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -951,7 +952,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Operating sterilizers</Typography>
+                        <Typography variant="body2" gutterBottom>5. Sterilisatoren bedienen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -971,14 +972,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Occupational health and safety
+                            Arbeits- und Gesundheitsschutz
                         </Typography>
                     </Box>  
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Transports of patients</Typography>
+                        <Typography variant="body2" gutterBottom>6. Transporte von PatientInnen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -997,7 +998,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Reduce the risk of accidents (e.g. accident prevention regulations)</Typography>
+                        <Typography variant="body2" gutterBottom>7. Unfallgefahr reduzieren (z.B. Unfallverhütungsvorschriften)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1016,7 +1017,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>External protection and self-protection</Typography>
+                        <Typography variant="body2" gutterBottom>8. Fremdschutz und Selbstschutz</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1036,14 +1037,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
-                            Dealing with disasters
+                            Umgang mit Katastrophen
                         </Typography>
                     </Box>  
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Fire, emergencies, mass attack on patients</Typography>
+                        <Typography variant="body2" gutterBottom>9. Feuer, Notfälle, Massenanfall an PatientInnen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1063,14 +1064,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12} sm={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
-                            E - Communication with colleagues, patients and others
+                            E - Kommunikation mit KollegInnen, PatientInnen und Anderen
                         </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Lead team and case meetings</Typography>
+                        <Typography variant="body2" gutterBottom>1. Team- und Fallbesprechungen führen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1089,7 +1090,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Introducing, guiding and guilding employees</Typography>
+                        <Typography variant="body2" gutterBottom>2. MitarbeiterInnen einführen, anleiten</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1108,7 +1109,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Shift line station line</Typography>
+                        <Typography variant="body2" gutterBottom>3. Schichtleitung- Stationsleitung</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1127,7 +1128,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Write rosters</Typography>
+                        <Typography variant="body2" gutterBottom>4. Dienstpläne schreiben</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1146,7 +1147,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Educate and advice relatives</Typography>
+                        <Typography variant="body2" gutterBottom>5. Patienten aufklären und beraten</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1165,7 +1166,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Educate and advice relatives</Typography>
+                        <Typography variant="body2" gutterBottom>6. Angehörige aufklären und beraten</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1185,14 +1186,14 @@ function  PracticalActivitiesView({ response }) {
                 <Grid item xs={12} sm={12}>
                     <Box py={2} px={4}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
-                            F - Documentation and quality
+                            F - Dokumentation und Qualität
                         </Typography>
                     </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Document primary care and treatment care measures (care report)</Typography>
+                        <Typography variant="body2" gutterBottom>1. Grundpflegerische und behandlungspflegerische Maßnahmen dokumentieren (Pflegebericht)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1211,7 +1212,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Placing order</Typography>
+                        <Typography variant="body2" gutterBottom>2. Bestellungen durchführen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1230,7 +1231,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Documenting and evaluating visits</Typography>
+                        <Typography variant="body2" gutterBottom>3. Visiten dokumentieren und auswerten</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1249,7 +1250,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Write letters (e.g. care transition)</Typography>
+                        <Typography variant="body2" gutterBottom>4. Briefe verfassen (z.B. Pflegeüberleitung)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1268,7 +1269,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Ensure cleanliness and order at the workplace (station rooms, patient rooms)</Typography>
+                        <Typography variant="body2" gutterBottom>5. Sauberkeit und Ordnung am Arbeitsplatz (Stationszimmer, Patientenzimmer) sicherstellen</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1287,7 +1288,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Apply quality assurance and control measures (e.g. drug check)</Typography>
+                        <Typography variant="body2" gutterBottom>6. Maßnahmen der Qualitätssicherung und –kontrolle anwenden (z.B. Medikamentencheck)</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>
@@ -1306,7 +1307,7 @@ function  PracticalActivitiesView({ response }) {
 
                 <Grid item xs={12} sm={10}>
                     <Box px={4}>
-                        <Typography variant="body2" gutterBottom>Resource-saving working methods</Typography>
+                        <Typography variant="body2" gutterBottom>7. Ressourcenschonende Arbeitsweise</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={2}>

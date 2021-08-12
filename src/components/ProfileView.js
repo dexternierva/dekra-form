@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
         borderLeft: '4px solid #008B4F',
     },
     gridItemNoPadding: {
-        padding: '12px 0 !important',
+        padding: '0 12px !important',
     },
     table: {
         margin: '-.75rem 0 0 0',
