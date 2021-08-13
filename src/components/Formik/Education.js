@@ -103,38 +103,35 @@ function Education () {
 
         // FUNCTION TO SAVE EACH EXPERIENCE
         const submitValues = async function (valuesToSubmit) {
-            if (formValues !==  null) {
-                for (let i = 0; i < formValues.educations.length; i++) {
-                    if ( formValues.educations[i].id === valuesToSubmit.id ) {
-                        setRequest({ method: 'PUT', url: `https://dekra-form-api-m8bsw.ondigitalocean.app/educations/${formValues.educations[i].id}` });
-                    }
-                }
-            }
 
-            const data = new FormData(); 
+            if ( typeof valuesToSubmit.id === 'undefined' ) {
+                const data = new FormData(); 
             
-            const info = {
-                'from': valuesToSubmit.from,
-                'to': valuesToSubmit.to,
-                'course': valuesToSubmit.course,
-                'university': valuesToSubmit.university
-            }
+                const info = {
+                    'from': valuesToSubmit.from,
+                    'to': valuesToSubmit.to,
+                    'course': valuesToSubmit.course,
+                    'university': valuesToSubmit.university
+                }
 
-            data.append('data', JSON.stringify(info));
+                data.append('data', JSON.stringify(info));
 
-            await axios({
-                method: request.method,
-                url: request.url,
-                data,
-                withCredentials: true
-            })
-                .then((res) => {
-                    setRequestID(res.data.id);
-                    setDialog({ state: true, header: "Status: Successful", text: request.method === "POST" ? "Information Successfully CREATED!" : "Information Successfully UPDATED!" });
+                await axios({
+                    method: 'POST',
+                    url: 'https://dekra-form-api-m8bsw.ondigitalocean.app/educations',
+                    data,
+                    withCredentials: true
                 })
-                .catch(error => {
-                    setDialog({ state: true, header: "An Error Occurred!", text: "Oh snap! Something went wrong. Please change a few things up and try submitting again. Thank you!" });
-                });
+                    .then((res) => {
+                        //setRequestID(res.data.id);
+                        setDialog({ state: true, header: "Status: Successful", text: request.method === "POST" ? "Information Successfully CREATED!" : "Information Successfully UPDATED!" });
+                    })
+                    .catch(error => {
+                        setDialog({ state: true, header: "An Error Occurred!", text: "Oh snap! Something went wrong. Please change a few things up and try submitting again. Thank you!" });
+                    });
+            } else {
+                return;
+            }
         }
 
         // MAP THROUGH EDUCATIONS
@@ -163,7 +160,7 @@ function Education () {
             />
 
             <Formik
-                initialValues={ formValues ||initialValues }
+                initialValues={ formValues || initialValues }
                 validationSchema={ validationSchema }
                 onSubmit={ onSubmit }
                 enableReinitialize
