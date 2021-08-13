@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
 function Education () {
     const classes = useStyles();
     const { loading, response, error, setEducationID } = useContext(EducationContext);
+    console.log("***RESPONSE: ", response);
     const [formValues, setFormValues] = useState(null);
     const currentUser = useCurrentUser();
     const [request, setRequest] = useState({ method: null, url: null });
@@ -100,10 +101,10 @@ function Education () {
     });
     
     const onSubmit = async function (values, actions) {
-
+        console.log("*** VALUES: ", values);
         // FUNCTION TO SAVE EACH EXPERIENCE
         const submitValues = async function (valuesToSubmit) {
-
+            console.log("*** VALUESTOSUBMIT: ", valuesToSubmit);
             if ( typeof valuesToSubmit.id === 'undefined' ) {
                 const data = new FormData(); 
             
@@ -133,7 +134,7 @@ function Education () {
                 return;
             }
         }
-
+        console.log("*** EDUCATIONS: ", values.educations);
         // MAP THROUGH EDUCATIONS
         values.educations.map((education) => (
             submitValues(education)    
