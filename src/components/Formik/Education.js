@@ -220,7 +220,7 @@ function Education () {
                                                                         variant="outlined"
                                                                         fullWidth
                                                                         multiline
-                                                                        rows={6}
+                                                                        rows={4}
                                                                         helperText="Please provide the name and address of the school/university"
                                                                     />
                                                                 </Box>
