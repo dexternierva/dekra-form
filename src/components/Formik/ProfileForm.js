@@ -395,12 +395,12 @@ function ProfileForm ({ setProfileFormState }) {
                     dateOfBirth: new Date(),
                     placeOfBirth: '',
                     maritalStatus: '',
-                    child1: 'Not Applicable',
-                    child2: 'Not Applicable',
-                    child3: 'Not Applicable',
-                    child4: 'Not Applicable',
-                    child5: 'Not Applicable',
-                    child6: 'Not Applicable',
+                    child1: 'N/A',
+                    child2: 'N/A',
+                    child3: 'N/A',
+                    child4: 'N/A',
+                    child5: 'N/A',
+                    child6: 'N/A',
                     // INITIAL VALUES: LANGUAGE SKILLS
                     nativeLanguage: 'Filipino (Tagalog)',
                     germanLanguageLevel: '',
@@ -421,7 +421,7 @@ function ProfileForm ({ setProfileFormState }) {
                     const info = {
                         // VALUES: KEY-FIGURES
                         'kfParticipantId': values.kfParticipantId,
-                        'kfCategory' : values.Category,
+                        'kfCategory' : values.kfCategory,
                         'kfDegree': values.kfDegree,
                         'kfLanguage': values.kfLanguage.join(", "),
                         'kfExperienceYear': values.kfExperienceYear,

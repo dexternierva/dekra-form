@@ -242,7 +242,7 @@ function Education () {
                                                     size="large" 
                                                     color="primary"
                                                     startIcon={<AddIcon />}
-                                                    onClick={ () => push({ from: new Date(), to: new Date(), job: '', employer: '' })}
+                                                    onClick={ () => push({ from: new Date(), to: new Date(), course: '', university: '' })}
                                                 >
                                                         Add Education
                                                 </Button>
