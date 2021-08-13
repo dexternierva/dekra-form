@@ -29,6 +29,7 @@ function UsersList () {
     const classes = useStyles();
     const history = useHistory();
     const { loading, response, error, setUserID } = useContext(UserContext);
+    console.log("***RESPONSE: ", response);
     const handleRowClick = function (params) {
         setUserID(params.id);
         history.push(`/users/${params.id}`)
