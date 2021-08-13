@@ -284,7 +284,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
         >
             {/**
              * FORMIK STEP:
-             * BASIC CARE
+             * DEPARTMENT
              * 
              */}
             <FormikStep 
@@ -317,7 +317,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                                 component={CheckboxWithLabel}
                                 type="checkbox"
                                 name="care"
-                                Label={{ label: 'Care' }}
+                                Label={{ label: 'Intensive care unit' }}
                                 color="primary"
                             />
                         </Box>
@@ -344,7 +344,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                                 component={CheckboxWithLabel}
                                 type="checkbox"
                                 name="generalaccidentsurgery"
-                                Label={{ label: 'General accident surgery' }}
+                                Label={{ label: 'General surgery & traumatology' }}
                                 color="primary"
                             />
                         </Box>
@@ -375,7 +375,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                                 component={CheckboxWithLabel}
                                 type="checkbox"
                                 name="emergency"
-                                Label={{ label: 'Emergency' }}
+                                Label={{ label: 'Emergency room' }}
                                 color="primary"
                             />
                         </Box>
@@ -481,7 +481,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                                 component={CheckboxWithLabel}
                                 type="checkbox"
                                 name="patientstorage"
-                                Label={{ label: 'Patient storage' }}
+                                Label={{ label: 'Positioning patient' }}
                                 color="primary"
                             />
                         </Box>
@@ -499,7 +499,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                                 component={CheckboxWithLabel}
                                 type="checkbox"
                                 name="helpwithfood"
-                                Label={{ label: 'Help with food' }}
+                                Label={{ label: 'Feeding' }}
                                 color="primary"
                             />
                         </Box>

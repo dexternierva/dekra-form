@@ -235,6 +235,9 @@ function WorkExperience () {
                                                                         name={`workExperiences[${index}].employer`}
                                                                         variant="outlined"
                                                                         fullWidth
+                                                                        multiline
+                                                                        rows={6}
+                                                                        helperText="Please put the name &amp; address of employer"
                                                                     />
                                                                 </Box>
                                                             </Grid>

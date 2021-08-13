@@ -210,6 +210,9 @@ function Training () {
                                                                         name={`trainings[${index}].provider`}
                                                                         variant="outlined"
                                                                         fullWidth
+                                                                        multiline
+                                                                        rows={6}
+                                                                        helperText="Please provide the title of the training and the name of the training provider"
                                                                     />
                                                                 </Box>
                                                                 <Box px={4} pb={4} pt={2}>

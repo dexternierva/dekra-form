@@ -457,7 +457,7 @@ function TrainingTemplate({ training, idx }) {
     
     const keyfigurerows = [
         createKeyFiguresData('Period', "From: " + training.from + " | To: " + training.to),
-        createKeyFiguresData('Name of Training Provider', training.provider),
+        createKeyFiguresData('Title of training & name of Training Provider', training.provider),
         createKeyFiguresData('Skills Acquired', training.skills),
     ];
 

@@ -50,8 +50,8 @@ function TrainingView({ response }) {
         
         const trainingrows = [
             createTrainingData(t('Period'), t("From: ") + response.trainings.from + " | " + t(" To: ") + response.trainings.to),
-            createTrainingData(t('Name of training provider'), response.trainings.trainingProvider),
-            createTrainingData(t('Skills acquired'), response.trainings.skillsAcquired),
+            createTrainingData(t('Name of training provider'), response.trainings.provider),
+            createTrainingData(t('Skills acquired'), response.trainings.skills),
         ];
 
         return (
