@@ -215,10 +215,13 @@ function Education () {
                                                                     <Field
                                                                         component={TextField}
                                                                         type="text"
-                                                                        label="Name &amp; Address Of School / University"
+                                                                        label="School / University"
                                                                         name={`educations[${index}].university`}
                                                                         variant="outlined"
                                                                         fullWidth
+                                                                        multiline
+                                                                        rows={6}
+                                                                        helperText="Please provide the name and address of the school/university"
                                                                     />
                                                                 </Box>
                                                             </Grid>
