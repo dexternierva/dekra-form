@@ -36,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
 function Education () {
     const classes = useStyles();
     const { loading, response, error, setEducationID } = useContext(EducationContext);
-    console.log("***RESPONSE: ", response);
     const [formValues, setFormValues] = useState(null);
     const currentUser = useCurrentUser();
     const [request, setRequest] = useState({ method: null, url: null });
@@ -47,19 +46,19 @@ function Education () {
     useEffect(() => {
         if (response !== null) {
             if(Array.isArray(response)) {
-                const educations = response.map((edu) => {
-                    if (edu.user.id === currentUser.id) return edu;
+                const educations = response.map((education) => {
+                    if (education.user.id === currentUser.id) return education;
                     return null;
                 }).filter((el) => { return el !== null });
 
                 if (educations.length !== 0) {
-                    const cleanedEducation = educations.map((edu) => {
+                    const cleanedEducation = educations.map((education) => {
                         return {
-                            id: edu.id,
-                            from: edu.from,
-                            to: edu.to,
-                            course: edu.course,
-                            university: edu.university,
+                            id: education.id,
+                            from: education.from,
+                            to: education.to,
+                            course: education.course,
+                            university: education.university,
                         }
                     });
 
@@ -101,10 +100,8 @@ function Education () {
     });
     
     const onSubmit = async function (values, actions) {
-        console.log("*** VALUES: ", values);
         // FUNCTION TO SAVE EACH EXPERIENCE
         const submitValues = async function (valuesToSubmit) {
-            console.log("*** VALUESTOSUBMIT: ", valuesToSubmit);
             if ( typeof valuesToSubmit.id === 'undefined' ) {
                 const data = new FormData(); 
             
@@ -134,7 +131,7 @@ function Education () {
                 return;
             }
         }
-        console.log("*** EDUCATIONS: ", values.educations);
+
         // MAP THROUGH EDUCATIONS
         values.educations.map((education) => (
             submitValues(education)    
