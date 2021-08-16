@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import moment from 'moment';
 import axios from 'axios';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from "react-router-dom";
@@ -195,6 +196,9 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         boxSizing: 'borderBox'
+    },
+    pWrap: {
+        whiteSpace: 'pre-line'
     }
 }));
 
@@ -335,7 +339,7 @@ function WorkExprienceTemplate({ exp, idx }) {
     }
     
     const keyfigurerows = [
-        createKeyFiguresData('Period', "From: " + exp.from + " | To: " + exp.to),
+        createKeyFiguresData('Period', "From: " + moment(exp.from).format('MMMM YYYY') + " | To: " + moment(exp.to).format('MMMM YYYY')),
         createKeyFiguresData('Job title/function', exp.job),
         createKeyFiguresData('Employers name & address', exp.employer),
     ];
@@ -352,7 +356,7 @@ function WorkExprienceTemplate({ exp, idx }) {
                             {keyfigurerows.map((row) => (
                                 <TableRow key={row.name}>
                                     <TableCell component="th" scope="row">{row.name}</TableCell>
-                                    <TableCell align="right">{row.value}</TableCell>
+                                    <TableCell align="right"><p className={classes.pWrap}>{row.value}</p></TableCell>
                                 </TableRow>
                             ))}
                             </TableBody>

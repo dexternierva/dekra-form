@@ -742,7 +742,7 @@ function ProfileForm ({ setProfileFormState }) {
                         </Typography>
                     </Box>
                     <Box px={4} py={2}>
-                        <InputLabel shrink={true} htmlFor="child1">Children</InputLabel>
+                        <InputLabel shrink={true} htmlFor="child1">Children (No fields should be left blank, please choose N/A)</InputLabel>
                         <Grid container spacing={0} className={classes.grid}>
                             <Grid item xs={4} sm={2}>
                                 <Box pl={0} pr={2} py={0}>
