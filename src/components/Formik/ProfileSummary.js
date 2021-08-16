@@ -19,13 +19,41 @@ import {
     MenuItem,
     FormHelperText,
     FormControlLabel,
+    Fade,
+    Link,
+    Modal
 } from '@material-ui/core';
 
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import { DatePicker } from 'formik-material-ui-pickers';
 import DateFnsUtils from '@date-io/date-fns';
+import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles((theme) => ({
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '70%',
+        margin: '0 auto',
+    },
+    paper: {
+        backgroundColor: theme.palette.background.paper,
+        border: '2px solid #008A4C',
+        boxShadow: theme.shadows[5],
+        [theme.breakpoints.down('sm')]: {
+            height: '90%',
+            overflow: 'scroll'
+        },
+        padding: theme.spacing(2, 4, 3),
+    },
+    modallink: {
+        cursor: 'pointer'
+    }
+}));
 
 function ProfileSummary () {
+    const classes = useStyles();
+
     const currentUser = useCurrentUser();
     const cvID = currentUser.cv;                             
     const { loading, response, error, setCvID } = useContext(ProfileContext);
@@ -33,6 +61,28 @@ function ProfileSummary () {
     const [dialog, setDialog] = useState({ state:false, header: null, text: null });
     const [formValues, setFormValues] = useState(null);
 
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => { setOpen(true) };
+    const handleClose = () => { setOpen(false) };
+    const body = (
+        <Fade in={open}>
+            <div className={classes.paper}>
+                <p><strong>Category 1:</strong> Nurse with little or no professional experience. Low professional experience means that someone in their home country has worked for less than three years in the function of a nurse on the patient in the recent past.</p>
+                <p><strong>Category 2:</strong> Nurse with in-depth professional experience, inpatient or in a special department. In-depth professional experience means that someone in their home country has recently worked for at least three years in the function of a nurse on the patient, regardless of whether this was done on the ward or in a special department (intensive, surgical, neurology, anesthesia, etc.).</p>
+                <p><strong>Category 3:</strong> <em>High Potential</em> - Nurse with in-depth professional experience of at least five years and special linguistic and personal aptitude, inpatient ot in a special department. In-depth professional experience means that someone in their home country has recently worked for at least five years in the function of a nurse (health and nurse as well as health and pediatric nurse) on the patient, regardless of whether this is done on the ward or in a special department (intensive, surgical, surgery, neurology, anesthesia, etc.).</p>
+                <p><strong>Category 4:</strong> <em>Pediatric nurses</em> - with or without work experience. Pediatric nurse means that someone has already obtained the degree of a pediatric nurse in his home country and, thanks to a specific professional preparation and knowledge test, the German vocational qualification of a recognized nurse for general nursing pediatric nursing.</p>
+            </div>
+        </Fade>
+    )
+
+    const categoryOptions = [
+        { label: 'Select Category', value: '' },
+        { label: 'Category 1', value: 'Category 1' },
+        { label: 'Category 2', value: 'Category 2' },
+        { label: 'Category 3', value: 'Category 3' },
+        { label: 'Category 4', value: 'Category 4' },
+    ];
+    
     const conclusionOptions = [
         { label: 'Select Degree', value: '' },
         { label: 'Diploma', value: 'Diploma' },
@@ -283,7 +333,7 @@ function ProfileSummary () {
     ];
 
     const yearOptions = [
-        { label: 'N/A', value: 'none' },
+        { label: 'N/A', value: 'N/A' },
         { label: '1990', value: '1990' },
         { label: '1991', value: '1991' },
         { label: '1992', value: '1992' },
@@ -325,6 +375,8 @@ function ProfileSummary () {
         if (response !== null) {
             const savedData = {
                 // KEY-FIGURES
+                kfParticipantId: response.kfParticipantId,
+                kfCategory: response.kfCategory,
                 kfDegree: response.kfDegree,
                 kfLanguage: response.kfLanguage.split(", "),
                 kfExperienceYear: response.kfExperienceYear,
@@ -367,6 +419,8 @@ function ProfileSummary () {
      * ------------------------------------------------------------------------- */
     const initialValues={
         // KEY-FIGURES
+        kfParticipantId: '',
+        kfCategory: '',
         kfDegree: '',
         kfLanguage: ["Filipino (Tagalog)"],
         kfExperienceYear: 0,
@@ -405,6 +459,8 @@ function ProfileSummary () {
      * ------------------------------------------------------------------------- */
     const validationSchema = Yup.object({
         // KEY-FIGURES
+        kfParticipantId: Yup.string().required('This field is required'),
+        kfCategory: Yup.string().required('This field is required'),
         kfDegree: Yup.string().required('This field is required'),
         kfLanguage: Yup.array().required('This field is required'),
         kfExperienceYear: Yup.number().required('This field is required'),
@@ -417,6 +473,12 @@ function ProfileSummary () {
         sex: Yup.string().required('This field is required'),
         dateOfBirth: Yup.date().required('This field is required').nullable(),
         placeOfBirth: Yup.string().required('This field is required'),
+        child1: Yup.string().required('This field is required'),
+        child2: Yup.string().required('This field is required'),
+        child3: Yup.string().required('This field is required'),
+        child4: Yup.string().required('This field is required'),
+        child5: Yup.string().required('This field is required'),
+        child6: Yup.string().required('This field is required'),
         maritalStatus: Yup.string().required('This field is required'),
         // LANGUAGE-SKILLS
         nativeLanguage: Yup.string().required('This field is required'),
@@ -440,6 +502,8 @@ function ProfileSummary () {
 
         const info = {
             // KEY-FIGURES
+            'kfParticipantId': values.kfParticipantId,
+            'kfCategory' : values.kfCategory,
             'kfDegree': values.kfDegree,
             'kfLanguage': values.kfLanguage.join(", "),
             'kfExperienceYear': values.kfExperienceYear,
@@ -512,6 +576,56 @@ function ProfileSummary () {
                 {
                     ({submitForm, isSubmitting, touched, errors, values}) => (
                         <Form>
+                            <Box px={4} py={2}>
+                                <InputLabel shrink={true} htmlFor="kfCategory">Participant ID</InputLabel>
+                                <Field
+                                    component={TextField}
+                                    type="text"
+                                    placeholder="Please enter your participant ID"
+                                    name="kfParticipantId"
+                                    variant="outlined"
+                                    fullWidth
+                                />
+                            </Box>
+                            <Box px={4} py={2}>
+                                <InputLabel shrink={true} htmlFor="kfCategory">Category</InputLabel>
+                                <Field
+                                    component={Select}
+                                    name="kfCategory"
+                                    variant="outlined"
+                                    margin="normal"
+                                    fullWidth
+                                    autoWidth={true}
+                                    multiple={false}
+                                    InputLabelProps={{ shrink: true }}
+                                >
+                                    {categoryOptions.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </Field>
+                                <Typography variant="caption" display="block" gutterBottom color="secondary"><ErrorMessage name="kfDegree" component="span" /></Typography>
+                                <FormHelperText>
+                                    <Link onClick={handleOpen} className={classes.modallink}>Click here to learn more about the Category options.</Link>
+                                </FormHelperText>
+                                { /* MODAL FOR THE CATEGORIES */ }
+                                <Modal
+                                    aria-labelledby="transition-modal-title"
+                                    aria-describedby="transition-modal-description"
+                                    className={classes.modal}
+                                    open={open}
+                                    onClose={handleClose}
+                                    closeAfterTransition
+                                    BackdropComponent={Backdrop}
+                                    BackdropProps={{
+                                        timeout: 500,
+                                    }}
+                                >
+                                    {body}
+                                </Modal>
+                            </Box>
+
                             {
                                 /**
                                  * = KEY-FIGURES

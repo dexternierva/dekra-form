@@ -75,10 +75,10 @@ function ProfileForm ({ setProfileFormState }) {
 
     const categoryOptions = [
         { label: 'Select Category', value: '' },
-        { label: 'Category 1', value: '1' },
-        { label: 'Category 2', value: '2' },
-        { label: 'Category 3', value: '3' },
-        { label: 'Category 4', value: '4' },
+        { label: 'Category 1', value: 'Category 1' },
+        { label: 'Category 2', value: 'Category 2' },
+        { label: 'Category 3', value: 'Category 3' },
+        { label: 'Category 4', value: 'Category 4' },
     ];
 
     const conclusionOptions = [
@@ -329,7 +329,7 @@ function ProfileForm ({ setProfileFormState }) {
     ];
 
     const yearOptions = [
-        { label: 'N/A', value: 'none' },
+        { label: 'N/A', value: 'N/A' },
         { label: '1990', value: '1990' },
         { label: '1991', value: '1991' },
         { label: '1992', value: '1992' },
@@ -395,12 +395,12 @@ function ProfileForm ({ setProfileFormState }) {
                     dateOfBirth: new Date(),
                     placeOfBirth: '',
                     maritalStatus: '',
-                    child1: 'N/A',
-                    child2: 'N/A',
-                    child3: 'N/A',
-                    child4: 'N/A',
-                    child5: 'N/A',
-                    child6: 'N/A',
+                    child1: '',
+                    child2: '',
+                    child3: '',
+                    child4: '',
+                    child5: '',
+                    child6: '',
                     // INITIAL VALUES: LANGUAGE SKILLS
                     nativeLanguage: 'Filipino (Tagalog)',
                     germanLanguageLevel: '',
@@ -473,7 +473,7 @@ function ProfileForm ({ setProfileFormState }) {
             >
                 {
                     /**
-                     * FORMIK STEP:
+                     * FORMIK STEP 1:
                      * KEY-FIGURES
                      * 
                      */
@@ -641,7 +641,7 @@ function ProfileForm ({ setProfileFormState }) {
                 
                 {
                     /**
-                     * FORMIK STEP:
+                     * FORMIK STEP 2:
                      * PERSONAL-BACKGROUND
                      * 
                      */
@@ -655,6 +655,12 @@ function ProfileForm ({ setProfileFormState }) {
                         sex: Yup.string().required('This field is required'),
                         dateOfBirth: Yup.date().required('This field is required').nullable(),
                         placeOfBirth: Yup.string().required('This field is required'),
+                        child1: Yup.string().required('This field is required'),
+                        child2: Yup.string().required('This field is required'),
+                        child3: Yup.string().required('This field is required'),
+                        child4: Yup.string().required('This field is required'),
+                        child5: Yup.string().required('This field is required'),
+                        child6: Yup.string().required('This field is required'),
                         maritalStatus: Yup.string().required('This field is required'),
                     })}
                 >
@@ -699,7 +705,7 @@ function ProfileForm ({ setProfileFormState }) {
                                 variant="dialog"
                                 views={[ "date", "year", "month" ]}
                                 fullWidth
-                                format="MM/dd/yyyy"
+                                format="dd/MM/yyyy"
                             />
                         </MuiPickersUtilsProvider>
                     </Box>
@@ -857,7 +863,7 @@ function ProfileForm ({ setProfileFormState }) {
 
                 {
                     /**
-                     * FORMIK STEP:
+                     * FORMIK STEP 3:
                      * LANGUAGE SKILL
                      * 
                      */
@@ -896,7 +902,7 @@ function ProfileForm ({ setProfileFormState }) {
                                         variant="dialog"
                                         views={["date", "year", "month"]}
                                         fullWidth
-                                        format="MM/dd/yyyy"
+                                        format="dd/MM/yyyy"
                                     />
                                 </Grid>
                             </Grid>
@@ -933,7 +939,7 @@ function ProfileForm ({ setProfileFormState }) {
                                         variant="dialog"
                                         views={["date", "year", "month"]}
                                         fullWidth
-                                        format="MM/dd/yyyy"
+                                        format="dd/MM/yyyy"
                                     />
                                     <FormHelperText>Select Date</FormHelperText>
                                 </Grid>
