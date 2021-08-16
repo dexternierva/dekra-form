@@ -198,7 +198,8 @@ const useStyles = makeStyles((theme) => ({
         boxSizing: 'borderBox'
     },
     pWrap: {
-        whiteSpace: 'pre-line'
+        whiteSpace: 'pre-line',
+        margin: '0'
     }
 }));
 

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import moment from 'moment';
 
 import { useTranslate } from "react-translate";
 
@@ -65,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     ftable: {
         maxWidth: '98%',
         border: '4px solid #008B4F',
-        margin: '0 0 4rem 0'
+        margin: '0 0 2rem 0'
     },
     tcell: {
         borderRight: '4px solid #008B4F',
@@ -97,6 +98,10 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         boxSizing: 'borderBox'
+    },
+    pWrap: {
+        whiteSpace: 'pre-line',
+        margin: '0'
     }
 }));
 
@@ -110,10 +115,10 @@ function  ProfileView({ response }) {
         }
         
         const keyfigurerows = [
-            createKeyFiguresData(t('Conclusion'), response.cv.kfDegree),
+            //createKeyFiguresData(t('Conclusion'), response.cv.kfDegree),
             createKeyFiguresData(t('Language skills'), response.cv.kfLanguage),
-            createKeyFiguresData(t('Experience'), response.cv.kfExperienceYear + " years(s) and " + response.cv.kfExperienceMonth + " month(s)"),
-            createKeyFiguresData(t('Priorities'), response.cv.kfPriorities),
+            createKeyFiguresData(t('Experience'), response.cv.kfExperienceYear + " Jahr(e) und " + response.cv.kfExperienceMonth + " Monat(e)"),
+            // createKeyFiguresData(t('Priorities'), response.cv.kfPriorities),
         ];
 
         function personalBackgroundData(name, value) {
@@ -125,7 +130,7 @@ function  ProfileView({ response }) {
             personalBackgroundData(t('E-mail Address'), response.cv.email),
             personalBackgroundData(t('Nationality'), response.cv.nationality),
             personalBackgroundData(t('Sex'), response.cv.sex),
-            personalBackgroundData(t('Date of birth'), response.cv.dateOfBirth),
+            personalBackgroundData(t('Date of birth'), moment(response.cv.dateOfBirth).format("DD.MM.YYYY")),
             personalBackgroundData(t('Place of birth'), response.cv.placeOfBirth),
             personalBackgroundData(t('Marital status'), response.cv.maritalStatus),
         ];
@@ -143,8 +148,8 @@ function  ProfileView({ response }) {
                         <Table aria-label="simple table">
                             <TableBody>
                                 <TableRow>
-                                    <TableCell component="th" scope="row" align="center" className={classes.tcell}><Header>Participant ID</Header></TableCell>
-                                    <TableCell component="th" scope="row" align="center"><Header>Category</Header></TableCell>
+                                    <TableCell component="th" scope="row" align="center" className={classes.tcell}><Header>Teilnehmer - ID</Header></TableCell>
+                                    <TableCell component="th" scope="row" align="center"><Header>Kategorie</Header></TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell align="center" className={classes.tcell}>{response.cv.kfParticipantId}</TableCell>
@@ -156,6 +161,7 @@ function  ProfileView({ response }) {
 
                     <Name>
                         <Typography className={classes.typo} variant="h4" component="h2">{response.firstname} {response.lastname}</Typography>
+                        <Typography className={classes.typo} variant="h4" component="h2">Gesundheits - Und Krankenpfleger</Typography>
                     </Name>
                 </Grid>
             </Grid>
@@ -166,14 +172,31 @@ function  ProfileView({ response }) {
                 </Grid>
                 <Grid item xs={12} sm={9}>
                     <TableContainer className={classes.table}>
-                        <Table aria-label="simple table">
+                        <Table aria-label="simple table"> 
                             <TableBody>
-                            {keyfigurerows.map((row) => (
-                                <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row">{row.name}</TableCell>
-                                    <TableCell align="right">{row.value}</TableCell>
+                                <TableRow>
+                                    <TableCell component="th" scope="row">Abschluss</TableCell>
+                                    <TableCell align="right">
+                                        {response.cv.kfDegree}
+                                        Allgemeine Gesundheits- und Krankenpflege
+                                    </TableCell>
                                 </TableRow>
-                            ))}
+
+                                {keyfigurerows.map((row) => (
+                                    <TableRow key={row.name}>
+                                        <TableCell component="th" scope="row">{row.name}</TableCell>
+                                        <TableCell align="right">{row.value}</TableCell>
+                                    </TableRow>
+                                ))}
+
+                                <TableRow>
+                                    <TableCell component="th" scope="row">Schwerpunkte</TableCell>
+                                    <TableCell align="right">
+                                        <ol>
+                                            {response.cv.kfPriorities.split(', ').map((step) => <li>{step}</li>)}
+                                        </ol>
+                                    </TableCell>
+                                </TableRow>
                             </TableBody>
                             <caption>{t("Detailed overview of activities in the 'Professional Skills' facility")}</caption>
                         </Table>

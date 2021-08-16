@@ -75,19 +75,17 @@ function ProfileForm ({ setProfileFormState }) {
 
     const categoryOptions = [
         { label: 'Select Category', value: '' },
-        { label: 'Category 1', value: 'Category 1' },
-        { label: 'Category 2', value: 'Category 2' },
-        { label: 'Category 3', value: 'Category 3' },
-        { label: 'Category 4', value: 'Category 4' },
+        { label: 'Category 1', value: '1' },
+        { label: 'Category 2', value: '2' },
+        { label: 'Category 3', value: '3 - High Potential' },
+        { label: 'Category 4', value: '4' },
     ];
 
     const conclusionOptions = [
         { label: 'Select Degree', value: '' },
-        { label: 'Diploma', value: 'Diploma' },
         { label: 'Bachelor', value: 'Bachelor' },
         { label: 'Masters', value: 'Masters' },
-        { label: 'High school', value: 'High school' },
-        { label: 'Matura', value: 'Matura' }
+        { label: 'Doctorate', value: 'Dóktortitel' }
     ];
 
     const languageSkillsOptions = [
@@ -203,9 +201,12 @@ function ProfileForm ({ setProfileFormState }) {
         { label: 'A1', value: 'A1' },
         { label: 'A2', value: 'A2' },
         { label: 'B1', value: 'B1' },
+        { label: 'B1 Care', value: 'B1 Pflege' },
+        { label: 'B1-B2 Care', value: 'B1-B2 Pflege' },
         { label: 'B2', value: 'B2' },
         { label: 'C1', value: 'C1' },
         { label: 'C2', value: 'C2' },
+        { label: 'Native Speaker', value: 'Muttersprachler/-in' },
     ];
 
     const prioritiesOptions = [
@@ -292,11 +293,10 @@ function ProfileForm ({ setProfileFormState }) {
 
     const maritalStatusOptions = [
         { label: 'Select Marital Status', value: '' },
-        { label: 'Single', value: 'single' },
-        { label: 'Married', value: 'married' },
-        { label: 'Widowed', value: 'widowed' },
-        { label: 'Divorced', value: 'divorced' },
-        { label: 'Separated', value: 'separated' }
+        { label: 'Single', value: 'ledig' },
+        { label: 'Married', value: 'verheiratet' },
+        { label: 'Widowed', value: 'verwitwet' },
+        { label: 'Divorced', value: 'geschieden' }
     ];
 
     const computerSkillsOptions = [
@@ -570,7 +570,7 @@ function ProfileForm ({ setProfileFormState }) {
                             InputLabelProps={{ name: 'kfLanguage', id: 'kfLanguage' }}
                             autoWidth="true"
                         >
-                            {languageSkillsOptions.map((option) => (
+                            {languageSkillsLevelOptions.map((option) => (
                                 <MenuItem key={option.value} value={option.value}>
                                     {option.label}
                                 </MenuItem>
@@ -672,6 +672,7 @@ function ProfileForm ({ setProfileFormState }) {
                             name="address"
                             variant="outlined"
                             fullWidth
+                            helperText="Please add the German word 'Philippinen' at the end of your address."
                         />
                     </Box>
                     <Box px={4} py={2}>
@@ -689,7 +690,7 @@ function ProfileForm ({ setProfileFormState }) {
                             component={TextField}
                             type="text"
                             label="Nationality"
-                            value="Filipino"
+                            value="Filipinisch"
                             name="nationality"
                             variant="outlined"
                             fullWidth
@@ -717,6 +718,7 @@ function ProfileForm ({ setProfileFormState }) {
                             name="placeOfBirth"
                             variant="outlined"
                             fullWidth
+                            helperText="Please add the German word 'Philippinen' at the end."
                         />
                     </Box>
                     <Box px={4} py={2}>
@@ -845,12 +847,12 @@ function ProfileForm ({ setProfileFormState }) {
                     <Box px={4} py={2}>
                         <Field component={RadioGroup} name="sex" row>
                             <FormControlLabel
-                                value="male"
+                                value="männlich"
                                 control={<Radio />}
                                 label="Male"
                             />
                             <FormControlLabel
-                                value="female"
+                                value="weiblich"
                                 control={<Radio />}
                                 label="Female"
                             />
