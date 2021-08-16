@@ -229,7 +229,7 @@ function  ProfileView({ response }) {
             personalBackgroundData('E-mail Address', response.cv.email),
             personalBackgroundData('Nationality', response.cv.nationality),
             personalBackgroundData('Sex', response.cv.sex),
-            personalBackgroundData('Date of birth', response.cv.dateOfBirth),
+            personalBackgroundData('Date of birth', moment(response.cv.dateOfBirth).format('DD MMMM YYYY')),
             personalBackgroundData('Place of birth', response.cv.placeOfBirth),
             personalBackgroundData('Marital status', response.cv.maritalStatus),
         ];
