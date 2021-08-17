@@ -11,7 +11,7 @@ const PageTemplate = (props) => {
                     left: "20px",
                     display: "flex",
                     justifyContent: "space-between",
-                    marginBottom: "3rem"
+                    marginBottom: "2rem"
                 }}
             >
                 <div style={{  color: "#008B4F", fontSize: "1.25em", fontWeight: "700" }}>DEKRA Expert Migration</div>
