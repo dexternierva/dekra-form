@@ -79,7 +79,7 @@ function PracticalKnowledgeDetails () {
                         keepTogether="section" 
                         scale={0.6} 
                         forcePageBreak=".page-break"
-                        margin={{ top: 20, left: 20, right: 20, bottom: 40 }}
+                        margin={{ top: 20, left: 20, right: 20, bottom: 20 }}
                     >
                         <ActiveUserInfo id={ id } />
                     </PDFExport>
