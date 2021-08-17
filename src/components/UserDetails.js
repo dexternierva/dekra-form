@@ -6,6 +6,7 @@ import { UserContext } from "../containers/GetUsers";
 import { useHistory } from "react-router-dom";
 
 import { PDFExport } from '@progress/kendo-react-pdf';
+import PageTemplate from "./pageTemplate";
 
 import GetUsers from "../containers/GetUsers";
 import ProfileView from "./ProfileView";
@@ -87,24 +88,6 @@ let translations = {
     }
 };
 
-const Header = styled.div`
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3rem;
-`;
-
-const HeaderTitle = styled.div`
-    color: #008B4F;
-    font-size: 1em;
-    font-weight: 700;
-`;
-
-const HeaderText = styled.div`
-    color: #008B4F;
-    font-size: 1em;
-    font-weight: 500;
-`;
-
 const useStyles = makeStyles((theme) => ({
     backdrop: {
         zIndex: theme.zIndex.drawer + 1,
@@ -125,11 +108,6 @@ function ActiveUserInfo ({id}) {
     if (response !== null) {
         return (
             <Container maxWidth="lg" className={classes.container}>
-                <Header>
-                    <HeaderTitle>DEKRA Expert Migration</HeaderTitle>
-                    <HeaderText>Curriculum Vitae</HeaderText>
-                </Header>
-
                 <TranslatorProvider translations={translations}>
                     <ProfileView response={response} />
                     <WorkExperienceView response={response} />
@@ -172,6 +150,7 @@ function UserDetails () {
             <div ref={componentRef}>
                 <GetUsers>
                     <PDFExport 
+                        pageTemplate={PageTemplate}
                         ref={pdfExportComponent} 
                         paperSize="A4"
                         keepTogether=".MuiGrid-container" 
