@@ -4,6 +4,7 @@ import { UserContext } from "../containers/GetUsers";
 import { useHistory } from "react-router-dom";
 
 import { PDFExport } from '@progress/kendo-react-pdf';
+import PageTemplate from "./PageTemplate";
 
 import GetUsers from "../containers/GetUsers";
 import PracticalKnowledgeView from "./PracticalKnowledgeView";
@@ -71,7 +72,15 @@ function PracticalKnowledgeDetails () {
         <>
             <div ref={componentRef}>
                 <GetUsers>
-                    <PDFExport ref={pdfExportComponent} paperSize="A4" scale={0.6}>
+                    <PDFExport 
+                        pageTemplate={PageTemplate}
+                        ref={pdfExportComponent} 
+                        paperSize="A4"
+                        keepTogether="section" 
+                        scale={0.6} 
+                        forcePageBreak=".page-break"
+                        margin={{ top: 20, left: 20, right: 20, bottom: 40 }}
+                    >
                         <ActiveUserInfo id={ id } />
                     </PDFExport>
                 </GetUsers>

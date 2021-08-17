@@ -76,7 +76,6 @@ function PracticalActivitiesDetails () {
                         pageTemplate={PageTemplate}
                         ref={pdfExportComponent} 
                         paperSize="A4"
-                        keepTogether=".MuiGrid-container" 
                         scale={0.6} 
                         forcePageBreak=".page-break"
                         margin={{ top: 20, left: 20, right: 20, bottom: 40 }}

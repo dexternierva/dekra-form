@@ -45,7 +45,7 @@ function  PracticalActivitiesView({ response }) {
         return (
             <Grid container spacing={3} alignItems="center" className={classes.grid}>
                 <Grid item xs={12} sm={12}>
-                    <Box py={2} px={4}>
+                    <Box py={0} px={4}>
                         <Typography variant="h5" component="h2">
                             Praktische Tätigkeiten
                         </Typography>
