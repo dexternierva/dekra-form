@@ -1,5 +1,4 @@
 import React, { useContext, useRef } from "react";
-import styled from "styled-components";
 import { TranslatorProvider } from "react-translate"
 import { useParams } from "react-router";
 import { UserContext } from "../containers/GetUsers";
