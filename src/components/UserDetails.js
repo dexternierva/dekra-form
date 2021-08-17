@@ -5,7 +5,7 @@ import { UserContext } from "../containers/GetUsers";
 import { useHistory } from "react-router-dom";
 
 import { PDFExport } from '@progress/kendo-react-pdf';
-import PageTemplate from "./pageTemplate";
+import PageTemplate from "./PageTemplate";
 
 import GetUsers from "../containers/GetUsers";
 import ProfileView from "./ProfileView";
