@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function  PracticalKnowledgeView({ response }) {
+    console.log("***RESPONSE FROM PRACTICAL KNOWLEDGE VIEW: ", response);
     const classes = useStyles();
 
     return (
@@ -48,7 +49,7 @@ function  PracticalKnowledgeView({ response }) {
                     Praktische Kenntnisse
                 </Typography>
                 <Typography color="textSecondary" gutterBottom>
-                    Anlage zum Lebenslauf von:
+                    Anlage zum Lebenslauf von: 
                 </Typography>
                 <Typography variant="body2" component="p">
                     Diese Angaben sollen zusätzlich zum Lebenslauf eine Übersicht darüber vermitteln, welche praktischen Fähigkeiten bereits selbständig ausgeführt wurden. Es handelt sich um eine Selbsteinschätzung des Teilnehmers zur allgemeinen Orientierung, stellt aber keine qualitative Aussage über diese individuelle Fähigkeiten dar.
