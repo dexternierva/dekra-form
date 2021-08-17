@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from "react";
-import { TranslatorProvider } from "react-translate"
+import { TranslatorProvider } from "react-translate";
 import { useParams } from "react-router";
 import { UserContext } from "../containers/GetUsers";
 import { useHistory } from "react-router-dom";
