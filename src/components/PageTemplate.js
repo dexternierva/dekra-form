@@ -8,10 +8,11 @@ const PageTemplate = (props) => {
                 style={{
                     position: "absolute",
                     top: "20px",
-                    left: "20px",
+                    left: "20",
                     display: "flex",
                     justifyContent: "space-between",
-                    marginBottom: "2rem"
+                    marginBottom: "2rem",
+                    width: "100%"
                 }}
             >
                 <div style={{  color: "#008B4F", fontSize: "1.25em", fontWeight: "700" }}>DEKRA Expert Migration</div>
@@ -22,9 +23,10 @@ const PageTemplate = (props) => {
                 style={{
                     position: "absolute",
                     bottom: "20px",
-                    left: "20px",
+                    left: "20",
                     display: "flex",
-                    justifyContent: "space-between"
+                    justifyContent: "space-between",
+                    width: "100%"
                 }}
             >
                 <div>Seite {props.pageNum} von {props.totalPages}</div>
