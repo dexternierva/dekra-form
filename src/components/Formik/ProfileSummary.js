@@ -432,6 +432,7 @@ function ProfileSummary () {
         dateOfBirth: new Date(),
         placeOfBirth: '',
         maritalStatus: '',
+        children: 0,
         child1: '',
         child2: '',
         child3: '',
@@ -471,6 +472,7 @@ function ProfileSummary () {
         sex: Yup.string().required('This field is required'),
         dateOfBirth: Yup.date().required('This field is required').nullable(),
         placeOfBirth: Yup.string().required('This field is required'),
+        children: Yup.number().required('This field is required'),
         child1: Yup.string().required('This field is required'),
         child2: Yup.string().required('This field is required'),
         child3: Yup.string().required('This field is required'),
@@ -515,6 +517,7 @@ function ProfileSummary () {
             'dateOfBirth': values.dateOfBirth,
             'placeOfBirth': values.placeOfBirth,
             'maritalStatus': values.maritalStatus,
+            'children': values.children,
             'child1': values.child1,
             'child2': values.child2,
             'child3': values.child3,
@@ -822,6 +825,20 @@ function ProfileSummary () {
                                     <ErrorMessage name="sex" component="span" />
                                 </Typography>
                             </Box>
+                            <Box px={4} py={2}>
+                                <Field
+                                    component={TextField}
+                                    type="number"
+                                    name="children"
+                                    multiple={true}
+                                    label="Number of children"
+                                    fullWidth
+                                    variant="outlined"
+                                    autoWidth="true"
+                                    InputProps={{ inputProps: { min: 0, max: 10 } }}
+                                />
+                            </Box>
+                            <Box px={4} py={2}></Box>
                             <Box px={4} py={2}>
                                 <InputLabel shrink={true} htmlFor="child1">Children</InputLabel>
                                 <Grid container spacing={0}>

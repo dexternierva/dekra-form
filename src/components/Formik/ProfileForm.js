@@ -657,13 +657,14 @@ function ProfileForm ({ setProfileFormState }) {
                         sex: Yup.string().required('This field is required'),
                         dateOfBirth: Yup.date().required('This field is required').nullable(),
                         placeOfBirth: Yup.string().required('This field is required'),
+                        maritalStatus: Yup.string().required('This field is required'),
+                        children: Yup.number().required('This field is required'),
                         child1: Yup.string().required('This field is required'),
                         child2: Yup.string().required('This field is required'),
                         child3: Yup.string().required('This field is required'),
                         child4: Yup.string().required('This field is required'),
                         child5: Yup.string().required('This field is required'),
                         child6: Yup.string().required('This field is required'),
-                        maritalStatus: Yup.string().required('This field is required'),
                     })}
                 >
                     <Box px={4} py={2}>
@@ -744,6 +745,19 @@ function ProfileForm ({ setProfileFormState }) {
                         <Typography variant="caption" display="block" gutterBottom color="secondary">
                             <ErrorMessage name="maritalStatus" component="span" />
                         </Typography>
+                    </Box>
+                    <Box px={4} py={2}>
+                        <Field
+                            component={TextField}
+                            type="number"
+                            name="children"
+                            multiple={true}
+                            label="Number of children"
+                            fullWidth
+                            variant="outlined"
+                            autoWidth="true"
+                            InputProps={{ inputProps: { min: 0, max: 10 } }}
+                        />
                     </Box>
                     <Box px={4} py={2}>
                         <InputLabel shrink={true} htmlFor="child1">Children (No fields should be left blank, please choose N/A)</InputLabel>
