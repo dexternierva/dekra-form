@@ -30,10 +30,7 @@ const SectionTitle = styled.div`
 `;
 
 function WorkExprienceTemplate({ exp, idx }) {
-    moment.locale('en');
-    var localLocale = moment();
-    localLocale.locale('de');
-    localLocale.format('MMMM YYYY');
+    moment.locale('de');
 
     let t = useTranslate("Experience");
     const classes = useStyles();
