@@ -1,4 +1,5 @@
 import React from "react";
+import moment from 'moment';
 import styled from "styled-components";
 
 import { useTranslate } from "react-translate";
@@ -29,6 +30,11 @@ const SectionTitle = styled.div`
 `;
 
 function WorkExprienceTemplate({ exp, idx }) {
+    moment.locale('en');
+    var localLocale = moment();
+    localLocale.locale('de');
+    localLocale.format('MMMM YYYY');
+
     let t = useTranslate("Experience");
     const classes = useStyles();
     
@@ -37,7 +43,7 @@ function WorkExprienceTemplate({ exp, idx }) {
     }
     
     const keyfigurerows = [
-        createKeyFiguresData(t('Period'), t("From: ") + exp.from + " | " +  t(" To: ") + exp.to),
+        createKeyFiguresData(t('Period'), t("From: ") + moment(exp.from).format('MMMM YYYY') + " | " +  t(" To: ") + moment(exp.to).format('MMMM YYYY')),
         createKeyFiguresData(t('Job title/function'), exp.job),
         createKeyFiguresData(t('Employers name & address'), exp.employer),
     ];

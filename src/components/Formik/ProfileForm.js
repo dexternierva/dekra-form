@@ -329,7 +329,7 @@ function ProfileForm ({ setProfileFormState }) {
     ];
 
     const yearOptions = [
-        { label: 'N/A', value: 'N/A' },
+        { label: 'Select Year', value: '' },
         { label: '1990', value: '1990' },
         { label: '1991', value: '1991' },
         { label: '1992', value: '1992' },
@@ -760,7 +760,7 @@ function ProfileForm ({ setProfileFormState }) {
                         />
                     </Box>
                     <Box px={4} py={2}>
-                        <InputLabel shrink={true} htmlFor="child1">Children (No fields should be left blank, please choose N/A)</InputLabel>
+                        <InputLabel shrink={true} htmlFor="child1">Select birth year of children, if any</InputLabel>
                         <Grid container spacing={0} className={classes.grid}>
                             <Grid item xs={4} sm={2}>
                                 <Box pl={0} pr={2} py={0}>
