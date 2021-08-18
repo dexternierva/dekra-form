@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme) => ({
     },
     table: {
         margin: '-.75rem 0 0 0'
+    },
+    pWrap: {
+        whiteSpace: 'pre-line',
+        margin: '0'
     }
 }));
 
@@ -30,8 +34,6 @@ const SectionTitle = styled.div`
 `;
 
 function WorkExprienceTemplate({ exp, idx }) {
-    moment.locale('de');
-
     let t = useTranslate("Experience");
     const classes = useStyles();
     
@@ -40,7 +42,7 @@ function WorkExprienceTemplate({ exp, idx }) {
     }
     
     const keyfigurerows = [
-        createKeyFiguresData(t('Period'), t("From: ") + moment(exp.from).format('MMMM YYYY') + " | " +  t(" To: ") + moment(exp.to).format('MMMM YYYY')),
+        createKeyFiguresData(t('Period'), t("From: ") + moment(exp.from).locale('de').format('MMMM YYYY') + " | " +  t(" To: ") + moment(exp.to).locale('de').format('MMMM YYYY')),
         createKeyFiguresData(t('Job title/function'), exp.job),
         createKeyFiguresData(t('Employers name & address'), exp.employer),
     ];
@@ -57,7 +59,7 @@ function WorkExprienceTemplate({ exp, idx }) {
                         {keyfigurerows.map((row) => (
                             <TableRow key={row.name}>
                                 <TableCell component="th" scope="row">{row.name}</TableCell>
-                                <TableCell align="right">{row.value}</TableCell>
+                                <TableCell align="right"><p className={classes.pWrap}>{row.value}</p></TableCell>
                             </TableRow>
                         ))}
                         </TableBody>
