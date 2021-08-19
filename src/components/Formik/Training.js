@@ -212,7 +212,7 @@ function Training () {
                                                                         fullWidth
                                                                         multiline
                                                                         rows={6}
-                                                                        helperText="Please provide the title of the training and the name of the training provider"
+                                                                        helperText="Please provide the title of the training and on a new line the name of the training provider"
                                                                     />
                                                                 </Box>
                                                                 <Box px={4} pb={4} pt={2}>

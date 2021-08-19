@@ -1,4 +1,6 @@
 import React from "react";
+import moment from 'moment';
+import 'moment/locale/de';
 import styled from "styled-components";
 
 import { useTranslate } from "react-translate";
@@ -18,7 +20,9 @@ const useStyles = makeStyles((theme) => ({
     },
     table: {
         margin: '-.75rem 0 0 0'
-    }
+    },
+    col1: { width: '30%' },
+    col2: { width: '70%' },
 }));
 
 const SectionTitle = styled.div`
@@ -37,7 +41,7 @@ function EducationTemplate({ edu, idx }) {
     }
     
     const keyfigurerows = [
-        createKeyFiguresData(t('Period'), t("From: ") + edu.from + " | " + t(" To: ") + edu.to),
+        createKeyFiguresData(t('Period'), t("From: ") + moment(edu.from).locale('de').format('MMMM YYYY') + " | " + t(" To: ") + moment(edu.to).locale('de').format('MMMM YYYY')),
         createKeyFiguresData(t('Conclusion'), edu.course),
         createKeyFiguresData(t('Name & address of the school/university'), edu.university),
     ];
@@ -53,8 +57,8 @@ function EducationTemplate({ edu, idx }) {
                         <TableBody>
                         {keyfigurerows.map((row) => (
                             <TableRow key={row.name}>
-                                <TableCell component="th" scope="row">{row.name}</TableCell>
-                                <TableCell align="right">{row.value}</TableCell>
+                                <TableCell component="th" scope="row" className={classes.col1}>{row.name}</TableCell>
+                                <TableCell className={classes.col2}><p className={classes.pWrap}>{row.value}</p></TableCell>
                             </TableRow>
                         ))}
                         </TableBody>

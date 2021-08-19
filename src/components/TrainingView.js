@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import moment from 'moment';
+import 'moment/locale/de';
 
 import { useTranslate } from "react-translate";
 
@@ -49,7 +51,7 @@ function TrainingView({ response }) {
         }
         
         const trainingrows = [
-            createTrainingData(t('Period'), t("From: ") + response.trainings.from + " | " + t(" To: ") + response.trainings.to),
+            createTrainingData(t('Period'), t("From: ") + moment(response.trainings.from).locale('de').format('MMMM YYYY') + " | " + t(" To: ") + moment(response.trainings.to).locale('de').format('MMMM YYYY')),
             createTrainingData(t('Name of training provider'), response.trainings.provider),
             createTrainingData(t('Skills acquired'), response.trainings.skills),
         ];
@@ -65,8 +67,8 @@ function TrainingView({ response }) {
                             <TableBody>
                             {trainingrows.map((row) => (
                                 <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row">{row.name}</TableCell>
-                                    <TableCell align="right">{row.value}</TableCell>
+                                    <TableCell component="th" scope="row" className={classes.col1}>{row.name}</TableCell>
+                                    <TableCell className={classes.col2}><p className={classes.pWrap}>{row.value}</p></TableCell>
                                 </TableRow>
                             ))}
                             </TableBody>

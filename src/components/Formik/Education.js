@@ -221,7 +221,7 @@ function Education () {
                                                                         fullWidth
                                                                         multiline
                                                                         rows={4}
-                                                                        helperText="Please provide the name and address of the school/university"
+                                                                        helperText="Please provide the name and address of the school/university. Address of shool/university should be on a new line."
                                                                     />
                                                                 </Box>
                                                             </Grid>

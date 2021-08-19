@@ -220,7 +220,7 @@ function WorkExperience () {
                                                                         multiline
                                                                         rows={6}
                                                                         fullWidth
-                                                                        helperText="Please use German word for your job title"
+                                                                        helperText="Please use German word for your job title and include roles and functions in bullet form (New line for each role/function)."
                                                                     />
                                                                 </Box>
                                                                 <Box px={4} pb={4} pt={2}>
