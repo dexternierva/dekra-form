@@ -102,7 +102,14 @@ const useStyles = makeStyles((theme) => ({
     pWrap: {
         whiteSpace: 'pre-line',
         margin: '0'
-    }
+    },
+    specializationList: {
+        padding: '0',
+        margin: '0',
+        listStylePosition: 'inside'
+    },
+    col1: { width: '30%' },
+    col2: { width: '70%' },
 }));
 
 function  ProfileView({ response }) {
@@ -175,8 +182,8 @@ function  ProfileView({ response }) {
                         <Table aria-label="simple table"> 
                             <TableBody>
                                 <TableRow>
-                                    <TableCell component="th" scope="row">Abschluss</TableCell>
-                                    <TableCell align="right">
+                                    <TableCell className={classes.col1} component="th" scope="row">Abschluss</TableCell>
+                                    <TableCell className={classes.col2}>
                                         {response.cv.kfDegree}
                                         Allgemeine Gesundheits- und Krankenpflege
                                     </TableCell>
@@ -184,15 +191,15 @@ function  ProfileView({ response }) {
 
                                 {keyfigurerows.map((row) => (
                                     <TableRow key={row.name}>
-                                        <TableCell component="th" scope="row">{row.name}</TableCell>
-                                        <TableCell align="right">{row.value}</TableCell>
+                                        <TableCell className={classes.col1} component="th" scope="row">{row.name}</TableCell>
+                                        <TableCell className={classes.col2}>{row.value}</TableCell>
                                     </TableRow>
                                 ))}
 
                                 <TableRow>
-                                    <TableCell component="th" scope="row">Schwerpunkte</TableCell>
-                                    <TableCell align="right">
-                                        <ol>
+                                    <TableCell className={classes.col1} component="th" scope="row">Schwerpunkte</TableCell>
+                                    <TableCell className={classes.col2}>
+                                        <ol className={classes.specializationList}>
                                             {response.cv.kfPriorities.split(', ').map((step) => <li>{step}</li>)}
                                         </ol>
                                     </TableCell>
@@ -214,8 +221,8 @@ function  ProfileView({ response }) {
                             <TableBody>
                             {personalbackgroundrows.map((row) => (
                                 <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row">{row.name}</TableCell>
-                                    <TableCell align="right">{row.value}</TableCell>
+                                    <TableCell className={classes.col1} component="th" scope="row">{row.name}</TableCell>
+                                    <TableCell className={classes.col2}>{row.value}</TableCell>
                                 </TableRow>
                             ))}
                             </TableBody>
