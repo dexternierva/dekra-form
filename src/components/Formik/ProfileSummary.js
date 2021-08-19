@@ -331,7 +331,7 @@ function ProfileSummary () {
     ];
 
     const yearOptions = [
-        { label: 'N/A', value: 'N/A' },
+        { label: 'Select Year', value: 'N/A' },
         { label: '1990', value: '1990' },
         { label: '1991', value: '1991' },
         { label: '1992', value: '1992' },
@@ -388,6 +388,7 @@ function ProfileSummary () {
                 dateOfBirth: response.dateOfBirth,
                 placeOfBirth: response.placeOfBirth,
                 maritalStatus: response.maritalStatus,
+                children: response.children,
                 child1: response.child1,
                 child2: response.child2,
                 child3: response.child3,
@@ -433,12 +434,12 @@ function ProfileSummary () {
         placeOfBirth: '',
         maritalStatus: '',
         children: 0,
-        child1: '',
-        child2: '',
-        child3: '',
-        child4: '',
-        child5: '',
-        child6: '',
+        child1: 'N/A',
+        child2: 'N/A',
+        child3: 'N/A',
+        child4: 'N/A',
+        child5: 'N/A',
+        child6: 'N/A',
         // LANGUAGE SKILLS
         nativeLanguage: 'Filipino (Tagalog)',
         germanLanguageLevel: '',
@@ -811,12 +812,12 @@ function ProfileSummary () {
                             <Box px={4} py={2}>
                                 <Field component={RadioGroup} name="sex" row>
                                     <FormControlLabel
-                                        value="male"
+                                        value="männlich"
                                         control={<Radio />}
                                         label="Male"
                                     />
                                     <FormControlLabel
-                                        value="female"
+                                        value="weiblich"
                                         control={<Radio />}
                                         label="Female"
                                     />
@@ -849,6 +850,7 @@ function ProfileSummary () {
                                                 fullWidth
                                                 autoWidth={true}
                                                 name="child1"
+                                                inputProps={{ 'aria-label': 'Without label' }}
                                             >
                                                 {yearOptions.map((option) => (
                                                     <MenuItem key={option.value} value={option.value}>
@@ -865,6 +867,7 @@ function ProfileSummary () {
                                                 fullWidth
                                                 autoWidth={true}
                                                 name="child2"
+                                                inputProps={{ 'aria-label': 'Without label' }}
                                             >
                                                 {yearOptions.map((option) => (
                                                     <MenuItem key={option.value} value={option.value}>
@@ -881,6 +884,7 @@ function ProfileSummary () {
                                                 fullWidth
                                                 autoWidth={true}
                                                 name="child3"
+                                                inputProps={{ 'aria-label': 'Without label' }}
                                             >
                                                 {yearOptions.map((option) => (
                                                     <MenuItem key={option.value} value={option.value}>
@@ -897,6 +901,7 @@ function ProfileSummary () {
                                                 fullWidth
                                                 autoWidth={true}
                                                 name="child4"
+                                                inputProps={{ 'aria-label': 'Without label' }}
                                             >
                                                 {yearOptions.map((option) => (
                                                     <MenuItem key={option.value} value={option.value}>
@@ -913,6 +918,7 @@ function ProfileSummary () {
                                                 fullWidth
                                                 autoWidth={true}
                                                 name="child5"
+                                                inputProps={{ 'aria-label': 'Without label' }}
                                             >
                                                 {yearOptions.map((option) => (
                                                     <MenuItem key={option.value} value={option.value}>
@@ -929,6 +935,7 @@ function ProfileSummary () {
                                                 fullWidth
                                                 autoWidth={true}
                                                 name="child6"
+                                                inputProps={{ 'aria-label': 'Without label' }}
                                             >
                                                 {yearOptions.map((option) => (
                                                     <MenuItem key={option.value} value={option.value}>
@@ -1012,7 +1019,7 @@ function ProfileSummary () {
                                 <Box px={4} py={2}>
                                     <Grid container spacing={2}>
                                         <Grid item lg={12} xs={12}>
-                                            <InputLabel shrink="true" tmlFor="otherLanguages">Other Languages</InputLabel>
+                                            <InputLabel shrink="true" htmlFor="otherLanguages">Other Languages</InputLabel>
                                         </Grid>
                                         <Grid item lg={6} xs={12}>
                                             <Field

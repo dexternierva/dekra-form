@@ -41,6 +41,8 @@ const Name = styled.div`
 const Dl = styled.dl`
     display: flex;
     justify-content: space-between;
+    font-size: 0.875em;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 `;
 
 const Dt = styled.dt`
@@ -54,7 +56,7 @@ const Dd = styled.dd`
 
 const useStyles = makeStyles((theme) => ({
     grid: {
-        margin: '0 0 2rem 0',
+        margin: '0 0 4rem 0',
         borderLeft: '4px solid #008B4F',
     },
     gridItemNoPadding: {
