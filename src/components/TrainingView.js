@@ -76,6 +76,7 @@ function TrainingTemplate({ training, idx }) {
                             </TableRow>
                         ))}
                             <TableRow>
+                                <TableCell component="th" scope="row" className={classes.col1}>{t("Skills acquired")}</TableCell>
                                 <TableCell className={classes.col2}>
                                     <ol className={classes.specializationList}>
                                         {training.skills.split(',').map((step) => <li>{step}</li>)}
