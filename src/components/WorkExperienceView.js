@@ -24,7 +24,9 @@ const useStyles = makeStyles((theme) => ({
     pWrap: {
         whiteSpace: 'pre-line',
         margin: '0'
-    }
+    },
+    col1: { width: '30%' },
+    col2: { width: '70%' },
 }));
 
 const SectionTitle = styled.div`
@@ -59,8 +61,8 @@ function WorkExprienceTemplate({ exp, idx }) {
                         <TableBody>
                         {keyfigurerows.map((row) => (
                             <TableRow key={row.name}>
-                                <TableCell component="th" scope="row">{row.name}</TableCell>
-                                <TableCell align="right"><p className={classes.pWrap}>{row.value}</p></TableCell>
+                                <TableCell component="th" scope="row" className={classes.col1}>{row.name}</TableCell>
+                                <TableCell className={classes.col2}><p className={classes.pWrap}>{row.value}</p></TableCell>
                             </TableRow>
                         ))}
                         </TableBody>

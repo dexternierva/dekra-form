@@ -150,7 +150,7 @@ function  ProfileView({ response }) {
                         <PersonIcon color="disabled" fontSize="large" />
                     </Paper>
                 </Grid>
-                <Grid item xs={12} sm={9}>
+                <Grid item xs={12} sm={9} className={classes.gridItemNoPadding}>
                     <TableContainer className={classes.ftable}>
                         <Table aria-label="simple table">
                             <TableBody>
