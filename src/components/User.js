@@ -200,7 +200,14 @@ const useStyles = makeStyles((theme) => ({
     pWrap: {
         whiteSpace: 'pre-line',
         margin: '0'
-    }
+    },
+    specializationList: {
+        padding: '0',
+        margin: '0',
+        listStylePosition: 'inside'
+    },
+    col1: { width: '30%' },
+    col2: { width: '70%' },
 }));
 
 /* 
@@ -340,31 +347,31 @@ function WorkExprienceTemplate({ exp, idx }) {
     }
     
     const keyfigurerows = [
-        createKeyFiguresData('Period', "From: " + moment(exp.from).format('MMMM YYYY') + " | To: " + moment(exp.to).format('MMMM YYYY')),
+        createKeyFiguresData('Period', "From: " + moment(exp.from).locale('de').format('MMMM YYYY') + " | To: " + moment(exp.to).locale('de').format('MMMM YYYY')),
         createKeyFiguresData('Job title/function', exp.job),
         createKeyFiguresData('Employers name & address', exp.employer),
     ];
 
     return (
-            <Grid container spacing={0} className={classes.grid}>
-                <Grid item xs={12} sm={2}>
-                    <SectionTitle>Work Experience {idx + 1}</SectionTitle>
-                </Grid>
-                <Grid item xs={12} sm={10}>
-                    <TableContainer className={classes.table}>
-                        <Table aria-label="simple table">
-                            <TableBody>
-                            {keyfigurerows.map((row) => (
-                                <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row">{row.name}</TableCell>
-                                    <TableCell align="right"><p className={classes.pWrap}>{row.value}</p></TableCell>
-                                </TableRow>
-                            ))}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
-                </Grid>
+        <Grid container spacing={0} className={classes.grid}>
+            <Grid item xs={12} sm={3}>
+                <SectionTitle>{"Work Experience"} {idx + 1}</SectionTitle>
             </Grid>
+            <Grid item xs={12} sm={9}>
+                <TableContainer className={classes.table}>
+                    <Table aria-label="simple table">
+                        <TableBody>
+                        {keyfigurerows.map((row) => (
+                            <TableRow key={row.name}>
+                                <TableCell component="th" scope="row" className={classes.col1}>{row.name}</TableCell>
+                                <TableCell className={classes.col2}><p className={classes.pWrap}>{row.value}</p></TableCell>
+                            </TableRow>
+                        ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Grid>
+        </Grid>
     )
 }
 
@@ -400,24 +407,24 @@ function EducationTemplate({ edu, idx }) {
     }
     
     const keyfigurerows = [
-        createKeyFiguresData('Period', "From: " + edu.from + " | To: " + edu.to),
+        createKeyFiguresData('Period', "From: " + moment(edu.from).locale('de').format('MMMM YYYY') + " | To: " + moment(edu.to).locale('de').format('MMMM YYYY')),
         createKeyFiguresData('Conclusion', edu.course),
         createKeyFiguresData('Name & address of the school/university', edu.university),
     ];
 
     return (
         <Grid container spacing={0} className={classes.grid}>
-            <Grid item xs={12} sm={2}>
-                <SectionTitle>Education &amp; Training {idx + 1}</SectionTitle>
+            <Grid item xs={12} sm={3}>
+                <SectionTitle>{"Education & Training"} {idx + 1}</SectionTitle>
             </Grid>
-            <Grid item xs={12} sm={10}>
+            <Grid item xs={12} sm={9}>
                 <TableContainer className={classes.table}>
                     <Table aria-label="simple table">
                         <TableBody>
                         {keyfigurerows.map((row) => (
                             <TableRow key={row.name}>
-                                <TableCell component="th" scope="row">{row.name}</TableCell>
-                                <TableCell align="right">{row.value}</TableCell>
+                                <TableCell component="th" scope="row" className={classes.col1}>{row.name}</TableCell>
+                                <TableCell className={classes.col2}><p className={classes.pWrap}>{row.value}</p></TableCell>
                             </TableRow>
                         ))}
                         </TableBody>
@@ -455,32 +462,39 @@ function EducationView ({ response }) {
  * ------------------------------------------------------------------------------------------------ */
 function TrainingTemplate({ training, idx }) {
     const classes = useStyles();
-
+    
     function createKeyFiguresData(name, value) {
         return { name, value };
     }
     
     const keyfigurerows = [
-        createKeyFiguresData('Period', "From: " + training.from + " | To: " + training.to),
-        createKeyFiguresData('Title of training & name of Training Provider', training.provider),
-        createKeyFiguresData('Skills Acquired', training.skills),
+        createKeyFiguresData('Period', "From: " + moment(training.from).locale('de').format('MMMM YYYY') + " | To: " + moment(training.to).locale('de').format('MMMM YYYY')),
+        createKeyFiguresData('Name of training provider', training.provider),
+        // createKeyFiguresData(t('Skills acquired'), training.skills),
     ];
 
     return (
         <Grid container spacing={0} className={classes.grid}>
-            <Grid item xs={12} sm={2}>
-                <SectionTitle>Training(s) {idx + 1}</SectionTitle>
+            <Grid item xs={12} sm={3}>
+                <SectionTitle>{"Training and further education"} {idx + 1}</SectionTitle>
             </Grid>
-            <Grid item xs={12} sm={10}>
+            <Grid item xs={12} sm={9}>
                 <TableContainer className={classes.table}>
                     <Table aria-label="simple table">
                         <TableBody>
                         {keyfigurerows.map((row) => (
                             <TableRow key={row.name}>
-                                <TableCell component="th" scope="row">{row.name}</TableCell>
-                                <TableCell align="right">{row.value}</TableCell>
+                                <TableCell component="th" scope="row" className={classes.col1}>{row.name}</TableCell>
+                                <TableCell className={classes.col2}><p className={classes.pWrap}>{row.value}</p></TableCell>
                             </TableRow>
                         ))}
+                            <TableRow>
+                                <TableCell className={classes.col2}>
+                                    <ol className={classes.specializationList}>
+                                        {training.skills.split(',').map((step) => <li>{step}</li>)}
+                                    </ol>
+                                </TableCell>
+                            </TableRow>
                         </TableBody>
                     </Table>
                 </TableContainer>

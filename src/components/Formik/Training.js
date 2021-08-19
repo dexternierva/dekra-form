@@ -223,6 +223,7 @@ function Training () {
                                                                         name={`trainings[${index}].skills`}
                                                                         variant="outlined"
                                                                         fullWidth
+                                                                        helperText="Please enter comma separated values"
                                                                     />
                                                                 </Box>
                                                             </Grid>

@@ -21,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
     table: {
         margin: '-.75rem 0 0 0'
     },
+    pWrap: {
+        whiteSpace: 'pre-line',
+        margin: '0'
+    },
     col1: { width: '30%' },
     col2: { width: '70%' },
 }));
