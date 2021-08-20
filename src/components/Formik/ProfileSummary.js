@@ -331,7 +331,7 @@ function ProfileSummary () {
     ];
 
     const yearOptions = [
-        { label: 'Select Year', value: 'N/A' },
+        { label: 'Select Year', value: ' ' },
         { label: '1990', value: '1990' },
         { label: '1991', value: '1991' },
         { label: '1992', value: '1992' },
@@ -434,12 +434,12 @@ function ProfileSummary () {
         placeOfBirth: '',
         maritalStatus: '',
         children: 0,
-        child1: 'N/A',
-        child2: 'N/A',
-        child3: 'N/A',
-        child4: 'N/A',
-        child5: 'N/A',
-        child6: 'N/A',
+        child1: ' ',
+        child2: ' ',
+        child3: ' ',
+        child4: ' ',
+        child5: ' ',
+        child6: ' ',
         // LANGUAGE SKILLS
         nativeLanguage: 'Filipino (Tagalog)',
         germanLanguageLevel: '',
