@@ -102,6 +102,14 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-between',
         textDecoration: 'underline'
     },
+    noborderbottom: {
+        "& th": {
+            borderBottom: 'none'
+        },
+        "& td": {
+            borderBottom: 'none'
+        }
+    },
     col1: { width: '30%' },
     col2: { width: '70%' },
 }));
@@ -134,7 +142,7 @@ function  ProfileView({ response }) {
             personalBackgroundData(t('Date of birth'), moment(response.cv.dateOfBirth).format("DD.MM.YYYY")),
             personalBackgroundData(t('Place of birth'), response.cv.placeOfBirth),
             personalBackgroundData(t('Marital status'), response.cv.maritalStatus),
-            personalBackgroundData(t('Number of children'), response.cv.children),
+            // personalBackgroundData(t('Number of children'), response.cv.children),
         ];
 
         return (
@@ -220,8 +228,12 @@ function  ProfileView({ response }) {
                                     <TableCell className={classes.col2}>{row.value}</TableCell>
                                 </TableRow>
                             ))}
+                            <TableRow className={classes.noborderbottom}>
+                                <TableCell className={classes.col1} component="th" scope="row">Kinder</TableCell>
+                                <TableCell className={classes.col2}>{response.cv.children}</TableCell>
+                            </TableRow>
                             <TableRow>
-                                <TableCell className={classes.col1}>Kinder</TableCell>
+                                <TableCell className={classes.col1}></TableCell>
                                 <TableCell className={classes.col2}>
                                     <ul className={classes.inlineList}>
                                         <li>{response.cv.child1}</li>
