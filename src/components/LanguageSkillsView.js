@@ -53,7 +53,7 @@ function LanguageSkillsView({ response }) {
         const languageskillsrows = [
             languageSkillsData(t('Native language'), response.cv.nativeLanguage),
             languageSkillsData(t('German language skills up-to-date'), moment(response.cv.germanLanguageDate).format("DD.MM.YYYY")),
-            languageSkillsData(t('German B1-B2 Care'), 'voraussichtlich' + moment(response.cv.germanCare).format("DD.MM.YYYY")),
+            languageSkillsData(t('German B1-B2 Care'), 'voraussichtlich ' + moment(response.cv.germanCare).format("DD.MM.YYYY")),
             languageSkillsData(t('Other languages'), t("Language: ") + response.cv.otherLanguages + " | " +  t("Level: ") + response.cv.otherLanguagesLevel),
         ];
 
