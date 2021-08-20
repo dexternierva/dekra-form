@@ -295,10 +295,10 @@ function ProfileSummary () {
 
     const maritalStatusOptions = [
         { label: 'Select Marital Status', value: '' },
-        { label: 'Single', value: 'ledig' },
-        { label: 'Married', value: 'verheiratet' },
-        { label: 'Widowed', value: 'verwitwet' },
-        { label: 'Divorced', value: 'geschieden' }
+        { label: 'Single', value: 'Ledig' },
+        { label: 'Married', value: 'Verheiratet' },
+        { label: 'Widowed', value: 'Verwitwet' },
+        { label: 'Divorced', value: 'Geschieden' }
     ];
 
     const computerSkillsOptions = [
@@ -812,12 +812,12 @@ function ProfileSummary () {
                             <Box px={4} py={2}>
                                 <Field component={RadioGroup} name="sex" row>
                                     <FormControlLabel
-                                        value="männlich"
+                                        value="Männlich"
                                         control={<Radio />}
                                         label="Male"
                                     />
                                     <FormControlLabel
-                                        value="weiblich"
+                                        value="Weiblich"
                                         control={<Radio />}
                                         label="Female"
                                     />

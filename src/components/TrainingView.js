@@ -30,6 +30,10 @@ const useStyles = makeStyles((theme) => ({
         border: '1px solid #008B4F',
         textAlign: 'center'
     },
+    pWrap: {
+        whiteSpace: 'pre-line',
+        margin: '0'
+    },
     specializationList: {
         padding: '0',
         margin: '0',
