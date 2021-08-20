@@ -43,7 +43,8 @@ let translations = {
         "Sex": "Geschlecht",
         "Date of birth": "Geburtsdatum",
         "Place of birth": "Geburtsort",
-        "Marital status": "Familienstand"
+        "Marital status": "Familienstand",
+        "Number of children": "Anzahl der Kinder"
     },
     Experience: {
         "Work Experience": "Berufserfahrung",

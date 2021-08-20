@@ -82,7 +82,7 @@ function OtherSkillsView({ response }) {
                             {furtherknowledgerows.map((row) => (
                                 <TableRow key={row.name}>
                                     <TableCell component="th" scope="row" className={classes.col1}>{row.name}</TableCell>
-                                    <TableCell align="right" className={classes.col2}>{row.value}</TableCell>
+                                    <TableCell className={classes.col2}>{row.value}</TableCell>
                                 </TableRow>
                             ))}
                             </TableBody>

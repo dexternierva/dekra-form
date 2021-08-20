@@ -134,6 +134,7 @@ function  ProfileView({ response }) {
             personalBackgroundData(t('Date of birth'), moment(response.cv.dateOfBirth).format("DD.MM.YYYY")),
             personalBackgroundData(t('Place of birth'), response.cv.placeOfBirth),
             personalBackgroundData(t('Marital status'), response.cv.maritalStatus),
+            personalBackgroundData(t('Number of children'), response.cv.children),
         ];
 
         return (
@@ -220,7 +221,7 @@ function  ProfileView({ response }) {
                                 </TableRow>
                             ))}
                             <TableRow>
-                                <TableCell className={classes.col1}>Children</TableCell>
+                                <TableCell className={classes.col1}>Kinder</TableCell>
                                 <TableCell className={classes.col2}>
                                     <ul className={classes.inlineList}>
                                         <li>{response.cv.child1}</li>
