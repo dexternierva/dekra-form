@@ -82,7 +82,6 @@ const SectionTitle = styled.div`
 `;
 
 const Name = styled.div`
-    display: flex;
     font-size: 1.5rem;
     color: #008B4F;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -198,6 +197,7 @@ const useStyles = makeStyles((theme) => ({
         listStyleType: 'none',
         display: 'flex',
         justifyContent: 'space-between',
+        textDecoration: 'underline'
     },
     col1: { width: '30%' },
     col2: { width: '70%' },

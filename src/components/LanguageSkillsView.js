@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import moment from 'moment';
 
 import { useTranslate } from "react-translate";
 
@@ -30,6 +31,8 @@ const useStyles = makeStyles((theme) => ({
         border: '1px solid #008B4F',
         textAlign: 'center'
     },
+    col1: { width: '30%' },
+    col2: { width: '70%' },
 }));
 
 const SectionTitle = styled.div`
@@ -49,8 +52,8 @@ function LanguageSkillsView({ response }) {
         
         const languageskillsrows = [
             languageSkillsData(t('Native language'), response.cv.nativeLanguage),
-            languageSkillsData(t('German language skills up-to-date'), response.cv.germanLanguageDate),
-            languageSkillsData(t('German B1-B2 Care'), response.cv.germanCare),
+            languageSkillsData(t('German language skills up-to-date'), moment(response.cv.germanLanguageDate).format("DD.MM.YYYY")),
+            languageSkillsData(t('German B1-B2 Care'), 'voraussichtlich' + moment(response.cv.germanCare).format("DD.MM.YYYY")),
             languageSkillsData(t('Other languages'), t("Language: ") + response.cv.otherLanguages + " | " +  t("Level: ") + response.cv.otherLanguagesLevel),
         ];
 
@@ -65,8 +68,8 @@ function LanguageSkillsView({ response }) {
                             <TableBody>
                             {languageskillsrows.map((row) => (
                                 <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row">{row.name}</TableCell>
-                                    <TableCell align="right">{row.value}</TableCell>
+                                    <TableCell component="th" scope="row" className={classes.col1}>{row.name}</TableCell>
+                                    <TableCell className={classes.col2}>{row.value}</TableCell>
                                 </TableRow>
                             ))}
                             </TableBody>

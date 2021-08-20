@@ -1081,6 +1081,7 @@ function ProfileForm ({ setProfileFormState }) {
                                     label="Personal Skills"
                                     variant="outlined"
                                     fullWidth
+                                    helperText="Please enter value in German"
                                 />
                             </Grid>
                             <Grid item lg={6} xs={12}>

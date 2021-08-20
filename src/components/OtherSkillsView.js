@@ -30,6 +30,13 @@ const useStyles = makeStyles((theme) => ({
         border: '1px solid #008B4F',
         textAlign: 'center'
     },
+    specializationList: {
+        padding: '0',
+        margin: '0',
+        listStylePosition: 'inside'
+    },
+    col1: { width: '30%' },
+    col2: { width: '70%' },
 }));
 
 const SectionTitle = styled.div`
@@ -49,7 +56,7 @@ function OtherSkillsView({ response }) {
         }
         
         const furtherknowledgerows = [
-            furtherKnowledgeData(t('Computer skills'), response.cv.computerSkills),
+            // furtherKnowledgeData(t('Computer skills'), response.cv.computerSkills),
             furtherKnowledgeData(t('Other Computer skills'), response.cv.otherComputerSkills),
             furtherKnowledgeData(t('Personal skills'), response.cv.personalSkills),
             furtherKnowledgeData(t('Driving license'), response.cv.drivingLicense),
@@ -64,10 +71,18 @@ function OtherSkillsView({ response }) {
                     <TableContainer className={classes.table}>
                         <Table aria-label="simple table">
                             <TableBody>
+                            <TableRow>
+                                <TableCell component="th" scope="row" className={classes.col1}>EDV-Kenntnisse</TableCell>
+                                <TableCell className={classes.col2}>
+                                    <ol className={classes.specializationList}>
+                                        {response.cv.computerSkills.split(',').map((step) => <li>{step}</li>)}
+                                    </ol>
+                                </TableCell>
+                            </TableRow>
                             {furtherknowledgerows.map((row) => (
                                 <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row">{row.name}</TableCell>
-                                    <TableCell align="right">{row.value}</TableCell>
+                                    <TableCell component="th" scope="row" className={classes.col1}>{row.name}</TableCell>
+                                    <TableCell align="right" className={classes.col2}>{row.value}</TableCell>
                                 </TableRow>
                             ))}
                             </TableBody>
