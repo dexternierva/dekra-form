@@ -96,20 +96,6 @@ const Header = styled.h4`
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 `;
 
-const Dl = styled.dl`
-    display: flex;
-    justify-content: space-between;
-`;
-
-const Dt = styled.dt`
-    padding: 0 16px;
-`;
-
-const Dd = styled.dd`
-    padding: 0 16px;
-    border-bottom: 1px solid rgba(224, 224, 224, 1);
-`;
-
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -205,6 +191,13 @@ const useStyles = makeStyles((theme) => ({
         padding: '0',
         margin: '0',
         listStylePosition: 'inside'
+    },
+    inlineList: {
+        margin: '0',
+        padding: '0',
+        listStyleType: 'none',
+        display: 'flex',
+        justifyContent: 'space-between',
     },
     col1: { width: '30%' },
     col2: { width: '70%' },
@@ -326,18 +319,21 @@ function  ProfileView({ response }) {
                                     <TableCell className={classes.col2}>{row.value}</TableCell>
                                 </TableRow>
                             ))}
+                            <TableRow>
+                                <TableCell className={classes.col1}>Children</TableCell>
+                                <TableCell className={classes.col2}>
+                                    <ul className={classes.inlineList}>
+                                        <li>{response.cv.child1}</li>
+                                        <li>{response.cv.child2}</li>
+                                        <li>{response.cv.child3}</li>
+                                        <li>{response.cv.child4}</li>
+                                        <li>{response.cv.child5}</li>
+                                        <li>{response.cv.child6}</li>
+                                    </ul>
+                                </TableCell>
+                            </TableRow>
                             </TableBody>
                         </Table>
-
-                        <Dl>
-                            <Dt>Kinder</Dt>
-                            <Dd>{response.cv.child1}</Dd>
-                            <Dd>{response.cv.child2}</Dd>
-                            <Dd>{response.cv.child3}</Dd>
-                            <Dd>{response.cv.child4}</Dd>
-                            <Dd>{response.cv.child5}</Dd>
-                            <Dd>{response.cv.child6}</Dd>
-                        </Dl>
                     </TableContainer>
                 </Grid>
             </Grid>
