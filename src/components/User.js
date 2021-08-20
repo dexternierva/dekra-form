@@ -222,10 +222,10 @@ function  ProfileView({ response }) {
         }
         
         const keyfigurerows = [
-            createKeyFiguresData('Conclusion', response.cv.kfDegree),
+            //createKeyFiguresData(t('Conclusion'), response.cv.kfDegree),
             createKeyFiguresData('Language skills', response.cv.kfLanguage),
-            createKeyFiguresData('Experience', response.cv.kfExperienceYear + " years(s) and " + response.cv.kfExperienceMonth + " month(s)"),
-            createKeyFiguresData('Specializations', response.cv.kfPriorities),
+            createKeyFiguresData('Experience', response.cv.kfExperienceYear + " Year(s) and " + response.cv.kfExperienceMonth + " Month(s)"),
+            // createKeyFiguresData(t('Priorities'), response.cv.kfPriorities),
         ];
 
         function personalBackgroundData(name, value) {
@@ -237,26 +237,27 @@ function  ProfileView({ response }) {
             personalBackgroundData('E-mail Address', response.cv.email),
             personalBackgroundData('Nationality', response.cv.nationality),
             personalBackgroundData('Sex', response.cv.sex),
-            personalBackgroundData('Date of birth', moment(response.cv.dateOfBirth).format('DD MMMM YYYY')),
+            personalBackgroundData('Date of birth', moment(response.cv.dateOfBirth).format("DD.MM.YYYY")),
             personalBackgroundData('Place of birth', response.cv.placeOfBirth),
             personalBackgroundData('Marital status', response.cv.maritalStatus),
+            personalBackgroundData('Number of children', response.cv.children),
         ];
 
         return (
             <>
-            <Grid container spacing={0} className={classes.grid}>
-                <Grid item xs={12} sm={2}>
+            <Grid container spacing={3} className={classes.grid}>
+                <Grid item xs={12} sm={3} className={classes.gridItemNoPadding}>
                     <Paper variant="outlined" square className={classes.avatar}>
                         <PersonIcon color="disabled" fontSize="large" />
                     </Paper>
                 </Grid>
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9} className={classes.gridItemNoPadding}>
                     <TableContainer className={classes.ftable}>
                         <Table aria-label="simple table">
                             <TableBody>
                                 <TableRow>
-                                    <TableCell component="th" scope="row" align="center" className={classes.tcell}><Header>Participant ID</Header></TableCell>
-                                    <TableCell component="th" scope="row" align="center"><Header>Category</Header></TableCell>
+                                    <TableCell component="th" scope="row" align="center" className={classes.tcell}><Header>Teilnehmer - ID</Header></TableCell>
+                                    <TableCell component="th" scope="row" align="center"><Header>Kategorie</Header></TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell align="center" className={classes.tcell}>{response.cv.kfParticipantId}</TableCell>
@@ -268,50 +269,68 @@ function  ProfileView({ response }) {
 
                     <Name>
                         <Typography className={classes.typo} variant="h4" component="h2">{response.firstname} {response.lastname}</Typography>
+                        <Typography className={classes.typo} variant="h4" component="h2">Gesundheits - Und Krankenpfleger</Typography>
                     </Name>
                 </Grid>
             </Grid>
 
             <Grid container spacing={0} className={classes.grid}>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <SectionTitle>At a glance</SectionTitle>
                 </Grid>
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <TableContainer className={classes.table}>
-                        <Table aria-label="simple table">
+                        <Table aria-label="simple table"> 
                             <TableBody>
-                            {keyfigurerows.map((row) => (
-                                <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row">{row.name}</TableCell>
-                                    <TableCell align="right">{row.value}</TableCell>
+                                <TableRow>
+                                    <TableCell className={classes.col1} component="th" scope="row">Degree</TableCell>
+                                    <TableCell className={classes.col2}>
+                                        {response.cv.kfDegree}
+                                        Allgemeine Gesundheits- und Krankenpflege
+                                    </TableCell>
                                 </TableRow>
-                            ))}
+
+                                {keyfigurerows.map((row) => (
+                                    <TableRow key={row.name}>
+                                        <TableCell className={classes.col1} component="th" scope="row">{row.name}</TableCell>
+                                        <TableCell className={classes.col2}>{row.value}</TableCell>
+                                    </TableRow>
+                                ))}
+
+                                <TableRow>
+                                    <TableCell className={classes.col1} component="th" scope="row">Specializations</TableCell>
+                                    <TableCell className={classes.col2}>
+                                        <ol className={classes.specializationList}>
+                                            {response.cv.kfPriorities.split(', ').map((step) => <li>{step}</li>)}
+                                        </ol>
+                                    </TableCell>
+                                </TableRow>
                             </TableBody>
-                            <caption>Detailed overview of activities in the 'Professional Skills' facility"</caption>
+                            <caption>Detailed overview of activities in the 'Professional Skills' facility</caption>
                         </Table>
                     </TableContainer>
                 </Grid>
             </Grid>
 
             <Grid container spacing={0} className={classes.grid}>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <SectionTitle>Private Background</SectionTitle>
                 </Grid>
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <TableContainer className={classes.table}>
                         <Table aria-label="simple table">
                             <TableBody>
                             {personalbackgroundrows.map((row) => (
                                 <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row">{row.name}</TableCell>
-                                    <TableCell align="right">{row.value}</TableCell>
+                                    <TableCell className={classes.col1} component="th" scope="row">{row.name}</TableCell>
+                                    <TableCell className={classes.col2}>{row.value}</TableCell>
                                 </TableRow>
                             ))}
                             </TableBody>
                         </Table>
 
                         <Dl>
-                            <Dt>Children</Dt>
+                            <Dt>Kinder</Dt>
                             <Dd>{response.cv.child1}</Dd>
                             <Dd>{response.cv.child2}</Dd>
                             <Dd>{response.cv.child3}</Dd>
@@ -335,6 +354,7 @@ function  ProfileView({ response }) {
         )
     }
 }
+
 
 /* 
  * WORK EXPERIENCE VIEW

@@ -839,7 +839,6 @@ function ProfileSummary () {
                                     InputProps={{ inputProps: { min: 0, max: 10 } }}
                                 />
                             </Box>
-                            <Box px={4} py={2}></Box>
                             <Box px={4} py={2}>
                                 <InputLabel shrink={true} htmlFor="child1">Children</InputLabel>
                                 <Grid container spacing={0}>
