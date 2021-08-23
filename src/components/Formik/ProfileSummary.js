@@ -1035,9 +1035,9 @@ function ProfileSummary () {
                                                 label="English Language"
                                                 value="English"
                                                 name="englishLanguage"
-                                                variant="outlined"
                                                 fullWidth
                                             />
+                                            <FormHelperText>Language</FormHelperText>
                                         </Grid>
                                         <Grid item lg={6} xs={12}>
                                             <Field
@@ -1045,7 +1045,6 @@ function ProfileSummary () {
                                                 label="English Languages Level"
                                                 type="text"
                                                 name="englishLanguageLevel"
-                                                variant="outlined"
                                                 margin="normal"
                                                 fullWidth
                                                 autoWidth={true}
@@ -1058,8 +1057,8 @@ function ProfileSummary () {
                                                     </MenuItem>
                                                 ))}
                                             </Field>
+                                            <FormHelperText>English Language Level</FormHelperText>
                                         </Grid>
-                                        <FormHelperText>Select English Language Level</FormHelperText>
                                     
                                         <Grid item lg={6} xs={12}>
                                             <Field
