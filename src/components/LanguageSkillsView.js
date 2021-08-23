@@ -73,7 +73,7 @@ function LanguageSkillsView({ response }) {
                                 </TableRow>
                             ))}
                             <TableRow className={classes.noborderbottom}>
-                                <TableCell component="th" scope="row" className={classes.col1}>{t("Other Languages")}</TableCell>
+                                <TableCell component="th" scope="row" className={classes.col1}>Weitere Sprachen</TableCell>
                                 <TableCell className={classes.col2}>{t("Language: ")} {response.cv.englishLanguage} | {t("Level: ")} {response.cv.englishLanguageLevel}</TableCell>
                             </TableRow>
                             <TableRow>
