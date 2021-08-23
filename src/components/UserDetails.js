@@ -63,7 +63,7 @@ let translations = {
         "Name & address of the school/university": "Name und Adresse der Schule/Universität"
     },
     Training: {
-        "Training and further education": "Schul- und Berufsbildung",
+        "Training and further education": "Schulungen und Weiterbildungen",
         "Period": "Zeitraum",
         "From: ": "von: ",
         " To: ": " bis: ",
