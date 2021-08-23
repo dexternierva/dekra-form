@@ -730,16 +730,18 @@ function  PracticalSkillsView({ response }) {
                         <Typography variant="body2" gutterBottom>1. Grundsätzliche Parameter (bspw. Größe, Gewicht) und Vitalparameter erheben (mittels manueller Messung, mittels Monitoring)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.a1}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        max={6}
-                    />
+                <Grid item xs={12} sm={3}>
+                    <Box className={classes.ratingGrid}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.a1}
+                            icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
@@ -747,16 +749,18 @@ function  PracticalSkillsView({ response }) {
                         <Typography variant="body2" gutterBottom>2. Körperlichen (physisch, neurologisch) und kognitiven Zustand von PatientInnen ermitteln</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.a2}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        max={6}
-                    />
+                <Grid item xs={12} sm={3}>
+                    <Box className={classes.ratingGrid}>
+                        <StyledRating
+                            name="customized-color"
+                            defaultValue={0}
+                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                            precision={1}
+                            value={response.practical_activity.a2}
+                            icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                            max={6}
+                        />
+                    </Box>
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
