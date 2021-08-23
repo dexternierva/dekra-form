@@ -54,7 +54,7 @@ function LanguageSkillsView({ response }) {
             languageSkillsData(t('Native language'), response.cv.nativeLanguage),
             languageSkillsData(t('German language skills up-to-date'), moment(response.cv.germanLanguageDate).format("DD.MM.YYYY")),
             languageSkillsData(t('German B1-B2 Care'), 'voraussichtlich ' + moment(response.cv.germanCare).format("DD.MM.YYYY")),
-            languageSkillsData(t('Other languages'), t("Language: ") + response.cv.otherLanguages + " | " +  t("Level: ") + response.cv.otherLanguagesLevel),
+            // languageSkillsData(t('Other languages'), t("Language: ") + response.cv.otherLanguages + " | " +  t("Level: ") + response.cv.otherLanguagesLevel),
         ];
 
         return (
@@ -72,6 +72,14 @@ function LanguageSkillsView({ response }) {
                                     <TableCell className={classes.col2}>{row.value}</TableCell>
                                 </TableRow>
                             ))}
+                            <TableRow className={classes.noborderbottom}>
+                                <TableCell component="th" scope="row" className={classes.col1}>{t("Other Languages")}</TableCell>
+                                <TableCell className={classes.col2}>{t("Language: ")} {response.cv.englishLanguage} | {t("Level: ")} {response.cv.englishLanguageLevel}</TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell component="th" scope="row" className={classes.col1}>&nbsp;</TableCell>
+                                <TableCell className={classes.col2}>{t("Language: ")} {response.cv.otherLanguages} | {t("Level: ")} {response.cv.otherLanguagesLevel}</TableCell>
+                            </TableRow>
                             </TableBody>
                         </Table>
                     </TableContainer>

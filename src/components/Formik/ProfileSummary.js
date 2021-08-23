@@ -430,7 +430,7 @@ function ProfileSummary () {
         // PERSONAL-BACKGROUND
         address: '',
         email: '',
-        nationality: 'Filipino',
+        nationality: 'Filipinisch',
         sex: '',
         dateOfBirth: new Date(),
         placeOfBirth: '',
@@ -1032,8 +1032,7 @@ function ProfileSummary () {
                                             <Field
                                                 component={TextField}
                                                 type="text"
-                                                label="English Language"
-                                                value="English"
+                                                // value="English"
                                                 name="englishLanguage"
                                                 fullWidth
                                             />
