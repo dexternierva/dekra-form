@@ -31,6 +31,14 @@ const useStyles = makeStyles((theme) => ({
         border: '1px solid #008B4F',
         textAlign: 'center'
     },
+    noborderbottom: {
+        "& th": {
+            borderBottom: 'none'
+        },
+        "& td": {
+            borderBottom: 'none'
+        }
+    },
     col1: { width: '30%' },
     col2: { width: '70%' },
 }));

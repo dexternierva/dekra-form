@@ -12,6 +12,7 @@ import Login from "./components/Formik/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import UserDetails from "./components/UserDetails";
 import PracticalKnowledgeDetails from "./components/PracticalKnowledgeDetails";
+import PracticalSkillsDetails from "./components/PracticalSkillsDetails";
 import PracticalActivitiesDetails from "./components/PracticalActivitiesDetails";
 
 function App () {
@@ -27,6 +28,7 @@ function App () {
 				<Route path="/users/:id" component={ User } exact/>
 				<Route path="/signup" component={ SignUp } exact />
 				<Route path="/userdetails/:id" component={ UserDetails } />
+				<Route path="/userpracticalskills/:id" component={ PracticalSkillsDetails } />
 				<Route path="/userpracticalknowledge/:id" component={ PracticalKnowledgeDetails } />
 				<Route path="/userpracticalactivities/:id" component={ PracticalActivitiesDetails } />
 				<Route path="/forgotpassword" component={ ForgotPassword } />

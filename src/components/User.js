@@ -644,6 +644,1817 @@ function OtherSkillsView({ response }) {
     } 
 }
 
+
+/* 
+ * PRACTICAL SKILLS VIEW
+ * ------------------------------------------------------------------------------------------------ */
+function  PracticalSkillsView({ response }) {
+    const classes = useStyles();
+
+    if (response.practical_knowledge && response.practical_activity !== null) {
+
+        return (
+            <>
+            <div className={classes.intro}>
+                <Paper elevation={0} className={classes.paper}>
+                    <Typography variant="h5" component="h2" className={classes.titles}>
+                        Praktische Kenntnisse
+                    </Typography>
+                    <Typography color="h5" gutterBottom className={classes.titles}>
+                        Anlage zum Lebenslauf von: {response.lastname + ', ' + response.lastname}
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                        Diese Angaben sollen zusätzlich zum Lebenslauf eine Übersicht darüber vermitteln, welche praktischen Fähigkeiten bereits selbständig ausgeführt wurden. Es handelt sich um eine Selbsteinschätzung des Teilnehmers zur allgemeinen Orientierung, stellt aber keine qualitative Aussage über diese individuelle Fähigkeiten dar.
+                    </Typography>
+                </Paper>
+            </div>
+
+            {
+                /**
+                 * PRACTICAL KNOWLEDGE
+                 * =====================================================================
+                 */
+            }
+            <section>
+                {
+                    /**
+                     * DEPARTMENT
+                     * =====================================================================
+                     */
+                }
+                <Grid container spacing={0} className={classes.grid}>
+                    <Grid item xs={12} sm={12}>
+                        <SectionTitle>Fachbereich</SectionTitle>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.care}  color="primary" />}
+                                label="Intensivmedizin"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.internalmedicine}  color="primary" />}
+                                label="Innere Medizin"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.pediatrics}  color="primary" />}
+                                label="Pädiatrie"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.generalaccidentsurgery}  color="primary" />}
+                                label="Allgemeine Unfallchirurgie"
+                            />
+                        </Box>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.anesthesia}  color="primary" />}
+                                label="Anästhesie"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.orthopedics}  color="primary" />}
+                                label="Orthopädie"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.emergency}  color="primary" />}
+                                label="Notaufnahme"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionaldepartment1}/>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.op}  color="primary" />}
+                                label="OP"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.neurology}  color="primary" />}
+                                label="Neurologie"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.geriatrics}  color="primary" />}
+                                label="Geriatrie"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionaldepartment2}/>
+                        </Box>
+                    </Grid>
+                </Grid>
+            </section>
+            
+            <section>
+                <Grid container spacing={0}>
+                    {
+                        /**
+                         * BASIC CARE
+                         * =====================================================================
+                         */
+                    }
+                    <Grid item xs={12} sm={6} className={classes.grid}>
+                        <SectionTitle>Grundpflege</SectionTitle>
+
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.patientwashing}  color="primary" />}
+                                label="Patient waschen"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.patientstorage}  color="primary" />}
+                                label="Patient lagern"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.mobilization}  color="primary" />}
+                                label="Mobilisation"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.helpwithfood}  color="primary" />}
+                                label="Hilfe beim Essen"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.prophylaxis}  color="primary" />}
+                                label="Prophylaxen (Pneumonie, Dekubitus, Kontraktur...)"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare1}/>
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare2}/>
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare3}/>
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare4}/>
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare5}/>
+                        </Box>
+                    </Grid>
+
+                    {
+                        /**
+                         * BREATHING
+                         * =====================================================================
+                         */
+                    }
+                    <Grid item xs={12} sm={6} className={classes.grid}>
+                        <SectionTitle>Atmung</SectionTitle>
+
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.oxygentherapy}  color="primary" />}
+                                label="O²-Gabe / Sauerstofftherapie"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.assessingbreathing}  color="primary" />}
+                                label="Atmung beurteilen"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.inhalation}  color="primary" />}
+                                label="Inhalation"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.thoraxdrainage}  color="primary" />}
+                                label="Thoraxdrainage"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.tracheostoma}  color="primary" />}
+                                label="Tracheostoma / Pflege Trachealkanüle"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.suction}  color="primary" />}
+                                label="Absaugen Mund/Rachen"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.ventilators}  color="primary" />}
+                                label="Beatmungsgeräte bedienen auf Anweisung"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.settingventilators}  color="primary" />}
+                                label="Beatmungsgeräte selbständig einstellen"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.beatmungsformen}  color="primary" />}
+                                label="Beatmungsformen (CPAP, BIPAP, SIMV)"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbreathing}/>
+                        </Box>
+                    </Grid>
+                </Grid>
+            </section>
+            
+            <section>
+                <Grid container spacing={0}>
+                    {
+                        /**
+                         * Vital sign control / monitoring
+                         * =====================================================================
+                         */
+                    }
+                    <Grid item xs={12} sm={6} className={classes.grid}>
+                        <SectionTitle>Vitalzeichenkontrolle / Überwachung</SectionTitle>
+
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.rrmeasurement}  color="primary" />}
+                                label="RR-Messung (Blutdruck messen)"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.measuringtemperature}  color="primary" />}
+                                label="Temperatur messen"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.measuringblood}  color="primary" />}
+                                label="Blutzucker messen (Geräte)"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.monitor}  color="primary" />}
+                                label="Monitor"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.pulsoxymeter}  color="primary" />}
+                                label="Pulsoxymeter"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.ecg}  color="primary" />}
+                                label="EKG schreiben"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.readassess}  color="primary" />}
+                                label="EKG lesen / beurteilen"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalvitalsign}/>
+                        </Box>
+                    </Grid>
+
+                    {
+                        /**
+                         * DEVICES
+                         * =====================================================================
+                         */
+                    }
+                    <Grid item xs={12} sm={6} className={classes.grid}>
+                        <SectionTitle>Geräte</SectionTitle>
+
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.bloodglucose}  color="primary" />}
+                                label="Blutzuckermessgerät"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.devicesmonitor}  color="primary" />}
+                                label="Monitor"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.devicespulsoxymeter}  color="primary" />}
+                                label="Pulsoxymeter"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.schmerzpumpe}  color="primary" />}
+                                label="Schmerzpumpe / PCA-Pumpe"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.infusomat}  color="primary" />}
+                                label="Infusomat / Infusionspumpe"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.perfusor}  color="primary" />}
+                                label="Perfusor / Sprizenpumpe"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.vacuumpump}  color="primary" />}
+                                label="Vakuumpumpe Wunde"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionaldevices}/>
+                        </Box>
+                    </Grid>
+                </Grid>
+            </section>
+
+            <section>
+                <Grid container spacing={0}>
+                    {
+                        /**
+                         * MEDICATIONS
+                         * =====================================================================
+                         */
+                    }
+                    <Grid item xs={12} sm={6} className={classes.grid}>
+                        <SectionTitle>Medikamente</SectionTitle>
+
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.pharmacology}  color="primary" />}
+                                label="Pharmakologie, Wirkungsweise von Medikamenten"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.oraladministration}  color="primary" />}
+                                label="Oral gabe"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.rektalegabe}  color="primary" />}
+                                label="Rektale gabe"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.subcutaneous}  color="primary" />}
+                                label="Subkutan"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.intramuscular}  color="primary" />}
+                                label="intramuskulär"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.intravenously}  color="primary" />}
+                                label="Intravenös"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.infusion}  color="primary" />}
+                                label="Infusion"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.centralvenous}  color="primary" />}
+                                label="ZVK – Zentraler Venenkatheter"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.feedingtube}  color="primary" />}
+                                label="Magensonde"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.notfallmedikamente}  color="primary" />}
+                                label="Notfallmedikamente"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication1}/>
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication2}/>
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication3}/>
+                        </Box>
+                    </Grid>
+
+                    {
+                        /**
+                         * EXCRETION
+                         * =====================================================================
+                         */
+                    }
+                    <Grid item xs={12} sm={6} className={classes.grid}>
+                        <SectionTitle>Ausscheidung</SectionTitle>
+
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.urogenitalbereich}  color="primary" />}
+                                label="Urogenitalbereich"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.onetimecatheter}  color="primary" />}
+                                label="Einmalkatheter legen"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.permanentcatheter}  color="primary" />}
+                                label="Dauerkatheter legen"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.suprapubiccatheter}  color="primary" />}
+                                label="Suprapubischer Katheter Assist. Anlage/Pflege"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.hurine}  color="primary" />}
+                                label="24h - Urin"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.excretioninfusion}  color="primary" />}
+                                label="Infusion"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.condomurinal}  color="primary" />}
+                                label="Kondom – Urinal"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.magendarmtrakt}  color="primary" />}
+                                label="Magendarmtrakt"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.caregastricprobe}  color="primary" />}
+                                label="Pflege von Magensonde "
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.transnasalgastric}  color="primary" />}
+                                label="Transnasale Magensonde legen"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.careofpeg}  color="primary" />}
+                                label="Pflege von PEG"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.careofstoma}  color="primary" />}
+                                label="Pflege von Stoma / Enterostoma"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.intestinalrinsing}  color="primary" />}
+                                label="Darmspülung (Hebe-Senk-Einlauf, Klistier)"
+                            />
+                        </Box>
+                    </Grid>
+                </Grid>
+            </section>
+
+            <section>
+                <Grid container spacing={0}>
+                    {
+                        /**
+                         * NEUROLOGY
+                         * =====================================================================
+                         */
+                    }
+                    <Grid item xs={12} sm={6} className={classes.grid}>
+                        <SectionTitle>Neurologie</SectionTitle>
+
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.stateofconsciousness}  color="primary" />}
+                                label="Bewusstseinslage prüfen"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.carestroke}  color="primary" />}
+                                label="Pflege schlaganfall / stroke"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.cerebralhemorrhage}  color="primary" />}
+                                label="Pflege hirnblutung"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.caringparkinson}  color="primary" />}
+                                label="Pflege Parkinson"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.carebraintumor}  color="primary" />}
+                                label="Pflege Gehirntumor"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalneurology}/>
+                        </Box>
+                    </Grid>
+
+                    {
+                        /**
+                         * WOUND TREATMENT
+                         * =====================================================================
+                         */
+                    }
+                    <Grid item xs={12} sm={6} className={classes.grid}>
+                        <SectionTitle>Wundbehandlung</SectionTitle>
+
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.asepticdressing}  color="primary" />}
+                                label="Steriler verbandswechsel aseptischer verband"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.septicdressing}  color="primary" />}
+                                label="Steriler verbandswechsel septischer verband"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.pullingthreads}  color="primary" />}
+                                label="Fäden ziehen"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.removebrackets}  color="primary" />}
+                                label="Klammern entfernen"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <FormControlLabel
+                                control={<Checkbox checked={response.practical_knowledge.woundassessment}  color="primary" />}
+                                label="Wundbeurteilung"
+                            />
+                        </Box>
+                        <Box px={2}>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalwoundtreatment}/>
+                        </Box>
+                    </Grid>
+                </Grid>
+            </section>
+            
+            {
+                /**
+                 * PRACTICAL ACTIVITIES
+                 * =====================================================================
+                 */
+            }
+            <Grid container spacing={3} alignItems="center" className={classes.grid}>
+                <Grid item xs={12} sm={12}>
+                    <Box py={0} px={4}>
+                        <Typography variant="h5" component="h2">
+                            Praktische Tätigkeiten
+                        </Typography>
+                        <Typography variant="body2" component="p">
+                            Selbsteinschätzung des Teilnehmers <br />
+                            0 (nicht bekannt), 1 (in Theorie bekannt), 2 (praktische Durchführung beobachtet), 3 (unter Aufsicht selbst durchgeführt), 4 (selbständige Durchführung), 5 (Experte, Anleitung anderer Kollegen).
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom color="primary">
+                            A - Beurteilung von PatientInnen, Pflegediagnose, Pflegeplanung
+                        </Typography>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Informationen über PatientInnen erlangen
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>1. Grundsätzliche Parameter (bspw. Größe, Gewicht) und Vitalparameter erheben (mittels manueller Messung, mittels Monitoring)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a1}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>2. Körperlichen (physisch, neurologisch) und kognitiven Zustand von PatientInnen ermitteln</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a2}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>3. Skalen und Indikatoren auszufüllen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a3}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>4. Skalen und Indikatoren auszufüllen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a4}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={12}>
+                    <Box px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Pflegeprobleme und Pflegediagnose
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>5. Versorgungsdefizite erkennen, adäquate Unterstützung bereitstellen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a5}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>6. Pflegediagnosen festlegen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a6}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>7. Pflegestandards anwenden</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a7}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={12}>
+                    <Box px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Pflegeplanung
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>8. Pflegeziele festlegen und Pflegepläne aktualisieren</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a8}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>9. Pflegemaßnahmen planen und durchführen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a9}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>10. Spezielle Pflegepläne (krankheitsbildbezogen) anwenden</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a10}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                { /*** PROFESSIONAL CARE */ }
+                <Grid item xs={12} sm={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom color="primary">
+                            B - Professionelle Pflege
+                        </Typography>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Grundpflege und Körperpflege
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>1. Teil- und Ganzkörperpflege unterstützen und übernehmen (inklusive Hautpflege, Waschen und Kleiden, Pflegeprodukte anwenden, spezielle Methoden anwenden [z.B. Basale Stimulation, Bobath], am Waschbecken, im Bett)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.b1}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>2. Anlegen von Kompressionsverbänden und Kompressionsstrümpfen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.b2}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Ernährung
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>3. Speisen und Getränke zubereiten, verteilen, anreichen (füttern)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.b3}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>4. Ernährungspläne erstellen, dokumentieren</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.b4}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>5. Ernährungssonden (inklusive PEG) benutzen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.b5}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Mobilität
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>6. Mobilität unterstützen, aufrechterhalten, wiederherstellen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.b6}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>7. Prophylaktische Maßnahmen (Dekubitus-, Kontraktur-, Thromboseprophylaxe) durchführen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.b7}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>8. Mobilisationspläne erstellen und führen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.b8}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Ausscheiden
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>9. Bei der Ausscheidung unterstützen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.b9}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>10. Umgang mit Inkontinenz, Kontinenztraining</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.b10}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>11. Ableitungssysteme (z.B. Harnblasenkatheterismus, Stuhlableitungssysteme) anwenden</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.b11}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>12. Einläufe verabreichen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.b12}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                { /*** PROFESSIONAL CARE */ }
+                <Grid item xs={12} sm={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom color="primary">
+                            Pflegeintervention
+                        </Typography>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Teilnahme an medizinischen und diagnostischen Prozeduren und Verfahren
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>1. Blutentnahme, körperliche Untersuchung</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c1}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>2. Assistenz bei ärztlichen Maßnahmen (z.B. Endoskopie, Aufnahmeuntersuchung im Krankenhaus)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c2}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Medikamente
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>3. Verwalten, vorbereiten, verabreichen (z.B. oral, intravenös)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c3}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>4. Blut und Blutprodukte (Transfusion)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c4}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>5. Umgang mit Betäubungsmitteln</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c5}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Wundmanagement
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>6. Wundvermeidung, Prophylaxen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c6}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>7. Wundassessment</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c7}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>8. Wundbehandlung (z.B. Verbände anlegen und wechseln)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c8}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Stomaversorgung
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>9. Pflege unterschiedlicher Stomata (z.B. Tracheostoma, Ileostoma, Urostoma)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c9}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Medizinische Geräte anwenden
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>10. Pflegehilfsmittel, Mobilisationsmittel, Transferhilfen, Rollstühle</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c10}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>11. Geräte zur Messung von Vitalparametern (z.B. Blutdruck, Blutzucker, Monitoring)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c11}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>12. Spezielle Geräte (z.B. Absauggeräte, EKG, Defibrillatoren, Beatmungsmaschinen)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c12}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Lebensrettende Maßnahmen
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Basic life support</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c13}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>Advanced life support</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.c14}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom color="primary">
+                            D - Hygiene
+                        </Typography>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Hygienemaßnahmen anwenden
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>1. Verschiedene Desinfektionsmaßnahmen (z.B. Hände-, Haut-, Flächendesinfektion)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.d1}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>2. Maßnahmen der Infektionskontrolle durchführen (z.B. Isolierung von Patienten)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.d2}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>3. Sterile Verfahren anwenden (z.B. Legen von Dauerkathetern)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.d3}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Sterilisation
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>4. Medizinprodukte aufbereiten, angemessen verpacken und lagern</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.d4}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>5. Sterilisatoren bedienen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.d5}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Arbeits- und Gesundheitsschutz
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>6. Transporte von PatientInnen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.d6}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>7. Unfallgefahr reduzieren (z.B. Unfallverhütungsvorschriften)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.d7}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>8. Fremdschutz und Selbstschutz</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.d8}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Umgang mit Katastrophen
+                        </Typography>
+                    </Box>  
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>9. Feuer, Notfälle, Massenanfall an PatientInnen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.d9}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom color="primary">
+                            E - Kommunikation mit KollegInnen, PatientInnen und Anderen
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>1. Team- und Fallbesprechungen führen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.e1}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>2. MitarbeiterInnen einführen, anleiten</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.e2}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>3. Schichtleitung- Stationsleitung</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.e3}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>4. Dienstpläne schreiben</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.e4}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>5. Patienten aufklären und beraten</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.e5}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>6. Angehörige aufklären und beraten</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.e6}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={12}>
+                    <Box py={2} px={4}>
+                        <Typography variant="subtitle2" display="block" gutterBottom color="primary">
+                            F - Dokumentation und Qualität
+                        </Typography>
+                    </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>1. Grundpflegerische und behandlungspflegerische Maßnahmen dokumentieren (Pflegebericht)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.f1}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>2. Bestellungen durchführen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.f2}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>3. Visiten dokumentieren und auswerten</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.f3}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>4. Briefe verfassen (z.B. Pflegeüberleitung)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.f4}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>5. Sauberkeit und Ordnung am Arbeitsplatz (Stationszimmer, Patientenzimmer) sicherstellen</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.f5}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>6. Maßnahmen der Qualitätssicherung und –kontrolle anwenden (z.B. Medikamentencheck)</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.f6}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Box px={4}>
+                        <Typography variant="body2" gutterBottom>7. Ressourcenschonende Arbeitsweise</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.f7}
+                        icon={<CheckBoxIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+            </Grid>
+            </>
+        )
+    } else {
+        return (
+            <Box py={4}>
+                <div className={classes.notification} color="secondary">
+                    <ErrorOutlineIcon color="secondary" />&nbsp; 
+                    Applicant has not filled out his/her Practical Skills form.
+                </div>
+            </Box>
+        )
+    }
+}
+
 /* 
  * PRACTICAL KNOWLEDGE VIEW
  * ------------------------------------------------------------------------------------------------ */
@@ -2599,6 +4410,17 @@ function UserSummary ({id, displayComponent}) {
                     </Box>
                 </>
             )
+        } else if (displayComponent === 'ps') {
+            return (
+                <>
+                    <PracticalSkillsView response={response} />
+                    <Box my={4} position="fixed" right="2rem" bottom="0rem">
+                        <Link to={`/userpracticalskills/${id}`}>
+                        <Fab color="primary" aria-label="add"><PrintIcon /></Fab>
+                        </Link>
+                    </Box>
+                </>
+            )
         } else if (displayComponent === 'pk') {
             return (
                 <>
@@ -2708,6 +4530,10 @@ function User (props) {
                 <ListItem button onClick={ () => setDisplayComponent("cv") }>
                     <ListItemIcon><AssignmentIndIcon /></ListItemIcon>
                     <ListItemText>Curriculum Vitae</ListItemText>
+                </ListItem>
+                <ListItem button onClick={ () => setDisplayComponent("ps") }>
+                    <ListItemIcon><ListAltIcon /></ListItemIcon>
+                    <ListItemText>Practical Skills</ListItemText>
                 </ListItem>
                 <ListItem button onClick={ () => setDisplayComponent("pk") }>
                     <ListItemIcon><ListAltIcon /></ListItemIcon>

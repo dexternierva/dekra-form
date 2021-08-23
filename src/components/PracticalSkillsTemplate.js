@@ -1,5 +1,4 @@
 import * as React from "react";
-import moment from "moment";
 
 const PageTemplate = (props) => {
     return (
@@ -12,11 +11,11 @@ const PageTemplate = (props) => {
                     display: "flex",
                     justifyContent: "space-between",
                     marginBottom: "2rem",
-                    width: "89%"
+                    width: "80%"
                 }}
             >
                 <div style={{  color: "#008B4F", fontSize: "1.25em", fontWeight: "700" }}>DEKRA Expert Migration</div>
-                <div style={{ color: "#008B4F", fontSize: "1.25em", fontWeight: "400" }}>Curriculum Vitae</div>
+                <div style={{ color: "#008B4F", fontSize: "1.25em", fontWeight: "400" }}>Anlage zum Lebenslauf - "Praktische Skills"</div>
             </div>
 
             <div
@@ -26,11 +25,11 @@ const PageTemplate = (props) => {
                     left: "56px",
                     display: "flex",
                     justifyContent: "space-between",
-                    width: "89%"
+                    width: "80%"
                 }}
             >
                 <div>Seite {props.pageNum} von {props.totalPages}</div>
-                <div>{moment().format("DD.MM.YYYY")}</div>
+                <div>Stand: März 2019</div>
             </div>
         </>
     );

@@ -17,6 +17,7 @@ const SectionTitle = styled.div`
     color: #008B4F;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 700;
+    font-size: 1.25em;
 `;
 
 const useStyles = makeStyles((theme) => ({
@@ -34,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         background: 'transparent'
+    },
+    titles: {
+        color: '#008B4F'
     }
 }));
 
@@ -44,10 +48,10 @@ function  PracticalKnowledgeView({ response }) {
         <>
         <div className={classes.intro}>
             <Paper elevation={0} className={classes.paper}>
-                <Typography variant="h5" component="h2">
+                <Typography variant="h5" component="h2" className={classes.titles}>
                     Praktische Kenntnisse
                 </Typography>
-                <Typography color="textSecondary" gutterBottom>
+                <Typography color="h5" gutterBottom className={classes.titles}>
                     Anlage zum Lebenslauf von: {response.lastname + ', ' + response.lastname}
                 </Typography>
                 <Typography variant="body2" component="p">
