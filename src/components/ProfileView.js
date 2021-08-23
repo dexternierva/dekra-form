@@ -89,6 +89,10 @@ const useStyles = makeStyles((theme) => ({
         whiteSpace: 'pre-line',
         margin: '0'
     },
+    defaultText: {
+        display: 'block',
+        marginTop: '.25rem'
+    },
     specializationList: {
         padding: '0',
         margin: '0',
@@ -188,7 +192,7 @@ function  ProfileView({ response }) {
                                     <TableCell className={classes.col1} component="th" scope="row">Abschluss</TableCell>
                                     <TableCell className={classes.col2}>
                                         {response.cv.kfDegree}
-                                        Allgemeine Gesundheits- und Krankenpflege
+                                        <span className={classes.defaultText}>Allgemeine Gesundheits- und Krankenpflege</span>
                                     </TableCell>
                                 </TableRow>
 

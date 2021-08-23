@@ -400,6 +400,8 @@ function ProfileSummary () {
                 germanLanguageLevel: response.germanLanguageLevel,
                 germanLanguageDate: response.germanLanguageDate,
                 germanCare: response.germanCare,
+                englishLanguage: response.englishLanguage,
+                englishLanguageLevel: response.englishLanguageLevel,
                 otherLanguages: response.otherLanguages,
                 otherLanguagesLevel: response.otherLanguagesLevel,
                 // OTHER-SKILLS
@@ -445,6 +447,8 @@ function ProfileSummary () {
         germanLanguageLevel: '',
         germanLanguageDate: new Date(),
         germanCare: new Date(),
+        englishLanguage: 'English',
+        englishLanguageLevel: '',
         otherLanguages: '',
         otherLanguagesLevel: '',
         // OTHER SKILLS
@@ -486,6 +490,8 @@ function ProfileSummary () {
         germanLanguageLevel: Yup.string().required('This field is required'),
         germanLanguageDate: Yup.date().required('This field is required'),
         germanCare: Yup.date().required('This field is required'),
+        englishLanguage: Yup.string().required('This field is required'),
+        englishLanguageLevel: Yup.string().required('This field is required'),
         otherLanguages: Yup.string().required('This field is required'),
         otherLanguagesLevel: Yup.string().required('This field is required'),
         // OTHER-SKILLS
@@ -530,6 +536,8 @@ function ProfileSummary () {
             'germanLanguageLevel': values.germanLanguageLevel,
             'germanLanguageDate': values.germanLanguageDate,
             'germanCare': values.germanCare,
+            'englishLanguage': values.englishLanguage,
+            'englishLanguageLevel': values.englishLanguageLevel,
             'otherLanguages': values.otherLanguages,
             'otherLanguagesLevel': values.otherLanguagesLevel,
             // OTHER SKILLS
@@ -1020,6 +1028,39 @@ function ProfileSummary () {
                                         <Grid item lg={12} xs={12}>
                                             <InputLabel shrink="true" htmlFor="otherLanguages">Other Languages</InputLabel>
                                         </Grid>
+                                        <Grid item lg={6} xs={12}>
+                                            <Field
+                                                component={TextField}
+                                                type="text"
+                                                label="English Language"
+                                                value="English"
+                                                name="englishLanguage"
+                                                variant="outlined"
+                                                fullWidth
+                                            />
+                                        </Grid>
+                                        <Grid item lg={6} xs={12}>
+                                            <Field
+                                                component={Select}
+                                                label="English Languages Level"
+                                                type="text"
+                                                name="englishLanguageLevel"
+                                                variant="outlined"
+                                                margin="normal"
+                                                fullWidth
+                                                autoWidth={true}
+                                                multiple={false}
+                                                InputLabelProps={{ shrink: true }}
+                                            >
+                                                {languageSkillsLevelOptions.map((option) => (
+                                                    <MenuItem key={option.value} value={option.value}>
+                                                        {option.label}
+                                                    </MenuItem>
+                                                ))}
+                                            </Field>
+                                        </Grid>
+                                        <FormHelperText>Select English Language Level</FormHelperText>
+                                    
                                         <Grid item lg={6} xs={12}>
                                             <Field
                                                 component={Select}

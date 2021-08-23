@@ -555,24 +555,24 @@ function LanguageSkillsView({ response }) {
         
         const languageskillsrows = [
             languageSkillsData('Native language', response.cv.nativeLanguage),
-            languageSkillsData('German language skills up-to-date', response.cv.germanLanguageDate),
-            languageSkillsData('German B1-B2 Care', response.cv.germanCare),
-            languageSkillsData('Other languages', "Language: " + response.cv.otherLanguages + " | Level: " + response.cv.otherLanguagesLevel),
+            languageSkillsData('German language skills up-to-date', moment(response.cv.germanLanguageDate).format("DD.MM.YYYY")),
+            languageSkillsData('German B1-B2 Care', 'voraussichtlich ' + moment(response.cv.germanCare).format("DD.MM.YYYY")),
+            languageSkillsData('Other languages', 'Language: ' + response.cv.otherLanguages + ' | Level: ' + response.cv.otherLanguagesLevel),
         ];
 
         return (
             <Grid container spacing={0} className={classes.grid}>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={3}>
                     <SectionTitle>Language Skills</SectionTitle>
                 </Grid>
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={9}>
                     <TableContainer className={classes.table}>
                         <Table aria-label="simple table">
                             <TableBody>
                             {languageskillsrows.map((row) => (
                                 <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row">{row.name}</TableCell>
-                                    <TableCell align="right">{row.value}</TableCell>
+                                    <TableCell component="th" scope="row" className={classes.col1}>{row.name}</TableCell>
+                                    <TableCell className={classes.col2}>{row.value}</TableCell>
                                 </TableRow>
                             ))}
                             </TableBody>
