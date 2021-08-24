@@ -29,8 +29,6 @@ function App () {
 				<Route path="/signup" component={ SignUp } exact />
 				<Route path="/userdetails/:id" component={ UserDetails } />
 				<Route path="/userpracticalskills/:id" component={ PracticalSkillsDetails } />
-				<Route path="/userpracticalknowledge/:id" component={ PracticalKnowledgeDetails } />
-				<Route path="/userpracticalactivities/:id" component={ PracticalActivitiesDetails } />
 				<Route path="/forgotpassword" component={ ForgotPassword } />
 				<Route path="/resetpassword" component={ ResetPassword } />
 				<ProtectedRoute

@@ -11,11 +11,11 @@ const PageTemplate = (props) => {
                     display: "flex",
                     justifyContent: "space-between",
                     marginBottom: "2rem",
-                    width: "80%"
+                    width: "90%"
                 }}
             >
-                <div style={{  color: "#008B4F", fontSize: "1.25em", fontWeight: "700" }}>DEKRA Expert Migration</div>
-                <div style={{ color: "#008B4F", fontSize: "1.25em", fontWeight: "400" }}>Anlage zum Lebenslauf - "Praktische Skills"</div>
+                <div style={{  color: "#008B4F", fontSize: "0.875em", fontWeight: "700" }}>DEKRA Expert Migration</div>
+                <div style={{ color: "#008B4F", fontSize: "0.875em", fontWeight: "400" }}>Anlage zum Lebenslauf - "Praktische Skills"</div>
             </div>
 
             <div
@@ -25,7 +25,7 @@ const PageTemplate = (props) => {
                     left: "56px",
                     display: "flex",
                     justifyContent: "space-between",
-                    width: "80%"
+                    width: "90%"
                 }}
             >
                 <div>Seite {props.pageNum} von {props.totalPages}</div>

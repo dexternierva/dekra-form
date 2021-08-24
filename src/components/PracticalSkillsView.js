@@ -85,7 +85,7 @@ function  PracticalSkillsView({ response }) {
                     <Typography variant="h5" component="h2" className={classes.titles}>
                         Praktische Kenntnisse
                     </Typography>
-                    <Typography color="h5" gutterBottom className={classes.titles}>
+                    <Typography variant="h5" component="h2" gutterBottom className={classes.titles}>
                         Anlage zum Lebenslauf von: {response.lastname + ', ' + response.lastname}
                     </Typography>
                     <Typography variant="body2" component="p">
@@ -114,7 +114,7 @@ function  PracticalSkillsView({ response }) {
                     <Grid item xs={12} sm={4}>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.care}  color="primary" />}
+                                control={<CheckBoxOutlinedIcon checked={response.practical_knowledge.care}  color="primary" />}
                                 label="Intensivmedizin"
                             />
                         </Box>
@@ -730,18 +730,16 @@ function  PracticalSkillsView({ response }) {
                         <Typography variant="body2" gutterBottom>1. Grundsätzliche Parameter (bspw. Größe, Gewicht) und Vitalparameter erheben (mittels manueller Messung, mittels Monitoring)</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={3}>
-                    <Box className={classes.ratingGrid}>
-                        <StyledRating
-                            name="customized-color"
-                            defaultValue={0}
-                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                            precision={1}
-                            value={response.practical_activity.a1}
-                            icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                            max={6}
-                        />
-                    </Box>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a1}
+                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        max={6}
+                    />
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
@@ -749,18 +747,16 @@ function  PracticalSkillsView({ response }) {
                         <Typography variant="body2" gutterBottom>2. Körperlichen (physisch, neurologisch) und kognitiven Zustand von PatientInnen ermitteln</Typography>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={3}>
-                    <Box className={classes.ratingGrid}>
-                        <StyledRating
-                            name="customized-color"
-                            defaultValue={0}
-                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                            precision={1}
-                            value={response.practical_activity.a2}
-                            icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                            max={6}
-                        />
-                    </Box>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a2}
+                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        max={6}
+                    />
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
