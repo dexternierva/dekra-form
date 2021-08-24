@@ -25,12 +25,5 @@
 body {
     background-color: #ecf0f1;
     font-family: "DejaVu Sans", "Arial", sans-serif;
-}
-
-input[type=checkbox] {
-  color: #008B4F;
-}
-
-input:checked .MuiSvgIcon-root {
-  fill: #008B4F !important;
+    color: #008B4F;
 }
