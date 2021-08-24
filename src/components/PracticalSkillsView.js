@@ -114,7 +114,7 @@ function  PracticalSkillsView({ response }) {
                     <Grid item xs={12} sm={4}>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.care} checkedIcon={CheckBoxOutlinedIcon} color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.care} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Intensivmedizin"
                             />
                         </Box>
