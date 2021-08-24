@@ -119,7 +119,6 @@ function  PracticalSkillsView({ response }) {
                                         checked={response.practical_knowledge.care} 
                                         checkedIcon={<CheckBoxOutlinedIcon />} 
                                         color="primary"
-                                        htmlColor="#008B4F"
                                     />
                                 }
                                 label="Intensivmedizin"

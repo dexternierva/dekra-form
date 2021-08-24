@@ -27,3 +27,6 @@ body {
     font-family: "DejaVu Sans", "Arial", sans-serif;
 }
 
+input:checked .MuiSvgIcon-root {
+  color: #008B4F !important;
+}
