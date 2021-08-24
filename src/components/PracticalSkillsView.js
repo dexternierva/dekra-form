@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { green } from '@material-ui/core/colors';
 import { withStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
@@ -16,16 +15,6 @@ import {
 
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import CheckBoxOutlinedIcon from '@material-ui/icons/CheckBoxOutlined';
-
-const GreenCheckbox = withStyles({
-    root: {
-      color: green[400],
-      '&$checked': {
-        color: green[600],
-      },
-    },
-    checked: {},
-})((props) => <Checkbox color="default" {...props} />);
 
 const SectionTitle = styled.div`
     margin-left: 1rem;
@@ -125,19 +114,26 @@ function  PracticalSkillsView({ response }) {
                     <Grid item xs={12} sm={4}>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<GreenCheckbox checked={response.practical_knowledge.care} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                                control={
+                                    <Checkbox 
+                                        checked={response.practical_knowledge.care} 
+                                        checkedIcon={<CheckBoxOutlinedIcon />} 
+                                        color="primary"
+                                        htmlColor="#008B4F"
+                                    />
+                                }
                                 label="Intensivmedizin"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<GreenCheckbox checked={response.practical_knowledge.internalmedicine}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.internalmedicine}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Innere Medizin"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<GreenCheckbox checked={response.practical_knowledge.pediatrics}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.pediatrics}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Pädiatrie"
                             />
                         </Box>
