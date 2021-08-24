@@ -117,7 +117,7 @@ function  PracticalSkillsView({ response }) {
                                 control={
                                     <Checkbox 
                                         checked={response.practical_knowledge.care} 
-                                        checkedIcon={<CheckBoxOutlinedIcon color="primary" />} 
+                                        checkedIcon={<CheckBoxOutlinedIcon color="primary" htmlColor="#008B4F" />} 
                                         color="primary"
                                     />
                                 }
