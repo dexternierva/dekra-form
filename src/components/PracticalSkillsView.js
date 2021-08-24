@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { green } from '@material-ui/core/colors';
 import { withStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
@@ -119,6 +120,7 @@ function  PracticalSkillsView({ response }) {
                                         checked={response.practical_knowledge.care} 
                                         checkedIcon={<CheckBoxOutlinedIcon />} 
                                         color="primary"
+                                        style={{ color: green[500] }}
                                     />
                                 }
                                 label="Intensivmedizin"
