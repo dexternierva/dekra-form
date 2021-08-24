@@ -120,19 +120,19 @@ function  PracticalSkillsView({ response }) {
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.internalmedicine}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.internalmedicine}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Innere Medizin"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.pediatrics}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.pediatrics}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Pädiatrie"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.generalaccidentsurgery}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.generalaccidentsurgery}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Allgemeine Unfallchirurgie"
                             />
                         </Box>
@@ -140,19 +140,19 @@ function  PracticalSkillsView({ response }) {
                     <Grid item xs={12} sm={4}>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.anesthesia}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.anesthesia}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Anästhesie"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.orthopedics}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.orthopedics}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Orthopädie"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.emergency}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.emergency}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Notaufnahme"
                             />
                         </Box>
