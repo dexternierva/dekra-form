@@ -28,8 +28,8 @@ const PageTemplate = (props) => {
                     width: "90%"
                 }}
             >
-                <div style={{  color: "#666666", fontSize: "0.875em", fontWeight: "700" }}>Seite {props.pageNum} von {props.totalPages}</div>
-                <div style={{  color: "#666666", fontSize: "0.875em", fontWeight: "700" }}>Stand: März 2019</div>
+                <div style={{  color: "#666666", fontSize: "0.875em" }}>Seite {props.pageNum} von {props.totalPages}</div>
+                <div style={{  color: "#666666", fontSize: "0.875em" }}>Stand: März 2019</div>
             </div>
         </>
     );

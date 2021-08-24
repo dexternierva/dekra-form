@@ -26,3 +26,8 @@ body {
     background-color: #ecf0f1;
     font-family: "DejaVu Sans", "Arial", sans-serif;
 }
+
+.MuiSvgIcon-root {
+  fill: #008B4F !important;
+  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(80%) contrast(119%) !important;
+}
