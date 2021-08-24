@@ -28,5 +28,5 @@ body {
 }
 
 input:checked .MuiSvgIcon-root {
-  color: #008B4F !important;
+  fill: #008B4F !important;
 }
