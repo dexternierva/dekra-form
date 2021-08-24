@@ -11,9 +11,7 @@ import SignUp from "./components/Formik/SignUp";
 import Login from "./components/Formik/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import UserDetails from "./components/UserDetails";
-import PracticalKnowledgeDetails from "./components/PracticalKnowledgeDetails";
 import PracticalSkillsDetails from "./components/PracticalSkillsDetails";
-import PracticalActivitiesDetails from "./components/PracticalActivitiesDetails";
 
 function App () {
 	const currentUser = useCurrentUser();
