@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { green } from '@material-ui/core/colors';
 import { withStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,6 +16,16 @@ import {
 
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import CheckBoxOutlinedIcon from '@material-ui/icons/CheckBoxOutlined';
+
+const GreenCheckbox = withStyles({
+    root: {
+      color: green[400],
+      '&$checked': {
+        color: green[600],
+      },
+    },
+    checked: {},
+})((props) => <Checkbox color="default" {...props} />);
 
 const SectionTitle = styled.div`
     margin-left: 1rem;
@@ -114,19 +125,19 @@ function  PracticalSkillsView({ response }) {
                     <Grid item xs={12} sm={4}>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.care} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                                control={<GreenCheckbox checked={response.practical_knowledge.care} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Intensivmedizin"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.internalmedicine}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                                control={<GreenCheckbox checked={response.practical_knowledge.internalmedicine}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Innere Medizin"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.pediatrics}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                                control={<GreenCheckbox checked={response.practical_knowledge.pediatrics}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Pädiatrie"
                             />
                         </Box>
@@ -523,79 +534,79 @@ function  PracticalSkillsView({ response }) {
 
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.urogenitalbereich}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.urogenitalbereich} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Urogenitalbereich"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.onetimecatheter}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.onetimecatheter} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Einmalkatheter legen"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.permanentcatheter}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.permanentcatheter} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Dauerkatheter legen"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.suprapubiccatheter}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.suprapubiccatheter} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Suprapubischer Katheter Assist. Anlage/Pflege"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.hurine}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.hurine} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="24h - Urin"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.excretioninfusion}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.excretioninfusion} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Infusion"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.condomurinal}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.condomurinal} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Kondom – Urinal"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.magendarmtrakt}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.magendarmtrakt} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Magendarmtrakt"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.caregastricprobe}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.caregastricprobe} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Pflege von Magensonde "
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.transnasalgastric}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.transnasalgastric} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Transnasale Magensonde legen"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.careofpeg}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.careofpeg} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Pflege von PEG"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.careofstoma}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.careofstoma} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Pflege von Stoma / Enterostoma"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.intestinalrinsing}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.intestinalrinsing} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Darmspülung (Hebe-Senk-Einlauf, Klistier)"
                             />
                         </Box>
@@ -660,31 +671,31 @@ function  PracticalSkillsView({ response }) {
 
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.asepticdressing}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.asepticdressing} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Steriler verbandswechsel aseptischer verband"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.septicdressing}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.septicdressing} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Steriler verbandswechsel septischer verband"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.pullingthreads}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.pullingthreads} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Fäden ziehen"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.removebrackets}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.removebrackets} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Klammern entfernen"
                             />
                         </Box>
                         <Box px={2}>
                             <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.woundassessment}  color="primary" />}
+                                control={<Checkbox checked={response.practical_knowledge.woundassessment} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
                                 label="Wundbeurteilung"
                             />
                         </Box>

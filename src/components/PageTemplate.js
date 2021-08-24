@@ -29,8 +29,8 @@ const PageTemplate = (props) => {
                     width: "90%"
                 }}
             >
-                <div>Seite {props.pageNum} von {props.totalPages}</div>
-                <div>{moment().format("DD.MM.YYYY")}</div>
+                <div style={{  color: "#666666", fontSize: "0.875em", fontWeight: "700" }}>Seite {props.pageNum} von {props.totalPages}</div>
+                <div style={{  color: "#666666", fontSize: "0.875em", fontWeight: "700" }}>{moment().format("DD.MM.YYYY")}</div>
             </div>
         </>
     );
