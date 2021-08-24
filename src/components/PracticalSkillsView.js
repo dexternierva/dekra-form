@@ -70,10 +70,6 @@ const useStyles = makeStyles((theme) => ({
     },
     ratingGrid: {
         borderLeft: '4px solid #008B4F'
-    },
-    checkboxIcon: {
-        fill: '#008B4F',
-        filter: 'invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(80%) contrast(119%)'
     }
 }));
 
@@ -121,9 +117,8 @@ function  PracticalSkillsView({ response }) {
                                 control={
                                     <Checkbox 
                                         checked={response.practical_knowledge.care} 
-                                        checkedIcon={<CheckBoxOutlinedIcon />} 
+                                        checkedIcon={<CheckBoxOutlinedIcon color="primary" />} 
                                         color="primary"
-                                        className={classes.checkboxIcon}
                                     />
                                 }
                                 label="Intensivmedizin"
