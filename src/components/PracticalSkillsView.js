@@ -133,7 +133,7 @@ function  PracticalSkillsView({ response }) {
                                 control={
                                     <Checkbox 
                                         checked={response.practical_knowledge.care} 
-                                        checkedIcon={<Icon baseClassName="fas" className="fa-plus-circle" />} 
+                                        checkedIcon={<Icon className="fas fa-plus-circle" />} 
                                         color="primary"
                                     />
                                 }
