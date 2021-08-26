@@ -19,6 +19,17 @@ import Icon from '@material-ui/core/Icon';
 
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import CheckBoxOutlinedIcon from '@material-ui/icons/CheckBoxOutlined';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+const theme = createTheme({
+    components: {
+      MuiIcon: {
+        defaultProps: {
+          // Replace the `material-icons` default value.
+          baseClassName: 'fas',
+        },
+      },
+    },
+  });
 
 const SectionTitle = styled.div`
     margin-left: 1rem;
@@ -96,6 +107,7 @@ function  PracticalSkillsView({ response }) {
 
         return (
             <>
+             <ThemeProvider theme={theme}>
             <div className={classes.intro}>
                 <Paper elevation={0} className={classes.paper}>
                     <Typography variant="h5" component="h2" className={classes.titles}>
@@ -1767,6 +1779,7 @@ function  PracticalSkillsView({ response }) {
                     />
                 </Grid>
             </Grid>
+            </ThemeProvider>
             </>
         )
     } else {
