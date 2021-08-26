@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { green } from '@material-ui/core/colors';
 import { withStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
@@ -20,15 +19,6 @@ import Icon from '@material-ui/core/Icon';
 
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import CheckBoxOutlinedIcon from '@material-ui/icons/CheckBoxOutlined';
-
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
-const innerTheme = createTheme({
-    palette: {
-      secondary: {
-        main: green[500],
-      },
-    },
-  });
 
 const SectionTitle = styled.div`
     margin-left: 1rem;
@@ -106,7 +96,6 @@ function  PracticalSkillsView({ response }) {
 
         return (
             <>
-            <ThemeProvider theme={innerTheme}>
             <div className={classes.intro}>
                 <Paper elevation={0} className={classes.paper}>
                     <Typography variant="h5" component="h2" className={classes.titles}>
@@ -1778,7 +1767,6 @@ function  PracticalSkillsView({ response }) {
                     />
                 </Grid>
             </Grid>
-            </ThemeProvider>
             </>
         )
     } else {
