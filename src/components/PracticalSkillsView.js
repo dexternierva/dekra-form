@@ -709,19 +709,17 @@ function  PracticalSkillsView({ response }) {
             }
             <Grid container spacing={3} alignItems="center" className={classes.grid}>
                 <Grid item xs={12} sm={12}>
-                    <Box py={0} px={2}>
-                        <Typography variant="h5" component="h2" className={classes.titles}>
-                            Praktische Tätigkeiten
-                        </Typography>
-                        <Typography variant="body2" component="p">
-                            Selbsteinschätzung des Teilnehmers <br />
-                            0 (nicht bekannt), 1 (in Theorie bekannt), 2 (praktische Durchführung beobachtet), 3 (unter Aufsicht selbst durchgeführt), 4 (selbständige Durchführung), 5 (Experte, Anleitung anderer Kollegen).
-                        </Typography>
-                    </Box>
+                    <Typography variant="h5" component="h2" className={classes.titles}>
+                        Praktische Tätigkeiten
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                        Selbsteinschätzung des Teilnehmers <br />
+                        0 (nicht bekannt), 1 (in Theorie bekannt), 2 (praktische Durchführung beobachtet), 3 (unter Aufsicht selbst durchgeführt), 4 (selbständige Durchführung), 5 (Experte, Anleitung anderer Kollegen).
+                    </Typography>
                 </Grid>
 
                 <Grid item xs={12} sm={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             A - Beurteilung von PatientInnen, Pflegediagnose, Pflegeplanung
                         </Typography>
@@ -732,88 +730,74 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>1. Grundsätzliche Parameter (bspw. Größe, Gewicht) und Vitalparameter erheben (mittels manueller Messung, mittels Monitoring)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>1. Grundsätzliche Parameter (bspw. Größe, Gewicht) und Vitalparameter erheben (mittels manueller Messung, mittels Monitoring)</Typography>
                 </Grid>
 
-                <section className={classes.ratingGrid}>
-                    <Grid item xs={12} sm={3}>
-                        <StyledRating
-                            name="customized-color"
-                            defaultValue={0}
-                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                            precision={1}
-                            value={response.practical_activity.a1}
-                            icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                            max={6}
-                        />
-                    </Grid>
-
-                    <Grid item xs={12} sm={9}>
-                        <Box px={2}>
-                            <Typography variant="body2" gutterBottom>2. Körperlichen (physisch, neurologisch) und kognitiven Zustand von PatientInnen ermitteln</Typography>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12} sm={3}>
-                        <StyledRating
-                            name="customized-color"
-                            defaultValue={0}
-                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                            precision={1}
-                            value={response.practical_activity.a2}
-                            icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                            max={6}
-                        />
-                    </Grid>
-
-                    <Grid item xs={12} sm={9}>
-                        <Box px={2}>
-                            <Typography variant="body2" gutterBottom>3. Skalen und Indikatoren auszufüllen</Typography>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12} sm={3}>
-                        <StyledRating
-                            name="customized-color"
-                            defaultValue={0}
-                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                            precision={1}
-                            value={response.practical_activity.a3}
-                            icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                            max={6}
-                        />
-                    </Grid>
-
-                    <Grid item xs={12} sm={9}>
-                        <Box px={2}>
-                            <Typography variant="body2" gutterBottom>4. Skalen und Indikatoren auszufüllen</Typography>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                        <StyledRating
-                            name="customized-color"
-                            defaultValue={0}
-                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                            precision={1}
-                            value={response.practical_activity.a4}
-                            icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                            max={6}
-                        />
-                    </Grid>
-                </section>
-
-                <Grid item xs={12} sm={12}>
-                    <Box px={2}>
-                        <Typography variant="subtitle2" display="block" gutterBottom>
-                            Pflegeprobleme und Pflegediagnose
-                        </Typography>
-                    </Box>
+                <Grid item xs={12} sm={3}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a1}
+                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        max={6}
+                    />
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>5. Versorgungsdefizite erkennen, adäquate Unterstützung bereitstellen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>2. Körperlichen (physisch, neurologisch) und kognitiven Zustand von PatientInnen ermitteln</Typography>
+                </Grid>
+                <Grid item xs={12} sm={3}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a2}
+                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Typography variant="body2" gutterBottom>3. Skalen und Indikatoren auszufüllen</Typography>
+                </Grid>
+                <Grid item xs={12} sm={3}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a3}
+                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Typography variant="body2" gutterBottom>4. Skalen und Indikatoren auszufüllen</Typography>
+                </Grid>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
+                    <StyledRating
+                        name="customized-color"
+                        defaultValue={0}
+                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                        precision={1}
+                        value={response.practical_activity.a4}
+                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        max={6}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={12}>
+                    <Typography variant="subtitle2" display="block" gutterBottom>
+                        Pflegeprobleme und Pflegediagnose
+                    </Typography>
+                </Grid>
+
+                <Grid item xs={12} sm={9}>
+                    <Typography variant="body2" gutterBottom>5. Versorgungsdefizite erkennen, adäquate Unterstützung bereitstellen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -828,9 +812,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>6. Pflegediagnosen festlegen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>6. Pflegediagnosen festlegen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -845,9 +827,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>7. Pflegestandards anwenden</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>7. Pflegestandards anwenden</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -862,17 +842,13 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={12}>
-                    <Box px={2}>
-                        <Typography variant="subtitle2" display="block" gutterBottom>
-                            Pflegeplanung
-                        </Typography>
-                    </Box>
+                    <Typography variant="subtitle2" display="block" gutterBottom>
+                        Pflegeplanung
+                    </Typography>
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>8. Pflegeziele festlegen und Pflegepläne aktualisieren</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>8. Pflegeziele festlegen und Pflegepläne aktualisieren</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -887,9 +863,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>9. Pflegemaßnahmen planen und durchführen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>9. Pflegemaßnahmen planen und durchführen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -904,9 +878,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>10. Spezielle Pflegepläne (krankheitsbildbezogen) anwenden</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>10. Spezielle Pflegepläne (krankheitsbildbezogen) anwenden</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -922,7 +894,7 @@ function  PracticalSkillsView({ response }) {
 
                 { /*** PROFESSIONAL CARE */ }
                 <Grid item xs={12} sm={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             B - Professionelle Pflege
                         </Typography>
@@ -933,9 +905,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>1. Teil- und Ganzkörperpflege unterstützen und übernehmen (inklusive Hautpflege, Waschen und Kleiden, Pflegeprodukte anwenden, spezielle Methoden anwenden [z.B. Basale Stimulation, Bobath], am Waschbecken, im Bett)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>1. Teil- und Ganzkörperpflege unterstützen und übernehmen (inklusive Hautpflege, Waschen und Kleiden, Pflegeprodukte anwenden, spezielle Methoden anwenden [z.B. Basale Stimulation, Bobath], am Waschbecken, im Bett)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -950,9 +920,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>2. Anlegen von Kompressionsverbänden und Kompressionsstrümpfen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>2. Anlegen von Kompressionsverbänden und Kompressionsstrümpfen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -967,7 +935,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Ernährung
                         </Typography>
@@ -975,9 +943,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>3. Speisen und Getränke zubereiten, verteilen, anreichen (füttern)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>3. Speisen und Getränke zubereiten, verteilen, anreichen (füttern)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -992,9 +958,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>4. Ernährungspläne erstellen, dokumentieren</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>4. Ernährungspläne erstellen, dokumentieren</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1009,9 +973,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>5. Ernährungssonden (inklusive PEG) benutzen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>5. Ernährungssonden (inklusive PEG) benutzen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1026,7 +988,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Mobilität
                         </Typography>
@@ -1034,9 +996,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>6. Mobilität unterstützen, aufrechterhalten, wiederherstellen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>6. Mobilität unterstützen, aufrechterhalten, wiederherstellen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1051,9 +1011,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>7. Prophylaktische Maßnahmen (Dekubitus-, Kontraktur-, Thromboseprophylaxe) durchführen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>7. Prophylaktische Maßnahmen (Dekubitus-, Kontraktur-, Thromboseprophylaxe) durchführen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1068,9 +1026,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>8. Mobilisationspläne erstellen und führen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>8. Mobilisationspläne erstellen und führen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1085,7 +1041,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Ausscheiden
                         </Typography>
@@ -1093,9 +1049,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>9. Bei der Ausscheidung unterstützen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>9. Bei der Ausscheidung unterstützen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1110,9 +1064,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>10. Umgang mit Inkontinenz, Kontinenztraining</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>10. Umgang mit Inkontinenz, Kontinenztraining</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1127,9 +1079,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>11. Ableitungssysteme (z.B. Harnblasenkatheterismus, Stuhlableitungssysteme) anwenden</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>11. Ableitungssysteme (z.B. Harnblasenkatheterismus, Stuhlableitungssysteme) anwenden</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1144,9 +1094,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>12. Einläufe verabreichen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>12. Einläufe verabreichen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1162,7 +1110,7 @@ function  PracticalSkillsView({ response }) {
 
                 { /*** PROFESSIONAL CARE */ }
                 <Grid item xs={12} sm={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             Pflegeintervention
                         </Typography>
@@ -1173,9 +1121,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>1. Blutentnahme, körperliche Untersuchung</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>1. Blutentnahme, körperliche Untersuchung</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1190,9 +1136,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>2. Assistenz bei ärztlichen Maßnahmen (z.B. Endoskopie, Aufnahmeuntersuchung im Krankenhaus)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>2. Assistenz bei ärztlichen Maßnahmen (z.B. Endoskopie, Aufnahmeuntersuchung im Krankenhaus)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1207,7 +1151,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Medikamente
                         </Typography>
@@ -1215,9 +1159,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>3. Verwalten, vorbereiten, verabreichen (z.B. oral, intravenös)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>3. Verwalten, vorbereiten, verabreichen (z.B. oral, intravenös)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1232,9 +1174,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>4. Blut und Blutprodukte (Transfusion)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>4. Blut und Blutprodukte (Transfusion)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1249,9 +1189,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>5. Umgang mit Betäubungsmitteln</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>5. Umgang mit Betäubungsmitteln</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1266,7 +1204,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Wundmanagement
                         </Typography>
@@ -1274,9 +1212,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={4}>
-                        <Typography variant="body2" gutterBottom>6. Wundvermeidung, Prophylaxen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>6. Wundvermeidung, Prophylaxen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1291,9 +1227,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>7. Wundassessment</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>7. Wundassessment</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1308,9 +1242,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>8. Wundbehandlung (z.B. Verbände anlegen und wechseln)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>8. Wundbehandlung (z.B. Verbände anlegen und wechseln)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1325,7 +1257,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Stomaversorgung
                         </Typography>
@@ -1333,9 +1265,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>9. Pflege unterschiedlicher Stomata (z.B. Tracheostoma, Ileostoma, Urostoma)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>9. Pflege unterschiedlicher Stomata (z.B. Tracheostoma, Ileostoma, Urostoma)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1350,7 +1280,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Medizinische Geräte anwenden
                         </Typography>
@@ -1358,9 +1288,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>10. Pflegehilfsmittel, Mobilisationsmittel, Transferhilfen, Rollstühle</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>10. Pflegehilfsmittel, Mobilisationsmittel, Transferhilfen, Rollstühle</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1375,9 +1303,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>11. Geräte zur Messung von Vitalparametern (z.B. Blutdruck, Blutzucker, Monitoring)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>11. Geräte zur Messung von Vitalparametern (z.B. Blutdruck, Blutzucker, Monitoring)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1392,9 +1318,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>12. Spezielle Geräte (z.B. Absauggeräte, EKG, Defibrillatoren, Beatmungsmaschinen)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>12. Spezielle Geräte (z.B. Absauggeräte, EKG, Defibrillatoren, Beatmungsmaschinen)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1409,7 +1333,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Lebensrettende Maßnahmen
                         </Typography>
@@ -1417,9 +1341,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>Basic life support</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>Basic life support</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1434,9 +1356,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>Advanced life support</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>Advanced life support</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1451,7 +1371,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             D - Hygiene
                         </Typography>
@@ -1462,9 +1382,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>1. Verschiedene Desinfektionsmaßnahmen (z.B. Hände-, Haut-, Flächendesinfektion)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>1. Verschiedene Desinfektionsmaßnahmen (z.B. Hände-, Haut-, Flächendesinfektion)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1479,9 +1397,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>2. Maßnahmen der Infektionskontrolle durchführen (z.B. Isolierung von Patienten)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>2. Maßnahmen der Infektionskontrolle durchführen (z.B. Isolierung von Patienten)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1496,9 +1412,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>3. Sterile Verfahren anwenden (z.B. Legen von Dauerkathetern)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>3. Sterile Verfahren anwenden (z.B. Legen von Dauerkathetern)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1513,7 +1427,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Sterilisation
                         </Typography>
@@ -1521,9 +1435,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>4. Medizinprodukte aufbereiten, angemessen verpacken und lagern</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>4. Medizinprodukte aufbereiten, angemessen verpacken und lagern</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1538,9 +1450,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>5. Sterilisatoren bedienen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>5. Sterilisatoren bedienen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1555,7 +1465,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Arbeits- und Gesundheitsschutz
                         </Typography>
@@ -1563,9 +1473,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>6. Transporte von PatientInnen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>6. Transporte von PatientInnen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1580,9 +1488,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>7. Unfallgefahr reduzieren (z.B. Unfallverhütungsvorschriften)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>7. Unfallgefahr reduzieren (z.B. Unfallverhütungsvorschriften)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1597,9 +1503,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>8. Fremdschutz und Selbstschutz</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>8. Fremdschutz und Selbstschutz</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1614,7 +1518,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Umgang mit Katastrophen
                         </Typography>
@@ -1622,9 +1526,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>9. Feuer, Notfälle, Massenanfall an PatientInnen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>9. Feuer, Notfälle, Massenanfall an PatientInnen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1639,7 +1541,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             E - Kommunikation mit KollegInnen, PatientInnen und Anderen
                         </Typography>
@@ -1647,9 +1549,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>1. Team- und Fallbesprechungen führen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>1. Team- und Fallbesprechungen führen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1664,9 +1564,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>2. MitarbeiterInnen einführen, anleiten</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>2. MitarbeiterInnen einführen, anleiten</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1681,9 +1579,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>3. Schichtleitung- Stationsleitung</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>3. Schichtleitung- Stationsleitung</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1698,9 +1594,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>4. Dienstpläne schreiben</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>4. Dienstpläne schreiben</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1715,9 +1609,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>5. Patienten aufklären und beraten</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>5. Patienten aufklären und beraten</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1732,9 +1624,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>6. Angehörige aufklären und beraten</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>6. Angehörige aufklären und beraten</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1749,7 +1639,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={12}>
-                    <Box py={2} px={2}>
+                    <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             F - Dokumentation und Qualität
                         </Typography>
@@ -1757,9 +1647,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>1. Grundpflegerische und behandlungspflegerische Maßnahmen dokumentieren (Pflegebericht)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>1. Grundpflegerische und behandlungspflegerische Maßnahmen dokumentieren (Pflegebericht)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1774,9 +1662,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>2. Bestellungen durchführen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>2. Bestellungen durchführen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1791,9 +1677,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>3. Visiten dokumentieren und auswerten</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>3. Visiten dokumentieren und auswerten</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1808,9 +1692,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>4. Briefe verfassen (z.B. Pflegeüberleitung)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>4. Briefe verfassen (z.B. Pflegeüberleitung)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1825,9 +1707,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>5. Sauberkeit und Ordnung am Arbeitsplatz (Stationszimmer, Patientenzimmer) sicherstellen</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>5. Sauberkeit und Ordnung am Arbeitsplatz (Stationszimmer, Patientenzimmer) sicherstellen</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1842,9 +1722,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>6. Maßnahmen der Qualitätssicherung und –kontrolle anwenden (z.B. Medikamentencheck)</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>6. Maßnahmen der Qualitätssicherung und –kontrolle anwenden (z.B. Medikamentencheck)</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
@@ -1859,9 +1737,7 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
 
                 <Grid item xs={12} sm={9}>
-                    <Box px={2}>
-                        <Typography variant="body2" gutterBottom>7. Ressourcenschonende Arbeitsweise</Typography>
-                    </Box>
+                    <Typography variant="body2" gutterBottom>7. Ressourcenschonende Arbeitsweise</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
