@@ -13,6 +13,10 @@ import {
     Typography
 } from '@material-ui/core';
 
+import { loadCSS } from 'fg-loadcss';
+import { green } from '@material-ui/core/colors';
+import Icon from '@material-ui/core/Icon';
+
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import CheckBoxOutlinedIcon from '@material-ui/icons/CheckBoxOutlined';
 
@@ -74,6 +78,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function  PracticalSkillsView({ response }) {
+    React.useEffect(() => {
+        const node = loadCSS(
+          'https://use.fontawesome.com/releases/v5.14.0/css/all.css',
+          // Inject before JSS
+          document.querySelector('#font-awesome-css') || document.head.firstChild,
+        );
+    
+        return () => {
+          node.parentNode.removeChild(node);
+        };
+      }, []);
+
     const classes = useStyles();
 
     if (response.practical_knowledge && response.practical_activity !== null) {
@@ -117,7 +133,7 @@ function  PracticalSkillsView({ response }) {
                                 control={
                                     <Checkbox 
                                         checked={response.practical_knowledge.care} 
-                                        checkedIcon={<CheckBoxOutlinedIcon color="primary" htmlColor="#008B4F" />} 
+                                        checkedIcon={<Icon baseClassName="fas" className="fa-plus-circle" />} 
                                         color="primary"
                                     />
                                 }
