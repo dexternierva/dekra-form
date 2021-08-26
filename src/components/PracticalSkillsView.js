@@ -15,6 +15,7 @@ import {
 
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import CheckBoxOutlinedIcon from '@material-ui/icons/CheckBoxOutlined';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 
 const SectionTitle = styled.div`
     margin-left: 1rem;
@@ -741,6 +742,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.a1}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -756,6 +758,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.a2}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -771,6 +774,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.a3}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -786,6 +790,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.a4}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -807,6 +812,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.a5}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -822,6 +828,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.a6}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -837,6 +844,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.a7}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -858,6 +866,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.a8}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -873,6 +882,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.a9}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -888,6 +898,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.a10}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -915,6 +926,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.b1}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -930,6 +942,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.b2}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -953,6 +966,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.b3}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -968,6 +982,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.b4}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -983,6 +998,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.b5}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1006,6 +1022,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.b6}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1021,6 +1038,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.b7}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1036,6 +1054,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.b8}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1059,6 +1078,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.b9}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1074,6 +1094,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.b10}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1089,6 +1110,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.b11}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1104,6 +1126,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.b12}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1131,6 +1154,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c1}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1146,6 +1170,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c2}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1169,6 +1194,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c3}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1184,6 +1210,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c4}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1199,6 +1226,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c5}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1222,6 +1250,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c6}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1237,6 +1266,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c7}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1252,6 +1282,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c8}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1275,6 +1306,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c9}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1298,6 +1330,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c10}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1313,6 +1346,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c11}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1328,6 +1362,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c12}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1351,6 +1386,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c13}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1366,6 +1402,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.c14}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1392,6 +1429,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.d1}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1407,6 +1445,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.d2}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1422,6 +1461,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.d3}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1445,6 +1485,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.d4}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1460,6 +1501,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.d5}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1483,6 +1525,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.d6}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1498,6 +1541,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.d7}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1513,6 +1557,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.d8}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1536,6 +1581,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.d9}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1559,6 +1605,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.e1}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1574,6 +1621,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.e2}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1589,6 +1637,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.e3}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1604,6 +1653,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.e4}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1619,6 +1669,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.e5}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1634,6 +1685,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.e6}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1657,6 +1709,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.f1}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1672,6 +1725,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.f2}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1687,6 +1741,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.f3}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1702,6 +1757,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.f4}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1717,6 +1773,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.f5}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1732,6 +1789,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.f6}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
@@ -1747,6 +1805,7 @@ function  PracticalSkillsView({ response }) {
                         precision={1}
                         value={response.practical_activity.f7}
                         icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                        emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
                 </Grid>
