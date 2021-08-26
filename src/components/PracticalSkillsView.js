@@ -733,7 +733,7 @@ function  PracticalSkillsView({ response }) {
                     <Typography variant="body2" gutterBottom>1. Grundsätzliche Parameter (bspw. Größe, Gewicht) und Vitalparameter erheben (mittels manueller Messung, mittels Monitoring)</Typography>
                 </Grid>
 
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
                         name="customized-color"
                         defaultValue={0}
@@ -748,7 +748,7 @@ function  PracticalSkillsView({ response }) {
                 <Grid item xs={12} sm={9}>
                     <Typography variant="body2" gutterBottom>2. Körperlichen (physisch, neurologisch) und kognitiven Zustand von PatientInnen ermitteln</Typography>
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
                         name="customized-color"
                         defaultValue={0}
@@ -763,7 +763,7 @@ function  PracticalSkillsView({ response }) {
                 <Grid item xs={12} sm={9}>
                     <Typography variant="body2" gutterBottom>3. Skalen und Indikatoren auszufüllen</Typography>
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
                     <StyledRating
                         name="customized-color"
                         defaultValue={0}
