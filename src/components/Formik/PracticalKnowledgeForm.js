@@ -19,8 +19,17 @@ import { Formik, Field, Form, FieldArray } from "formik";
 import { CheckboxWithLabel, TextField } from "formik-material-ui";
 import axios from "axios";
 import Alert from "../Alert";
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    dynamicfield: {
+        display: 'flex',
+        alignItems: 'center',
+    },
+}));
 
 function PracticalKnowledge ({ setPracticalKnowledgeState }) {
+    const classes = useStyles();
     const [dialog, setDialog] = useState({ state:false, header: null, text: null });
 
     return (
@@ -410,14 +419,13 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                             <FieldArray name="departments">
                                 {
                                     (fieldArrayProps) => {
-                                        console.log('fieldArrayProps', fieldArrayProps)
                                         const { push, remove, form } = fieldArrayProps
                                         const { values } = form
                                         const { departments } = values
                                         return (
                                             <div>
                                                 {departments.map((department, index) => (
-                                                    <div key={index}>
+                                                    <div key={index} className={classes.dynamicfield}>
                                                         <Field component={TextField} name={`departments[${index}]`} />
                                                         {index > 0 && (
                                                             <button type='button' onClick={() => remove(index)}> - </button>
