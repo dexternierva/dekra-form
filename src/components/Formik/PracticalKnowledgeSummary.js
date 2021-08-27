@@ -9,7 +9,7 @@ import {
     Backdrop,
     Button
 } from '@material-ui/core';
-import { Formik, Field, Form } from "formik";
+import { Formik, Field, Form, FieldArray } from "formik";
 import { CheckboxWithLabel, TextField } from "formik-material-ui";
 
 import { useCurrentUser } from "../../containers/CurrentUser";
@@ -18,7 +18,20 @@ import { PracticalKnowledgeContext } from "../../containers/GetPracticalKnowledg
 import axios from "axios";
 import Alert from "../Alert";
 
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    dynamicfield: {
+        display: 'flex',
+        alignItems: 'center',
+    },
+    dynamicfieldminus: {
+        marginRight: '.25rem'
+    }
+}));
+
 function PracticalKnowledgeSummary () {
+    const classes = useStyles();
     const currentUser = useCurrentUser();
     const practicalKnowledgeID = currentUser.practical_knowledge;                             
     const { loading, response, error, setPracticalKnowledgeID } = useContext(PracticalKnowledgeContext);
@@ -43,8 +56,7 @@ function PracticalKnowledgeSummary () {
                 op: response.op,
                 neurology: response.neurology,
                 geriatrics: response.geriatrics,
-                additionaldepartment1: response.additionaldepartment1,
-                additionaldepartment2: response.additionaldepartment2,
+                departments: response.departments.split(", "),
 
                 // BASIC CARE
                 patientwashing: response.patientwashing,
@@ -578,18 +590,6 @@ function PracticalKnowledgeSummary () {
                                     </Box>
                                     <Box px={4}>
                                         <Field
-                                            component={TextField}
-                                            label="Additional Department"
-                                            name="additionaldepartment1"
-                                            InputProps={{ notched: false }}
-                                        />
-                                    </Box>
-                                </Grid>
-                                
-                                {/** THIRD COLUMN */}
-                                <Grid item xs={12} sm={4}>
-                                    <Box px={4}>
-                                        <Field
                                             component={CheckboxWithLabel}
                                             type="checkbox"
                                             name="op"
@@ -597,6 +597,10 @@ function PracticalKnowledgeSummary () {
                                             color="primary"
                                         />
                                     </Box>
+                                </Grid>
+                                
+                                {/** THIRD COLUMN */}
+                                <Grid item xs={12} sm={4}>
                                     <Box px={4}>
                                         <Field
                                             component={CheckboxWithLabel}
@@ -616,12 +620,30 @@ function PracticalKnowledgeSummary () {
                                         />
                                     </Box>
                                     <Box px={4}>
-                                        <Field
-                                            component={TextField}
-                                            label="Others..."
-                                            name="additionaldepartment2"
-                                            InputProps={{ notched: false }}
-                                        />
+                                        <FieldArray name="departments">
+                                            {
+                                                (fieldArrayProps) => {
+                                                    const { push, remove, form } = fieldArrayProps
+                                                    const { values } = form
+                                                    const { departments } = values
+                                                    return (
+                                                        <div>
+                                                            {departments.map((department, index) => (
+                                                                <div key={index} className={classes.dynamicfield}>
+                                                                    <Field component={TextField} value={department} name={`departments[${index}]`} />
+                                                                    {index > 0 && (
+                                                                        <button className={classes.dynamicfieldminus} type='button' onClick={() => remove(index)}> - </button>
+                                                                    )}
+                                                                    {index < 5 && (
+                                                                        <button type='button' onClick={() => index < 5 ? push('') : null }> + </button>
+                                                                    )}
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )
+                                                }
+                                            }
+                                        </FieldArray>
                                     </Box>
                                 </Grid>
                             </Grid>

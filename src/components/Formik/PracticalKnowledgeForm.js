@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
     },
+    dynamicfieldminus: {
+        marginRight: '.25rem'
+    }
 }));
 
 function PracticalKnowledge ({ setPracticalKnowledgeState }) {
@@ -428,7 +431,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                                                     <div key={index} className={classes.dynamicfield}>
                                                         <Field component={TextField} name={`departments[${index}]`} />
                                                         {index > 0 && (
-                                                            <button type='button' onClick={() => remove(index)}> - </button>
+                                                            <button className={classes.dynamicfieldminus} type='button' onClick={() => remove(index)}> - </button>
                                                         )}
                                                         {index < 5 && (
                                                             <button type='button' onClick={() => index < 5 ? push('') : null }> + </button>
