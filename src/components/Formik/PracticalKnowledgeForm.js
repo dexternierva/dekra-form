@@ -15,7 +15,7 @@ import {
     FormHelperText,
     Divider
 } from '@material-ui/core';
-import { Formik, Field, Form } from "formik";
+import { Formik, Field, Form, FieldArray } from "formik";
 import { CheckboxWithLabel, TextField } from "formik-material-ui";
 import axios from "axios";
 import Alert from "../Alert";
@@ -64,6 +64,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                 geriatrics: false,
                 additionaldepartment1: '',
                 additionaldepartment2: '',
+                departments: [''],
 
                 // BASIC CARE
                 patientwashing: false,
@@ -425,6 +426,17 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                                 name="additionaldepartment2"
                                 InputProps={{ notched: false }}
                             />
+                        </Box>
+
+                        <Box px={4}>
+                            <FieldArray name="departments">
+                                {
+                                    (fieldArrayProps) => {
+                                        console.log('fieldArrayProps', fieldArrayProps)
+                                        return <div>Field Array</div>
+                                    }
+                                }
+                            </FieldArray>
                         </Box>
                     </Grid>
                 </Grid>
