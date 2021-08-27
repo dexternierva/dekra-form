@@ -652,6 +652,7 @@ function  PracticalSkillsView({ response }) {
     const classes = useStyles();
 
     if (response.practical_knowledge && response.practical_activity !== null) {
+        const departments = response.practical_knowledge.departments.split(", ");
 
         return (
             <>
@@ -753,7 +754,7 @@ function  PracticalSkillsView({ response }) {
                         </Box>
                     </Grid>
                     {
-                        response.practical_knowledge.departments.map((department, index) => (
+                        departments.map((department, index) => (
                             <Grid item xs={12} sm={4}>
                                 <Box px={2}>
                                     <TextField id="standard-basic" label="" value={department} />
