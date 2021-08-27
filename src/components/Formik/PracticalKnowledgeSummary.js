@@ -169,7 +169,7 @@ function PracticalKnowledgeSummary () {
         op: false,
         neurology: false,
         geriatrics: false,
-        departments: response.departments.split(", "),
+        departments: [''],
 
         // BASIC CARE
         patientwashing: false,
@@ -374,8 +374,7 @@ function PracticalKnowledgeSummary () {
             'op': values.op,
             'neurology': values.neurology,
             'geriatrics': values.geriatrics,
-            'additionaldepartment1': values.additionaldepartment1,
-            'additionaldepartment2': values.additionaldepartment2,
+            'departments': values.departments.join(", "),
 
             // BASIC CARE
             'patientwashing': values.patientwashing,
