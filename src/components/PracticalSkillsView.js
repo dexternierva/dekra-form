@@ -78,6 +78,7 @@ function  PracticalSkillsView({ response }) {
     const classes = useStyles();
 
     if (response.practical_knowledge && response.practical_activity !== null) {
+        const departments = response.practical_knowledge.departments.split(", ");
 
         return (
             <>
@@ -163,9 +164,6 @@ function  PracticalSkillsView({ response }) {
                                 label="Notaufnahme"
                             />
                         </Box>
-                        <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionaldepartment1}/>
-                        </Box>
                     </Grid>
                     <Grid item xs={12} sm={4}>
                         <Box px={2}>
@@ -186,10 +184,17 @@ function  PracticalSkillsView({ response }) {
                                 label="Geriatrie"
                             />
                         </Box>
-                        <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionaldepartment2}/>
-                        </Box>
                     </Grid>
+                    {
+                        departments.map((department, index) => (
+                            <Grid item xs={12} sm={4}>
+                                <Box px={2}>
+                                    <Checkbox checked="true" checkedIcon={<CheckBoxOutlinedIcon />} />
+                                    <TextField id="standard-basic" label="" value={department} />
+                                </Box>
+                            </Grid>
+                        ))
+                    }
                 </Grid>
             </section>
             
