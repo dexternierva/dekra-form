@@ -169,8 +169,7 @@ function PracticalKnowledgeSummary () {
         op: false,
         neurology: false,
         geriatrics: false,
-        additionaldepartment1: '',
-        additionaldepartment2: '',
+        departments: response.departments.split(", "),
 
         // BASIC CARE
         patientwashing: false,
@@ -634,8 +633,8 @@ function PracticalKnowledgeSummary () {
                                                                     {index > 0 && (
                                                                         <button className={classes.dynamicfieldminus} type='button' onClick={() => remove(index)}> - </button>
                                                                     )}
-                                                                    {index < 5 && (
-                                                                        <button type='button' onClick={() => index < 5 ? push('') : null }> + </button>
+                                                                    {index < 4 && (
+                                                                        <button type='button' onClick={() => index < 4 ? push('') : null }> + </button>
                                                                     )}
                                                                 </div>
                                                             ))}

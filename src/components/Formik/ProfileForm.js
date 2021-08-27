@@ -383,7 +383,7 @@ function ProfileForm ({ setProfileFormState }) {
                     kfParticipantId: '',
                     kfCategory: '',
                     kfDegree: '',
-                    kfLanguage: '',
+                    kfLanguage: [],
                     kfExperienceYear: 0,
                     kfExperienceMonth: 0,
                     kfPriorities: [],
