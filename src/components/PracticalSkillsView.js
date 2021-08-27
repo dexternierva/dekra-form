@@ -71,6 +71,10 @@ const useStyles = makeStyles((theme) => ({
     },
     ratingGrid: {
         borderLeft: '4px solid #008B4F'
+    },
+    dynamicfield: {
+        display: 'flex',
+        alignItems: 'center',
     }
 }));
 
@@ -188,7 +192,7 @@ function  PracticalSkillsView({ response }) {
                     {
                         departments.map((department, index) => (
                             <Grid item xs={12} sm={4}>
-                                <Box px={2}>
+                                <Box px={2} className={classes.dynamicfield}>
                                     <Checkbox checked="true" checkedIcon={<CheckBoxOutlinedIcon />} />
                                     <TextField id="standard-basic" label="" value={department} />
                                 </Box>
