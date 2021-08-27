@@ -433,7 +433,24 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                                 {
                                     (fieldArrayProps) => {
                                         console.log('fieldArrayProps', fieldArrayProps)
-                                        return <div>Field Array</div>
+                                        const { push, remove, form } = fieldArrayProps
+                                        const { values } = form
+                                        const { departments } = values
+                                        return (
+                                            <div>
+                                                {departments.map((department, index) => (
+                                                    <div key={index}>
+                                                        <Field name={`departments[${index}]`} />
+                                                        {index > 0 && (
+                                                            <button type='button' onClick={() => remove(index)}> - </button>
+                                                        )}
+                                                        {index < 5 && (
+                                                            <button type='button' onClick={() => push('')}> + </button>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )
                                     }
                                 }
                             </FieldArray>
