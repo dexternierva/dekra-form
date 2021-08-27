@@ -62,8 +62,6 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                 op: false,
                 neurology: false,
                 geriatrics: false,
-                additionaldepartment1: '',
-                additionaldepartment2: '',
                 departments: [''],
 
                 // BASIC CARE
@@ -172,8 +170,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                     'op': values.op,
                     'neurology': values.neurology,
                     'geriatrics': values.geriatrics,
-                    'additionaldepartment1': values.additionaldepartment1,
-                    'additionaldepartment2': values.additionaldepartment2,
+                    'departments': values.departments.join(", "),
 
                     // BASIC CARE
                     'patientwashing': values.patientwashing,
@@ -301,8 +298,6 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                     op: Yup.boolean(),
                     neurology: Yup.boolean(),
                     geriatrics: Yup.boolean(),
-                    additionaldepartment1: Yup.string(),
-                    additionaldepartment2: Yup.string(),
                 })}
             >
                 <Box px={4}>
@@ -382,18 +377,6 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                         </Box>
                         <Box px={4}>
                             <Field
-                                component={TextField}
-                                label="Additional Department"
-                                name="additionaldepartment1"
-                                InputProps={{ notched: false }}
-                            />
-                        </Box>
-                    </Grid>
-                    
-                    {/** THIRD COLUMN */}
-                    <Grid item xs={12} sm={4}>
-                        <Box px={4}>
-                            <Field
                                 component={CheckboxWithLabel}
                                 type="checkbox"
                                 name="op"
@@ -401,6 +384,10 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                                 color="primary"
                             />
                         </Box>
+                    </Grid>
+                    
+                    {/** THIRD COLUMN */}
+                    <Grid item xs={12} sm={4}>
                         <Box px={4}>
                             <Field
                                 component={CheckboxWithLabel}
@@ -420,15 +407,6 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                             />
                         </Box>
                         <Box px={4}>
-                            <Field
-                                component={TextField}
-                                label="Others..."
-                                name="additionaldepartment2"
-                                InputProps={{ notched: false }}
-                            />
-                        </Box>
-
-                        <Box px={4}>
                             <FieldArray name="departments">
                                 {
                                     (fieldArrayProps) => {
@@ -440,12 +418,12 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                                             <div>
                                                 {departments.map((department, index) => (
                                                     <div key={index}>
-                                                        <Field name={`departments[${index}]`} />
+                                                        <Field component={TextField} name={`departments[${index}]`} />
                                                         {index > 0 && (
                                                             <button type='button' onClick={() => remove(index)}> - </button>
                                                         )}
                                                         {index < 5 && (
-                                                            <button type='button' onClick={() => push('')}> + </button>
+                                                            <button type='button' onClick={() => index < 5 ? push('') : null }> + </button>
                                                         )}
                                                     </div>
                                                 ))}
