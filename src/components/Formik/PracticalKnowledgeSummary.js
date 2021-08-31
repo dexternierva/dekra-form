@@ -90,7 +90,7 @@ function PracticalKnowledgeSummary () {
                 pulsoxymeter: response.pulsoxymeter,
                 ecg: response.ecg,
                 readassess: response.readassess,
-                additionalvitalsign: response.additionalvitalsign,
+                vitalsigns: response.vitalsigns.split(", "),
 
                 // DEVICES
                 bloodglucose: response.bloodglucose,
@@ -203,7 +203,7 @@ function PracticalKnowledgeSummary () {
         pulsoxymeter: false,
         ecg: false,
         readassess: false,
-        additionalvitalsign: '',
+        vitalsigns: [''],
 
         // DEVICES
         bloodglucose: false,
@@ -408,7 +408,7 @@ function PracticalKnowledgeSummary () {
             'pulsoxymeter': values.pulsoxymeter,
             'ecg': values.ecg,
             'readassess': values.readassess,
-            'additionalvitalsign': values.additionalvitalsign,
+            'vitalsigns': values.vitalsigns.join(", "),
 
             // DEVICES
             'bloodglucose': values.bloodglucose,
@@ -946,12 +946,30 @@ function PracticalKnowledgeSummary () {
                                         />
                                     </Box>
                                     <Box px={4}>
-                                        <Field
-                                            component={TextField}
-                                            label="Others..."
-                                            name="additionalvitalsign"
-                                            InputProps={{ notched: false }}
-                                        />
+                                        <FieldArray name="vitalsigns">
+                                            {
+                                                (fieldArrayProps) => {
+                                                    const { push, remove, form } = fieldArrayProps
+                                                    const { values } = form
+                                                    const { vitalsigns } = values
+                                                    return (
+                                                        <div>
+                                                            {vitalsigns.map((vitalsign, index) => (
+                                                                <div key={index} className={classes.dynamicfield}>
+                                                                    <Field component={TextField} value={vitalsign} name={`vitalsigns[${index}]`} />
+                                                                    {index > 0 && (
+                                                                        <button className={classes.dynamicfieldminus} type='button' onClick={() => remove(index)}> - </button>
+                                                                    )}
+                                                                    {index < 4 && (
+                                                                        <button type='button' onClick={() => index < 4 ? push('') : null }> + </button>
+                                                                    )}
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )
+                                                }
+                                            }
+                                        </FieldArray>
                                     </Box>
                                 </Grid>
                                 

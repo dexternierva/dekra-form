@@ -108,7 +108,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                 pulsoxymeter: false,
                 ecg: false,
                 readassess: false,
-                additionalvitalsign: '',
+                vitalsigns: [''],
 
                 // DEVICES
                 bloodglucose: false,
@@ -216,7 +216,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                     'pulsoxymeter': values.pulsoxymeter,
                     'ecg': values.ecg,
                     'readassess': values.readassess,
-                    'additionalvitalsign': values.additionalvitalsign,
+                    'vitalsigns': values.vitalsigns.join(", "),
 
                     // DEVICES
                     'bloodglucose': values.bloodglucose,
@@ -795,12 +795,30 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                             />
                         </Box>
                         <Box px={4}>
-                            <Field
-                                component={TextField}
-                                label="Others..."
-                                name="additionalvitalsign"
-                                InputProps={{ notched: false }}
-                            />
+                            <FieldArray name="vitalsigns">
+                                {
+                                    (fieldArrayProps) => {
+                                        const { push, remove, form } = fieldArrayProps
+                                        const { values } = form
+                                        const { vitalsigns } = values
+                                        return (
+                                            <div>
+                                                {vitalsigns.map((vitalsign, index) => (
+                                                    <div key={index} className={classes.dynamicfield}>
+                                                        <Field component={TextField} name={`vitalsigns[${index}]`} />
+                                                        {index > 0 && (
+                                                            <button className={classes.dynamicfieldminus} type='button' onClick={() => remove(index)}> - </button>
+                                                        )}
+                                                        {index < 5 && (
+                                                            <button type='button' onClick={() => index < 5 ? push('') : null }> + </button>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )
+                                    }
+                                }
+                            </FieldArray>
                         </Box>
                     </Grid>
                     

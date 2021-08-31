@@ -106,6 +106,7 @@ function  PracticalSkillsView({ response }) {
     if (response.practical_knowledge && response.practical_activity !== null) {
         const departments = response.practical_knowledge.departments.split(", ");
         const breathings = response.practical_knowledge.breathings.split(", ");
+        const vitalsigns = response.practical_knowledge.breathings.split(", ");
 
         return (
             <>
@@ -465,9 +466,20 @@ function  PracticalSkillsView({ response }) {
                                 label="EKG lesen / beurteilen"
                             />
                         </Box>
-                        <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalvitalsign}/>
-                        </Box>
+                        {
+                            vitalsigns.map((vitalsign, index) => (
+                                <Box px={2} className={classes.dynamicfield}>
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox checked="true"
+                                            checkedIcon={<CheckBoxOutlinedIcon />} 
+                                            color="primary" />
+                                        }
+                                    />
+                                    <TextField id="standard-basic" label="" value={vitalsign} />
+                                </Box>
+                            ))
+                        }
                     </Grid>
 
                     {
