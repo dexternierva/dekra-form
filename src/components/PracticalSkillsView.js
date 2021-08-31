@@ -45,6 +45,16 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: '100%',
         flexBasis: '100%',
         flexGrow: '0',
+        [theme.breakpoints.up('sm')]: {
+            maxWidth: '50%',
+            flexBasis: '50%',
+            flexGrow: '0'
+        },
+        [theme.breakpoints.up('md')]: {
+            maxWidth: '33.333333%',
+            flexBasis: '33.333333',
+            flexGrow: '0'
+        }
     },
     sectionTitle: {
         width: '100%',
