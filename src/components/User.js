@@ -653,6 +653,7 @@ function  PracticalSkillsView({ response }) {
 
     if (response.practical_knowledge && response.practical_activity !== null) {
         const departments = response.practical_knowledge.departments.split(", ");
+        const breathings = response.practical_knowledge.breathings.split(", ");
 
         return (
             <>
@@ -886,9 +887,15 @@ function  PracticalSkillsView({ response }) {
                                 label="Beatmungsformen (CPAP, BIPAP, SIMV)"
                             />
                         </Box>
-                        <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbreathing}/>
-                        </Box>
+                        {
+                            breathings.map((breathing, index) => (
+                                <Grid item xs={12} sm={4}>
+                                    <Box px={2}>
+                                        <TextField id="standard-basic" label="" value={breathing} />
+                                    </Box>
+                                </Grid>
+                            ))
+                        }
                     </Grid>
                 </Grid>
             </section>

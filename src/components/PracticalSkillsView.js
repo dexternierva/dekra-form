@@ -105,6 +105,7 @@ function  PracticalSkillsView({ response }) {
 
     if (response.practical_knowledge && response.practical_activity !== null) {
         const departments = response.practical_knowledge.departments.split(", ");
+        const breathings = response.practical_knowledge.breathings.split(", ");
 
         return (
             <>
@@ -278,19 +279,54 @@ function  PracticalSkillsView({ response }) {
                                 label="Prophylaxen (Pneumonie, Dekubitus, Kontraktur...)"
                             />
                         </Box>
-                        <Box px={2}>
+                        <Box px={2} className={classes.dynamicfield}>
+                            <FormControlLabel
+                                control={
+                                    <Checkbox checked="true"
+                                    checkedIcon={<CheckBoxOutlinedIcon />} 
+                                    color="primary" />
+                                }
+                            />
                             <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare1}/>
                         </Box>
-                        <Box px={2}>
+                        <Box px={2} className={classes.dynamicfield}>
+                            <FormControlLabel
+                                control={
+                                    <Checkbox checked="true"
+                                    checkedIcon={<CheckBoxOutlinedIcon />} 
+                                    color="primary" />
+                                }
+                            />
                             <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare2}/>
                         </Box>
-                        <Box px={2}>
+                        <Box px={2} className={classes.dynamicfield}>
+                            <FormControlLabel
+                                control={
+                                    <Checkbox checked="true"
+                                    checkedIcon={<CheckBoxOutlinedIcon />} 
+                                    color="primary" />
+                                }
+                            />
                             <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare3}/>
                         </Box>
-                        <Box px={2}>
+                        <Box px={2} className={classes.dynamicfield}>
+                            <FormControlLabel
+                                control={
+                                    <Checkbox checked="true"
+                                    checkedIcon={<CheckBoxOutlinedIcon />} 
+                                    color="primary" />
+                                }
+                            />
                             <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare4}/>
                         </Box>
-                        <Box px={2}>
+                        <Box px={2} className={classes.dynamicfield}>
+                            <FormControlLabel
+                                control={
+                                    <Checkbox checked="true"
+                                    checkedIcon={<CheckBoxOutlinedIcon />} 
+                                    color="primary" />
+                                }
+                            />
                             <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare5}/>
                         </Box>
                     </Grid>
@@ -358,9 +394,20 @@ function  PracticalSkillsView({ response }) {
                                 label="Beatmungsformen (CPAP, BIPAP, SIMV)"
                             />
                         </Box>
-                        <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbreathing}/>
-                        </Box>
+                        {
+                            breathings.map((breathing, index) => (
+                                <Box px={2} className={classes.dynamicfield}>
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox checked="true"
+                                            checkedIcon={<CheckBoxOutlinedIcon />} 
+                                            color="primary" />
+                                        }
+                                    />
+                                    <TextField id="standard-basic" label="" value={breathing} />
+                                </Box>
+                            ))
+                        }
                     </Grid>
                 </Grid>
             </section>

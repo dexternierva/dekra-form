@@ -98,7 +98,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                 ventilators: false,
                 settingventilators: false,
                 beatmungsformen: false,
-                additionalbreathing: '',
+                breathings: [''],
 
                 // VITAL SIGN CONTROL MONITORING
                 rrmeasurement: false,
@@ -206,7 +206,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                     'ventilators': values.ventilators,
                     'settingventilators': values.settingventilators,
                     'beatmungsformen': values.beatmungsformen,
-                    'additionalbreathing': values.additionalbreathing,
+                    'breathings': values.departments.join(", "),
 
                     // VITAL SIGN CONTROL MONITORING
                     'rrmeasurement': values.rrmeasurement,
@@ -669,12 +669,30 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                             />
                         </Box>
                         <Box px={4}>
-                            <Field
-                                component={TextField}
-                                label="Others..."
-                                name="additionalbreathing"
-                                InputProps={{ notched: false }}
-                            />
+                            <FieldArray name="breathings">
+                                {
+                                    (fieldArrayProps) => {
+                                        const { push, remove, form } = fieldArrayProps
+                                        const { values } = form
+                                        const { breathings } = values
+                                        return (
+                                            <div>
+                                                {breathings.map((breathing, index) => (
+                                                    <div key={index} className={classes.dynamicfield}>
+                                                        <Field component={TextField} name={`breathings[${index}]`} />
+                                                        {index > 0 && (
+                                                            <button className={classes.dynamicfieldminus} type='button' onClick={() => remove(index)}> - </button>
+                                                        )}
+                                                        {index < 5 && (
+                                                            <button type='button' onClick={() => index < 5 ? push('') : null }> + </button>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )
+                                    }
+                                }
+                            </FieldArray>
                         </Box>
                     </Grid>
                 </Grid>
