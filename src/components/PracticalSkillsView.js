@@ -33,6 +33,10 @@ const StyledRating = withStyles({
 })(Rating);
 
 const useStyles = makeStyles((theme) => ({
+    grid: {
+        margin: '0 0 4rem 0',
+        borderLeft: '4px solid #008B4F',
+    },
     container: {
         display: 'flex',
         width: '100%',
