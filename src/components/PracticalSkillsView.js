@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { withStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
@@ -16,14 +15,6 @@ import {
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import CheckBoxOutlinedIcon from '@material-ui/icons/CheckBoxOutlined';
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-
-const SectionTitle = styled.div`
-    margin-left: 1rem;
-    color: #008B4F;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: 700;
-    font-size: 1.25em;
-`;
 
 const StyledRating = withStyles({
     grid: {
@@ -42,9 +33,26 @@ const StyledRating = withStyles({
 })(Rating);
 
 const useStyles = makeStyles((theme) => ({
-    grid: {
+    container: {
+        display: 'flex',
+        width: '100%',
+        flexWrap: 'wrap',
+        boxSizing: 'border-box',
         margin: '0 0 4rem 0',
         borderLeft: '4px solid #008B4F',
+    },
+    containerChild: {
+        maxWidth: '100%',
+        flexBasis: '100%',
+        flexGrow: '0',
+    },
+    sectionTitle: {
+        width: '100%',
+        margin: '0 0 .5rem 1rem',
+        color: '#008B4F',
+        fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
+        fontWeight: '700',
+        fontSize: '1.25em'
     },
     table: {
         margin: '-.75rem 0 0 0'
@@ -100,114 +108,120 @@ function  PracticalSkillsView({ response }) {
                 </Paper>
             </div>
 
+            {/*** PRACTICAL KNOWLEDGE* ===================================================================== */}
+
             {
                 /**
-                 * PRACTICAL KNOWLEDGE
+                 * DEPARTMENT
                  * =====================================================================
                  */
             }
-            <section>
+            <section className={classes.container}>
+                <h3 className={classes.sectionTitle}>Fachbereich</h3>
+
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={
+                                <Checkbox 
+                                    checked={response.practical_knowledge.care} 
+                                    checkedIcon={<CheckBoxOutlinedIcon />} 
+                                    color="primary"
+                                />
+                            }
+                            label="Intensivmedizin"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.internalmedicine}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Innere Medizin"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}> 
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.pediatrics}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Pädiatrie"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.generalaccidentsurgery}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Allgemeine Unfallchirurgie"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.anesthesia}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Anästhesie"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.orthopedics}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Orthopädie"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.emergency}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Notaufnahme"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.op} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="OP"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.neurology} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Neurologie"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.geriatrics} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Geriatrie"
+                        />
+                    </Box>
+                </div>
                 {
-                    /**
-                     * DEPARTMENT
-                     * =====================================================================
-                     */
-                }
-                <Grid container spacing={0} className={classes.grid}>
-                    <Grid item xs={12} sm={12}>
-                        <SectionTitle>Fachbereich</SectionTitle>
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={
-                                    <Checkbox 
-                                        checked={response.practical_knowledge.care} 
+                    departments.map((department, index) => (
+                        <div className={classes.containerChild}>
+                            <Box px={2} className={classes.dynamicfield}>
+                                <FormControlLabel
+                                    control={
+                                        <Checkbox checked="true"
                                         checkedIcon={<CheckBoxOutlinedIcon />} 
-                                        color="primary"
-                                    />
-                                }
-                                label="Intensivmedizin"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.internalmedicine}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
-                                label="Innere Medizin"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.pediatrics}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
-                                label="Pädiatrie"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.generalaccidentsurgery}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
-                                label="Allgemeine Unfallchirurgie"
-                            />
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.anesthesia}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
-                                label="Anästhesie"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.orthopedics}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
-                                label="Orthopädie"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.emergency}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
-                                label="Notaufnahme"
-                            />
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.op} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
-                                label="OP"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.neurology} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
-                                label="Neurologie"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.geriatrics} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
-                                label="Geriatrie"
-                            />
-                        </Box>
-                    </Grid>
-                    {
-                        departments.map((department, index) => (
-                            <Grid item xs={12} sm={4}>
-                                <Box px={2} className={classes.dynamicfield}>
-                                    <FormControlLabel
-                                        control={
-                                            <Checkbox checked="true"
-                                            checkedIcon={<CheckBoxOutlinedIcon />} 
-                                            color="primary" />
-                                        }
-                                        label="Geriatrie"
-                                    />
-                                    <TextField id="standard-basic" label="" value={department} />
-                                </Box>
-                            </Grid>
-                        ))
-                    }
-                </Grid>
-            </section>
+                                        color="primary" />
+                                    }
+                                />
+                                <TextField id="standard-basic" label="" value={department} />
+                            </Box>
+                        </div>
+                    ))
+                }
+            </section> {/* END OF CONTAINER */}
             
             <section>
                 <Grid container spacing={0}>
@@ -218,7 +232,7 @@ function  PracticalSkillsView({ response }) {
                          */
                     }
                     <Grid item xs={12} sm={6} className={classes.grid}>
-                        <SectionTitle>Grundpflege</SectionTitle>
+                    <h3 className={classes.sectionTitle}>Grundpflege</h3>
 
                         <Box px={2}>
                             <FormControlLabel
@@ -274,7 +288,7 @@ function  PracticalSkillsView({ response }) {
                          */
                     }
                     <Grid item xs={12} sm={6} className={classes.grid}>
-                        <SectionTitle>Atmung</SectionTitle>
+                        <h3 className={classes.sectionTitle}>Atmung</h3>
 
                         <Box px={2}>
                             <FormControlLabel
@@ -346,7 +360,7 @@ function  PracticalSkillsView({ response }) {
                          */
                     }
                     <Grid item xs={12} sm={6} className={classes.grid}>
-                        <SectionTitle>Vitalzeichenkontrolle / Überwachung</SectionTitle>
+                        <h3 className={classes.sectionTitle}>Vitalzeichenkontrolle / Überwachung</h3>
 
                         <Box px={2}>
                             <FormControlLabel
@@ -402,7 +416,7 @@ function  PracticalSkillsView({ response }) {
                          */
                     }
                     <Grid item xs={12} sm={6} className={classes.grid}>
-                        <SectionTitle>Geräte</SectionTitle>
+                        <h3 className={classes.sectionTitle}>Geräte</h3>
 
                         <Box px={2}>
                             <FormControlLabel
@@ -462,7 +476,7 @@ function  PracticalSkillsView({ response }) {
                          */
                     }
                     <Grid item xs={12} sm={6} className={classes.grid}>
-                        <SectionTitle>Medikamente</SectionTitle>
+                        <h3 className={classes.sectionTitle}>Medikamente</h3>
 
                         <Box px={2}>
                             <FormControlLabel
@@ -542,7 +556,7 @@ function  PracticalSkillsView({ response }) {
                          */
                     }
                     <Grid item xs={12} sm={6} className={classes.grid}>
-                        <SectionTitle>Ausscheidung</SectionTitle>
+                        <h3 className={classes.sectionTitle}>Ausscheidung</h3>
 
                         <Box px={2}>
                             <FormControlLabel
@@ -635,7 +649,7 @@ function  PracticalSkillsView({ response }) {
                          */
                     }
                     <Grid item xs={12} sm={6} className={classes.grid}>
-                        <SectionTitle>Neurologie</SectionTitle>
+                        <h3 className={classes.sectionTitle}>Neurologie</h3>
 
                         <Box px={2}>
                             <FormControlLabel
@@ -679,7 +693,7 @@ function  PracticalSkillsView({ response }) {
                          */
                     }
                     <Grid item xs={12} sm={6} className={classes.grid}>
-                        <SectionTitle>Wundbehandlung</SectionTitle>
+                        <h3 className={classes.sectionTitle}>Wundbehandlung</h3>
 
                         <Box px={2}>
                             <FormControlLabel
