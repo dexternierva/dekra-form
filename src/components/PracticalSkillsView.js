@@ -193,7 +193,14 @@ function  PracticalSkillsView({ response }) {
                         departments.map((department, index) => (
                             <Grid item xs={12} sm={4}>
                                 <Box px={2} className={classes.dynamicfield}>
-                                    <Checkbox checked="true" checkedIcon={<CheckBoxOutlinedIcon />} />
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox checked="true"
+                                            checkedIcon={<CheckBoxOutlinedIcon />} 
+                                            color="primary" />
+                                        }
+                                        label="Geriatrie"
+                                    />
                                     <TextField id="standard-basic" label="" value={department} />
                                 </Box>
                             </Grid>
