@@ -118,7 +118,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                 infusomat: false,
                 perfusor: false,
                 vacuumpump: false,
-                additionaldevices: '',
+                devices: [''],
 
                 // MEDICATION
                 pharmacology: false,
@@ -226,7 +226,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                     'infusomat': values.infusomat,
                     'perfusor': values.perfusor,
                     'vacuumpump': values.vacuumpump,
-                    'additionaldevices': values.additionaldevices,
+                    'devices': values.devices.join(", "),
 
                     // MEDICATION
                     'pharmacology': values.pharmacology,
@@ -893,12 +893,30 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                             />
                         </Box>
                         <Box px={4}>
-                            <Field
-                                component={TextField}
-                                label="Others..."
-                                name="additionaldevices"
-                                InputProps={{ notched: false }}
-                            />
+                            <FieldArray name="devices">
+                                {
+                                    (fieldArrayProps) => {
+                                        const { push, remove, form } = fieldArrayProps
+                                        const { values } = form
+                                        const { devices } = values
+                                        return (
+                                            <div>
+                                                {devices.map((device, index) => (
+                                                    <div key={index} className={classes.dynamicfield}>
+                                                        <Field component={TextField} name={`devices[${index}]`} />
+                                                        {index > 0 && (
+                                                            <button className={classes.dynamicfieldminus} type='button' onClick={() => remove(index)}> - </button>
+                                                        )}
+                                                        {index < 5 && (
+                                                            <button type='button' onClick={() => index < 5 ? push('') : null }> + </button>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )
+                                    }
+                                }
+                            </FieldArray>
                         </Box>
                     </Grid>
                 </Grid>

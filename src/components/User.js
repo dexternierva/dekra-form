@@ -655,6 +655,7 @@ function  PracticalSkillsView({ response }) {
         const departments = response.practical_knowledge.departments.split(", ");
         const breathings = response.practical_knowledge.breathings.split(", ");
         const vitalsigns = response.practical_knowledge.vitalsigns.split(", ");
+        const devices = response.practical_knowledge.devices.split(", ");
 
         return (
             <>
@@ -1014,9 +1015,13 @@ function  PracticalSkillsView({ response }) {
                                 label="Vakuumpumpe Wunde"
                             />
                         </Box>
-                        <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionaldevices}/>
-                        </Box>
+                        {
+                            devices.map((device, index) => (
+                                <Box px={2}>
+                                    <TextField id="standard-basic" label="" value={device} />
+                                </Box>
+                            ))
+                        }
                     </Grid>
                 </Grid>
             </section>

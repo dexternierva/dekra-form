@@ -100,7 +100,7 @@ function PracticalKnowledgeSummary () {
                 infusomat: response.infusomat,
                 perfusor: response.perfusor,
                 vacuumpump: response.vacuumpump,
-                additionaldevices: response.additionaldevices,
+                devices: response.devices.split(", "),
 
                 // MEDICATION
                 pharmacology: response.pharmacology,
@@ -213,7 +213,7 @@ function PracticalKnowledgeSummary () {
         infusomat: false,
         perfusor: false,
         vacuumpump: false,
-        additionaldevices: '',
+        devices: [''],
 
         // MEDICATION
         pharmacology: false,
@@ -418,7 +418,7 @@ function PracticalKnowledgeSummary () {
             'infusomat': values.infusomat,
             'perfusor': values.perfusor,
             'vacuumpump': values.vacuumpump,
-            'additionaldevices': values.additionaldevices,
+            'devices': values.devices.join(", "),
 
             // MEDICATION
             'pharmacology': values.pharmacology,
@@ -1044,12 +1044,30 @@ function PracticalKnowledgeSummary () {
                                         />
                                     </Box>
                                     <Box px={4}>
-                                        <Field
-                                            component={TextField}
-                                            label="Others..."
-                                            name="additionaldevices"
-                                            InputProps={{ notched: false }}
-                                        />
+                                        <FieldArray name="devices">
+                                            {
+                                                (fieldArrayProps) => {
+                                                    const { push, remove, form } = fieldArrayProps
+                                                    const { values } = form
+                                                    const { devices } = values
+                                                    return (
+                                                        <div>
+                                                            {devices.map((device, index) => (
+                                                                <div key={index} className={classes.dynamicfield}>
+                                                                    <Field component={TextField} value={device} name={`devices[${index}]`} />
+                                                                    {index > 0 && (
+                                                                        <button className={classes.dynamicfieldminus} type='button' onClick={() => remove(index)}> - </button>
+                                                                    )}
+                                                                    {index < 4 && (
+                                                                        <button type='button' onClick={() => index < 4 ? push('') : null }> + </button>
+                                                                    )}
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )
+                                                }
+                                            }
+                                        </FieldArray>
                                     </Box>
                                 </Grid>
                             </Grid>
