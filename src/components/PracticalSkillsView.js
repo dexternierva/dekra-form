@@ -234,8 +234,9 @@ function  PracticalSkillsView({ response }) {
                                         checkedIcon={<CheckBoxOutlinedIcon />} 
                                         color="primary" />
                                     }
+                                    style={{ marginRight: 0 }}
                                 />
-                                <TextField id="standard-basic" label="" value={department} />
+                                <TextField id="standard-basic" label="" value={department} style={{ width: "50%" }} />
                             </Box>
                         </div>
                     ))
@@ -290,8 +291,9 @@ function  PracticalSkillsView({ response }) {
                                     checkedIcon={<CheckBoxOutlinedIcon />} 
                                     color="primary" />
                                 }
+                                style={{ marginRight: 0 }}
                             />
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare1} />
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare1} style={{ width: "50%" }} />
                         </Box>
                         <Box px={2} className={classes.dynamicfield}>
                             <FormControlLabel
@@ -300,8 +302,9 @@ function  PracticalSkillsView({ response }) {
                                     checkedIcon={<CheckBoxOutlinedIcon />} 
                                     color="primary" />
                                 }
+                                style={{ marginRight: 0 }}
                             />
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare2}/>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare2} style={{ width: "50%" }}/>
                         </Box>
                         <Box px={2} className={classes.dynamicfield}>
                             <FormControlLabel
@@ -321,8 +324,9 @@ function  PracticalSkillsView({ response }) {
                                     checkedIcon={<CheckBoxOutlinedIcon />} 
                                     color="primary" />
                                 }
+                                style={{ marginRight: 0 }}
                             />
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare4}/>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare4} style={{ width: "50%" }} />
                         </Box>
                         <Box px={2} className={classes.dynamicfield}>
                             <FormControlLabel
@@ -331,8 +335,9 @@ function  PracticalSkillsView({ response }) {
                                     checkedIcon={<CheckBoxOutlinedIcon />} 
                                     color="primary" />
                                 }
+                                style={{ marginRight: 0 }}
                             />
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare5}/>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare5} style={{ width: "50%" }} />
                         </Box>
                     </Grid>
 
@@ -408,8 +413,9 @@ function  PracticalSkillsView({ response }) {
                                             checkedIcon={<CheckBoxOutlinedIcon />} 
                                             color="primary" />
                                         }
+                                        style={{ marginRight: 0 }}
                                     />
-                                    <TextField id="standard-basic" label="" value={breathing} />
+                                    <TextField id="standard-basic" label="" value={breathing} style={{ width: "50%" }} />
                                 </Box>
                             ))
                         }
@@ -479,8 +485,9 @@ function  PracticalSkillsView({ response }) {
                                             checkedIcon={<CheckBoxOutlinedIcon />} 
                                             color="primary" />
                                         }
+                                        style={{ marginRight: 0 }}
                                     />
-                                    <TextField id="standard-basic" label="" value={vitalsign} />
+                                    <TextField id="standard-basic" label="" value={vitalsign} style={{ width: "50%" }} />
                                 </Box>
                             ))
                         }
@@ -546,8 +553,9 @@ function  PracticalSkillsView({ response }) {
                                             checkedIcon={<CheckBoxOutlinedIcon />} 
                                             color="primary" />
                                         }
+                                        style={{ marginRight: 0 }}
                                     />
-                                    <TextField id="standard-basic" label="" value={device} />
+                                    <TextField id="standard-basic" label="" value={device} style={{ width: "50%" }} />
                                 </Box>
                             ))
                         }
@@ -778,8 +786,9 @@ function  PracticalSkillsView({ response }) {
                                             checkedIcon={<CheckBoxOutlinedIcon />} 
                                             color="primary" />
                                         }
+                                        style={{ marginRight: 0 }}
                                     />
-                                    <TextField id="standard-basic" label="" value={neurology} />
+                                    <TextField id="standard-basic" label="" value={neurology} style={{ width: "50%" }} />
                                 </Box>
                             ))
                         }
@@ -833,8 +842,9 @@ function  PracticalSkillsView({ response }) {
                                             checkedIcon={<CheckBoxOutlinedIcon />} 
                                             color="primary" />
                                         }
+                                        style={{ marginRight: 0 }}
                                     />
-                                    <TextField id="standard-basic" label="" value={woundtreatment} />
+                                    <TextField id="standard-basic" label="" value={woundtreatment} style={{ width: "50%" }} />
                                 </Box>
                             ))
                         }
