@@ -138,7 +138,7 @@ function PracticalKnowledgeSummary () {
                 cerebralhemorrhage: response.cerebralhemorrhage,
                 caringparkinson: response.caringparkinson,
                 carebraintumor: response.carebraintumor,
-                additionalneurology: response.additionalneurology,
+                neurologies: response.neurologies.split(", "),
 
                 // WOUND TREATMENT
                 asepticdressing: response.asepticdressing,
@@ -146,7 +146,7 @@ function PracticalKnowledgeSummary () {
                 pullingthreads: response.pullingthreads,
                 removebrackets: response.removebrackets,
                 woundassessment: response.woundassessment,
-                additionalwoundtreatment: response.additionalwoundtreatment,
+                woundtreatments: response.woundtreatments.split(", "),
             }
 
             setFormValues(savedData);
@@ -251,7 +251,7 @@ function PracticalKnowledgeSummary () {
         cerebralhemorrhage: false,
         caringparkinson: false,
         carebraintumor: false,
-        additionalneurology: '',
+        neurologies: [''],
 
         // WOUND TREATMENT
         asepticdressing: false,
@@ -259,7 +259,7 @@ function PracticalKnowledgeSummary () {
         pullingthreads: false,
         removebrackets: false,
         woundassessment: false,
-        additionalwoundtreatment: ''
+        woundtreatments: [''],
     }
 
     /**
@@ -456,7 +456,7 @@ function PracticalKnowledgeSummary () {
             'cerebralhemorrhage': values.cerebralhemorrhage,
             'caringparkinson': values.caringparkinson,
             'carebraintumor': values.carebraintumor,
-            'additionalneurology': values.additionalneurology,
+            'neurologies': values.neurologies.join(", "),
 
             // WOUND TREATMENT
             'asepticdressing': values.asepticdressing,
@@ -464,7 +464,7 @@ function PracticalKnowledgeSummary () {
             'pullingthreads': values.pullingthreads,
             'removebrackets': values.removebrackets,
             'woundassessment': values.woundassessment,
-            'additionalwoundtreatment': values.additionalwoundtreatment 
+            'woundtreatments': values.woundtreatments.join(", "),
         }
 
         data.append('data', JSON.stringify(info));
@@ -1386,12 +1386,30 @@ function PracticalKnowledgeSummary () {
                                         />
                                     </Box>
                                     <Box px={4}>
-                                        <Field
-                                            component={TextField}
-                                            label="Others..."
-                                            name="additionalneurology"
-                                            InputProps={{ notched: true }}
-                                        />
+                                        <FieldArray name="neurologies">
+                                            {
+                                                (fieldArrayProps) => {
+                                                    const { push, remove, form } = fieldArrayProps
+                                                    const { values } = form
+                                                    const { neurologies } = values
+                                                    return (
+                                                        <div>
+                                                            {neurologies.map((neurology, index) => (
+                                                                <div key={index} className={classes.dynamicfield}>
+                                                                    <Field component={TextField} value={neurology} name={`neurologies[${index}]`} />
+                                                                    {index > 0 && (
+                                                                        <button className={classes.dynamicfieldminus} type='button' onClick={() => remove(index)}> - </button>
+                                                                    )}
+                                                                    {index < 4 && (
+                                                                        <button type='button' onClick={() => index < 4 ? push('') : null }> + </button>
+                                                                    )}
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )
+                                                }
+                                            }
+                                        </FieldArray>
                                     </Box>
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
@@ -1446,12 +1464,30 @@ function PracticalKnowledgeSummary () {
                                         />
                                     </Box>
                                     <Box px={4}>
-                                        <Field
-                                            component={TextField}
-                                            label="Others..."
-                                            name="additionalwoundtreatment"
-                                            InputProps={{ notched: true }}
-                                        />
+                                        <FieldArray name="woundtreatments">
+                                            {
+                                                (fieldArrayProps) => {
+                                                    const { push, remove, form } = fieldArrayProps
+                                                    const { values } = form
+                                                    const { woundtreatments } = values
+                                                    return (
+                                                        <div>
+                                                            {woundtreatments.map((device, index) => (
+                                                                <div key={index} className={classes.dynamicfield}>
+                                                                    <Field component={TextField} value={device} name={`woundtreatments[${index}]`} />
+                                                                    {index > 0 && (
+                                                                        <button className={classes.dynamicfieldminus} type='button' onClick={() => remove(index)}> - </button>
+                                                                    )}
+                                                                    {index < 4 && (
+                                                                        <button type='button' onClick={() => index < 4 ? push('') : null }> + </button>
+                                                                    )}
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )
+                                                }
+                                            }
+                                        </FieldArray>
                                     </Box>
                                 </Grid>
                             </Grid>

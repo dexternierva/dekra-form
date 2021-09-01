@@ -156,7 +156,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                 cerebralhemorrhage: false,
                 caringparkinson: false,
                 carebraintumor: false,
-                additionalneurology: '',
+                neurologies: [''],
 
                 // WOUND TREATMENT
                 asepticdressing: false,
@@ -164,7 +164,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                 pullingthreads: false,
                 removebrackets: false,
                 woundassessment: false,
-                additionalwoundtreatment: ''
+                woundtreatments: [''],
             }}
 
             onSubmit={async (values) => {
@@ -264,7 +264,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                     'cerebralhemorrhage': values.cerebralhemorrhage,
                     'caringparkinson': values.caringparkinson,
                     'carebraintumor': values.carebraintumor,
-                    'additionalneurology': values.additionalneurology,
+                    'neurologies': values.departments.join(", "),
 
                     // WOUND TREATMENT
                     'asepticdressing': values.asepticdressing,
@@ -272,7 +272,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                     'pullingthreads': values.pullingthreads,
                     'removebrackets': values.removebrackets,
                     'woundassessment': values.woundassessment,
-                    'additionalwoundtreatment': values.additionalwoundtreatment 
+                    'woundtreatments': values.departments.join(", "),
                 }
 
                 data.append('data', JSON.stringify(info));
@@ -1288,12 +1288,30 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                             />
                         </Box>
                         <Box px={4}>
-                            <Field
-                                component={TextField}
-                                label="Others..."
-                                name="additionalneurology"
-                                InputProps={{ notched: true }}
-                            />
+                            <FieldArray name="neurologies">
+                                {
+                                    (fieldArrayProps) => {
+                                        const { push, remove, form } = fieldArrayProps
+                                        const { values } = form
+                                        const { neurologies } = values
+                                        return (
+                                            <div>
+                                                {neurologies.map((neurology, index) => (
+                                                    <div key={index} className={classes.dynamicfield}>
+                                                        <Field component={TextField} name={`neurologies[${index}]`} />
+                                                        {index > 0 && (
+                                                            <button className={classes.dynamicfieldminus} type='button' onClick={() => remove(index)}> - </button>
+                                                        )}
+                                                        {index < 5 && (
+                                                            <button type='button' onClick={() => index < 5 ? push('') : null }> + </button>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )
+                                    }
+                                }
+                            </FieldArray>
                         </Box>
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -1348,12 +1366,30 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                             />
                         </Box>
                         <Box px={4}>
-                            <Field
-                                component={TextField}
-                                label="Others..."
-                                name="additionalwoundtreatment"
-                                InputProps={{ notched: true }}
-                            />
+                            <FieldArray name="woundtreatments">
+                                {
+                                    (fieldArrayProps) => {
+                                        const { push, remove, form } = fieldArrayProps
+                                        const { values } = form
+                                        const { woundtreatments } = values
+                                        return (
+                                            <div>
+                                                {woundtreatments.map((woundtreatment, index) => (
+                                                    <div key={index} className={classes.dynamicfield}>
+                                                        <Field component={TextField} name={`woundtreatments[${index}]`} />
+                                                        {index > 0 && (
+                                                            <button className={classes.dynamicfieldminus} type='button' onClick={() => remove(index)}> - </button>
+                                                        )}
+                                                        {index < 5 && (
+                                                            <button type='button' onClick={() => index < 5 ? push('') : null }> + </button>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )
+                                    }
+                                }
+                            </FieldArray>
                         </Box>
                     </Grid>
                 </Grid>

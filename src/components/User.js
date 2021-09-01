@@ -656,6 +656,8 @@ function  PracticalSkillsView({ response }) {
         const breathings = response.practical_knowledge.breathings.split(", ");
         const vitalsigns = response.practical_knowledge.vitalsigns.split(", ");
         const devices = response.practical_knowledge.devices.split(", ");
+        const neurologies = response.practical_knowledge.neurologies.split(", ");
+        const woundtreatments = response.practical_knowledge.woundtreatments.split(", ");
 
         return (
             <>
@@ -1240,9 +1242,15 @@ function  PracticalSkillsView({ response }) {
                                 label="Pflege Gehirntumor"
                             />
                         </Box>
-                        <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalneurology}/>
-                        </Box>
+                        {
+                            neurologies.map((neurology, index) => (
+                                <Grid item xs={12} sm={4}>
+                                    <Box px={2}>
+                                        <TextField id="standard-basic" label="" value={neurology} />
+                                    </Box>
+                                </Grid>
+                            ))
+                        }
                     </Grid>
 
                     {
@@ -1284,9 +1292,15 @@ function  PracticalSkillsView({ response }) {
                                 label="Wundbeurteilung"
                             />
                         </Box>
-                        <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalwoundtreatment}/>
-                        </Box>
+                        {
+                            woundtreatments.map((woundtreatment, index) => (
+                                <Grid item xs={12} sm={4}>
+                                    <Box px={2}>
+                                        <TextField id="standard-basic" label="" value={woundtreatments} />
+                                    </Box>
+                                </Grid>
+                            ))
+                        }
                     </Grid>
                 </Grid>
             </section>
