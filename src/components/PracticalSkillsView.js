@@ -76,10 +76,13 @@ const useStyles = makeStyles((theme) => ({
     table: {
         //margin: '-.75rem 0 0 0'
         "& th": {
+            padding: '8px 12px',
             borderBottom: 0
         },
         "& td": {
-            borderBottom: 0
+            padding: '8px',
+            borderBottom: 0,
+            borderLeft: '4px solid #008B4F'
         }
     },
     intro: {
@@ -997,7 +1000,7 @@ function  PracticalSkillsView({ response }) {
                                     <TableCell component="th" scope="row">
                                         <Typography variant="body2" gutterBottom>3. Skalen und Indikatoren auszufüllen</Typography>
                                     </TableCell>
-                                    <TableCell component="th" scope="row">
+                                    <TableCell style={{ width: 160 }} align="right">
                                         <StyledRating
                                             name="customized-color"
                                             defaultValue={0}
@@ -1014,7 +1017,7 @@ function  PracticalSkillsView({ response }) {
                                     <TableCell component="th" scope="row">
                                         <Typography variant="body2" gutterBottom>4. Skalen und Indikatoren auszufüllen</Typography>
                                     </TableCell>
-                                    <TableCell component="th" scope="row">
+                                    <TableCell style={{ width: 160 }} align="right">
                                         <StyledRating
                                             name="customized-color"
                                             defaultValue={0}
