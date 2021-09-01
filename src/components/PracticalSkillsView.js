@@ -310,6 +310,7 @@ function  PracticalSkillsView({ response }) {
                                     checkedIcon={<CheckBoxOutlinedIcon />} 
                                     color="primary" />
                                 }
+                                style={{ marginRight: 0 }}
                             />
                             <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare3} style={{ width: "50%" }} />
                         </Box>
