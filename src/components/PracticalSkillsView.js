@@ -9,7 +9,12 @@ import {
     FormControlLabel,
     TextField,
     Paper,
-    Typography
+    Typography,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableRow
 } from '@material-ui/core';
 
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
@@ -880,7 +885,7 @@ function  PracticalSkillsView({ response }) {
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} sm={9}>
+                {/* <Grid item xs={12} sm={9}>
                     <Typography variant="body2" gutterBottom>1. Grundsätzliche Parameter (bspw. Größe, Gewicht) und Vitalparameter erheben (mittels manueller Messung, mittels Monitoring)</Typography>
                 </Grid>
 
@@ -943,7 +948,76 @@ function  PracticalSkillsView({ response }) {
                         emptyIcon={<CheckBoxOutlineBlankIcon />}
                         max={6}
                     />
-                </Grid>
+                </Grid> */}
+
+                <TableContainer>
+                    <Table className={classes.table} aria-label="custom pagination table">
+                        <TableBody>
+                            <TableRow>
+                                <TableCell component="th" scope="row">
+                                    <Typography variant="body2" gutterBottom>1. Grundsätzliche Parameter (bspw. Größe, Gewicht) und Vitalparameter erheben (mittels manueller Messung, mittels Monitoring)</Typography>
+                                </TableCell>
+                                <TableCell style={{ width: 160 }} align="right">
+                                    <StyledRating
+                                        name="customized-color"
+                                        defaultValue={0}
+                                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                                        precision={1}
+                                        value={response.practical_activity.a1}
+                                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                                        emptyIcon={<CheckBoxOutlineBlankIcon />}
+                                        max={6}
+                                    />
+                                </TableCell>
+                                <TableCell component="th" scope="row">
+                                    <Typography variant="body2" gutterBottom>2. Körperlichen (physisch, neurologisch) und kognitiven Zustand von PatientInnen ermitteln</Typography>
+                                </TableCell>
+                                <TableCell style={{ width: 160 }} align="right">
+                                    <StyledRating
+                                        name="customized-color"
+                                        defaultValue={0}
+                                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                                        precision={1}
+                                        value={response.practical_activity.a2}
+                                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                                        emptyIcon={<CheckBoxOutlineBlankIcon />}
+                                        max={6}
+                                    />
+                                </TableCell>
+                                <TableCell component="th" scope="row">
+                                    <Typography variant="body2" gutterBottom>3. Skalen und Indikatoren auszufüllen</Typography>
+                                </TableCell>
+                                <TableCell component="th" scope="row">
+                                    <StyledRating
+                                        name="customized-color"
+                                        defaultValue={0}
+                                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                                        precision={1}
+                                        value={response.practical_activity.a3}
+                                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                                        emptyIcon={<CheckBoxOutlineBlankIcon />}
+                                        max={6}
+                                    />
+                                </TableCell>
+                                <TableCell component="th" scope="row">
+                                    <Typography variant="body2" gutterBottom>4. Skalen und Indikatoren auszufüllen</Typography>
+                                </TableCell>
+                                <TableCell component="th" scope="row">
+                                    <StyledRating
+                                        name="customized-color"
+                                        defaultValue={0}
+                                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                                        precision={1}
+                                        value={response.practical_activity.a4}
+                                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                                        emptyIcon={<CheckBoxOutlineBlankIcon />}
+                                        max={6}
+                                    />
+                                </TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                </TableContainer>
 
                 <Grid item xs={12} sm={12}>
                     <Typography variant="subtitle2" display="block" gutterBottom>
