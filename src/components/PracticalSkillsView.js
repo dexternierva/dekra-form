@@ -284,12 +284,10 @@ function  PracticalSkillsView({ response }) {
                             />
                         </Box>
                         <Box px={2} className={classes.dynamicfield}>
-                            <FormControlLabel
-                                control={
-                                    <Checkbox checked="true"
-                                    checkedIcon={<CheckBoxOutlinedIcon />} 
-                                    color="primary" />
-                                }
+                            <Checkbox 
+                                checked="true"
+                                checkedIcon={<CheckBoxOutlinedIcon />} 
+                                color="primary" 
                             />
                             <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalbasiccare1}/>
                         </Box>
