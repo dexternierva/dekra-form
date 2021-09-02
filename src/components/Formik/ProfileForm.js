@@ -598,11 +598,11 @@ function ProfileForm ({ setProfileFormState }) {
                             autoWidth="true"
                             onChange={(value) => {
                                 // here i dont want the user to choose more then 3 topics
-                                // if(v== null || v.length < 4){
-                                //     Formik.setFieldValue('kfPriorities', v);
-                                // }
-                                console.log("value: ", value)
+                                if(value== null || value.length < 4){
+                                    Formik.setFieldValue('kfPriorities', value);
+                                }
                             }}
+                            value={Formik.values.kfPriorities}
                         >
                             {prioritiesOptions.map((option) => (
                                 <MenuItem key={option.value} value={option.value}>
