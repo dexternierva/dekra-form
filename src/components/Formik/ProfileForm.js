@@ -495,7 +495,7 @@ function ProfileForm ({ setProfileFormState }) {
                         kfLanguage: Yup.array().required('This field is required'),
                         kfExperienceYear: Yup.number().required('This field is required'),
                         kfExperienceMonth: Yup.number().required('This field is required'),
-                        kfPriorities: Yup.array().min(1, 'Select Atleast 1 Professional Skill').required('This field is required'),
+                        kfPriorities: Yup.array().min(1, 'Select Atleast 1 Professional Skill').max(3, 'You are only allowed to select a maximum of 3 Professional skills').required('This field is required'),
                     })}
                 >
                     <Box px={4} py={2}>
@@ -596,13 +596,6 @@ function ProfileForm ({ setProfileFormState }) {
                             fullWidth
                             variant="outlined"
                             autoWidth="true"
-                            onChange={(value) => {
-                                // here i dont want the user to choose more then 3 topics
-                                if(value== null || value.length < 4){
-                                    Formik.setFieldValue('kfPriorities', value);
-                                }
-                            }}
-                            value={Formik.values.kfPriorities}
                         >
                             {prioritiesOptions.map((option) => (
                                 <MenuItem key={option.value} value={option.value}>
