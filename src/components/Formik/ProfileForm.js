@@ -495,7 +495,7 @@ function ProfileForm ({ setProfileFormState }) {
                         kfLanguage: Yup.array().required('This field is required'),
                         kfExperienceYear: Yup.number().required('This field is required'),
                         kfExperienceMonth: Yup.number().required('This field is required'),
-                        kfPriorities: Yup.array().min(1, 'Select Atleast 1 Professional Skill').max(3, 'You are only allowed to select a maximum of 3 Professional skills').required('This field is required'),
+                        kfPriorities: Yup.array().required('This field is required').min(1, 'Select Atleast 1 Professional Skill').max(3, 'You are only allowed to select a maximum of 3 Professional skills'),
                     })}
                 >
                     <Box px={4} py={2}>

@@ -471,7 +471,7 @@ function ProfileSummary () {
         kfLanguage: Yup.array().required('This field is required'),
         kfExperienceYear: Yup.number().required('This field is required'),
         kfExperienceMonth: Yup.number().required('This field is required'),
-        kfPriorities: Yup.array().min(1, 'Select Atleast 1 Professional Skill').required('This field is required'),
+        kfPriorities: Yup.array().required('This field is required').min(1, 'Select Atleast 1 Professional Skill').max(3, 'You are only allowed to select a maximum of 3 Professional skills'),
         // PERSONAL-BACKGROUND
         address: Yup.string().required('This field is required'),
         email: Yup.string().email().required('This field is required'),
@@ -995,7 +995,7 @@ function ProfileSummary () {
                                                     </MenuItem>
                                                 ))}
                                             </Field>
-                                            
+
                                             <Field
                                                 component={DatePicker}
                                                 label="German B1-B2 Care"
