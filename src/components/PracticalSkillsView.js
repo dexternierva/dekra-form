@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     table: {
         //margin: '-.75rem 0 0 0'
         "& th": {
-            padding: '8px 12px',
+            padding: '8px 16px',
             borderBottom: 0
         },
         "& td": {
@@ -880,7 +880,7 @@ function  PracticalSkillsView({ response }) {
                  */
             }
             <div className={classes.practicalactivities}>
-                <Box py={2} px={1}>
+                <Box py={2} px={2}>
                     <Typography variant="h5" component="h2" className={classes.titles}>
                         Praktische Tätigkeiten
                     </Typography>
@@ -891,7 +891,7 @@ function  PracticalSkillsView({ response }) {
                 </Box>
 
                 <section className={classes.section}>
-                    <Box py={2} px={1}>
+                    <Box py={2} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             A - Beurteilung von PatientInnen, Pflegediagnose, Pflegeplanung
                         </Typography>
@@ -977,7 +977,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
                
                 <section className={classes.section}>
-                    <Box py={2} px={1}>
+                    <Box py={1} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Pflegeprobleme und Pflegediagnose
                         </Typography>
@@ -1043,9 +1043,11 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Typography variant="subtitle2" display="block" gutterBottom>
-                        Pflegeplanung
-                    </Typography>
+                    <Box py={1} px={2}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Pflegeplanung
+                        </Typography>
+                    </Box>
 
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
@@ -1107,7 +1109,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={2} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             B - Professionelle Pflege
                         </Typography>
@@ -1159,7 +1161,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={1} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Ernährung
                         </Typography>
@@ -1225,7 +1227,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={1} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Mobilität
                         </Typography>
@@ -1291,7 +1293,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={1} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Ausscheiden
                         </Typography>
@@ -1374,7 +1376,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={2} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             Pflegeintervention
                         </Typography>
@@ -1423,10 +1425,10 @@ function  PracticalSkillsView({ response }) {
                             </TableBody>
                         </Table>
                     </TableContainer>
-                </section>\
+                </section>
                 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={2} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Medikamente
                         </Typography>
@@ -1492,7 +1494,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={1} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Wundmanagement
                         </Typography>
@@ -1558,7 +1560,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={1} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Stomaversorgung
                         </Typography>
@@ -1589,7 +1591,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={1} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Medizinische Geräte anwenden
                         </Typography>
@@ -1655,7 +1657,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={1} px={2}> 
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Lebensrettende Maßnahmen
                         </Typography>
@@ -1704,7 +1706,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={2} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             D - Hygiene
                         </Typography>
@@ -1858,7 +1860,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={1} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Umgang mit Katastrophen
                         </Typography>
@@ -1890,7 +1892,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={1} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             E - Kommunikation mit KollegInnen, PatientInnen und Anderen
                         </Typography>
@@ -2007,7 +2009,7 @@ function  PracticalSkillsView({ response }) {
                 </section>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={1} px={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             F - Dokumentation und Qualität
                         </Typography>
