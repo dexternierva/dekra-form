@@ -38,6 +38,10 @@ const StyledRating = withStyles({
 })(Rating);
 
 const useStyles = makeStyles((theme) => ({
+    grid: {
+        margin: '0 0 4rem 0',
+        borderLeft: '4px solid #008B4F',
+    },
     practicalactivities: {
         margin: '0 0 4rem 0',
         borderLeft: '4px solid #008B4F',
@@ -876,16 +880,18 @@ function  PracticalSkillsView({ response }) {
                  */
             }
             <div className={classes.practicalactivities}>
-                <Typography variant="h5" component="h2" className={classes.titles}>
-                    Praktische Tätigkeiten
-                </Typography>
-                <Typography variant="body2" component="p">
-                    Selbsteinschätzung des Teilnehmers <br />
-                    0 (nicht bekannt), 1 (in Theorie bekannt), 2 (praktische Durchführung beobachtet), 3 (unter Aufsicht selbst durchgeführt), 4 (selbständige Durchführung), 5 (Experte, Anleitung anderer Kollegen).
-                </Typography>
+                <Box py={2} px={1}>
+                    <Typography variant="h5" component="h2" className={classes.titles}>
+                        Praktische Tätigkeiten
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                        Selbsteinschätzung des Teilnehmers <br />
+                        0 (nicht bekannt), 1 (in Theorie bekannt), 2 (praktische Durchführung beobachtet), 3 (unter Aufsicht selbst durchgeführt), 4 (selbständige Durchführung), 5 (Experte, Anleitung anderer Kollegen).
+                    </Typography>
+                </Box>
 
                 <section className={classes.section}>
-                    <Box py={2}>
+                    <Box py={2} px={1}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             A - Beurteilung von PatientInnen, Pflegediagnose, Pflegeplanung
                         </Typography>
@@ -971,9 +977,11 @@ function  PracticalSkillsView({ response }) {
                 </section>
                
                 <section className={classes.section}>
-                    <Typography variant="subtitle2" display="block" gutterBottom>
-                        Pflegeprobleme und Pflegediagnose
-                    </Typography>
+                    <Box py={2} px={1}>
+                        <Typography variant="subtitle2" display="block" gutterBottom>
+                            Pflegeprobleme und Pflegediagnose
+                        </Typography>
+                    </Box>
 
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
