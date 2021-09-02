@@ -38,7 +38,7 @@ const StyledRating = withStyles({
 })(Rating);
 
 const useStyles = makeStyles((theme) => ({
-    grid: {
+    practicalactivities: {
         margin: '0 0 4rem 0',
         borderLeft: '4px solid #008B4F',
     },
@@ -64,6 +64,9 @@ const useStyles = makeStyles((theme) => ({
             flexBasis: '33.333333',
             flexGrow: '0'
         }
+    },
+    section: {
+        width: '100%',
     },
     sectionTitle: {
         width: '100%',
@@ -872,18 +875,16 @@ function  PracticalSkillsView({ response }) {
                  * =====================================================================
                  */
             }
-            <Grid container spacing={3} alignItems="center" className={classes.grid}>
-                <Grid item xs={12} sm={12}>
-                    <Typography variant="h5" component="h2" className={classes.titles}>
-                        Praktische Tätigkeiten
-                    </Typography>
-                    <Typography variant="body2" component="p">
-                        Selbsteinschätzung des Teilnehmers <br />
-                        0 (nicht bekannt), 1 (in Theorie bekannt), 2 (praktische Durchführung beobachtet), 3 (unter Aufsicht selbst durchgeführt), 4 (selbständige Durchführung), 5 (Experte, Anleitung anderer Kollegen).
-                    </Typography>
-                </Grid>
+            <div className={classes.practicalactivities}>
+                <Typography variant="h5" component="h2" className={classes.titles}>
+                    Praktische Tätigkeiten
+                </Typography>
+                <Typography variant="body2" component="p">
+                    Selbsteinschätzung des Teilnehmers <br />
+                    0 (nicht bekannt), 1 (in Theorie bekannt), 2 (praktische Durchführung beobachtet), 3 (unter Aufsicht selbst durchgeführt), 4 (selbständige Durchführung), 5 (Experte, Anleitung anderer Kollegen).
+                </Typography>
 
-                <Grid item xs={12} sm={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             A - Beurteilung von PatientInnen, Pflegediagnose, Pflegeplanung
@@ -892,73 +893,7 @@ function  PracticalSkillsView({ response }) {
                             Informationen über PatientInnen erlangen
                         </Typography>
                     </Box>
-                </Grid>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>1. Grundsätzliche Parameter (bspw. Größe, Gewicht) und Vitalparameter erheben (mittels manueller Messung, mittels Monitoring)</Typography>
-                </Grid>
-
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.a1}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>2. Körperlichen (physisch, neurologisch) und kognitiven Zustand von PatientInnen ermitteln</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.a2}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>3. Skalen und Indikatoren auszufüllen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.a3}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>4. Skalen und Indikatoren auszufüllen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.a4}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -1034,62 +969,12 @@ function  PracticalSkillsView({ response }) {
                         </Table>
                     </TableContainer>
                 </section>
-
-                <Grid item xs={12} sm={12}>
+               
+                <section className={classes.section}>
                     <Typography variant="subtitle2" display="block" gutterBottom>
                         Pflegeprobleme und Pflegediagnose
                     </Typography>
-                </Grid>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>5. Versorgungsdefizite erkennen, adäquate Unterstützung bereitstellen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.a5}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>6. Pflegediagnosen festlegen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.a6}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>7. Pflegestandards anwenden</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.a7}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -1149,61 +1034,11 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                <Grid item xs={12} sm={12}>
+                <section className={classes.section}>
                     <Typography variant="subtitle2" display="block" gutterBottom>
                         Pflegeplanung
                     </Typography>
-                </Grid>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>8. Pflegeziele festlegen und Pflegepläne aktualisieren</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.a8}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>9. Pflegemaßnahmen planen und durchführen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.a9}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>10. Spezielle Pflegepläne (krankheitsbildbezogen) anwenden</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.a10}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -1263,8 +1098,7 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                { /*** PROFESSIONAL CARE */ }
-                <Grid item xs={12} sm={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             B - Professionelle Pflege
@@ -1273,41 +1107,7 @@ function  PracticalSkillsView({ response }) {
                             Grundpflege und Körperpflege
                         </Typography>
                     </Box>
-                </Grid>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>1. Teil- und Ganzkörperpflege unterstützen und übernehmen (inklusive Hautpflege, Waschen und Kleiden, Pflegeprodukte anwenden, spezielle Methoden anwenden [z.B. Basale Stimulation, Bobath], am Waschbecken, im Bett)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.b1}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>2. Anlegen von Kompressionsverbänden und Kompressionsstrümpfen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.b2}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -1350,63 +1150,13 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                <Grid item xs={12} sm={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Ernährung
                         </Typography>
                     </Box>
-                </Grid>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>3. Speisen und Getränke zubereiten, verteilen, anreichen (füttern)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.b3}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>4. Ernährungspläne erstellen, dokumentieren</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.b4}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>5. Ernährungssonden (inklusive PEG) benutzen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.b5}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -1466,63 +1216,13 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                <Grid item xs={12} sm={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Mobilität
                         </Typography>
                     </Box>
-                </Grid>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>6. Mobilität unterstützen, aufrechterhalten, wiederherstellen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.b6}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>7. Prophylaktische Maßnahmen (Dekubitus-, Kontraktur-, Thromboseprophylaxe) durchführen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.b7}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>8. Mobilisationspläne erstellen und führen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.b8}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -1582,79 +1282,13 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                <Grid item xs={12} sm={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Ausscheiden
                         </Typography>
                     </Box>
-                </Grid>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>9. Bei der Ausscheidung unterstützen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.b9}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>10. Umgang mit Inkontinenz, Kontinenztraining</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.b10}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>11. Ableitungssysteme (z.B. Harnblasenkatheterismus, Stuhlableitungssysteme) anwenden</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.b11}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>12. Einläufe verabreichen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.b12}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -1731,8 +1365,7 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                { /*** PROFESSIONAL CARE */ }
-                <Grid item xs={12} sm={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             Pflegeintervention
@@ -1741,41 +1374,7 @@ function  PracticalSkillsView({ response }) {
                             Teilnahme an medizinischen und diagnostischen Prozeduren und Verfahren
                         </Typography>
                     </Box>
-                </Grid>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>1. Blutentnahme, körperliche Untersuchung</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c1}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>2. Assistenz bei ärztlichen Maßnahmen (z.B. Endoskopie, Aufnahmeuntersuchung im Krankenhaus)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c2}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -1816,65 +1415,15 @@ function  PracticalSkillsView({ response }) {
                             </TableBody>
                         </Table>
                     </TableContainer>
-                </section>
-
-                <Grid item xs={12}>
+                </section>\
+                
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Medikamente
                         </Typography>
-                    </Box>  
-                </Grid>
+                    </Box>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>3. Verwalten, vorbereiten, verabreichen (z.B. oral, intravenös)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c3}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>4. Blut und Blutprodukte (Transfusion)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c4}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>5. Umgang mit Betäubungsmitteln</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c5}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -1934,63 +1483,13 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                <Grid item xs={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Wundmanagement
                         </Typography>
-                    </Box>  
-                </Grid>
+                    </Box>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>6. Wundvermeidung, Prophylaxen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c6}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>7. Wundassessment</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c7}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>8. Wundbehandlung (z.B. Verbände anlegen und wechseln)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c8}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -2050,31 +1549,12 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                <Grid item xs={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Stomaversorgung
                         </Typography>
-                    </Box>  
-                </Grid>
-
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>9. Pflege unterschiedlicher Stomata (z.B. Tracheostoma, Ileostoma, Urostoma)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c9}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
+                    </Box>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -2100,63 +1580,13 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                <Grid item xs={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Medizinische Geräte anwenden
                         </Typography>
-                    </Box>  
-                </Grid>
+                    </Box>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>10. Pflegehilfsmittel, Mobilisationsmittel, Transferhilfen, Rollstühle</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c10}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>11. Geräte zur Messung von Vitalparametern (z.B. Blutdruck, Blutzucker, Monitoring)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c11}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>12. Spezielle Geräte (z.B. Absauggeräte, EKG, Defibrillatoren, Beatmungsmaschinen)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c12}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -2216,47 +1646,13 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                <Grid item xs={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Lebensrettende Maßnahmen
                         </Typography>
-                    </Box>  
-                </Grid>
+                    </Box>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>Basic life support</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c13}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>Advanced life support</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.c14}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -2299,7 +1695,7 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                <Grid item xs={12} sm={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             D - Hygiene
@@ -2308,153 +1704,7 @@ function  PracticalSkillsView({ response }) {
                             Hygienemaßnahmen anwenden
                         </Typography>
                     </Box>
-                </Grid>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>1. Verschiedene Desinfektionsmaßnahmen (z.B. Hände-, Haut-, Flächendesinfektion)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.d1}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>2. Maßnahmen der Infektionskontrolle durchführen (z.B. Isolierung von Patienten)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.d2}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>3. Sterile Verfahren anwenden (z.B. Legen von Dauerkathetern)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.d3}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12}>
-                    <Box py={2}>
-                        <Typography variant="subtitle2" display="block" gutterBottom>
-                            Sterilisation
-                        </Typography>
-                    </Box>  
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>4. Medizinprodukte aufbereiten, angemessen verpacken und lagern</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.d4}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>5. Sterilisatoren bedienen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.d5}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12}>
-                    <Box py={2}>
-                        <Typography variant="subtitle2" display="block" gutterBottom>
-                            Arbeits- und Gesundheitsschutz
-                        </Typography>
-                    </Box>  
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>6. Transporte von PatientInnen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.d6}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>7. Unfallgefahr reduzieren (z.B. Unfallverhütungsvorschriften)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.d7}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>8. Fremdschutz und Selbstschutz</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.d8}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -2599,31 +1849,13 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                <Grid item xs={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom>
                             Umgang mit Katastrophen
                         </Typography>
-                    </Box>  
-                </Grid>
+                    </Box>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>9. Feuer, Notfälle, Massenanfall an PatientInnen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.d9}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -2649,111 +1881,13 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                <Grid item xs={12} sm={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             E - Kommunikation mit KollegInnen, PatientInnen und Anderen
                         </Typography>
                     </Box>
-                </Grid>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>1. Team- und Fallbesprechungen führen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.e1}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>2. MitarbeiterInnen einführen, anleiten</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.e2}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>3. Schichtleitung- Stationsleitung</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.e3}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>4. Dienstpläne schreiben</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.e4}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>5. Patienten aufklären und beraten</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.e5}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>6. Angehörige aufklären und beraten</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.e6}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -2864,127 +1998,13 @@ function  PracticalSkillsView({ response }) {
                     </TableContainer>
                 </section>
 
-                <Grid item xs={12} sm={12}>
+                <section className={classes.section}>
                     <Box py={2}>
                         <Typography variant="subtitle2" display="block" gutterBottom color="primary">
                             F - Dokumentation und Qualität
                         </Typography>
                     </Box>
-                </Grid>
 
-                {/* <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>1. Grundpflegerische und behandlungspflegerische Maßnahmen dokumentieren (Pflegebericht)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.f1}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>2. Bestellungen durchführen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.f2}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>3. Visiten dokumentieren und auswerten</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.f3}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>4. Briefe verfassen (z.B. Pflegeüberleitung)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.f4}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>5. Sauberkeit und Ordnung am Arbeitsplatz (Stationszimmer, Patientenzimmer) sicherstellen</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.f5}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>6. Maßnahmen der Qualitätssicherung und –kontrolle anwenden (z.B. Medikamentencheck)</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.f6}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid>
-
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" gutterBottom>7. Ressourcenschonende Arbeitsweise</Typography>
-                </Grid>
-                <Grid item xs={12} sm={3} className={classes.ratingGrid}>
-                    <StyledRating
-                        name="customized-color"
-                        defaultValue={0}
-                        // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                        precision={1}
-                        value={response.practical_activity.f7}
-                        icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                        emptyIcon={<CheckBoxOutlineBlankIcon />}
-                        max={6}
-                    />
-                </Grid> */}
-
-                <section>
                     <TableContainer>
                         <Table className={classes.table} aria-label="custom pagination table">
                             <TableBody>
@@ -3111,7 +2131,7 @@ function  PracticalSkillsView({ response }) {
                         </Table>
                     </TableContainer>
                 </section>
-            </Grid>
+            </div>
             </>
         )
     } else {
