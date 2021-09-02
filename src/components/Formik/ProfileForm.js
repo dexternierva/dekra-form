@@ -390,7 +390,7 @@ function ProfileForm ({ setProfileFormState }) {
                     // INITIAL VALUES: PERSONAL-BACKGROUND
                     address: '',
                     email: '',
-                    nationality: 'Filipinisch',
+                    nationality: 'Philipinisch',
                     sex: '',
                     dateOfBirth: new Date(),
                     placeOfBirth: '',
@@ -405,6 +405,7 @@ function ProfileForm ({ setProfileFormState }) {
                     // INITIAL VALUES: LANGUAGE SKILLS
                     nativeLanguage: 'Filipino (Tagalog)',
                     germanLanguageLevel: '',
+                    uptodateskills: '',
                     germanLanguageDate: new Date(),
                     germanCare: new Date(),
                     englishLanguage: 'English',
@@ -447,6 +448,7 @@ function ProfileForm ({ setProfileFormState }) {
                         'child6': values.child6,
                         // VALUES: LANGUAGE SKILLS
                         'nativeLanguage': values.nativeLanguage,
+                        'uptodateskills': values.uptodateskills,
                         'germanLanguageLevel': values.germanLanguageLevel,
                         'germanLanguageDate': values.germanLanguageDate,
                         'germanCare': values.germanCare,
@@ -594,6 +596,12 @@ function ProfileForm ({ setProfileFormState }) {
                             fullWidth
                             variant="outlined"
                             autoWidth="true"
+                            onChange={(v) => {
+                                // here i dont want the user to choose more then 3 topics
+                                if(v== null || v.length < 4){
+                                    Formik.setFieldValue('kfPriorities', v);
+                                }
+                            }}
                         >
                             {prioritiesOptions.map((option) => (
                                 <MenuItem key={option.value} value={option.value}>
@@ -924,16 +932,34 @@ function ProfileForm ({ setProfileFormState }) {
                                     />
                                 </Grid>
                                 <Grid item lg={6} xs={12}>
-                                    <Field
-                                        component={DatePicker}
-                                        label="German B1-B2 Care"
-                                        name="germanCare"
-                                        inputVariant="outlined"
-                                        variant="dialog"
-                                        views={["date", "year", "month"]}
-                                        fullWidth
-                                        format="dd/MM/yyyy"
-                                    />
+                                    <Box p={1}>
+                                        <Field
+                                            component={Select}
+                                            name="uptodateskills"
+                                            multiple={false}
+                                            fullWidth
+                                            variant="outlined"
+                                            autoWidth="true"
+                                        >
+                                            {languageSkillsLevelOptions.map((option) => (
+                                                <MenuItem key={option.value} value={option.value}>
+                                                    {option.label}
+                                                </MenuItem>
+                                            ))}
+                                        </Field>
+                                    </Box>
+                                    <Box p={1}>
+                                        <Field
+                                            component={DatePicker}
+                                            label="German B1-B2 Care"
+                                            name="germanCare"
+                                            inputVariant="outlined"
+                                            variant="dialog"
+                                            views={["date", "year", "month"]}
+                                            fullWidth
+                                            format="dd/MM/yyyy"
+                                        />
+                                    </Box>
                                 </Grid>
                             </Grid>
                         </Box>

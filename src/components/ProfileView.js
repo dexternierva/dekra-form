@@ -175,7 +175,7 @@ function  ProfileView({ response }) {
 
                     <Name>
                         <Typography className={classes.typo} variant="h4" component="h2">{response.firstname} {response.lastname}</Typography>
-                        <Typography className={classes.typo} variant="h4" component="h2">Gesundheits - Und Krankenpfleger</Typography>
+                        <Typography className={classes.typo} variant="h4" component="h2">Gesundheits - und Krankenpfleger</Typography>
                     </Name>
                 </Grid>
             </Grid>

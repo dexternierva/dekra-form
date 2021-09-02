@@ -397,6 +397,7 @@ function ProfileSummary () {
                 child6: response.child6,
                 // LANGUAGE-SKILLS
                 nativeLanguage: response.nativeLanguage,
+                uptodateskills: response.uptodateskills,
                 germanLanguageLevel: response.germanLanguageLevel,
                 germanLanguageDate: response.germanLanguageDate,
                 germanCare: response.germanCare,
@@ -444,6 +445,7 @@ function ProfileSummary () {
         child6: ' ',
         // LANGUAGE SKILLS
         nativeLanguage: 'Filipino (Tagalog)',
+        uptodateskills: '',
         germanLanguageLevel: '',
         germanLanguageDate: new Date(),
         germanCare: new Date(),
@@ -487,6 +489,7 @@ function ProfileSummary () {
         maritalStatus: Yup.string().required('This field is required'),
         // LANGUAGE-SKILLS
         nativeLanguage: Yup.string().required('This field is required'),
+        uptodateskills: Yup.string(),
         germanLanguageLevel: Yup.string().required('This field is required'),
         germanLanguageDate: Yup.date().required('This field is required'),
         germanCare: Yup.date().required('This field is required'),
@@ -533,6 +536,7 @@ function ProfileSummary () {
             'child6': values.child6,
             // LANGUAGE-SKILLS
             'nativeLanguage': values.nativeLanguage,
+            'uptodateskills': values.uptodateskills,
             'germanLanguageLevel': values.germanLanguageLevel,
             'germanLanguageDate': values.germanLanguageDate,
             'germanCare': values.germanCare,
@@ -977,6 +981,21 @@ function ProfileSummary () {
                                             />
                                         </Grid>
                                         <Grid item lg={6} xs={12}>
+                                            <Field
+                                                component={Select}
+                                                name="uptodateskills"
+                                                multiple={false}
+                                                fullWidth
+                                                variant="outlined"
+                                                autoWidth="true"
+                                            >
+                                                {languageSkillsLevelOptions.map((option) => (
+                                                    <MenuItem key={option.value} value={option.value}>
+                                                        {option.label}
+                                                    </MenuItem>
+                                                ))}
+                                            </Field>
+                                            
                                             <Field
                                                 component={DatePicker}
                                                 label="German B1-B2 Care"
