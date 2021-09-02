@@ -383,7 +383,7 @@ function ProfileForm ({ setProfileFormState }) {
                     kfParticipantId: '',
                     kfCategory: '',
                     kfDegree: '',
-                    kfLanguage: [],
+                    kfLanguage: '',
                     kfExperienceYear: 0,
                     kfExperienceMonth: 0,
                     kfPriorities: [],
@@ -548,7 +548,7 @@ function ProfileForm ({ setProfileFormState }) {
                         </Modal>
                     </Box>
                     <Box px={4} py={2}>
-                        <InputLabel shrink={true} htmlFor="kfLanguage">Degree</InputLabel>
+                        <InputLabel shrink={true} htmlFor="kfDegree">Degree</InputLabel>
                         <Field
                             component={Select}
                             name="kfDegree"
@@ -572,7 +572,7 @@ function ProfileForm ({ setProfileFormState }) {
                         <Field
                             component={Select}
                             name="kfLanguage"
-                            multiple={true}
+                            multiple={false}
                             fullWidth
                             variant="outlined"
                             InputLabelProps={{ name: 'kfLanguage', id: 'kfLanguage' }}
@@ -914,7 +914,7 @@ function ProfileForm ({ setProfileFormState }) {
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
                         <Box px={4} py={2}>
                             <Grid container spacing={2}>
-                                <Grid item lg={6} xs={12}>
+                                <Grid item lg={12} xs={12}>
                                     <Field
                                         component={TextField}
                                         type="text"
@@ -926,26 +926,25 @@ function ProfileForm ({ setProfileFormState }) {
                                     />
                                 </Grid>
                                 <Grid item lg={6} xs={12}>
-                                    <Box p={1}>
-                                        <Field
-                                            component={Select}
-                                            name="uptodateskills"
-                                            multiple={false}
-                                            fullWidth
-                                            variant="outlined"
-                                            autoWidth="true"
-                                        >
-                                            {languageSkillsLevelOptions.map((option) => (
-                                                <MenuItem key={option.value} value={option.value}>
-                                                    {option.label}
-                                                </MenuItem>
-                                            ))}
-                                        </Field>
-                                    </Box>
-                                    <Box p={1}>
+                                    <InputLabel htmlFor="uptodateskills">German B1-B2 Care</InputLabel>
+                                    <Field
+                                        component={Select}
+                                        name="uptodateskills"
+                                        multiple={false}
+                                        fullWidth
+                                        variant="outlined"
+                                        autoWidth="true"
+                                    >
+                                        {languageSkillsLevelOptions.map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                            </MenuItem>
+                                        ))}
+                                    </Field>
+                                </Grid>
+                                <Grid item lg={6} xs={12}>
                                         <Field
                                             component={DatePicker}
-                                            label="German B1-B2 Care"
                                             name="germanCare"
                                             inputVariant="outlined"
                                             variant="dialog"
@@ -953,7 +952,6 @@ function ProfileForm ({ setProfileFormState }) {
                                             fullWidth
                                             format="dd/MM/yyyy"
                                         />
-                                    </Box>
                                 </Grid>
                             </Grid>
                         </Box>
@@ -1004,31 +1002,30 @@ function ProfileForm ({ setProfileFormState }) {
                                     <Field
                                         component={TextField}
                                         type="text"
-                                        label="English Language"
                                         value="English"
                                         name="englishLanguage"
                                         variant="outlined"
                                         fullWidth
                                     />
+                                    <FormHelperText>English Language</FormHelperText>
                                 </Grid>
                                 <Grid item lg={6} xs={12}>
                                     <Field
-                                            component={Select}
-                                            label="English Languages Level"
-                                            type="text"
-                                            name="englishLanguageLevel"
-                                            variant="outlined"
-                                            margin="normal"
-                                            fullWidth
-                                            autoWidth={true}
-                                            multiple={false}
-                                            InputLabelProps={{ shrink: true }}
-                                        >
-                                            {languageSkillsLevelOptions.map((option) => (
-                                                <MenuItem key={option.value} value={option.value}>
-                                                    {option.label}
-                                                </MenuItem>
-                                            ))}
+                                        component={Select}
+                                        label="English Languages Level"
+                                        type="text"
+                                        name="englishLanguageLevel"
+                                        variant="outlined"
+                                        margin="normal"
+                                        fullWidth
+                                        autoWidth={true}
+                                        multiple={false}
+                                    >
+                                        {languageSkillsLevelOptions.map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                            </MenuItem>
+                                        ))}
                                     </Field>
                                     <FormHelperText>Select English Language Level</FormHelperText>
                                 </Grid>
