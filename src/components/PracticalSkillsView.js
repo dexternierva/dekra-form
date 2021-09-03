@@ -257,7 +257,7 @@ function  PracticalSkillsView({ response }) {
                                     }
                                     style={{ marginRight: 0 }}
                                 />
-                                <TextField id="standard-basic" label="" value={department} style={{ width: "50%" }} />
+                                <TextField id="standard-basic" label="" value={department} style={{ width: "80%" }} />
                             </Box>
                         </div>
                     ))
@@ -656,13 +656,13 @@ function  PracticalSkillsView({ response }) {
                             />
                         </Box>
                         <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication1}/>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication1} style={{ width: "50%" }}/>
                         </Box>
                         <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication2}/>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication2} style={{ width: "50%" }}/>
                         </Box>
                         <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication3}/>
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication3} style={{ width: "50%" }}/>
                         </Box>
                     </Grid>
 

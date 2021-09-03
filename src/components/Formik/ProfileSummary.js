@@ -446,7 +446,6 @@ function ProfileSummary () {
         // LANGUAGE SKILLS
         nativeLanguage: 'Filipino (Tagalog)',
         uptodateskills: '',
-        germanLanguageLevel: '',
         germanLanguageDate: new Date(),
         germanCare: new Date(),
         englishLanguage: 'English',
@@ -490,7 +489,6 @@ function ProfileSummary () {
         // LANGUAGE-SKILLS
         nativeLanguage: Yup.string().required('This field is required'),
         uptodateskills: Yup.string(),
-        germanLanguageLevel: Yup.string().required('This field is required'),
         germanLanguageDate: Yup.date().required('This field is required'),
         germanCare: Yup.date().required('This field is required'),
         englishLanguage: Yup.string().required('This field is required'),
@@ -537,7 +535,6 @@ function ProfileSummary () {
             // LANGUAGE-SKILLS
             'nativeLanguage': values.nativeLanguage,
             'uptodateskills': values.uptodateskills,
-            'germanLanguageLevel': values.germanLanguageLevel,
             'germanLanguageDate': values.germanLanguageDate,
             'germanCare': values.germanCare,
             'englishLanguage': values.englishLanguage,
@@ -970,7 +967,7 @@ function ProfileSummary () {
                             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                 <Box px={4} py={2}>
                                     <Grid container spacing={2}>
-                                        <Grid item lg={6} xs={12}>
+                                        <Grid item lg={12} xs={12}>
                                             <Field
                                                 component={TextField}
                                                 type="text"
@@ -979,6 +976,9 @@ function ProfileSummary () {
                                                 name="nativeLanguage"
                                                 fullWidth
                                             />
+                                        </Grid>
+                                        <Grid item lg={12} xs={12}>
+                                            <InputLabel shrink="true" htmlFor="germanLanguageLevel">German Language Skills Up-to-date</InputLabel>
                                         </Grid>
                                         <Grid item lg={6} xs={12}>
                                             <Field
@@ -995,11 +995,11 @@ function ProfileSummary () {
                                                     </MenuItem>
                                                 ))}
                                             </Field>
-
+                                        </Grid>
+                                        <Grid item lg={6} xs={12}>
                                             <Field
                                                 component={DatePicker}
-                                                label="German B1-B2 Care"
-                                                name="germanCare"
+                                                name="germanLanguageDate"
                                                 variant="dialog"
                                                 views={["date", "year", "month"]}
                                                 fullWidth
@@ -1010,30 +1010,12 @@ function ProfileSummary () {
                                 <Box px={4} py={2}>
                                     <Grid container spacing={2}>
                                         <Grid item lg={12} xs={12}>
-                                            <InputLabel shrink="true" htmlFor="germanLanguageLevel">German Language Skills Up-to-date</InputLabel>
+                                            <InputLabel shrink="true" htmlFor="germanLanguageLevel">German B1-B2 Care</InputLabel>
                                         </Grid>
-                                        <Grid item lg={6} xs={12}>
-                                            <Field
-                                                component={Select}
-                                                name="germanLanguageLevel"
-                                                margin="normal"
-                                                fullWidth
-                                                autoWidth={true}
-                                                multiple={false}
-                                                InputLabelProps={{ shrink: true }}
-                                            >   
-                                                {languageSkillsLevelOptions.map((option) => (
-                                                    <MenuItem key={option.value} value={option.value}>
-                                                        {option.label}
-                                                    </MenuItem>
-                                                ))}
-                                            </Field>
-                                            <FormHelperText>Select Level</FormHelperText>
-                                        </Grid>
-                                        <Grid item lg={6} xs={12}>
+                                        <Grid item lg={12} xs={12}>
                                             <Field
                                                 component={DatePicker}
-                                                name="germanLanguageDate"
+                                                name="germanCare"
                                                 variant="dialog"
                                                 views={["date", "year", "month"]}
                                                 fullWidth

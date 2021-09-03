@@ -404,7 +404,6 @@ function ProfileForm ({ setProfileFormState }) {
                     child6: ' ',
                     // INITIAL VALUES: LANGUAGE SKILLS
                     nativeLanguage: 'Filipino (Tagalog)',
-                    germanLanguageLevel: '',
                     uptodateskills: '',
                     germanLanguageDate: new Date(),
                     germanCare: new Date(),
@@ -449,7 +448,6 @@ function ProfileForm ({ setProfileFormState }) {
                         // VALUES: LANGUAGE SKILLS
                         'nativeLanguage': values.nativeLanguage,
                         'uptodateskills': values.uptodateskills,
-                        'germanLanguageLevel': values.germanLanguageLevel,
                         'germanLanguageDate': values.germanLanguageDate,
                         'germanCare': values.germanCare,
                         'englishLanguage': values.englishLanguage,
@@ -903,7 +901,6 @@ function ProfileForm ({ setProfileFormState }) {
                     validationSchema={Yup.object({
                         nativeLanguage: Yup.string().required('This field is required'),
                         uptodateskills: Yup.string().required('This field is required'),
-                        germanLanguageLevel: Yup.string().required('This field is required'),
                         germanLanguageDate: Yup.date().required('This field is required'),
                         germanCare: Yup.date().required('This field is required'),
                         englishLanguage: Yup.string().required('This field is required'),
@@ -926,8 +923,10 @@ function ProfileForm ({ setProfileFormState }) {
                                         fullWidth
                                     />
                                 </Grid>
+                                <Grid item lg={12} xs={12}>
+                                    <InputLabel htmlFor="uptodateskills">German Language Skills Up-to-date</InputLabel>
+                                </Grid>
                                 <Grid item lg={6} xs={12}>
-                                    <InputLabel htmlFor="uptodateskills">German B1-B2 Care</InputLabel>
                                     <Field
                                         component={Select}
                                         name="uptodateskills"
@@ -946,7 +945,7 @@ function ProfileForm ({ setProfileFormState }) {
                                 <Grid item lg={6} xs={12}>
                                         <Field
                                             component={DatePicker}
-                                            name="germanCare"
+                                            name="germanLanguageDate"
                                             inputVariant="outlined"
                                             variant="dialog"
                                             views={["date", "year", "month"]}
@@ -959,31 +958,10 @@ function ProfileForm ({ setProfileFormState }) {
                         <Box px={4} py={2}>
                             <Grid container spacing={2}>
                                 <Grid item lg={12} xs={12}>
-                                    <InputLabel htmlFor="kfLanguage">German Language Skills Up-to-date</InputLabel>
-                                </Grid>
-                                <Grid item lg={6} xs={12}>
-                                    <Field
-                                        component={Select}
-                                        name="germanLanguageLevel"
-                                        variant="outlined"
-                                        margin="normal"
-                                        fullWidth
-                                        autoWidth={true}
-                                        multiple={false}
-                                        InputLabelProps={{ shrink: true }}
-                                    >   
-                                        {languageSkillsLevelOptions.map((option) => (
-                                            <MenuItem key={option.value} value={option.value}>
-                                                {option.label}
-                                            </MenuItem>
-                                        ))}
-                                    </Field>
-                                    <FormHelperText>Select Level</FormHelperText>
-                                </Grid>
-                                <Grid item lg={6} xs={12}>
+                                    <InputLabel htmlFor="kfLanguage">German B1-B2 Care</InputLabel>
                                     <Field
                                         component={DatePicker}
-                                        name="germanLanguageDate"
+                                        name="germanCare"
                                         inputVariant="outlined"
                                         variant="dialog"
                                         views={["date", "year", "month"]}

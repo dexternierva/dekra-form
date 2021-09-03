@@ -53,18 +53,8 @@ const SectionTitle = styled.div`
 function LanguageSkillsView({ response }) {
     let t = useTranslate("Language");
     const classes = useStyles();
+    
     if (response.cv !== null) {
-        function languageSkillsData(name, value) {
-            return { name, value };
-        }
-        
-        const languageskillsrows = [
-            languageSkillsData(t('Native language'), response.cv.nativeLanguage),
-            languageSkillsData(t('German language skills up-to-date'), moment(response.cv.germanLanguageDate).format("DD.MM.YYYY")),
-            languageSkillsData(t('German B1-B2 Care'), 'voraussichtlich ' + moment(response.cv.germanCare).format("DD.MM.YYYY")),
-            // languageSkillsData(t('Other languages'), t("Language: ") + response.cv.otherLanguages + " | " +  t("Level: ") + response.cv.otherLanguagesLevel),
-        ];
-
         return (
             <Grid container spacing={0} className={classes.grid}>
                 <Grid item xs={12} sm={3}>
@@ -74,20 +64,26 @@ function LanguageSkillsView({ response }) {
                     <TableContainer className={classes.table}>
                         <Table aria-label="simple table">
                             <TableBody>
-                            {languageskillsrows.map((row) => (
-                                <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row" className={classes.col1}>{row.name}</TableCell>
-                                    <TableCell className={classes.col2}>{row.value}</TableCell>
+                                <TableRow>
+                                    <TableCell component="th" scope="row" className={classes.col1}>{t('Native language')}</TableCell>
+                                    <TableCell className={classes.col2}>response.cv.nativeLanguage</TableCell>
                                 </TableRow>
-                            ))}
-                            <TableRow className={classes.noborderbottom}>
-                                <TableCell component="th" scope="row" className={classes.col1}>Weitere Sprachen</TableCell>
-                                <TableCell className={classes.col2}>{t("Language: ")} {response.cv.englishLanguage} | {t("Level: ")} {response.cv.englishLanguageLevel}</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell component="th" scope="row" className={classes.col1}>&nbsp;</TableCell>
-                                <TableCell className={classes.col2}>{t("Language: ")} {response.cv.otherLanguages} | {t("Level: ")} {response.cv.otherLanguagesLevel}</TableCell>
-                            </TableRow>
+                                <TableRow>
+                                    <TableCell component="th" scope="row" className={classes.col1}>Deutschkenntnisse aktuell</TableCell>
+                                    <TableCell className={classes.col2}>{response.cv.uptodateskills} {moment(response.cv.germanLanguageDate).format("DD.MM.YYYY")}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell component="th" scope="row" className={classes.col1}>{t('German B1-B2 Care')}</TableCell>
+                                    <TableCell className={classes.col2}>voraussichtlich {moment(response.cv.germanCare).format("DD.MM.YYYY")}</TableCell>
+                                </TableRow>
+                                <TableRow className={classes.noborderbottom}>
+                                    <TableCell component="th" scope="row" className={classes.col1}>Weitere Sprachen</TableCell>
+                                    <TableCell className={classes.col2}>{t("Language: ")} {response.cv.englishLanguage} | {t("Level: ")} {response.cv.englishLanguageLevel}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell component="th" scope="row" className={classes.col1}>&nbsp;</TableCell>
+                                    <TableCell className={classes.col2}>{t("Language: ")} {response.cv.otherLanguages} | {t("Level: ")} {response.cv.otherLanguagesLevel}</TableCell>
+                                </TableRow>
                             </TableBody>
                         </Table>
                     </TableContainer>
