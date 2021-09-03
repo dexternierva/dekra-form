@@ -900,15 +900,17 @@ function  PracticalSkillsView({ response }) {
                  */
             }
             <div className={classes.practicalactivities}>
-                <Box py={2} px={2}>
-                    <Typography variant="h5" component="h2" className={classes.titles}>
-                        Praktische Tätigkeiten
-                    </Typography>
-                    <Typography variant="body2" component="p">
-                        Selbsteinschätzung des Teilnehmers <br />
-                        0 (nicht bekannt), 1 (in Theorie bekannt), 2 (praktische Durchführung beobachtet), 3 (unter Aufsicht selbst durchgeführt), 4 (selbständige Durchführung), 5 (Experte, Anleitung anderer Kollegen).
-                    </Typography>
-                </Box>
+                <section>
+                    <Box py={2} px={2}>
+                        <Typography variant="h5" component="h2" className={classes.titles}>
+                            Praktische Tätigkeiten
+                        </Typography>
+                        <Typography variant="body2" component="p">
+                            Selbsteinschätzung des Teilnehmers <br />
+                            0 (nicht bekannt), 1 (in Theorie bekannt), 2 (praktische Durchführung beobachtet), 3 (unter Aufsicht selbst durchgeführt), 4 (selbständige Durchführung), 5 (Experte, Anleitung anderer Kollegen).
+                        </Typography>
+                    </Box>
+                </section>
 
                 <section className={classes.section}>
                     <Box py={2} px={2}>
@@ -1949,7 +1951,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom color="primary" className={classes.practicalactivitiestitle2}>
+                        <Typography variant="h6" display="block" gutterBottom color="primary" className={classes.practicalactivitiestitle}>
                             E - Kommunikation mit KollegInnen, PatientInnen und Anderen
                         </Typography>
                     </Box>
@@ -2072,7 +2074,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom color="primary" className={classes.practicalactivitiestitle2}>
+                        <Typography variant="h6" display="block" gutterBottom color="primary" className={classes.practicalactivitiestitle}>
                             F - Dokumentation und Qualität
                         </Typography>
                     </Box>

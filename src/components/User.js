@@ -56,6 +56,8 @@ import { green, pink } from '@material-ui/core/colors';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
+import CheckBoxOutlinedIcon from '@material-ui/icons/CheckBoxOutlined';
+
 const StyledRating = withStyles({
     grid: {
         margin: '0 0 4rem 0',
@@ -201,6 +203,14 @@ const useStyles = makeStyles((theme) => ({
     },
     col1: { width: '30%' },
     col2: { width: '70%' },
+    container: {
+        display: 'flex',
+        width: '100%',
+        flexWrap: 'wrap',
+        boxSizing: 'border-box',
+        margin: '0 0 4rem 0',
+        borderLeft: '4px solid #008B4F',
+    },
 }));
 
 /* 
@@ -681,94 +691,120 @@ function  PracticalSkillsView({ response }) {
                  * =====================================================================
                  */
             }
-            <section>
+
+            {
+                /**
+                 * DEPARTMENT
+                 * =====================================================================
+                 */
+            }
+            <section className={classes.container}>
+                <h3 className={classes.sectionTitle}>Fachbereich</h3>
+
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={
+                                <Checkbox 
+                                    checked={response.practical_knowledge.care} 
+                                    checkedIcon={<CheckBoxOutlinedIcon />} 
+                                    color="primary"
+                                />
+                            }
+                            label="Intensivmedizin"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.internalmedicine}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Innere Medizin"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}> 
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.pediatrics}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Pädiatrie"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.generalaccidentsurgery}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Allgemeine Unfallchirurgie"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.anesthesia}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Anästhesie"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.orthopedics}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Orthopädie"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.emergency}  checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Notaufnahme"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.op} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="OP"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.neurology} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Neurologie"
+                        />
+                    </Box>
+                </div>
+                <div className={classes.containerChild}>
+                    <Box px={2}>
+                        <FormControlLabel
+                            control={<Checkbox checked={response.practical_knowledge.geriatrics} checkedIcon={<CheckBoxOutlinedIcon />} color="primary" />}
+                            label="Geriatrie"
+                        />
+                    </Box>
+                </div>
                 {
-                    /**
-                     * DEPARTMENT
-                     * =====================================================================
-                     */
+                    departments.map((department, index) => (
+                        <div className={classes.containerChild}>
+                            <Box px={2} className={classes.dynamicfield}>
+                                <FormControlLabel
+                                    control={
+                                        <Checkbox checked="true"
+                                        checkedIcon={<CheckBoxOutlinedIcon />} 
+                                        color="primary" />
+                                    }
+                                    style={{ marginRight: 0 }}
+                                />
+                                <TextField id="standard-basic" label="" value={department} style={{ width: "80%" }} />
+                            </Box>
+                        </div>
+                    ))
                 }
-                <Grid container spacing={0} className={classes.grid}>
-                    <Grid item xs={12} sm={12}>
-                        <SectionTitle>Fachbereich</SectionTitle>
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.care}  color="primary" />}
-                                label="Intensivmedizin"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.internalmedicine}  color="primary" />}
-                                label="Innere Medizin"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.pediatrics}  color="primary" />}
-                                label="Pädiatrie"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.generalaccidentsurgery}  color="primary" />}
-                                label="Allgemeine Unfallchirurgie"
-                            />
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.anesthesia}  color="primary" />}
-                                label="Anästhesie"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.orthopedics}  color="primary" />}
-                                label="Orthopädie"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.emergency}  color="primary" />}
-                                label="Notaufnahme"
-                            />
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.op}  color="primary" />}
-                                label="OP"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.neurology}  color="primary" />}
-                                label="Neurologie"
-                            />
-                        </Box>
-                        <Box px={2}>
-                            <FormControlLabel
-                                control={<Checkbox checked={response.practical_knowledge.geriatrics}  color="primary" />}
-                                label="Geriatrie"
-                            />
-                        </Box>
-                    </Grid>
-                    {
-                        departments.map((department, index) => (
-                            <Grid item xs={12} sm={4}>
-                                <Box px={2}>
-                                    <TextField id="standard-basic" label="" value={department} />
-                                </Box>
-                            </Grid>
-                        ))
-                    }
-                </Grid>
-            </section>
+            </section> {/* END OF CONTAINER */}
             
             <section>
                 <Grid container spacing={0}>
