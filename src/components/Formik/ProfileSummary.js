@@ -674,7 +674,7 @@ function ProfileSummary () {
                                     InputLabelProps={{ name: 'kfLanguage', id: 'kfLanguage' }}
                                     autoWidth="true"
                                 >
-                                    {languageSkillsOptions.map((option) => (
+                                    {languageSkillsLevelOptions.map((option) => (
                                         <MenuItem key={option.value} value={option.value}>
                                             {option.label}
                                         </MenuItem>

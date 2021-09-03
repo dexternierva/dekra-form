@@ -66,11 +66,11 @@ function LanguageSkillsView({ response }) {
                             <TableBody>
                                 <TableRow>
                                     <TableCell component="th" scope="row" className={classes.col1}>{t('Native language')}</TableCell>
-                                    <TableCell className={classes.col2}>response.cv.nativeLanguage</TableCell>
+                                    <TableCell className={classes.col2}>{response.cv.nativeLanguage}</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell component="th" scope="row" className={classes.col1}>Deutschkenntnisse aktuell</TableCell>
-                                    <TableCell className={classes.col2}>{response.cv.uptodateskills} {moment(response.cv.germanLanguageDate).format("DD.MM.YYYY")}</TableCell>
+                                    <TableCell className={classes.col2}>{response.cv.uptodateskills} (Stand: {moment(response.cv.germanLanguageDate).format("DD.MM.YYYY")})</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell component="th" scope="row" className={classes.col1}>{t('German B1-B2 Care')}</TableCell>

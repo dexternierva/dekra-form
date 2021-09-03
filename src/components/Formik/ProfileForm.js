@@ -77,7 +77,7 @@ function ProfileForm ({ setProfileFormState }) {
         { label: 'Select Category', value: '' },
         { label: 'Category 1', value: '1' },
         { label: 'Category 2', value: '2' },
-        { label: 'Category 3', value: '3 - High Potential' },
+        { label: 'Category 3 - High Potential', value: '3 - High Potential' },
         { label: 'Category 4', value: '4' },
     ];
 
@@ -211,7 +211,7 @@ function ProfileForm ({ setProfileFormState }) {
 
     const prioritiesOptions = [
         { label: 'Select Focus of Experience', value:'' },
-        { label: 'General health and nursing care', value: 'Allgemeine Gesundheits- und Krankenpflege' },
+        { label: 'General health and nursing care', value: 'Allgemeine Gesundheits - und Krankenpflege' },
         { label: 'Elderly care', value: 'Altenpflege' },
         { label: 'Ambulant care', value: 'Ambulante Pflege' },
         { label: 'Anesthesia', value: 'Anästhesie' },

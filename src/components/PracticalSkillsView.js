@@ -655,14 +655,38 @@ function  PracticalSkillsView({ response }) {
                                 label="Notfallmedikamente"
                             />
                         </Box>
-                        <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication1} style={{ width: "50%" }}/>
+                        <Box px={2} className={classes.dynamicfield}>
+                            <FormControlLabel
+                                control={
+                                    <Checkbox checked="true"
+                                    checkedIcon={<CheckBoxOutlinedIcon />} 
+                                    color="primary" />
+                                }
+                                style={{ marginRight: 0 }}
+                            />
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication1} style={{ width: "50%" }} />
                         </Box>
-                        <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication2} style={{ width: "50%" }}/>
+                        <Box px={2} className={classes.dynamicfield}>
+                            <FormControlLabel
+                                control={
+                                    <Checkbox checked="true"
+                                    checkedIcon={<CheckBoxOutlinedIcon />} 
+                                    color="primary" />
+                                }
+                                style={{ marginRight: 0 }}
+                            />
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication2} style={{ width: "50%" }} />
                         </Box>
-                        <Box px={2}>
-                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication3} style={{ width: "50%" }}/>
+                        <Box px={2} className={classes.dynamicfield}>
+                            <FormControlLabel
+                                control={
+                                    <Checkbox checked="true"
+                                    checkedIcon={<CheckBoxOutlinedIcon />} 
+                                    color="primary" />
+                                }
+                                style={{ marginRight: 0 }}
+                            />
+                            <TextField id="standard-basic" label="" value={response.practical_knowledge.additionalmedication3} style={{ width: "50%" }} />
                         </Box>
                     </Grid>
 
@@ -917,6 +941,7 @@ function  PracticalSkillsView({ response }) {
                                             icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
                                             emptyIcon={<CheckBoxOutlineBlankIcon />}
                                             max={6}
+                                            highlightSelectedOnly
                                         />
                                     </TableCell>
                                 </TableRow>

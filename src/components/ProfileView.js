@@ -192,7 +192,7 @@ function  ProfileView({ response }) {
                                     <TableCell className={classes.col1} component="th" scope="row">Abschluss</TableCell>
                                     <TableCell className={classes.col2}>
                                         {response.cv.kfDegree}
-                                        <span className={classes.defaultText}>Allgemeine Gesundheits- und Krankenpflege</span>
+                                        <span className={classes.defaultText}>Allgemeine Gesundheits - und Krankenpflege</span>
                                     </TableCell>
                                 </TableRow>
 
