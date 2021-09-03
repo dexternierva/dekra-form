@@ -1,5 +1,5 @@
 import React from "react";
-import { Rating } from '@mui/core';
+import Rating from '@mui/material/Rating';
 //import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
