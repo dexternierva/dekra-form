@@ -63,6 +63,22 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: '700',
         fontSize: '1.25em'
     },
+    practicalactivitiestitle: {
+        width: '100%',
+        margin: '0 0 .5rem 1rem',
+        color: '#008B4F',
+        fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
+        fontWeight: '700',
+        fontSize: '1em'
+    },
+    practicalactivitiestitle2: {
+        width: '100%',
+        margin: '0 0 .5rem 1rem',
+        color: '#666666',
+        fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
+        fontWeight: '700',
+        fontSize: '1em'
+    },
     table: {
         //margin: '-.75rem 0 0 0'
         "& th": {
@@ -899,10 +915,10 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={2} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom color="primary">
+                        <Typography variant="h6" display="block" gutterBottom color="primary" className={classes.practicalactivitiestitle}>
                             A - Beurteilung von PatientInnen, Pflegediagnose, Pflegeplanung
                         </Typography>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Informationen über PatientInnen erlangen
                         </Typography>
                     </Box>
@@ -916,7 +932,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             precision={1}
                                             value={response.practical_activity.a1}
@@ -933,7 +949,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -951,7 +967,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -969,7 +985,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -988,7 +1004,7 @@ function  PracticalSkillsView({ response }) {
                
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Pflegeprobleme und Pflegediagnose
                         </Typography>
                     </Box>
@@ -1002,7 +1018,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1020,7 +1036,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1038,7 +1054,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1057,7 +1073,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Pflegeplanung
                         </Typography>
                     </Box>
@@ -1071,7 +1087,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1089,7 +1105,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1107,7 +1123,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1126,10 +1142,10 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={2} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom color="primary">
+                        <Typography variant="h6" display="block" gutterBottom color="primary" className={classes.practicalactivitiestitle}>
                             B - Professionelle Pflege
                         </Typography>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Grundpflege und Körperpflege
                         </Typography>
                     </Box>
@@ -1143,7 +1159,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1161,7 +1177,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1180,7 +1196,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Ernährung
                         </Typography>
                     </Box>
@@ -1194,7 +1210,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1212,7 +1228,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1230,7 +1246,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1249,7 +1265,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Mobilität
                         </Typography>
                     </Box>
@@ -1263,7 +1279,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1281,7 +1297,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1299,7 +1315,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1318,7 +1334,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Ausscheiden
                         </Typography>
                     </Box>
@@ -1332,7 +1348,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1350,7 +1366,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1368,7 +1384,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1386,7 +1402,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1405,10 +1421,10 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={2} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom color="primary">
+                        <Typography variant="h6" display="block" gutterBottom color="primary" className={classes.practicalactivitiestitle}>
                             Pflegeintervention
                         </Typography>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Teilnahme an medizinischen und diagnostischen Prozeduren und Verfahren
                         </Typography>
                     </Box>
@@ -1422,7 +1438,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1440,7 +1456,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1459,7 +1475,7 @@ function  PracticalSkillsView({ response }) {
                 
                 <section className={classes.section}>
                     <Box py={2} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Medikamente
                         </Typography>
                     </Box>
@@ -1473,7 +1489,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1491,7 +1507,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1509,7 +1525,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1528,7 +1544,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Wundmanagement
                         </Typography>
                     </Box>
@@ -1542,7 +1558,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1560,7 +1576,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1578,7 +1594,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1597,7 +1613,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Stomaversorgung
                         </Typography>
                     </Box>
@@ -1610,7 +1626,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1629,7 +1645,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Medizinische Geräte anwenden
                         </Typography>
                     </Box>
@@ -1643,7 +1659,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1661,7 +1677,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1679,7 +1695,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1698,7 +1714,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}> 
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Lebensrettende Maßnahmen
                         </Typography>
                     </Box>
@@ -1712,7 +1728,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1730,7 +1746,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1749,10 +1765,10 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={2} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom color="primary">
+                        <Typography variant="h6" display="block" gutterBottom color="primary" className={classes.practicalactivitiestitle}>
                             D - Hygiene
                         </Typography>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Hygienemaßnahmen anwenden
                         </Typography>
                     </Box>
@@ -1766,7 +1782,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1784,7 +1800,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1802,7 +1818,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1820,7 +1836,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1838,7 +1854,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1856,7 +1872,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1874,7 +1890,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1892,7 +1908,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1911,7 +1927,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom className={classes.practicalactivitiestitle2}>
                             Umgang mit Katastrophen
                         </Typography>
                     </Box>
@@ -1925,7 +1941,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1944,7 +1960,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom color="primary">
+                        <Typography variant="h6" display="block" gutterBottom color="primary" className={classes.practicalactivitiestitle2}>
                             E - Kommunikation mit KollegInnen, PatientInnen und Anderen
                         </Typography>
                     </Box>
@@ -1958,7 +1974,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                     <Rating
-                                        name="customized-color"
+                                        name="highlight-selected-only"
                                         defaultValue={0}
                                         // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                         precision={1}
@@ -1976,7 +1992,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -1994,7 +2010,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -2012,7 +2028,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -2030,7 +2046,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -2048,7 +2064,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -2067,7 +2083,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h6" display="block" gutterBottom color="primary">
+                        <Typography variant="h6" display="block" gutterBottom color="primary" className={classes.practicalactivitiestitle2}>
                             F - Dokumentation und Qualität
                         </Typography>
                     </Box>
@@ -2081,7 +2097,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -2099,7 +2115,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -2117,7 +2133,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -2135,7 +2151,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -2153,7 +2169,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -2171,7 +2187,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
@@ -2189,7 +2205,7 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="customized-color"
+                                            name="highlight-selected-only"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
