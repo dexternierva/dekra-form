@@ -1,6 +1,4 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -21,22 +19,6 @@ import {
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import CheckBoxOutlinedIcon from '@material-ui/icons/CheckBoxOutlined';
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-
-const StyledRating = withStyles({
-    grid: {
-        margin: '0 0 4rem 0',
-        borderLeft: '4px solid #008B4F',
-    },
-    icon: {
-        color: 'rgba(0, 0, 0, 0.12)',
-    },
-    iconFilled: {
-        color: '#008B4F',
-    },
-    iconHover: {
-        color: 'rgba(0, 0, 0, 0.24)',
-    },
-})(Rating);
 
 const useStyles = makeStyles((theme) => ({
     grid: {
@@ -121,38 +103,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
     }
 }));
-
-const customIcons = {
-    1: {
-      icon: <CheckBoxOutlineBlankIcon />,
-      label: '',
-    },
-    2: {
-      icon: <CheckBoxOutlineBlankIcon />,
-      label: '',
-    },
-    3: {
-      icon: <CheckBoxOutlineBlankIcon />,
-      label: '',
-    },
-    4: {
-      icon: <CheckBoxOutlineBlankIcon />,
-      label: '',
-    },
-    5: {
-      icon: <CheckBoxOutlineBlankIcon />,
-      label: '',
-    },
-  };
-
-function IconContainer(props) {
-    const { value, ...other } = props;
-    return <span {...other}>{customIcons[value].icon}</span>;
-}
-  
-IconContainer.propTypes = {
-    value: PropTypes.number.isRequired,
-};
 
 function  PracticalSkillsView({ response }) {
     const classes = useStyles();
@@ -966,26 +916,15 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="highlight-selected-only"
-                                            defaultValue={0}
-                                            IconContainerComponent={IconContainer}
-                                            value={response.practical_activity.a1}
-                                            // icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                                            emptyIcon={<CheckBoxOutlineBlankIcon />}
-                                            max={6}
-                                            highlightSelectedOnly
-                                        />
-                                        {/* <StyledRating
                                             name="customized-color"
                                             defaultValue={0}
-                                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
                                             value={response.practical_activity.a1}
                                             icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
                                             emptyIcon={<CheckBoxOutlineBlankIcon />}
                                             max={6}
                                             highlightSelectedOnly
-                                        /> */}
+                                        />
                                     </TableCell>
                                 </TableRow>
                                 <TableRow>
@@ -994,16 +933,6 @@ function  PracticalSkillsView({ response }) {
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
                                         <Rating
-                                            name="highlight-selected-only"
-                                            defaultValue={0}
-                                            IconContainerComponent={IconContainer}
-                                            value={response.practical_activity.a2}
-                                            //icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
-                                            emptyIcon={<CheckBoxOutlineBlankIcon />}
-                                            max={6}
-                                            highlightSelectedOnly
-                                        />
-                                        {/* <StyledRating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1013,7 +942,7 @@ function  PracticalSkillsView({ response }) {
                                             emptyIcon={<CheckBoxOutlineBlankIcon />}
                                             max={6}
                                             highlightSelectedOnly
-                                        /> */}
+                                        />
                                     </TableCell>
                                 </TableRow>
                                 <TableRow>
@@ -1021,7 +950,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>3. Skalen und Indikatoren auszufüllen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1039,7 +968,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>4. Skalen und Indikatoren auszufüllen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1072,7 +1001,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>5. Versorgungsdefizite erkennen, adäquate Unterstützung bereitstellen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1090,7 +1019,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>6. Pflegediagnosen festlegen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1108,7 +1037,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>7. Pflegestandards anwenden</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1141,7 +1070,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>8. Pflegeziele festlegen und Pflegepläne aktualisieren</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1159,7 +1088,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>9. Pflegemaßnahmen planen und durchführen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1177,7 +1106,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>10. Spezielle Pflegepläne (krankheitsbildbezogen) anwenden</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1213,7 +1142,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>1. Teil- und Ganzkörperpflege unterstützen und übernehmen (inklusive Hautpflege, Waschen und Kleiden, Pflegeprodukte anwenden, spezielle Methoden anwenden [z.B. Basale Stimulation, Bobath], am Waschbecken, im Bett)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1231,7 +1160,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>2. Anlegen von Kompressionsverbänden und Kompressionsstrümpfen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1264,7 +1193,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>3. Speisen und Getränke zubereiten, verteilen, anreichen (füttern)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1282,7 +1211,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>4. Ernährungspläne erstellen, dokumentieren</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1300,7 +1229,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>5. Ernährungssonden (inklusive PEG) benutzen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1333,7 +1262,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>6. Mobilität unterstützen, aufrechterhalten, wiederherstellen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1351,7 +1280,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>7. Prophylaktische Maßnahmen (Dekubitus-, Kontraktur-, Thromboseprophylaxe) durchführen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1369,7 +1298,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>8. Mobilisationspläne erstellen und führen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1402,7 +1331,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>9. Bei der Ausscheidung unterstützen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1420,7 +1349,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>10. Umgang mit Inkontinenz, Kontinenztraining</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1438,7 +1367,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>11. Ableitungssysteme (z.B. Harnblasenkatheterismus, Stuhlableitungssysteme) anwenden</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1456,7 +1385,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>12. Einläufe verabreichen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1492,7 +1421,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>1. Blutentnahme, körperliche Untersuchung</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1510,7 +1439,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>2. Assistenz bei ärztlichen Maßnahmen (z.B. Endoskopie, Aufnahmeuntersuchung im Krankenhaus)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1543,7 +1472,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>3. Verwalten, vorbereiten, verabreichen (z.B. oral, intravenös)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1561,7 +1490,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>4. Blut und Blutprodukte (Transfusion)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1579,7 +1508,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>5. Umgang mit Betäubungsmitteln</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1612,7 +1541,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>6. Wundvermeidung, Prophylaxen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1630,7 +1559,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>7. Wundassessment</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1648,7 +1577,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>8. Wundbehandlung (z.B. Verbände anlegen und wechseln)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1680,7 +1609,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>9. Pflege unterschiedlicher Stomata (z.B. Tracheostoma, Ileostoma, Urostoma)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1713,7 +1642,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>10. Pflegehilfsmittel, Mobilisationsmittel, Transferhilfen, Rollstühle</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1731,7 +1660,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>11. Geräte zur Messung von Vitalparametern (z.B. Blutdruck, Blutzucker, Monitoring)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1749,7 +1678,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>12. Spezielle Geräte (z.B. Absauggeräte, EKG, Defibrillatoren, Beatmungsmaschinen)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1782,7 +1711,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>13. Basic life support</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1800,7 +1729,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>14. Advanced life support</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1836,7 +1765,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>1. Verschiedene Desinfektionsmaßnahmen (z.B. Hände-, Haut-, Flächendesinfektion)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1854,7 +1783,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>2. Maßnahmen der Infektionskontrolle durchführen (z.B. Isolierung von Patienten)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1872,7 +1801,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>3. Sterile Verfahren anwenden (z.B. Legen von Dauerkathetern)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1890,7 +1819,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>4. Medizinprodukte aufbereiten, angemessen verpacken und lagern</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1908,7 +1837,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>5. Sterilisatoren bedienen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1926,7 +1855,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>6. Transporte von PatientInnen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1944,7 +1873,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>7. Unfallgefahr reduzieren (z.B. Unfallverhütungsvorschriften)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1962,7 +1891,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>8. Fremdschutz und Selbstschutz</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -1995,7 +1924,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>9. Feuer, Notfälle, Massenanfall an PatientInnen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -2028,7 +1957,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>1. Team- und Fallbesprechungen führen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                    <StyledRating
+                                    <Rating
                                         name="customized-color"
                                         defaultValue={0}
                                         // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -2046,7 +1975,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>2. MitarbeiterInnen einführen, anleiten</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -2064,7 +1993,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>3. Schichtleitung- Stationsleitung</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -2082,7 +2011,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>4. Dienstpläne schreiben</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -2100,7 +2029,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>5. Patienten aufklären und beraten</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -2118,7 +2047,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>6. Angehörige aufklären und beraten</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -2151,7 +2080,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>1. Grundpflegerische und behandlungspflegerische Maßnahmen dokumentieren (Pflegebericht)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -2169,7 +2098,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>2. Bestellungen durchführen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -2187,7 +2116,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>3. Visiten dokumentieren und auswerten</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -2205,7 +2134,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>4. Briefe verfassen (z.B. Pflegeüberleitung)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -2223,7 +2152,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>5. Sauberkeit und Ordnung am Arbeitsplatz (Stationszimmer, Patientenzimmer) sicherstellen</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -2241,7 +2170,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>6. Maßnahmen der Qualitätssicherung und –kontrolle anwenden (z.B. Medikamentencheck)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -2259,7 +2188,7 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>7. Ressourcenschonende Arbeitsweise</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
