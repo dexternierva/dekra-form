@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
@@ -121,6 +122,38 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+const customIcons = {
+    1: {
+      icon: <CheckBoxOutlineBlankIcon />,
+      label: '',
+    },
+    2: {
+      icon: <CheckBoxOutlineBlankIcon />,
+      label: '',
+    },
+    3: {
+      icon: <CheckBoxOutlineBlankIcon />,
+      label: '',
+    },
+    4: {
+      icon: <CheckBoxOutlineBlankIcon />,
+      label: '',
+    },
+    5: {
+      icon: <CheckBoxOutlineBlankIcon />,
+      label: '',
+    },
+  };
+
+function IconContainer(props) {
+    const { value, ...other } = props;
+    return <span {...other}>{customIcons[value].icon}</span>;
+}
+  
+IconContainer.propTypes = {
+    value: PropTypes.number.isRequired,
+};
+
 function  PracticalSkillsView({ response }) {
     const classes = useStyles();
 
@@ -136,10 +169,10 @@ function  PracticalSkillsView({ response }) {
             <>
             <div className={classes.intro}>
                 <Paper elevation={0} className={classes.paper}>
-                    <Typography variant="h5" component="h2" className={classes.titles}>
+                    <Typography variant="h6" component="h2" className={classes.titles}>
                         Praktische Kenntnisse
                     </Typography>
-                    <Typography variant="h5" component="h2" gutterBottom className={classes.titles}>
+                    <Typography variant="h6" component="h2" gutterBottom className={classes.titles}>
                         Anlage zum Lebenslauf von: {response.lastname + ', ' + response.lastname}
                     </Typography>
                     <Typography variant="body2" component="p">
@@ -916,10 +949,10 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={2} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom color="primary">
+                        <Typography variant="h6" display="block" gutterBottom color="primary">
                             A - Beurteilung von PatientInnen, Pflegediagnose, Pflegeplanung
                         </Typography>
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Informationen über PatientInnen erlangen
                         </Typography>
                     </Box>
@@ -932,7 +965,17 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>1. Grundsätzliche Parameter (bspw. Größe, Gewicht) und Vitalparameter erheben (mittels manueller Messung, mittels Monitoring)</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
+                                            name="highlight-selected-only"
+                                            defaultValue={0}
+                                            IconContainerComponent={IconContainer}
+                                            value={response.practical_activity.a1}
+                                            icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                                            emptyIcon={<CheckBoxOutlineBlankIcon />}
+                                            max={6}
+                                            highlightSelectedOnly
+                                        />
+                                        {/* <StyledRating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -942,7 +985,7 @@ function  PracticalSkillsView({ response }) {
                                             emptyIcon={<CheckBoxOutlineBlankIcon />}
                                             max={6}
                                             highlightSelectedOnly
-                                        />
+                                        /> */}
                                     </TableCell>
                                 </TableRow>
                                 <TableRow>
@@ -950,7 +993,17 @@ function  PracticalSkillsView({ response }) {
                                         <Typography variant="body1" gutterBottom>2. Körperlichen (physisch, neurologisch) und kognitiven Zustand von PatientInnen ermitteln</Typography>
                                     </TableCell>
                                     <TableCell style={{ width: 160 }} align="right">
-                                        <StyledRating
+                                        <Rating
+                                            name="highlight-selected-only"
+                                            defaultValue={0}
+                                            IconContainerComponent={IconContainer}
+                                            value={response.practical_activity.a2}
+                                            icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                                            emptyIcon={<CheckBoxOutlineBlankIcon />}
+                                            max={6}
+                                            highlightSelectedOnly
+                                        />
+                                        {/* <StyledRating
                                             name="customized-color"
                                             defaultValue={0}
                                             // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
@@ -960,7 +1013,7 @@ function  PracticalSkillsView({ response }) {
                                             emptyIcon={<CheckBoxOutlineBlankIcon />}
                                             max={6}
                                             highlightSelectedOnly
-                                        />
+                                        /> */}
                                     </TableCell>
                                 </TableRow>
                                 <TableRow>
@@ -1006,7 +1059,7 @@ function  PracticalSkillsView({ response }) {
                
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Pflegeprobleme und Pflegediagnose
                         </Typography>
                     </Box>
@@ -1075,7 +1128,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Pflegeplanung
                         </Typography>
                     </Box>
@@ -1144,10 +1197,10 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={2} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom color="primary">
+                        <Typography variant="h6" display="block" gutterBottom color="primary">
                             B - Professionelle Pflege
                         </Typography>
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Grundpflege und Körperpflege
                         </Typography>
                     </Box>
@@ -1198,7 +1251,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Ernährung
                         </Typography>
                     </Box>
@@ -1267,7 +1320,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Mobilität
                         </Typography>
                     </Box>
@@ -1336,7 +1389,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Ausscheiden
                         </Typography>
                     </Box>
@@ -1423,10 +1476,10 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={2} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom color="primary">
+                        <Typography variant="h6" display="block" gutterBottom color="primary">
                             Pflegeintervention
                         </Typography>
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Teilnahme an medizinischen und diagnostischen Prozeduren und Verfahren
                         </Typography>
                     </Box>
@@ -1477,7 +1530,7 @@ function  PracticalSkillsView({ response }) {
                 
                 <section className={classes.section}>
                     <Box py={2} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Medikamente
                         </Typography>
                     </Box>
@@ -1546,7 +1599,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Wundmanagement
                         </Typography>
                     </Box>
@@ -1615,7 +1668,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Stomaversorgung
                         </Typography>
                     </Box>
@@ -1647,7 +1700,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Medizinische Geräte anwenden
                         </Typography>
                     </Box>
@@ -1716,7 +1769,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}> 
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Lebensrettende Maßnahmen
                         </Typography>
                     </Box>
@@ -1767,10 +1820,10 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={2} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom color="primary">
+                        <Typography variant="h6" display="block" gutterBottom color="primary">
                             D - Hygiene
                         </Typography>
-                        <Typography variant="subtitle2" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Hygienemaßnahmen anwenden
                         </Typography>
                     </Box>
@@ -1929,7 +1982,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom>
+                        <Typography variant="h6" display="block" gutterBottom>
                             Umgang mit Katastrophen
                         </Typography>
                     </Box>
@@ -1962,7 +2015,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom color="primary">
+                        <Typography variant="h6" display="block" gutterBottom color="primary">
                             E - Kommunikation mit KollegInnen, PatientInnen und Anderen
                         </Typography>
                     </Box>
@@ -2085,7 +2138,7 @@ function  PracticalSkillsView({ response }) {
 
                 <section className={classes.section}>
                     <Box py={1} px={2}>
-                        <Typography variant="h5" display="block" gutterBottom color="primary">
+                        <Typography variant="h6" display="block" gutterBottom color="primary">
                             F - Dokumentation und Qualität
                         </Typography>
                     </Box>
