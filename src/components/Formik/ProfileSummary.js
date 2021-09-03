@@ -376,7 +376,7 @@ function ProfileSummary () {
                 kfParticipantId: response.kfParticipantId,
                 kfCategory: response.kfCategory,
                 kfDegree: response.kfDegree,
-                kfLanguage: response.kfLanguage.split(", "),
+                kfLanguage: response.kfLanguage,
                 kfExperienceYear: response.kfExperienceYear,
                 kfExperienceMonth: response.kfExperienceMonth,
                 kfPriorities: response.kfPriorities.split(", "),
@@ -513,7 +513,7 @@ function ProfileSummary () {
             'kfParticipantId': values.kfParticipantId,
             'kfCategory' : values.kfCategory,
             'kfDegree': values.kfDegree,
-            'kfLanguage': values.kfLanguage.join(", "),
+            'kfLanguage': values.kfLanguage,
             'kfExperienceYear': values.kfExperienceYear,
             'kfExperienceMonth': values.kfExperienceMonth,
             'kfPriorities': values.kfPriorities.join(", "),
@@ -669,7 +669,7 @@ function ProfileSummary () {
                                 <Field
                                     component={Select}
                                     name="kfLanguage"
-                                    multiple={true}
+                                    multiple={false}
                                     fullWidth
                                     InputLabelProps={{ name: 'kfLanguage', id: 'kfLanguage' }}
                                     autoWidth="true"
