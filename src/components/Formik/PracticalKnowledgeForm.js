@@ -206,7 +206,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                     'ventilators': values.ventilators,
                     'settingventilators': values.settingventilators,
                     'beatmungsformen': values.beatmungsformen,
-                    'breathings': values.departments.join(", "),
+                    'breathings': values.breathings.join(", "),
 
                     // VITAL SIGN CONTROL MONITORING
                     'rrmeasurement': values.rrmeasurement,
@@ -264,7 +264,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                     'cerebralhemorrhage': values.cerebralhemorrhage,
                     'caringparkinson': values.caringparkinson,
                     'carebraintumor': values.carebraintumor,
-                    'neurologies': values.departments.join(", "),
+                    'neurologies': values.neurologies.join(", "),
 
                     // WOUND TREATMENT
                     'asepticdressing': values.asepticdressing,
@@ -272,7 +272,7 @@ function PracticalKnowledge ({ setPracticalKnowledgeState }) {
                     'pullingthreads': values.pullingthreads,
                     'removebrackets': values.removebrackets,
                     'woundassessment': values.woundassessment,
-                    'woundtreatments': values.departments.join(", "),
+                    'woundtreatments': values.woundtreatments.join(", "),
                 }
 
                 data.append('data', JSON.stringify(info));
