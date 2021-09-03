@@ -78,7 +78,6 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1em'
     },
     table: {
-        //margin: '-.75rem 0 0 0'
         "& th": {
             padding: '8px 16px',
             borderBottom: 0
