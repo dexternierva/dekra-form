@@ -970,7 +970,7 @@ function  PracticalSkillsView({ response }) {
                                             defaultValue={0}
                                             IconContainerComponent={IconContainer}
                                             value={response.practical_activity.a1}
-                                            icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                                            // icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
                                             emptyIcon={<CheckBoxOutlineBlankIcon />}
                                             max={6}
                                             highlightSelectedOnly
@@ -998,7 +998,7 @@ function  PracticalSkillsView({ response }) {
                                             defaultValue={0}
                                             IconContainerComponent={IconContainer}
                                             value={response.practical_activity.a2}
-                                            icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
+                                            //icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
                                             emptyIcon={<CheckBoxOutlineBlankIcon />}
                                             max={6}
                                             highlightSelectedOnly
