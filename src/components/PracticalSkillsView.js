@@ -1,5 +1,5 @@
 import React from "react";
-import Rating from '@material-ui/lab/Rating';
+import Rating from '@mui/core/Rating';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import {
@@ -65,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
     },
     practicalactivitiestitle: {
         width: '100%',
-        margin: '0 0 .5rem 1rem',
         color: '#008B4F',
         fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
         fontWeight: '700',
@@ -73,7 +72,6 @@ const useStyles = makeStyles((theme) => ({
     },
     practicalactivitiestitle2: {
         width: '100%',
-        margin: '0 0 .5rem 1rem',
         color: '#666666',
         fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
         fontWeight: '700',
