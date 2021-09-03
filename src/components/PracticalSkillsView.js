@@ -948,7 +948,6 @@ function  PracticalSkillsView({ response }) {
                                         <Rating
                                             name="highlight-selected-only"
                                             defaultValue={0}
-                                            // getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
                                             precision={1}
                                             value={response.practical_activity.a2}
                                             icon={<CheckBoxOutlinedIcon fontSize="inherit" />}
