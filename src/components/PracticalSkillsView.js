@@ -260,14 +260,14 @@ function  PracticalSkillsView({ response }) {
                 }
             </section> {/* END OF CONTAINER */}
             
+            {
+                /**
+                 * BASIC CARE
+                 * =====================================================================
+                 */
+            }
             <section>
                 <Grid container spacing={0}>
-                    {
-                        /**
-                         * BASIC CARE
-                         * =====================================================================
-                         */
-                    }
                     <Grid item xs={12} sm={6} className={classes.grid}>
                     <h3 className={classes.sectionTitle}>Grundpflege</h3>
 
@@ -440,14 +440,15 @@ function  PracticalSkillsView({ response }) {
                 </Grid>
             </section>
             
+            {
+                /**
+                 * VITAL SIGN CONTROL / MONITORING & DEVICES
+                 * =====================================================================
+                 */
+            }
             <section>
                 <Grid container spacing={0}>
-                    {
-                        /**
-                         * Vital sign control / monitoring
-                         * =====================================================================
-                         */
-                    }
+                    
                     <Grid item xs={12} sm={6} className={classes.grid}>
                         <h3 className={classes.sectionTitle}>Vitalzeichenkontrolle / Überwachung</h3>
 
@@ -510,12 +511,7 @@ function  PracticalSkillsView({ response }) {
                         }
                     </Grid>
 
-                    {
-                        /**
-                         * DEVICES
-                         * =====================================================================
-                         */
-                    }
+                    {/*** DEVICES */}
                     <Grid item xs={12} sm={6} className={classes.grid}>
                         <h3 className={classes.sectionTitle}>Geräte</h3>
 
@@ -579,15 +575,15 @@ function  PracticalSkillsView({ response }) {
                     </Grid>
                 </Grid>
             </section>
-
+            
+            {
+                /**
+                 * MEDICATIONS
+                 * =====================================================================
+                 */
+            }
             <section>
                 <Grid container spacing={0}>
-                    {
-                        /**
-                         * MEDICATIONS
-                         * =====================================================================
-                         */
-                    }
                     <Grid item xs={12} sm={6} className={classes.grid}>
                         <h3 className={classes.sectionTitle}>Medikamente</h3>
 
@@ -686,12 +682,7 @@ function  PracticalSkillsView({ response }) {
                         </Box>
                     </Grid>
 
-                    {
-                        /**
-                         * EXCRETION
-                         * =====================================================================
-                         */
-                    }
+                    { /*** EXCRETION */}
                     <Grid item xs={12} sm={6} className={classes.grid}>
                         <h3 className={classes.sectionTitle}>Ausscheidung</h3>
 
@@ -776,15 +767,15 @@ function  PracticalSkillsView({ response }) {
                     </Grid>
                 </Grid>
             </section>
-
+            
+            {
+                /**
+                 * NEUROLOGY
+                 * =====================================================================
+                 */
+            }
             <section>
                 <Grid container spacing={0}>
-                    {
-                        /**
-                         * NEUROLOGY
-                         * =====================================================================
-                         */
-                    }
                     <Grid item xs={12} sm={6} className={classes.grid}>
                         <h3 className={classes.sectionTitle}>Neurologie</h3>
 
@@ -835,12 +826,7 @@ function  PracticalSkillsView({ response }) {
                         }
                     </Grid>
 
-                    {
-                        /**
-                         * WOUND TREATMENT
-                         * =====================================================================
-                         */
-                    }
+                    {/*** WOUND TREATMENT */}
                     <Grid item xs={12} sm={6} className={classes.grid}>
                         <h3 className={classes.sectionTitle}>Wundbehandlung</h3>
 
