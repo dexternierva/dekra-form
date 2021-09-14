@@ -905,8 +905,8 @@ function ProfileForm ({ setProfileFormState }) {
                         germanCare: Yup.date().required('This field is required'),
                         englishLanguage: Yup.string().required('This field is required'),
                         englishLanguageLevel: Yup.string().required('This field is required'),
-                        otherLanguages: Yup.string().required('This field is required'),
-                        otherLanguagesLevel: Yup.string().required('This field is required')
+                        otherLanguages: Yup.string().notRequired(),
+                        otherLanguagesLevel: Yup.string().notRequired()
                     })}
                 >
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -1056,7 +1056,7 @@ function ProfileForm ({ setProfileFormState }) {
 
                 {
                     /**
-                     * FORMIK STEP:
+                     * FORMIK STEP 4:
                      * OTHER SKILL
                      * 
                      */
