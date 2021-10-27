@@ -310,24 +310,8 @@ function ProfileSummary () {
     ];
 
     const drivingLicenseOptions = [
-        { label: 'Select D', value: 'none' },
-        { label: 'AM', value: 'am' },
-        { label: 'A1', value: 'a1' },
-        { label: 'A2', value: 'a2' },
-        { label: 'A', value: 'a' },
-        { label: 'B1', value: 'b1' },
+        { label: 'Select Driving License', value: 'none' },
         { label: 'B', value: 'b' },
-        { label: 'BE', value: 'be' },
-        { label: 'C1', value: 'c1' },
-        { label: 'C1E', value: 'c1e' },
-        { label: 'C', value: 'c' },
-        { label: 'CE', value: 'ce' },
-        { label: 'D1', value: 'd1' },
-        { label: 'D1E', value: 'd1e' },
-        { label: 'D', value: 'd' },
-        { label: 'DE', value: 'de' },
-        { label: 'F', value: 'f' },
-        { label: 'M', value: 'm' }
     ];
 
     const yearOptions = [
